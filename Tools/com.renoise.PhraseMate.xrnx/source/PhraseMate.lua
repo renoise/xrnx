@@ -1268,14 +1268,28 @@ end
 
 function PhraseMate:apply_to_track(sel)
   TRACE("PhraseMate:apply_to_track(sel)",sel)
+  local selected_phrase
+  local transpose_amount = 0
 
-  if not rns.selected_phrase then
+  if self.prefs.auto_capture_phrase.value then
+    local start_line = xLine.resolve_pattern_line(rns.selected_sequence_index, sel.start_line, sel.start_track)
+    local phrase_instrument = 1 + start_line.note_columns[1].instrument_value
+    local phrase_command = xLinePattern.get_effect_command(renoise.song():track(sel.start_track), start_line, "0Z", 1)
+    local phrase_index = phrase_command[1].value
+    start_line:effect_column(1):clear()
+    selected_phrase = renoise.song():instrument(phrase_instrument):phrase(phrase_index)
+    transpose_amount = start_line.note_columns[1].note_value - selected_phrase.base_note
+  else
+    selected_phrase = rns.selected_phrase
+  end
+
+  if not selected_phrase then
     return false,"No phrase was selected"
   end
 
   local options = {
     instr_index = rns.selected_instrument_index,
-    phrase = rns.selected_phrase,
+    phrase = selected_phrase,
     sequence_index = rns.selected_sequence_index,
     track_index = sel and sel.start_track or rns.selected_track_index,
     anchor_to_selection = self.prefs.anchor_to_selection.value,
@@ -1293,6 +1307,14 @@ function PhraseMate:apply_to_track(sel)
   xPhrase.apply_to_track(options)
   self.suppress_line_notifier = false
 
+  if transpose_amount ~= 0 then
+    for pos, line in renoise.song().pattern_iterator:note_columns_in_pattern_track(rns.selected_pattern_index, rns.selected_track_index, true) do
+      if line.note_value < 120 and pos.line >= sel.start_line and pos.line <= sel.end_line then
+        line.note_value = line.note_value + transpose_amount
+      end
+    end
+  end
+
   return true
 
 end
@@ -1304,7 +1326,37 @@ end
 function PhraseMate:apply_to_selection()
   TRACE("PhraseMate:apply_to_selection()")
 
-  local sel,err = xPatternSelection.get_pattern_if_single_track()
+  local sel, err
+
+  if self.prefs.auto_capture_phrase.value then
+    local phraseEndLine = rns.selected_pattern.number_of_lines
+    local findPhraseEnd = function (notecol)
+      return notecol.note_value < 121
+    end
+    local phraseEnd = xNoteCapture.next(findPhraseEnd)
+    if phraseEnd then
+      phraseEndLine = phraseEnd.line
+    end
+
+    local findPhraseBegin = function (notecol)
+      return notecol.note_value < 120
+    end
+    local phraseBegin = xNoteCapture.nearest(findPhraseBegin)
+
+    local line = xLine.resolve_pattern_line(phraseBegin.sequence, phraseBegin.line, phraseBegin.track)
+    local phraseCommand = line:effect_column(1)
+    sel = {
+      start_line = phraseBegin.line,
+      start_track = phraseBegin.track,
+      start_column = 1,
+      end_line = phraseEndLine - 1,
+      end_column = 1,
+      end_track = phraseBegin.track
+    }
+  else
+    sel,err = xPatternSelection.get_pattern_if_single_track()
+  end
+
   if not sel then
     return false,err
   end
