@@ -4,7 +4,7 @@ name: Build and Deploy mdBook
 on:
   push:
     branches:
-      - next
+      - markdown
 
 jobs:
   build:
