@@ -1,0 +1,13 @@
+[package]
+name = "generate"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.5.7", features = ["derive"] }
+pest = "2.7.10"
+pest_derive = "2.7.10"
+serde = { version = "1.0.203", features = ["derive"] }
+serde_json = "1.0.117"
+tempdir = "0.3.7"
+thiserror = "1.0.61"

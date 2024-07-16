@@ -1,0 +1,48 @@
+name: Build and Deploy mdBook
+
+
+on:
+  push:
+    branches:
+      - next
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - run: ./generate/build.sh "3.9.3"
+      - run: cargo install mdbook
+      - run: cargo install mdbook-linkcheck
+
+      - name: Build the book
+        run: mdbook build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: ./book/html
+          
+  deploy:
+    # Add a dependency to the build job
+    needs: build
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RenoiseScriptingTool doc_version="0">
+  <ApiVersion>6.2</ApiVersion>
+  <Id>com.renoise.ExampleTool</Id>
+  <Version>1.0</Version>
+  <Author>taktik [taktik@renoise.com]</Author>
+  <Name>Renoise Scripting Tool Example</Name>
+  <Category>Tool Development</Category>
+  <Description>A XRNX tool which describes step by step and in depth how to create Renoise XRNX tools. Please have a look at the source files of this tool (manifest.xml and main.lua) for more info. Also creates a new menu 'Example Tool' in the global 'Tools' menu.</Description>
+  <Homepage>http://scripting.renoise.com</Homepage>
+  <Icon>icon.png</Icon>
+  <Platform>Windows, Mac, Linux</Platform>
+</RenoiseScriptingTool>

@@ -1,0 +1,12 @@
+[book]
+authors = ["renoise"]
+language = "en"
+multilingual = false
+src = "docs"
+title = "Renoise Scripting"
+
+[output.html]
+default-theme = "dark"
+preferred-dark-theme = "coal"
+
+[output.linkcheck]
