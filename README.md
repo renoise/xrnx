@@ -4,7 +4,7 @@
 
 This repository contains the documentation for tool scripting in Renoise.
 
-You can read the docs at [https://unlessgames.github.io/xrnx](https://unlessgames.github.io/xrnx) or by browsing the `docs` directory here.
+You can read the docs at [https://renoise.github.io/xrnx](https://renoise.github.io/xrnx) or by browsing the `docs` directory here.
 
 ## Development
 

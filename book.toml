@@ -8,5 +8,6 @@ title = "Renoise Scripting"
 [output.html]
 default-theme = "dark"
 preferred-dark-theme = "coal"
+no-section-label = true
 
 [output.linkcheck]
