@@ -1,4 +1,6 @@
+Cargo.lock
 /book/
-/old/
+/target/
+/generate/Cargo.lock
 /generate/target/
 /generate/lua-language-server/
