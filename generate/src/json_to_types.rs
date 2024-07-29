@@ -135,13 +135,11 @@ impl Function {
             Type::Lua(LuaKind::Function) => {
                 let params = extend
                     .args
-                    .unwrap_or_default()
                     .iter()
                     .filter_map(Var::from_argdef)
-                    .collect::<Vec<Var>>();
+                    .collect::<Vec<_>>();
                 let returns = extend
                     .returns
-                    .unwrap_or_default()
                     .iter()
                     .filter_map(Var::from_return)
                     .collect::<Vec<Var>>();
@@ -169,38 +167,22 @@ impl Function {
 }
 
 impl Class {
-    fn extend_has_type(e: &Option<Extend>, t: Type) -> bool {
-        if let Some(e) = e {
-            e.lua_type == t
-        } else {
-            false
-        }
-    }
     fn from_definition(d: &Definition) -> Self {
         Self {
+            scope: Scope::from_name(&d.name),
             name: d.name.clone(),
             fields: d
                 .fields
                 .clone()
-                .unwrap_or_default()
                 .into_iter()
-                .filter(|f| {
-                    f.lua_type == Type::Doc(Doc::Field)
-                        || (f.lua_type == Type::SetField
-                            && !Self::extend_has_type(&f.extends, Type::Lua(LuaKind::Function)))
-                })
+                .filter(Field::is_field)
                 .filter_map(Var::from_field)
                 .collect(),
-            methods: d
+            functions: d
                 .fields
                 .clone()
-                .unwrap_or_default()
                 .into_iter()
-                .filter(|f| {
-                    f.lua_type == Type::SetMethod
-                        || (f.lua_type == Type::SetField
-                            && Self::extend_has_type(&f.extends, Type::Lua(LuaKind::Function)))
-                })
+                .filter(Field::is_function)
                 .filter_map(Function::from_field)
                 .collect(),
             enums: vec![], // enums will get added in Library

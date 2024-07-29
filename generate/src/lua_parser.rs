@@ -191,9 +191,11 @@ mod test {
         assert_eq!(LuaParser::type_def(input), k);
         Ok(())
     }
-    fn var(name: &str, kind: Kind) -> Var {
+
+    fn var<N: Into<Option<String>>>(name: N, kind: Kind) -> Var {
+        let name = name.into();
         Var {
-            name: Some(name.to_string()),
+            name,
             kind,
             desc: None,
         }
@@ -204,7 +206,6 @@ mod test {
     }
 
     #[test]
-
     pub fn parse() -> Result<(), String> {
         assert_type("integer", Kind::Lua(LuaKind::Integer))?;
         assert_type(
@@ -239,8 +240,8 @@ mod test {
             Kind::Function(Function {
                 name: Some(String::from("a.b.c")),
                 params: vec![
-                    var("i", Kind::Lua(LuaKind::Integer)),
-                    var("", Kind::Variadic(Box::new(Kind::Lua(LuaKind::String)))),
+                    var("i".to_string(), Kind::Lua(LuaKind::Integer)),
+                    var(None, Kind::Variadic(Box::new(Kind::Lua(LuaKind::String)))),
                 ],
                 returns: vec![],
                 desc: None,
@@ -251,9 +252,9 @@ mod test {
             Kind::Function(Function {
                 name: Some(String::from("test")),
                 params: vec![
-                    var("a", Kind::Lua(LuaKind::Integer)),
+                    var("a".to_string(), Kind::Lua(LuaKind::Integer)),
                     var(
-                        "b",
+                        "b".to_string(),
                         Kind::Enum(vec![
                             Kind::Lua(LuaKind::Integer),
                             Kind::Nullable(Box::new(Kind::Lua(LuaKind::String))),

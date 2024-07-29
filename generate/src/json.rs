@@ -4,8 +4,10 @@ use std::{
     fmt, fs,
     path::{Path, PathBuf},
     process::Command,
+    str::FromStr,
 };
 use tempdir::TempDir;
+use url::Url;
 
 pub struct JsonDoc {}
 impl JsonDoc {
@@ -19,8 +21,17 @@ impl JsonDoc {
     fn export(path: &Path) -> Result<Vec<Definition>, Error> {
         let tmp_dir = TempDir::new("docs")?;
         let tmp_path = tmp_dir.path();
-
-        let output = Command::new("./lua-language-server/bin/lua-language-server")
+        let ls_filename = if cfg!(windows) {
+            "lua-language-server.exe"
+        } else {
+            "lua-language-server"
+        };
+        // allow running from within the "generate" path and from the repository root path
+        let mut ls_path = PathBuf::from("./generate/lua-language-server/bin/").join(ls_filename);
+        if !ls_path.exists() {
+            ls_path = PathBuf::from("./lua-language-server/bin/").join(ls_filename);
+        }
+        let output = Command::new(ls_path)
             .arg("--doc")
             .arg(path)
             .arg("--doc_out_path")
@@ -38,26 +49,29 @@ impl JsonDoc {
         }
     }
 
-    fn file_matches(file: &str, path: &Path) -> bool {
-        PathBuf::from(file)
-            .file_name()
-            .map(|p| p == path.file_name().unwrap_or_default())
+    fn file_url_matches(file_url: &str, base_path: &Path) -> bool {
+        assert!(
+            Url::from_str(file_url).is_ok(),
+            "Expecting an url file string"
+        );
+        let file_path = Url::from_str(file_url)
+            .unwrap()
+            .to_file_path()
             .unwrap_or_default()
+            .canonicalize()
+            .unwrap_or_default();
+        let base_path = base_path.canonicalize().unwrap_or_default();
+        file_path.starts_with(base_path)
     }
 
     /// Exclude standard lua
     fn strip(path: &Path, defs: Vec<Definition>) -> Vec<Definition> {
         defs.into_iter()
-            .filter(|def| {
-                def.defines
-                    .iter()
-                    .any(|define| Self::file_matches(&define.file, path))
-            })
             .map(|d| {
                 // remove standard define from the list of defines (for type())
                 let mut def = d.clone();
                 def.defines
-                    .retain(|define| Self::file_matches(&define.file, path));
+                    .retain(|define| Self::file_url_matches(&define.file, path));
                 def
             })
             .collect()
@@ -164,8 +178,7 @@ pub struct Field {
     pub lua_type: Type,
     pub file: String,
     pub visible: VisibleType,
-    #[serde(default)]
-    #[serde(deserialize_with = "deserialize_extends")]
+    #[serde(default, deserialize_with = "deserialize_extends")]
     pub extends: Option<Extend>,
 }
 
@@ -189,9 +202,31 @@ pub struct Definition {
     #[serde(rename = "type")]
     pub lua_type: Type,
     pub defines: Vec<Define>,
-    pub fields: Option<Vec<Field>>,
+    #[serde(default)]
+    pub fields: Vec<Field>,
 }
 
+impl Field {
+    pub fn is_field(&self) -> bool {
+        self.lua_type == Type::Doc(Doc::Field)
+            || (self.lua_type == Type::SetField
+                && !Self::extend_has_type(&self.extends, Type::Lua(LuaKind::Function)))
+    }
+
+    pub fn is_function(&self) -> bool {
+        self.lua_type == Type::SetMethod
+            || (self.lua_type == Type::SetField
+                && Self::extend_has_type(&self.extends, Type::Lua(LuaKind::Function)))
+    }
+
+    fn extend_has_type(e: &Option<Extend>, t: Type) -> bool {
+        if let Some(e) = e {
+            e.lua_type == t
+        } else {
+            false
+        }
+    }
+}
 impl fmt::Display for Definition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(
@@ -200,7 +235,7 @@ impl fmt::Display for Definition {
             self.name,
             self.lua_type,
             self.defines.len(),
-            self.fields.clone().map(|fs| fs.len()).unwrap_or(0),
+            self.fields.len(),
             // "",
             if !self.defines.is_empty() {
                 format!(
@@ -215,12 +250,11 @@ impl fmt::Display for Definition {
             } else {
                 String::from("")
             },
-            if !self.fields.clone().unwrap_or_default().is_empty() {
+            if !self.fields.is_empty() {
                 format!(
                     "\n{}",
                     self.fields
                         .clone()
-                        .unwrap_or_default()
                         .iter()
                         .enumerate()
                         .map(|(i, f)| format!("    [{}] - {}", i, f))
@@ -266,9 +300,11 @@ pub struct Extend {
     pub desc: Option<String>,
     pub rawdesc: Option<String>,
     /// Only present for functions (type = "function") with args
-    pub args: Option<Vec<ArgDef>>,
+    #[serde(default)]
+    pub args: Vec<ArgDef>,
     /// Only present for functions (type = "function") with returns
-    pub returns: Option<Vec<ReturnDef>>,
+    #[serde(default)]
+    pub returns: Vec<ReturnDef>,
 }
 
 /// Extends can be either null, an object or an array of objects

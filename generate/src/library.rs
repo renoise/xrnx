@@ -1,5 +1,8 @@
-use crate::{error::Error, json::JsonDoc, sources::Source, types::*};
-use std::{collections::HashMap, path::PathBuf};
+use std::{collections::HashMap, path::Path};
+
+use itertools::Itertools;
+
+use crate::{error::Error, json::JsonDoc, types::*};
 
 #[derive(Clone)]
 pub struct Library {
@@ -10,27 +13,22 @@ pub struct Library {
 
 impl Library {
     /// generate a library from a given root directory or lua file
-    pub fn from_path(path: PathBuf) -> Result<Self, Error> {
+    pub fn from_path(path: &Path) -> Result<Self, Error> {
+        println!("Parsing definitions: '{}'", path.to_string_lossy());
         let mut defs: Vec<Def> = vec![];
-        let sources = Source::from_path(path)?;
-        if let Some(sources) = sources {
-            for path in sources.file_paths(vec![]) {
-                let definitions = JsonDoc::get(&path)?;
-                defs.append(
-                    &mut definitions
-                        .iter()
-                        .filter_map(Def::from_definition)
-                        .collect::<Vec<Def>>(),
-                );
-                println!("{:?}", path)
-            }
-        }
+        let definitions = JsonDoc::get(path)?;
+        defs.append(
+            &mut definitions
+                .iter()
+                .filter_map(Def::from_definition)
+                .collect::<Vec<Def>>(),
+        );
         Ok(Self::from_defs(defs))
     }
 
     fn resolve_string(&self, s: String) -> Option<Kind> {
-        if self.classes.contains_key(&s) {
-            Some(Kind::Class(s))
+        if let Some(class) = self.classes.get(&s) {
+            Some(Kind::Class(class.scope.clone(), class.name.clone()))
         } else if self.aliases.contains_key(&s) {
             Some(Kind::Alias(s))
         } else if self.enums.contains_key(&s) {
@@ -83,19 +81,20 @@ impl Library {
             for f in c.fields.iter_mut() {
                 f.kind = l.resolve_kind(&f.kind)
             }
-            for f in c.methods.iter_mut() {
+            for f in c.functions.iter_mut() {
                 l.resolve_function(f)
             }
         }
     }
 
     // helper to create built-in dummy classes
-    fn class_desc(name: &str, desc: &str) -> Class {
+    fn builtin_class_desc(name: &str, desc: &str) -> Class {
         Class {
+            scope: Scope::Builtins,
             name: name.to_string(),
             desc: desc.to_string(),
             fields: vec![],
-            methods: vec![],
+            functions: vec![],
             constants: vec![],
             enums: vec![],
         }
@@ -104,42 +103,42 @@ impl Library {
     // a list of classes that correspond to lua types
     fn builtin_classes() -> Vec<Class> {
         let self_example =
-            "```lua\nlocal song = renoise.song()\nlocal first = song:pattern(0)\n```";
+            "```lua\nlocal song = renoise.song()\nlocal first_pattern = song:pattern(1)\n```";
         vec![
-            Self::class_desc(
+            Self::builtin_class_desc(
                 "self",
                 &format!("A type that represents an instance that you call a function on. When you see a function signature starting with this type, you should use `:` to call the function on the instance, this way you can omit this first argument.\n{}", self_example),
             ),
-            Self::class_desc(
+            Self::builtin_class_desc(
                 "nil",
                 "A built-in type representing a non-existant value, [see details](https://www.lua.org/pil/2.1.html). When you see `?` at the end of types, it means they can be nil.",
             ),
-            Self::class_desc(
+            Self::builtin_class_desc(
                 "boolean",
                 "A built-in type representing a boolean (true or false) value, [see details](https://www.lua.org/pil/2.2.html)",
             ),
-            Self::class_desc(
+            Self::builtin_class_desc(
                 "number",
                 "A built-in type representing floating point numbers, [see details](https://www.lua.org/pil/2.3.html)",
             ),
-            Self::class_desc(
+            Self::builtin_class_desc(
                 "string",
                 "A built-in type representing a string of characters, [see details](https://www.lua.org/pil/2.4.html)",
             ),
-            Self::class_desc("function", "A built-in type representing functions, [see details](https://www.lua.org/pil/2.6.html)"),
-            Self::class_desc("table", "A built-in type representing associative arrays, [see details](https://www.lua.org/pil/2.5.html)"),
-            Self::class_desc("userdata", "A built-in type representing array values, [see details](https://www.lua.org/pil/28.1.html)."),
-            Self::class_desc(
+            Self::builtin_class_desc("function", "A built-in type representing functions, [see details](https://www.lua.org/pil/2.6.html)"),
+            Self::builtin_class_desc("table", "A built-in type representing associative arrays, [see details](https://www.lua.org/pil/2.5.html)"),
+            Self::builtin_class_desc("userdata", "A built-in type representing array values, [see details](https://www.lua.org/pil/28.1.html)."),
+            Self::builtin_class_desc(
                 "lightuserdata",
                 "A built-in type representing a pointer, [see details](https://www.lua.org/pil/28.5.html)",
             ),
 
-            Self::class_desc("integer", "A helper type that represents whole numbers, a subset of [number](number.md)"),
-            Self::class_desc(
+            Self::builtin_class_desc("integer", "A helper type that represents whole numbers, a subset of [number](number.md)"),
+            Self::builtin_class_desc(
                 "any",
                 "A type for a dynamic argument, it can be anything at run-time.",
             ),
-            Self::class_desc(
+            Self::builtin_class_desc(
                 "unknown",
                 "A dummy type for something that cannot be inferred before run-time.",
             ),
@@ -203,27 +202,32 @@ impl Library {
             l.classes.insert(c.name.clone(), c.clone());
         });
 
-        // create dummy classes for global functions and those without a parent class (like bit)
+        // create dummy classes for global functions and those without a parent class (in module exensions)
         for f in dangling_functions.iter_mut() {
             let name = &f.name.clone().unwrap_or_default();
             let base = Class::get_base(name).unwrap_or("global");
             if let Some((_, class)) = l.classes.iter_mut().find(|(k, _)| *k == base) {
-                if class.methods.iter().any(|fun| fun.name == f.name) {
+                if class
+                    .functions
+                    .iter()
+                    .any(|fun| fun.name == f.strip_base().name)
+                {
                     // skip class function as it was already added by Def::from_definition to its class
                 } else {
-                    class.methods.push(f.strip_base())
+                    class.functions.push(f.strip_base())
                 }
             } else {
                 l.classes.insert(
                     base.to_string(),
                     Class {
+                        scope: Scope::from_name(base),
                         name: base.to_string(),
-                        methods: vec![f.strip_base()],
+                        functions: vec![f.strip_base()],
                         fields: vec![],
                         enums: vec![],
                         constants: vec![],
                         // TODO the description should end up here from bit, os etc
-                        desc: String::default(),
+                        desc: String::new(),
                     },
                 );
             }
@@ -234,8 +238,11 @@ impl Library {
                 .fields
                 .clone()
                 .into_iter()
-                .filter(|v| !Var::is_constant(v))
-                .collect::<Vec<Var>>();
+                .filter(Var::is_not_constant)
+                // HACK: remove table properties from classes, assuming they are nested classes
+                .filter(|v| !matches!(v.kind, Kind::Lua(LuaKind::Table)))
+                .unique_by(|f| f.name.clone())
+                .collect::<Vec<_>>();
             fields.sort_by(|a, b| a.name.cmp(&b.name));
 
             let mut constants = c
@@ -243,7 +250,8 @@ impl Library {
                 .clone()
                 .into_iter()
                 .filter(Var::is_constant)
-                .collect::<Vec<Var>>();
+                .unique_by(|f| f.name.clone())
+                .collect::<Vec<_>>();
 
             constants.sort_by(|a, b| a.name.cmp(&b.name));
 

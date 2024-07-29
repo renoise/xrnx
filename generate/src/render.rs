@@ -1,20 +1,35 @@
+use std::collections::HashMap;
+use std::vec;
+
 use crate::library::Library;
 use crate::types::*;
 
 impl Library {
     /// render each page inside the library as a list of string tuples (name, content)
-    pub fn export_docs(&self) -> Vec<(String, String)> {
-        let mut docs: Vec<(String, String)> = self
-            .classes
-            .iter()
-            .map(|(name, class)| (name.clone(), class.render()))
-            .collect();
-        let mut aliases: Vec<(String, String)> = self
-            .aliases
-            .iter()
-            .map(|(name, alias)| (name.clone(), alias.render()))
-            .collect();
-        docs.append(&mut aliases);
+    pub fn export_docs(&self, url_root: &str) -> Vec<(String, String)> {
+        // split classes int renoise, builtins and structs
+        let mut renoise = vec![];
+        let mut builtins = vec![];
+        let mut modules = vec![];
+        for (name, class) in &self.classes {
+            let content = class.render(url_root, &self.classes, &self.aliases);
+            match class.scope {
+                Scope::Global => renoise.push((name.clone(), content)),
+                Scope::Builtins => builtins.push((String::from("builtins/") + name, content)),
+                Scope::Local => (), // inlined in classes
+                Scope::Modules => modules.push((String::from("modules/") + name, content)),
+            }
+        }
+        let mut docs: Vec<(String, String)> = vec![];
+        docs.append(&mut renoise);
+        if !builtins.is_empty() {
+            docs.push(("builtins".to_string(), "#Lua Builtin Types".to_string()));
+            docs.append(&mut builtins);
+        }
+        if !modules.is_empty() {
+            docs.push(("modules".to_string(), "#Lua Standard Modules".to_string()));
+            docs.append(&mut modules);
+        }
         Self::sort(&mut docs);
         docs
     }
@@ -66,9 +81,16 @@ fn h3(text: &str) -> String {
 fn link(text: &str, url: &str) -> String {
     format!("[`{}`]({}.md)", text, url)
 }
-fn sublink(text: &str, url: &str, hash: &str) -> String {
+fn enum_link(text: &str, url: &str, hash: &str) -> String {
     format!("[`{}`]({}.md#{})", text, url, hash)
 }
+fn alias_link(text: &str, hash: &str) -> String {
+    format!("[`{}`](#{})", text, hash)
+}
+fn local_class_link(text: &str, hash: &str) -> String {
+    format!("[`{}`](#{})", text, hash.to_lowercase())
+}
+
 // fn quote(text: &str) -> String {
 //     format!("> {}", text)
 // }
@@ -85,69 +107,83 @@ fn hash(text: &str, hash: &str) -> String {
 }
 
 impl LuaKind {
-    fn link(&self) -> String {
+    fn link(&self, url_root: &str) -> String {
         let text = self.show();
-        link(&text, &text)
+        link(&text, &(format!("{}API/builtins/", url_root) + &text))
     }
 }
 
 impl Kind {
-    fn link(&self) -> String {
+    fn link(&self, url_root: &str) -> String {
         match self {
-            Kind::Lua(lk) => lk.link(),
+            Kind::Lua(lk) => lk.link(url_root),
             Kind::Literal(k, s) => match k.as_ref() {
                 LuaKind::String => format!("`\"{}\"`", s),
                 LuaKind::Integer | LuaKind::Number => format!("`{}`", s.clone()),
                 _ => s.clone(),
             },
-            Kind::Class(name) => link(name, name),
+            Kind::Class(scope, name) => match scope {
+                Scope::Local => local_class_link(name, name),
+                _ => link(name, &(url_root.to_string() + &scope.path_prefix() + name)),
+            },
             Kind::Enum(kinds) => kinds
                 .iter()
-                .map(|k| k.link())
+                .map(|k| k.link(url_root))
                 .collect::<Vec<String>>()
                 .join(" | "),
-            Kind::EnumRef(name) => sublink(
+            Kind::EnumRef(name) => enum_link(
                 name,
                 Class::get_base(name).unwrap_or(name),
                 Class::get_end(name).unwrap_or_default(),
             ),
-            Kind::SelfArg => "[*self*](self.md)".to_string(),
-            Kind::Array(k) => format!("{}`[]`", k.as_ref().link()),
-            Kind::Nullable(k) => format!("{}{}", k.as_ref().link(), link("?", "nil")),
-            Kind::Alias(name) => link(name, name),
-            Kind::Function(f) => f.short(),
-            Kind::Table(k, v) => format!("table<{}, {}>", k.as_ref().link(), v.as_ref().link()),
+            Kind::SelfArg => format!("[*self*]({}API/builtins/self.md)", url_root),
+            Kind::Array(k) => format!("{}`[]`", k.link(url_root)),
+            Kind::Nullable(k) => format!(
+                "{}{}",
+                k.as_ref().link(url_root),
+                link("?", &format!("{}API/builtins/nil", url_root))
+            ),
+            Kind::Alias(name) => alias_link(name, name),
+            Kind::Function(f) => f.short(url_root),
+            Kind::Table(k, v) => format!(
+                "table<{}, {}>",
+                k.as_ref().link(url_root),
+                v.as_ref().link(url_root)
+            ),
             Kind::Object(hm) => {
                 let mut keys = hm.iter().map(|(k, _)| k.clone()).collect::<Vec<String>>();
                 keys.sort();
                 let fields = keys
                     .iter()
-                    .map(|k| format!("{} : {}", k, hm.get(k).unwrap().as_ref().link()))
+                    .map(|k| format!("{} : {}", k, hm.get(k).unwrap().link(url_root)))
                     .collect::<Vec<String>>()
                     .join(", "); // TODO print on newlines?
                 format!("{{ {} }}", fields)
             }
-            Kind::Variadic(k) => format!("...{}", k.as_ref().link()),
+            Kind::Variadic(k) => format!("...{}", k.link(url_root)),
             Kind::Unresolved(s) => s.clone(),
         }
     }
 }
 
 impl Var {
-    fn short(&self) -> String {
+    fn short(&self, url_root: &str) -> String {
         if matches!(self.kind, Kind::SelfArg) {
-            self.kind.link()
+            self.kind.link(url_root)
         } else if let Some(name) = self.name.clone() {
-            format!("{} : {}", name, self.kind.link())
+            format!("{} : {}", name, self.kind.link(url_root))
         } else {
-            self.kind.link()
+            self.kind.link(url_root)
         }
     }
-    fn long(&self) -> String {
+    fn long(&self, url_root: &str) -> String {
         let desc = self.desc.clone().unwrap_or_default();
         format!(
             "{}{}",
-            hash(&h3(&self.short()), &self.name.clone().unwrap_or_default()),
+            hash(
+                &h3(&self.short(url_root)),
+                &self.name.clone().unwrap_or_default()
+            ),
             if desc.is_empty() {
                 desc
             } else {
@@ -158,44 +194,45 @@ impl Var {
 }
 
 impl Alias {
-    fn render(&self) -> String {
+    fn render(&self, url_root: &str) -> String {
         format!(
             "{}\n{}  \n{}",
             hash(&h1(&format!("alias {}", &self.name)), &self.name),
-            self.kind.link(),
+            self.kind.link(url_root),
             self.desc.clone().unwrap_or_default()
         )
     }
 }
 
 impl Function {
-    fn long(&self) -> String {
+    fn long(&self, url_root: &str) -> String {
         let name = self.name.clone().unwrap_or("fun".to_string());
         if self.params.is_empty() {
             let name = hash(&h3(&format!("`{}()`", &name)), &name);
-            self.with_desc(&self.with_returns(&name))
+            self.with_desc(&self.with_returns(&name, url_root))
         } else {
             let params = self
                 .params
                 .iter()
-                .map(Var::short)
+                .map(|v| v.short(url_root))
                 .collect::<Vec<String>>()
                 .join(", ");
 
-            self.with_desc(
-                &self.with_returns(&hash(&format!("### `{}`({})", &name, params), &name)),
-            )
+            self.with_desc(&self.with_returns(
+                &hash(&format!("### `{}`({})", &name, params), &name),
+                url_root,
+            ))
         }
     }
-    fn short(&self) -> String {
+    fn short(&self, url_root: &str) -> String {
         if self.params.is_empty() && self.returns.is_empty() {
             return self.empty();
         }
-        let returns = Self::render_vars(&self.returns);
+        let returns = Self::render_vars(&self.returns, url_root);
         format!(
             "{}({}){}",
             &self.name.clone().unwrap_or_default(),
-            Self::render_vars(&self.params),
+            Self::render_vars(&self.params, url_root),
             if returns.is_empty() {
                 returns
             } else {
@@ -206,9 +243,9 @@ impl Function {
     fn empty(&self) -> String {
         format!("{}()", &self.name.clone().unwrap_or("fun".to_string()))
     }
-    fn render_vars(vars: &[Var]) -> String {
+    fn render_vars(vars: &[Var], url_root: &str) -> String {
         vars.iter()
-            .map(Var::short)
+            .map(|v| v.short(url_root))
             .collect::<Vec<String>>()
             .join(", ")
     }
@@ -220,11 +257,11 @@ impl Function {
             format!("{}\n{}", head, desc)
         }
     }
-    fn with_returns(&self, head: &str) -> String {
+    fn with_returns(&self, head: &str, url_root: &str) -> String {
         let returns = self
             .returns
             .iter()
-            .map(Var::short)
+            .map(|v| v.short(url_root))
             .collect::<Vec<String>>()
             .join(", ");
         if returns.is_empty() {
@@ -236,7 +273,12 @@ impl Function {
 }
 
 impl Class {
-    fn render(&self) -> String {
+    fn render(
+        &self,
+        url_root: &str,
+        structs: &HashMap<String, Class>,
+        aliases: &HashMap<String, Alias>,
+    ) -> String {
         let mut m = vec![h1(&self.name)];
 
         if !self.desc.is_empty() {
@@ -244,10 +286,14 @@ impl Class {
         }
 
         if !self.enums.is_empty() || !self.constants.is_empty() {
+            let mut enums = self.enums.clone();
+            enums.sort_by(|a, b| a.name.cmp(&b.name));
+            let mut constants = self.constants.clone();
+            constants.sort_by(|a, b| a.name.cmp(&b.name));
             m.push(format!(
                 "{}\n{}\n{}",
                 h2("Constants"),
-                self.enums
+                enums
                     .iter()
                     .map(|e| {
                         let name = e.name.clone();
@@ -256,9 +302,9 @@ impl Class {
                     })
                     .collect::<Vec<String>>()
                     .join("\n"),
-                self.constants
+                constants
                     .iter()
-                    .map(Var::long)
+                    .map(|v| v.long(url_root))
                     .collect::<Vec<String>>()
                     .join("\n")
             ))
@@ -271,26 +317,60 @@ impl Class {
                 h2("Properties"),
                 self.fields
                     .iter()
-                    .map(Var::long)
+                    .map(|v| v.long(url_root))
                     .collect::<Vec<String>>()
                     .join("\n")
             ))
         }
 
-        let mut methods = self.methods.clone();
-        methods.sort_by(|a, b| a.name.cmp(&b.name));
-        if !methods.is_empty() {
+        let mut functions = self.functions.clone();
+        functions.sort_by(|a, b| a.name.cmp(&b.name));
+        if !functions.is_empty() {
             m.push("\n---".to_string());
             m.push(format!(
                 "{}\n{}",
                 h2("Functions"),
-                methods
+                functions
                     .iter()
-                    .map(Function::long)
+                    .map(|f| f.long(url_root))
                     .collect::<Vec<String>>()
                     .join("\n")
             ))
         }
+
+        // append used local classes and aliases
+        if self.scope != Scope::Local {
+            let (local_class_names, local_alias_names) = self.collect_local_types(structs, aliases);
+
+            // append all used local classes
+            if !local_class_names.is_empty() {
+                m.push("\n\n\n---".to_string());
+                m.push(h2("Structs"));
+                let mut class_names: Vec<&String> = structs.keys().collect();
+                class_names.sort();
+                for name in class_names {
+                    if local_class_names.contains(name) {
+                        let struct_ = structs.get(name).unwrap();
+                        m.push(struct_.render(url_root, structs, aliases));
+                    }
+                }
+            }
+
+            // append all used local aliases
+            if !local_alias_names.is_empty() {
+                m.push("\n\n\n---".to_string());
+                m.push(h2("Aliases"));
+                let mut alias_names: Vec<&String> = aliases.keys().collect();
+                alias_names.sort();
+                for name in alias_names {
+                    if local_alias_names.contains(name) {
+                        m.push(aliases.get(name).unwrap().render(url_root));
+                        m.push(String::new());
+                    }
+                }
+            }
+        }
+
         m.push("\n".to_string());
         m.join("  \n")
     }

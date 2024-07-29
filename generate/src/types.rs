@@ -1,5 +1,8 @@
 use serde::{Deserialize, Serialize};
-use std::{collections::HashMap, fmt};
+use std::{
+    collections::{HashMap, HashSet},
+    fmt,
+};
 
 /// enum for possible lua-ls built-in types
 #[derive(Debug, PartialEq, Serialize, Deserialize, Clone, Eq, PartialOrd, Ord)]
@@ -30,7 +33,7 @@ pub enum Kind {
     Table(Box<Kind>, Box<Kind>),
     Object(HashMap<String, Box<Kind>>),
     Alias(String),
-    Class(String),
+    Class(Scope, String),
     Function(Function),
     Enum(Vec<Kind>),
     EnumRef(String),
@@ -75,12 +78,22 @@ pub struct Enum {
     pub desc: String,
 }
 
+/// scope of a class item
+#[derive(Debug, Clone, PartialEq)]
+pub enum Scope {
+    Global,
+    Local,
+    Builtins,
+    Modules,
+}
+
 /// class definition, rendered as a doc page
 #[derive(Debug, Clone, PartialEq)]
 pub struct Class {
+    pub scope: Scope,
     pub name: String,
     pub fields: Vec<Var>,
-    pub methods: Vec<Function>,
+    pub functions: Vec<Function>,
     pub enums: Vec<Enum>,
     pub constants: Vec<Var>,
     pub desc: String,
@@ -95,21 +108,84 @@ pub enum Def {
     Function(Function),
 }
 
+impl Kind {
+    pub fn collect_local_class_types(&self) -> HashSet<String> {
+        let mut types = HashSet::new();
+        if let Kind::Array(item) = self {
+            types.extend(item.collect_local_class_types());
+        } else if let Kind::Nullable(item) = self {
+            types.extend(item.collect_local_class_types());
+        } else if let Kind::Table(key, value) = self {
+            types.extend(key.collect_local_class_types());
+            types.extend(value.collect_local_class_types());
+        } else if let Kind::Class(scope, name) = self {
+            if scope == &Scope::Local {
+                types.insert(name.clone());
+            }
+        } else if let Kind::Function(func) = self {
+            for ret in &func.returns {
+                types.extend(ret.kind.collect_local_class_types());
+            }
+            for param in &func.params {
+                types.extend(param.kind.collect_local_class_types());
+            }
+        } else if let Kind::Enum(kinds) = self {
+            for kind in kinds {
+                types.extend(kind.collect_local_class_types());
+            }
+        } else if let Kind::Variadic(item) = self {
+            types.extend(item.collect_local_class_types());
+        }
+        types
+    }
+
+    pub fn collect_alias_types(&self) -> HashSet<String> {
+        let mut types = HashSet::new();
+        if let Kind::Array(item) = self {
+            types.extend(item.collect_alias_types());
+        } else if let Kind::Nullable(item) = self {
+            types.extend(item.collect_alias_types());
+        } else if let Kind::Table(key, value) = self {
+            types.extend(key.collect_alias_types());
+            types.extend(value.collect_alias_types());
+        } else if let Kind::Alias(name) = self {
+            types.insert(name.clone());
+        } else if let Kind::Function(func) = self {
+            for ret in &func.returns {
+                types.extend(ret.kind.collect_alias_types());
+            }
+            for param in &func.params {
+                types.extend(param.kind.collect_alias_types());
+            }
+        } else if let Kind::Enum(kinds) = self {
+            for kind in kinds {
+                types.extend(kind.collect_alias_types());
+            }
+        } else if let Kind::Variadic(item) = self {
+            types.extend(item.collect_alias_types());
+        }
+        types
+    }
+}
+
 impl Var {
     pub fn is_constant(&self) -> bool {
         self.name
-            .clone()
-            .map(|name| name == name.to_uppercase())
-            .unwrap_or(false)
+            .as_ref()
+            .is_some_and(|name| name.chars().all(char::is_uppercase))
+    }
+
+    pub fn is_not_constant(&self) -> bool {
+        !self.is_constant()
     }
 }
 
 impl Function {
     pub fn strip_base(&self) -> Self {
-        if let Some(name) = self.name.clone() {
+        if let Some(name) = &self.name {
             Self {
                 name: Some(
-                    Class::get_end(&name)
+                    Class::get_end(name)
                         .map(|n| n.to_string())
                         .unwrap_or(self.name.clone().unwrap_or_default()),
                 ),
@@ -121,12 +197,125 @@ impl Function {
     }
 }
 
+impl Scope {
+    pub fn from_name(name: &str) -> Self {
+        if name.starts_with("renoise") {
+            Scope::Global
+        } else if ["global", "bit", "debug", "io", "math", "os"].contains(&name) {
+            Scope::Modules
+        } else {
+            Scope::Local
+        }
+    }
+
+    pub fn path_prefix(&self) -> String {
+        match self {
+            Scope::Global => String::from("API/renoise/"),
+            Scope::Builtins => String::from("API/builtins/"),
+            Scope::Local => String::from("API/structs/"),
+            Scope::Modules => String::from("API/modules/"),
+        }
+    }
+}
+
 impl Class {
     pub fn get_base(s: &str) -> Option<&str> {
         s.rfind('.').map(|pos| &s[..pos])
     }
+
     pub fn get_end(s: &str) -> Option<&str> {
         s.rfind('.').map(|pos| &s[pos + 1..])
+    }
+
+    pub fn collect_local_types(
+        &self,
+        structs: &HashMap<String, Class>,
+        aliases: &HashMap<String, Alias>,
+    ) -> (HashSet<String>, HashSet<String>) {
+        let mut local_class_names = self.collect_local_class_types();
+        let mut local_alias_names = self.collect_alias_types();
+
+        // loop until recursion settled
+        loop {
+            let mut new_local_class_names = local_class_names.clone();
+            let mut new_local_alias_names = local_alias_names.clone();
+
+            // find local structs and aliases names in aliases
+            for name in new_local_alias_names.clone() {
+                let alias = aliases.get(&name).unwrap();
+                new_local_class_names.extend(alias.kind.collect_local_class_types());
+                new_local_alias_names.extend(alias.kind.collect_alias_types());
+            }
+
+            // find alias and local struct names in local structs
+            for name in new_local_class_names.clone() {
+                let struct_ = structs.get(&name).unwrap();
+                new_local_alias_names.extend(struct_.collect_alias_types());
+                new_local_class_names.extend(struct_.collect_local_class_types());
+            }
+
+            // resolve new structs and aliases
+            for alias in new_local_alias_names.clone().into_iter() {
+                if let Some(alias) = aliases.get(&alias) {
+                    if let Kind::Alias(alias) = &alias.kind {
+                        new_local_alias_names.insert(alias.to_string());
+                    } else if let Kind::Class(scope, name) = &alias.kind {
+                        if scope == &Scope::Local {
+                            new_local_class_names.insert(name.to_string());
+                        }
+                    }
+                }
+            }
+
+            if new_local_class_names != local_class_names
+                || new_local_alias_names != local_alias_names
+            {
+                local_class_names.clone_from(&new_local_class_names);
+                local_alias_names.clone_from(&new_local_alias_names);
+            } else {
+                break;
+            }
+        }
+
+        (local_class_names, local_alias_names)
+    }
+
+    pub fn collect_local_class_types(&self) -> HashSet<String> {
+        let mut types = HashSet::new();
+        for field in &self.fields {
+            types.extend(field.kind.collect_local_class_types());
+        }
+        for function in &self.functions {
+            for ret in &function.returns {
+                types.extend(ret.kind.collect_local_class_types());
+            }
+            for param in &function.params {
+                types.extend(param.kind.collect_local_class_types());
+            }
+        }
+        for con in &self.constants {
+            types.extend(con.kind.collect_local_class_types());
+        }
+        types
+    }
+
+    pub fn collect_alias_types(&self) -> HashSet<String> {
+        let mut types = HashSet::new();
+        for field in &self.fields {
+            types.extend(field.kind.collect_alias_types());
+        }
+        for function in &self.functions {
+            for ret in &function.returns {
+                types.extend(ret.kind.collect_alias_types());
+            }
+            for param in &function.params {
+                types.extend(param.kind.collect_alias_types());
+            }
+        }
+        for con in &self.constants {
+            types.extend(con.kind.collect_alias_types());
+        }
+        types
     }
 }
 
@@ -264,15 +453,16 @@ impl Class {
                 return true;
             }
         }
-        for f in &self.methods {
+        for f in &self.functions {
             if f.has_unresolved() {
                 return true;
             }
         }
         false
     }
+
     pub fn is_empty(&self) -> bool {
-        self.fields.is_empty() && self.enums.is_empty() && self.methods.is_empty()
+        self.fields.is_empty() && self.enums.is_empty() && self.functions.is_empty()
     }
 
     fn with_new_line(s: &str) -> String {
@@ -282,6 +472,7 @@ impl Class {
             format!("\n{}", s)
         }
     }
+
     pub fn show(&self) -> String {
         format!(
             "  Class {}{}{}{}",
@@ -304,7 +495,7 @@ impl Class {
             ),
             Self::with_new_line(
                 &self
-                    .methods
+                    .functions
                     .iter()
                     .map(|f| format!("    {}", f))
                     .collect::<Vec<String>>()

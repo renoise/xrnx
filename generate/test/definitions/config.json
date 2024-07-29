@@ -1,0 +1,8 @@
+{
+    "name": "renoise",
+    "words"  : ["%s*renoise%.%w+"],
+    "has_plugin": true,
+    "settings" : {
+        "Lua.runtime.version" : "Lua 5.1"
+    }
+}

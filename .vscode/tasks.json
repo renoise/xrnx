@@ -8,7 +8,7 @@
 				"$rustc"
 			],
 			"args": [
-				"${workspaceFolder}/definitions",
+				"${workspaceFolder}/definitions/library",
 				"${workspaceFolder}/docs"
 			],
 			"group": "build",

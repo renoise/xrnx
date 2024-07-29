@@ -5,9 +5,12 @@ multilingual = false
 src = "docs"
 title = "Renoise Scripting"
 
+[build]
+create-missing = false
+
 [output.html]
 default-theme = "dark"
 preferred-dark-theme = "coal"
-no-section-label = true
 
-[output.linkcheck]
+#[output.linkcheck]
+#warning-policy = "ignore"
