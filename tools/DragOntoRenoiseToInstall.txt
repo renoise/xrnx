@@ -1,0 +1,8 @@
+To try out the example tools you have to install them first. 
+
+This can be done by dragging the com.renoise.ExampleTool.xrnx and 
+com.renoise.ExampleToolGui.xrnx folders onto the running Renoise window. 
+
+The installed tools will create two menu entries in Renoises "Tool" menu:
+"Tools -> Example Tool" and
+"Tools -> Example Tool GUI"
