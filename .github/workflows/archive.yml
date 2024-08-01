@@ -1,0 +1,35 @@
+name: Build and Archive XRNX_Starter_Pack.zip
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+            
+      - name: Install Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+
+      - name: Build the book
+        run: |
+          ./generate/build.sh "3.9.3" ""
+          cargo install mdbook
+          cargo install mdbook-linkcheck
+          mdbook build
+
+      - name: Create XRNX_Starter_Pack
+        run: |
+          mkdir dist
+          cp -rf book dist/docs
+          cp -rf tools dist/tools
+          cd dist && zip -r -q ../XRNX_Starter_Pack.zip .
+        
+      - name: Archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: Archive
+          path: XRNX_Starter_Pack.zip
