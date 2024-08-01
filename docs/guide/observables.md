@@ -33,7 +33,7 @@ Now try changing the name of the current song inside the first field of the *Son
 
 With this technique you can listen to all sorts of things which is very useful when you want your tool to change its behaviour or initialize itself each time the user selects a new instrument, track, sample and so on.
 
-There are different Observables for each primitive type like `ObservableBoolean`, `ObservableNumber` or `ObservableString` and ones that are for storing list of such values (`ObservableBooleanList` etc.). You can check out the entire [Observables API](https://github.com/renoise/definitions/blob/main/library/renoise/document/observable.lua) to see them all.
+There are different Observables for each primitive type like `ObservableBoolean`, `ObservableNumber` or `ObservableString` and ones that are for storing list of such values (`ObservableBooleanList` etc.). You can check out the entire [Observables API](../API/renoise/renoise.Document.Observable.md) to see them all.
 
 # Preferences
 
