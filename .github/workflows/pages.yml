@@ -19,7 +19,7 @@ jobs:
 
       - name: Build the book
         run: |
-          ./generate/build.sh "3.9.3" "/xrnx/"
+          ./generate/build.sh "3.9.3"
           cargo install mdbook
           cargo install mdbook-linkcheck
           mdbook build
@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
-          path: ./book
+          path: ./book/html
           
   deploy:
     # Add a dependency to the build job

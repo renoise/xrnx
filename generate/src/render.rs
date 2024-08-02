@@ -6,12 +6,14 @@ use crate::types::*;
 
 impl Library {
     /// render each page inside the library as a list of string tuples (name, content)
-    pub fn export_docs(&self, url_root: &str) -> Vec<(String, String)> {
+    pub fn export_docs(&self) -> Vec<(String, String)> {
         // split classes int renoise, builtins and structs
         let mut renoise = vec![];
         let mut builtins = vec![];
         let mut modules = vec![];
         for (name, class) in &self.classes {
+            // url_root is the path to /API folder
+            let url_root = if name == "renoise" { "../" } else { "../../" };
             let content = class.render(url_root, &self.classes, &self.aliases);
             match class.scope {
                 Scope::Global => renoise.push((name.clone(), content)),

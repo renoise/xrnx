@@ -52,7 +52,7 @@ The text label of the button
 A tooltip text that should be shown for this view on mouse hover.
 * Default: "" (no tip will be shown)
 
-### views : [`renoise.Views.View`](/API/renoise/renoise.Views.View.md)`[]` {#views}
+### views : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)`[]` {#views}
 **READ-ONLY** Empty for all controls, for layout views this contains the
 layout child views in the order they got added
 
@@ -72,26 +72,26 @@ relative to the view's parent size and will automatically update on size changes
 
 ---  
 ## Functions
-### `add_child`([*self*](/API/builtins/self.md), child : [`renoise.Views.View`](/API/renoise/renoise.Views.View.md)) {#add_child}
+### `add_child`([*self*](../../API/builtins/self.md), child : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)) {#add_child}
 Add a new child view to this view.
-### `add_pressed_notifier`([*self*](/API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#add_pressed_notifier}
+### `add_pressed_notifier`([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#add_pressed_notifier}
 Add/remove button hit/release notifier functions.
 When a "pressed" notifier is set, the release notifier is guaranteed to be
 called as soon as the mouse is released, either over your button or anywhere
 else. When a "release" notifier is set, it is only called when the mouse
 button is pressed !and! released over your button.
-### `add_released_notifier`([*self*](/API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#add_released_notifier}
-### `remove_child`([*self*](/API/builtins/self.md), child : [`renoise.Views.View`](/API/renoise/renoise.Views.View.md)) {#remove_child}
+### `add_released_notifier`([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#add_released_notifier}
+### `remove_child`([*self*](../../API/builtins/self.md), child : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)) {#remove_child}
 Remove a child view from this view.
-### `remove_pressed_notifier`([*self*](/API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#remove_pressed_notifier}
-### `remove_released_notifier`([*self*](/API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#remove_released_notifier}  
+### `remove_pressed_notifier`([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#remove_pressed_notifier}
+### `remove_released_notifier`([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#remove_released_notifier}  
 
 
 
 ---  
 ## Aliases  
 # alias BitmapImagePath {#BitmapImagePath}
-[`string`](/API/builtins/string.md)  
+[`string`](../../API/builtins/string.md)  
 You can load an image from your tool's directory,
 or use one from Renoise's built-in icons.  
 * For the built-in icons, use "Icons/ArrowRight.bmp"
@@ -128,19 +128,19 @@ always visible.
 Set color {0,0,0} to enable the theme colors for the button again.  
   
 # alias ButtonLabel {#ButtonLabel}
-[`string`](/API/builtins/string.md)  
+[`string`](../../API/builtins/string.md)  
 The text label of the button
 * Default: ""  
   
 # alias ControlActive {#ControlActive}
-[`boolean`](/API/builtins/boolean.md)  
+[`boolean`](../../API/builtins/boolean.md)  
 Instead of making a control invisible, you can also make it inactive.
 Deactivated controls will still be shown, and will still show their
 currently assigned values, but will not allow changes. Most controls will
 display as "grayed out" to visualize the deactivated state.  
   
 # alias ControlMidiMappingString {#ControlMidiMappingString}
-[`string`](/API/builtins/string.md)  
+[`string`](../../API/builtins/string.md)  
 When set, the control will be highlighted when Renoise's MIDI mapping dialog
 is open. When clicked, it selects the specified string as a MIDI mapping
 target action. This target acton can either be one of the globally available
@@ -153,26 +153,26 @@ fun()
   
   
 # alias RGBColor {#RGBColor}
-{ 1 : [`integer`](/API/builtins/integer.md), 2 : [`integer`](/API/builtins/integer.md), 3 : [`integer`](/API/builtins/integer.md) }  
+{ 1 : [`integer`](../../API/builtins/integer.md), 2 : [`integer`](../../API/builtins/integer.md), 3 : [`integer`](../../API/builtins/integer.md) }  
 A table of 3 bytes (ranging from 0 to 255)
 representing the red, green and blue channels of a color.
 {0xFF, 0xFF, 0xFF} is white
 {165, 73, 35} is the red from the Renoise logo  
   
 # alias ViewDimension {#ViewDimension}
-[`string`](/API/builtins/string.md) | [`integer`](/API/builtins/integer.md)  
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
 The dimensions of a view has to be larger than 0.
 For nested views you can also specify relative size
 for example `vb:text { width = "80%"}`. The percentage values are
 relative to the view's parent size and will automatically update on size changes.  
   
 # alias ViewTooltip {#ViewTooltip}
-[`string`](/API/builtins/string.md)  
+[`string`](../../API/builtins/string.md)  
 A tooltip text that should be shown for this view on mouse hover.
 * Default: "" (no tip will be shown)  
   
 # alias ViewVisibility {#ViewVisibility}
-[`boolean`](/API/builtins/boolean.md)  
+[`boolean`](../../API/builtins/boolean.md)  
 Set visible to false to hide a view (make it invisible without removing
 it). Please note that view.visible will also return false when any of its
 parents are invisible (when its implicitly invisible).

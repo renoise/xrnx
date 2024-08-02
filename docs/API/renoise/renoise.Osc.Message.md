@@ -6,11 +6,11 @@
 **READ-ONLY** Table of `{tag="X", value=SomeValue}` that represents the
 message arguments. See `renoise.Osc.Message.create` for more info.
 
-### binary_data : [`string`](/API/builtins/string.md) {#binary_data}
+### binary_data : [`string`](../../API/builtins/string.md) {#binary_data}
 **READ-ONLY** Raw binary representation of the message, as needed when e.g.
 sending the message over the network through sockets.
 
-### pattern : [`string`](/API/builtins/string.md) {#pattern}
+### pattern : [`string`](../../API/builtins/string.md) {#pattern}
 **READ-ONLY** The message pattern (e.g. "/renoise/transport/start")
 
   
@@ -30,7 +30,7 @@ specified. For more info, see: http://opensoundcontrol.org/spec-1_0
 ---  
 ## Properties
 ### tag : [`OscTag`](#OscTag) {#tag}
-### value : [`boolean`](/API/builtins/boolean.md) | [`string`](/API/builtins/string.md) | [`number`](/API/builtins/number.md) {#value}
+### value : [`boolean`](../../API/builtins/boolean.md) | [`string`](../../API/builtins/string.md) | [`number`](../../API/builtins/number.md) {#value}
   
 
   

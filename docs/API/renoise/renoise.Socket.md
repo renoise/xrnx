@@ -16,8 +16,8 @@ protocol, so both are easily interchangeable when needed.
 
 ---  
 ## Functions
-### `create_client`(server_address : [`string`](/API/builtins/string.md), server_port : [`integer`](/API/builtins/integer.md), protocol : [`renoise.Socket.Protocol`](renoise.Socket.md#Protocol)[`?`](/API/builtins/nil.md), timeout : [`integer`](/API/builtins/integer.md)[`?`](/API/builtins/nil.md)) {#create_client}
-`->`client : [`renoise.Socket.SocketClient`](/API/renoise/renoise.Socket.SocketClient.md)[`?`](/API/builtins/nil.md), error : [`string`](/API/builtins/string.md)[`?`](/API/builtins/nil.md)  
+### `create_client`(server_address : [`string`](../../API/builtins/string.md), server_port : [`integer`](../../API/builtins/integer.md), protocol : [`renoise.Socket.Protocol`](renoise.Socket.md#Protocol)[`?`](../../API/builtins/nil.md), timeout : [`integer`](../../API/builtins/integer.md)[`?`](../../API/builtins/nil.md)) {#create_client}
+`->`client : [`renoise.Socket.SocketClient`](../../API/renoise/renoise.Socket.SocketClient.md)[`?`](../../API/builtins/nil.md), error : [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
 
 Create a connected UPD or TCP client.
 `protocol` can be `renoise.Socket.PROTOCOL_TCP` or
@@ -25,8 +25,8 @@ Create a connected UPD or TCP client.
 `timeout` is the time in ms to wait until the connection is established
 (1000 ms by default). When instantiation and connection succeed, a valid client
 object is returned, otherwise "error" is set and the client object is nil
-### `create_server`(server_address : [`string`](/API/builtins/string.md), server_port : [`integer`](/API/builtins/integer.md), protocol : [`renoise.Socket.Protocol`](renoise.Socket.md#Protocol)[`?`](/API/builtins/nil.md)) {#create_server}
-`->`[`renoise.Socket.SocketServer`](/API/renoise/renoise.Socket.SocketServer.md)[`?`](/API/builtins/nil.md), [`string`](/API/builtins/string.md)[`?`](/API/builtins/nil.md)  
+### `create_server`(server_address : [`string`](../../API/builtins/string.md), server_port : [`integer`](../../API/builtins/integer.md), protocol : [`renoise.Socket.Protocol`](renoise.Socket.md#Protocol)[`?`](../../API/builtins/nil.md)) {#create_server}
+`->`[`renoise.Socket.SocketServer`](../../API/renoise/renoise.Socket.SocketServer.md)[`?`](../../API/builtins/nil.md), [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
 
 Creates a connected UPD or TCP server object. Use "localhost" to use your
 system's default network address. Protocol can be `renoise.Socket.PROTOCOL_TCP`

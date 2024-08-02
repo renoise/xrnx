@@ -48,7 +48,7 @@ Setup how the bitmap should be drawn, recolored. Available modes are:
 A tooltip text that should be shown for this view on mouse hover.
 * Default: "" (no tip will be shown)
 
-### views : [`renoise.Views.View`](/API/renoise/renoise.Views.View.md)`[]` {#views}
+### views : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)`[]` {#views}
 **READ-ONLY** Empty for all controls, for layout views this contains the
 layout child views in the order they got added
 
@@ -68,13 +68,13 @@ relative to the view's parent size and will automatically update on size changes
 
 ---  
 ## Functions
-### `add_child`([*self*](/API/builtins/self.md), child : [`renoise.Views.View`](/API/renoise/renoise.Views.View.md)) {#add_child}
+### `add_child`([*self*](../../API/builtins/self.md), child : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)) {#add_child}
 Add a new child view to this view.
-### `add_notifier`([*self*](/API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#add_notifier}
+### `add_notifier`([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#add_notifier}
 Add mouse click notifier
-### `remove_child`([*self*](/API/builtins/self.md), child : [`renoise.Views.View`](/API/renoise/renoise.Views.View.md)) {#remove_child}
+### `remove_child`([*self*](../../API/builtins/self.md), child : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)) {#remove_child}
 Remove a child view from this view.
-### `remove_notifier`([*self*](/API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#remove_notifier}
+### `remove_notifier`([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#remove_notifier}
 Remove mouse click notifier  
 
 
@@ -82,7 +82,7 @@ Remove mouse click notifier
 ---  
 ## Aliases  
 # alias BitmapImagePath {#BitmapImagePath}
-[`string`](/API/builtins/string.md)  
+[`string`](../../API/builtins/string.md)  
 You can load an image from your tool's directory,
 or use one from Renoise's built-in icons.  
 * For the built-in icons, use "Icons/ArrowRight.bmp"
@@ -118,14 +118,14 @@ BitmapMode:
 Supported bitmap file formats are *.bmp, *.png or *.tif (no transparency).  
   
 # alias ControlActive {#ControlActive}
-[`boolean`](/API/builtins/boolean.md)  
+[`boolean`](../../API/builtins/boolean.md)  
 Instead of making a control invisible, you can also make it inactive.
 Deactivated controls will still be shown, and will still show their
 currently assigned values, but will not allow changes. Most controls will
 display as "grayed out" to visualize the deactivated state.  
   
 # alias ControlMidiMappingString {#ControlMidiMappingString}
-[`string`](/API/builtins/string.md)  
+[`string`](../../API/builtins/string.md)  
 When set, the control will be highlighted when Renoise's MIDI mapping dialog
 is open. When clicked, it selects the specified string as a MIDI mapping
 target action. This target acton can either be one of the globally available
@@ -138,19 +138,19 @@ fun()
   
   
 # alias ViewDimension {#ViewDimension}
-[`string`](/API/builtins/string.md) | [`integer`](/API/builtins/integer.md)  
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
 The dimensions of a view has to be larger than 0.
 For nested views you can also specify relative size
 for example `vb:text { width = "80%"}`. The percentage values are
 relative to the view's parent size and will automatically update on size changes.  
   
 # alias ViewTooltip {#ViewTooltip}
-[`string`](/API/builtins/string.md)  
+[`string`](../../API/builtins/string.md)  
 A tooltip text that should be shown for this view on mouse hover.
 * Default: "" (no tip will be shown)  
   
 # alias ViewVisibility {#ViewVisibility}
-[`boolean`](/API/builtins/boolean.md)  
+[`boolean`](../../API/builtins/boolean.md)  
 Set visible to false to hide a view (make it invisible without removing
 it). Please note that view.visible will also return false when any of its
 parents are invisible (when its implicitly invisible).

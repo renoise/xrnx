@@ -12,5 +12,5 @@ create-missing = false
 default-theme = "dark"
 preferred-dark-theme = "coal"
 
-#[output.linkcheck]
-#warning-policy = "ignore"
+[output.linkcheck]
+warning-policy = "ignore"

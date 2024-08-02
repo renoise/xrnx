@@ -2,8 +2,8 @@
 
 ---  
 ## Functions
-### `class`(name : [`string`](/API/builtins/string.md)) {#class}
-`->`[`function`](/API/builtins/function.md)  
+### `class`(name : [`string`](../../API/builtins/string.md)) {#class}
+`->`[`function`](../../API/builtins/function.md)  
 
 Luabind "class" registration. Registers a global class object and returns a
 closure to optionally set the base class.
@@ -43,19 +43,19 @@ class 'Mammal' (Animal)
 local mamal = Mammal("Cow")
 mamal:show()
 ```
-### `objinfo`(object : [`userdata`](/API/builtins/userdata.md)) {#objinfo}
-`->`[`string`](/API/builtins/string.md)`[]`  
+### `objinfo`(object : [`userdata`](../../API/builtins/userdata.md)) {#objinfo}
+`->`[`string`](../../API/builtins/string.md)`[]`  
 
 Return a string which lists properties and methods of class objects.
-### `oprint`(object : [`userdata`](/API/builtins/userdata.md)) {#oprint}
+### `oprint`(object : [`userdata`](../../API/builtins/userdata.md)) {#oprint}
 Dumps properties and methods of class objects (like renoise.app()).
-### `rawequal`(obj1 : [`any`](/API/builtins/any.md), obj2 : [`any`](/API/builtins/any.md)) {#rawequal}
+### `rawequal`(obj1 : [`any`](../../API/builtins/any.md), obj2 : [`any`](../../API/builtins/any.md)) {#rawequal}
 
 Checks whether v1 is equal to v2, without invoking the `__eq` metamethod.
 
 [View documents](http://www.lua.org/manual/5.4/manual.html#pdf-rawequal)
 ### `ripairs`(table : <T:table>) {#ripairs}
-`->`fun(table: <V>[], i?: integer):integer, <V>, <T:table>, i : [`integer`](/API/builtins/integer.md)  
+`->`fun(table: <V>[], i?: integer):integer, <V>, <T:table>, i : [`integer`](../../API/builtins/integer.md)  
 
 An iterator like ipairs, but in reverse order.
 ### examples:
@@ -63,11 +63,11 @@ An iterator like ipairs, but in reverse order.
 t = {"a", "b", "c"}
 for k,v in ripairs(t) do print(k, v) end -> "3 c, 2 b, 1 a"
 ```
-### `rprint`(value : [`any`](/API/builtins/any.md)) {#rprint}
+### `rprint`(value : [`any`](../../API/builtins/any.md)) {#rprint}
 Recursively dumps a table and all its members to the std out (console).
 This works for standard Lua types and class objects as well.
-### `tostring`(pattern_line : [`renoise.PatternLine`](/API/renoise/renoise.PatternLine.md)) {#tostring}
-`->`[`string`](/API/builtins/string.md)  
+### `tostring`(pattern_line : [`renoise.PatternLine`](../../API/renoise/renoise.PatternLine.md)) {#tostring}
+`->`[`string`](../../API/builtins/string.md)  
 
 
 Receives a value of any type and converts it to a string in a human-readable format.
@@ -78,8 +78,8 @@ For complete control of how numbers are converted, use [string.format](http://ww
 
 
 [View documents](http://www.lua.org/manual/5.4/manual.html#pdf-tostring)
-### `type`(value : [`any`](/API/builtins/any.md)) {#type}
-`->`[`string`](/API/builtins/string.md)  
+### `type`(value : [`any`](../../API/builtins/any.md)) {#type}
+`->`[`string`](../../API/builtins/string.md)  
 
 
 Returns the type of its only argument, coded as a string. The possible results of this function are `"nil"` (a string, not the value `nil`), `"number"`, `"string"`, `"boolean"`, `"table"`, `"function"`, `"thread"`, and `"userdata"`.

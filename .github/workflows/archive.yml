@@ -16,7 +16,7 @@ jobs:
 
       - name: Build the book
         run: |
-          ./generate/build.sh "3.9.3" "../"
+          ./generate/build.sh "3.9.3"
           cargo install mdbook
           cargo install mdbook-linkcheck
           mdbook build
@@ -25,7 +25,7 @@ jobs:
         run: |
           mkdir dist
           cp -rf definitions dist/definitions
-          cp -rf book dist/docs
+          cp -rf book/html dist/docs
           cp -rf tools dist/tools
           rm -rf dist/*/.git dist/*/.gitignore
           echo -e '<html>\n<body>\n<script type="text/javascript">\n\twindow.location.href = "./docs/index.html";\n</script>\n</body>\n</html>' > dist/docs.html 

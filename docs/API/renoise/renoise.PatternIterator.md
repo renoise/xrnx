@@ -20,50 +20,50 @@ only once.
 
 ---  
 ## Functions
-### `effect_columns_in_pattern`([*self*](/API/builtins/self.md), pattern_index : [`integer`](/API/builtins/integer.md), visible_only : [`boolean`](/API/builtins/boolean.md)[`?`](/API/builtins/nil.md)) {#effect_columns_in_pattern}
-`->`(context : [`unknown`](/API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.EffectColumn`](/API/renoise/renoise.EffectColumn.md), column : [`renoise.EffectColumn`](/API/renoise/renoise.EffectColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
+### `effect_columns_in_pattern`([*self*](../../API/builtins/self.md), pattern_index : [`integer`](../../API/builtins/integer.md), visible_only : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md)) {#effect_columns_in_pattern}
+`->`(context : [`unknown`](../../API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.EffectColumn`](../../API/renoise/renoise.EffectColumn.md), column : [`renoise.EffectColumn`](../../API/renoise/renoise.EffectColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
 
  Iterate over all note columns in the specified pattern.
-### `effect_columns_in_pattern_track`([*self*](/API/builtins/self.md), pattern_index : [`integer`](/API/builtins/integer.md), track_index : [`integer`](/API/builtins/integer.md), visible_only : [`boolean`](/API/builtins/boolean.md)[`?`](/API/builtins/nil.md)) {#effect_columns_in_pattern_track}
-`->`(context : [`unknown`](/API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.EffectColumn`](/API/renoise/renoise.EffectColumn.md), column : [`renoise.EffectColumn`](/API/renoise/renoise.EffectColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
+### `effect_columns_in_pattern_track`([*self*](../../API/builtins/self.md), pattern_index : [`integer`](../../API/builtins/integer.md), track_index : [`integer`](../../API/builtins/integer.md), visible_only : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md)) {#effect_columns_in_pattern_track}
+`->`(context : [`unknown`](../../API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.EffectColumn`](../../API/renoise/renoise.EffectColumn.md), column : [`renoise.EffectColumn`](../../API/renoise/renoise.EffectColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
 
-### `effect_columns_in_song`([*self*](/API/builtins/self.md), visible_only : [`boolean`](/API/builtins/boolean.md)[`?`](/API/builtins/nil.md)) {#effect_columns_in_song}
-`->`(context : [`unknown`](/API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.EffectColumn`](/API/renoise/renoise.EffectColumn.md), column : [`renoise.EffectColumn`](/API/renoise/renoise.EffectColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
+### `effect_columns_in_song`([*self*](../../API/builtins/self.md), visible_only : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md)) {#effect_columns_in_song}
+`->`(context : [`unknown`](../../API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.EffectColumn`](../../API/renoise/renoise.EffectColumn.md), column : [`renoise.EffectColumn`](../../API/renoise/renoise.EffectColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
 
  Iterate over all effect columns in the song.
-### `effect_columns_in_track`([*self*](/API/builtins/self.md), track_index : [`integer`](/API/builtins/integer.md), visible_only : [`boolean`](/API/builtins/boolean.md)[`?`](/API/builtins/nil.md)) {#effect_columns_in_track}
-`->`(context : [`unknown`](/API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.EffectColumn`](/API/renoise/renoise.EffectColumn.md), column : [`renoise.EffectColumn`](/API/renoise/renoise.EffectColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
+### `effect_columns_in_track`([*self*](../../API/builtins/self.md), track_index : [`integer`](../../API/builtins/integer.md), visible_only : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md)) {#effect_columns_in_track}
+`->`(context : [`unknown`](../../API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.EffectColumn`](../../API/renoise/renoise.EffectColumn.md), column : [`renoise.EffectColumn`](../../API/renoise/renoise.EffectColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
 
-### `lines_in_pattern`([*self*](/API/builtins/self.md), pattern_index : [`integer`](/API/builtins/integer.md)) {#lines_in_pattern}
-`->`(context : [`unknown`](/API/builtins/unknown.md)) `->` [`PatternLinePosition`](#patternlineposition), [`renoise.PatternLine`](/API/renoise/renoise.PatternLine.md), line : [`renoise.PatternLine`](/API/renoise/renoise.PatternLine.md), pos : [`PatternLinePosition`](#patternlineposition)  
+### `lines_in_pattern`([*self*](../../API/builtins/self.md), pattern_index : [`integer`](../../API/builtins/integer.md)) {#lines_in_pattern}
+`->`(context : [`unknown`](../../API/builtins/unknown.md)) `->` [`PatternLinePosition`](#patternlineposition), [`renoise.PatternLine`](../../API/renoise/renoise.PatternLine.md), line : [`renoise.PatternLine`](../../API/renoise/renoise.PatternLine.md), pos : [`PatternLinePosition`](#patternlineposition)  
 
  Iterate over all lines in the given pattern only.
-### `lines_in_pattern_track`([*self*](/API/builtins/self.md), pattern_index : [`integer`](/API/builtins/integer.md), track_index : [`integer`](/API/builtins/integer.md)) {#lines_in_pattern_track}
-`->`(context : [`unknown`](/API/builtins/unknown.md)) `->` [`PatternLinePosition`](#patternlineposition), [`renoise.PatternLine`](/API/renoise/renoise.PatternLine.md), line : [`renoise.PatternLine`](/API/renoise/renoise.PatternLine.md), pos : [`PatternLinePosition`](#patternlineposition)  
+### `lines_in_pattern_track`([*self*](../../API/builtins/self.md), pattern_index : [`integer`](../../API/builtins/integer.md), track_index : [`integer`](../../API/builtins/integer.md)) {#lines_in_pattern_track}
+`->`(context : [`unknown`](../../API/builtins/unknown.md)) `->` [`PatternLinePosition`](#patternlineposition), [`renoise.PatternLine`](../../API/renoise/renoise.PatternLine.md), line : [`renoise.PatternLine`](../../API/renoise/renoise.PatternLine.md), pos : [`PatternLinePosition`](#patternlineposition)  
 
  Iterate over all lines in the given pattern, track only.
-### `lines_in_song`([*self*](/API/builtins/self.md), visible_only : [`boolean`](/API/builtins/boolean.md)[`?`](/API/builtins/nil.md)) {#lines_in_song}
-`->`(context : [`unknown`](/API/builtins/unknown.md)) `->` [`PatternLinePosition`](#patternlineposition), [`renoise.PatternLine`](/API/renoise/renoise.PatternLine.md), line : [`renoise.PatternLine`](/API/renoise/renoise.PatternLine.md), pos : [`PatternLinePosition`](#patternlineposition)  
+### `lines_in_song`([*self*](../../API/builtins/self.md), visible_only : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md)) {#lines_in_song}
+`->`(context : [`unknown`](../../API/builtins/unknown.md)) `->` [`PatternLinePosition`](#patternlineposition), [`renoise.PatternLine`](../../API/renoise/renoise.PatternLine.md), line : [`renoise.PatternLine`](../../API/renoise/renoise.PatternLine.md), pos : [`PatternLinePosition`](#patternlineposition)  
 
  Iterate over all pattern lines in the song.
-### `lines_in_track`([*self*](/API/builtins/self.md), track_index : [`integer`](/API/builtins/integer.md), visible_only : [`boolean`](/API/builtins/boolean.md)[`?`](/API/builtins/nil.md)) {#lines_in_track}
-`->`(context : [`unknown`](/API/builtins/unknown.md)) `->` [`PatternLinePosition`](#patternlineposition), [`renoise.PatternLine`](/API/renoise/renoise.PatternLine.md), line : [`renoise.PatternLine`](/API/renoise/renoise.PatternLine.md), pos : [`PatternLinePosition`](#patternlineposition)  
+### `lines_in_track`([*self*](../../API/builtins/self.md), track_index : [`integer`](../../API/builtins/integer.md), visible_only : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md)) {#lines_in_track}
+`->`(context : [`unknown`](../../API/builtins/unknown.md)) `->` [`PatternLinePosition`](#patternlineposition), [`renoise.PatternLine`](../../API/renoise/renoise.PatternLine.md), line : [`renoise.PatternLine`](../../API/renoise/renoise.PatternLine.md), pos : [`PatternLinePosition`](#patternlineposition)  
 
  Iterate over all lines in the given track only.
-### `note_columns_in_pattern`([*self*](/API/builtins/self.md), pattern_index : [`integer`](/API/builtins/integer.md), visible_only : [`boolean`](/API/builtins/boolean.md)[`?`](/API/builtins/nil.md)) {#note_columns_in_pattern}
-`->`(context : [`unknown`](/API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.NoteColumn`](/API/renoise/renoise.NoteColumn.md), column : [`renoise.NoteColumn`](/API/renoise/renoise.NoteColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
+### `note_columns_in_pattern`([*self*](../../API/builtins/self.md), pattern_index : [`integer`](../../API/builtins/integer.md), visible_only : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md)) {#note_columns_in_pattern}
+`->`(context : [`unknown`](../../API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.NoteColumn`](../../API/renoise/renoise.NoteColumn.md), column : [`renoise.NoteColumn`](../../API/renoise/renoise.NoteColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
 
  Iterate over all note columns in the specified pattern.
-### `note_columns_in_pattern_track`([*self*](/API/builtins/self.md), pattern_index : [`integer`](/API/builtins/integer.md), track_index : [`integer`](/API/builtins/integer.md), visible_only : [`boolean`](/API/builtins/boolean.md)[`?`](/API/builtins/nil.md)) {#note_columns_in_pattern_track}
-`->`(context : [`unknown`](/API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.NoteColumn`](/API/renoise/renoise.NoteColumn.md), column : [`renoise.NoteColumn`](/API/renoise/renoise.NoteColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
+### `note_columns_in_pattern_track`([*self*](../../API/builtins/self.md), pattern_index : [`integer`](../../API/builtins/integer.md), track_index : [`integer`](../../API/builtins/integer.md), visible_only : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md)) {#note_columns_in_pattern_track}
+`->`(context : [`unknown`](../../API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.NoteColumn`](../../API/renoise/renoise.NoteColumn.md), column : [`renoise.NoteColumn`](../../API/renoise/renoise.NoteColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
 
  Iterate over all note/effect columns in the specified pattern track.
-### `note_columns_in_song`([*self*](/API/builtins/self.md), visible_only : [`boolean`](/API/builtins/boolean.md)[`?`](/API/builtins/nil.md)) {#note_columns_in_song}
-`->`(context : [`unknown`](/API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.NoteColumn`](/API/renoise/renoise.NoteColumn.md), column : [`renoise.NoteColumn`](/API/renoise/renoise.NoteColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
+### `note_columns_in_song`([*self*](../../API/builtins/self.md), visible_only : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md)) {#note_columns_in_song}
+`->`(context : [`unknown`](../../API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.NoteColumn`](../../API/renoise/renoise.NoteColumn.md), column : [`renoise.NoteColumn`](../../API/renoise/renoise.NoteColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
 
  Iterate over all note columns in the song.
-### `note_columns_in_track`([*self*](/API/builtins/self.md), track_index : [`integer`](/API/builtins/integer.md), visible_only : [`boolean`](/API/builtins/boolean.md)[`?`](/API/builtins/nil.md)) {#note_columns_in_track}
-`->`(context : [`unknown`](/API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.NoteColumn`](/API/renoise/renoise.NoteColumn.md), column : [`renoise.NoteColumn`](/API/renoise/renoise.NoteColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
+### `note_columns_in_track`([*self*](../../API/builtins/self.md), track_index : [`integer`](../../API/builtins/integer.md), visible_only : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md)) {#note_columns_in_track}
+`->`(context : [`unknown`](../../API/builtins/unknown.md)) `->` [`PatternColumnPosition`](#patterncolumnposition), [`renoise.NoteColumn`](../../API/renoise/renoise.NoteColumn.md), column : [`renoise.NoteColumn`](../../API/renoise/renoise.NoteColumn.md), pos : [`PatternColumnPosition`](#patterncolumnposition)  
 
  Iterate over all note/effect columns in the specified track.  
 
@@ -76,10 +76,10 @@ Note/Effect column iterator position.
 
 ---  
 ## Properties
-### column : [`integer`](/API/builtins/integer.md) {#column}
-### line : [`integer`](/API/builtins/integer.md) {#line}
-### pattern : [`integer`](/API/builtins/integer.md) {#pattern}
-### track : [`integer`](/API/builtins/integer.md) {#track}
+### column : [`integer`](../../API/builtins/integer.md) {#column}
+### line : [`integer`](../../API/builtins/integer.md) {#line}
+### pattern : [`integer`](../../API/builtins/integer.md) {#pattern}
+### track : [`integer`](../../API/builtins/integer.md) {#track}
   
 
   
@@ -88,9 +88,9 @@ Line iterator position.
 
 ---  
 ## Properties
-### line : [`integer`](/API/builtins/integer.md) {#line}
-### pattern : [`integer`](/API/builtins/integer.md) {#pattern}
-### track : [`integer`](/API/builtins/integer.md) {#track}
+### line : [`integer`](../../API/builtins/integer.md) {#line}
+### pattern : [`integer`](../../API/builtins/integer.md) {#pattern}
+### track : [`integer`](../../API/builtins/integer.md) {#track}
   
 
   

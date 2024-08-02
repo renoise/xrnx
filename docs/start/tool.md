@@ -18,7 +18,7 @@ If needed, you can split your tool into multiple files and use the ["require" fu
 
 Some tools will also make use of other resources like icons, text files or audio samples, these should all be placed in the same folder (or any subfolders inside it).
 
-Let's look at a basic tool to see what goes into these two files. You can find more elaborate examples by browsing the [examples directory here](../examples).
+Let's look at a basic tool to see what goes into these two files. You can find more elaborate examples by browsing the example tools.
 
 ## Manifest
 
