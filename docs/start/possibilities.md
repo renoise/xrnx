@@ -40,7 +40,7 @@ There are a few ways tool creators can make the functionality they provide avail
 * [Add new entries to menus](../guide/TODO.md#menus) like the *Tools* menu or one of the right-click context menus
 * [Create custom views](../guide/TODO.md#views) that do things on button presses, slider drags and so on
 * [Listen to MIDI, OSC or WebSocket messages](../guide/TODO.md#midi) to execute actions
-* [React to events inside Renoise](../guide/observables_and_preferences.md) like "do something any time a new song is loaded"
+* [React to events inside Renoise](../guide/observables.md) like "do something any time a new song is loaded"
 
 <!-- 
   TODO more

@@ -14,24 +14,24 @@ messages it will not block or timeout.
 
 ---  
 ## Properties
-### is_open : [`boolean`](/API/builtins/boolean.md) {#is_open}
+### is_open : [`boolean`](../../API/builtins/boolean.md) {#is_open}
 **READ-ONLY** Returns true when the socket object is valid and connected.
 Sockets can manually be closed (see socket:close()). Client sockets can also
 actively be closed/refused by the server. In this case the client:receive()
 calls will fail and return an error.
 
-### local_address : [`string`](/API/builtins/string.md) {#local_address}
+### local_address : [`string`](../../API/builtins/string.md) {#local_address}
 **READ-ONLY** The socket's resolved local address (for example "127.0.0.1"
 when a socket is bound to "localhost")
 
-### local_port : [`integer`](/API/builtins/integer.md) {#local_port}
+### local_port : [`integer`](../../API/builtins/integer.md) {#local_port}
 **READ-ONLY** The socket's local port number, as specified when instantiated.
 
-### peer_address : [`string`](/API/builtins/string.md) {#peer_address}
+### peer_address : [`string`](../../API/builtins/string.md) {#peer_address}
 **READ-ONLY** Address of the socket's peer, the socket address this client
 is connected to.
 
-### peer_port : [`integer`](/API/builtins/integer.md) {#peer_port}
+### peer_port : [`integer`](../../API/builtins/integer.md) {#peer_port}
 **READ-ONLY** Port of the socket's peer, the socket this client is
 connected to.
 
@@ -39,14 +39,14 @@ connected to.
 
 ---  
 ## Functions
-### `close`([*self*](/API/builtins/self.md)) {#close}
+### `close`([*self*](../../API/builtins/self.md)) {#close}
 Closes the socket connection and releases all resources. This will make
 the socket useless, so any properties, calls to the socket will result in
 errors. Can be useful to explicitly release a connection without waiting for
 the dead object to be garbage collected, or if you want to actively refuse a
 connection.
-### `receive`([*self*](/API/builtins/self.md), mode : [`SocketReceiveMode`](#SocketReceiveMode), timeout_ms : [`number`](/API/builtins/number.md)) {#receive}
-`->`success : [`boolean`](/API/builtins/boolean.md)[`?`](/API/builtins/nil.md), error : [`string`](/API/builtins/string.md)[`?`](/API/builtins/nil.md)  
+### `receive`([*self*](../../API/builtins/self.md), mode : [`SocketReceiveMode`](#SocketReceiveMode), timeout_ms : [`number`](../../API/builtins/number.md)) {#receive}
+`->`success : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md), error : [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
 
 Receive a message string from the the connected server with the given
 timeout in milliseconds. Mode can be one of "*line", "*all" or a number > 0,
@@ -86,8 +86,8 @@ mode:
     | "*line"
     | "*all"
 ```
-### `send`([*self*](/API/builtins/self.md), message : [`string`](/API/builtins/string.md)) {#send}
-`->`success : [`boolean`](/API/builtins/boolean.md), error : [`string`](/API/builtins/string.md)[`?`](/API/builtins/nil.md)  
+### `send`([*self*](../../API/builtins/self.md), message : [`string`](../../API/builtins/string.md)) {#send}
+`->`success : [`boolean`](../../API/builtins/boolean.md), error : [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
 
 Send a message string (or OSC messages or bundles) to the connected server.
 When sending fails, "success" return value will be false and "error_message"
@@ -101,7 +101,7 @@ So, when necessary, do this manually by your own please.
 ---  
 ## Aliases  
 # alias SocketReceiveMode {#SocketReceiveMode}
-[`integer`](/API/builtins/integer.md) | `"*all"` | `"*line"`  
+[`integer`](../../API/builtins/integer.md) | `"*all"` | `"*line"`  
 ```lua
 SocketReceiveMode:
     | "*line"

@@ -16,7 +16,7 @@ jobs:
 
       - name: Build the book
         run: |
-          ./generate/build.sh "3.9.3" ""
+          ./generate/build.sh "3.9.3"
           cargo install mdbook
           cargo install mdbook-linkcheck
           mdbook build
@@ -24,12 +24,14 @@ jobs:
       - name: Create XRNX_Starter_Pack
         run: |
           mkdir dist
-          cp -rf book dist/docs
+          cp -rf definitions dist/definitions
+          cp -rf book/html dist/docs
           cp -rf tools dist/tools
-          cd dist && zip -r -q ../XRNX_Starter_Pack.zip .
+          rm -rf dist/*/.git dist/*/.gitignore
+          echo -e '<html>\n<body>\n<script type="text/javascript">\n\twindow.location.href = "./docs/index.html";\n</script>\n</body>\n</html>' > dist/docs.html 
         
       - name: Archive
         uses: actions/upload-artifact@v4
         with:
-          name: Archive
-          path: XRNX_Starter_Pack.zip
+          name: XRNX_Starter_Pack
+          path: dist

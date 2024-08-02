@@ -23,8 +23,6 @@ struct Args {
     #[arg(value_name = "PATH")]
     library: PathBuf,
     output: PathBuf,
-    #[arg(default_value_t = String::from("/"))]
-    url_root: String,
 }
 
 #[derive(Clone, Debug)]
@@ -109,7 +107,7 @@ fn replace_toc_in_file(file_path: &Path, toc: &[String]) -> Result<(), Error> {
 fn main() -> Result<(), Error> {
     let args = Args::parse();
     let lib = Library::from_path(&args.library)?;
-    let docs = lib.export_docs(&args.url_root);
+    let docs = lib.export_docs();
 
     // clear previously generated API doc files (except README.md)
     let api_path = args.output.clone().join("API");

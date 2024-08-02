@@ -7,15 +7,15 @@ create views for the dialog.
 
 ---  
 ## Properties
-### visible : [`boolean`](/API/builtins/boolean.md) {#visible}
+### visible : [`boolean`](../../API/builtins/boolean.md) {#visible}
  **READ-ONLY** Check if a dialog is alive and visible.
 
   
 
 ---  
 ## Functions
-### `close`([*self*](/API/builtins/self.md)) {#close}
+### `close`([*self*](../../API/builtins/self.md)) {#close}
  Close a visible dialog.
-### `show`([*self*](/API/builtins/self.md)) {#show}
+### `show`([*self*](../../API/builtins/self.md)) {#show}
  Bring an already visible dialog to front and make it the key window.  
 

@@ -68,8 +68,8 @@ my_document = MyDocument()
 
 ---  
 ## Functions
-### `create`(model_name : [`string`](/API/builtins/string.md)) {#create}
-`->`(properties : [`ObservableProperties`](#ObservableProperties)) `->` [`renoise.Document.DocumentNode`](/API/renoise/renoise.Document.DocumentNode.md)  
+### `create`(model_name : [`string`](../../API/builtins/string.md)) {#create}
+`->`(properties : [`ObservableProperties`](#ObservableProperties)) `->` [`renoise.Document.DocumentNode`](../../API/renoise/renoise.Document.DocumentNode.md)  
 
 Create an empty DocumentNode or a DocumentNode that is modeled after the
 passed key value table. "model_name" will be used to identify the documents
@@ -108,8 +108,8 @@ create new instances.
 -- create a new instance of "MyDoc"
 my_other_document = renoise.Document.instantiate("MyDoc")
 ```
-### `instantiate`(model_name : [`string`](/API/builtins/string.md)) {#instantiate}
-`->`[`renoise.Document.DocumentNode`](/API/renoise/renoise.Document.DocumentNode.md)  
+### `instantiate`(model_name : [`string`](../../API/builtins/string.md)) {#instantiate}
+`->`[`renoise.Document.DocumentNode`](../../API/renoise/renoise.Document.DocumentNode.md)  
 
 Create a new instance of the given document model. Given `model_name` must
 have been registered with `renoise.Document.create` before.  
@@ -119,11 +119,11 @@ have been registered with `renoise.Document.create` before.
 ---  
 ## Aliases  
 # alias ObservableProperties {#ObservableProperties}
-table<[`string`](/API/builtins/string.md), [`ObservableTypes`](#ObservableTypes) | [`renoise.Document.DocumentList`](/API/renoise/renoise.Document.DocumentList.md) | [`renoise.Document.DocumentNode`](/API/renoise/renoise.Document.DocumentNode.md)>  
+table<[`string`](../../API/builtins/string.md), [`ObservableTypes`](#ObservableTypes) | [`renoise.Document.DocumentList`](../../API/renoise/renoise.Document.DocumentList.md) | [`renoise.Document.DocumentNode`](../../API/renoise/renoise.Document.DocumentNode.md)>  
   
   
 # alias ObservableTypes {#ObservableTypes}
-[`boolean`](/API/builtins/boolean.md) | [`string`](/API/builtins/string.md) | [`number`](/API/builtins/number.md) | [`boolean`](/API/builtins/boolean.md)`[]` | [`number`](/API/builtins/number.md)`[]` | [`string`](/API/builtins/string.md)`[]`  
+[`boolean`](../../API/builtins/boolean.md) | [`string`](../../API/builtins/string.md) | [`number`](../../API/builtins/number.md) | [`boolean`](../../API/builtins/boolean.md)`[]` | [`number`](../../API/builtins/number.md)`[]` | [`string`](../../API/builtins/string.md)`[]`  
   
   
 

@@ -5,19 +5,19 @@ MIDI data.
 ---  
 ## Functions
 ### `available_input_devices()` {#available_input_devices}
-`->`[`string`](/API/builtins/string.md)`[]`  
+`->`[`string`](../../API/builtins/string.md)`[]`  
 
 Return a list of strings with currently available MIDI input devices.
 This list can change when devices are hot-plugged.
 See `renoise.Midi.devices_changed_observable`
 ### `available_output_devices()` {#available_output_devices}
-`->`[`string`](/API/builtins/string.md)`[]`  
+`->`[`string`](../../API/builtins/string.md)`[]`  
 
 Return a list of strings with currently available MIDI output devices.
 This list can change when devices are hot-plugged.
 See `renoise.Midi.devices_changed_observable`
-### `create_input_device`(device_name : [`string`](/API/builtins/string.md), callback : [`MidiMessageFunction`](#MidiMessageFunction) | [`MidiMessageMethod1`](#MidiMessageMethod1) | [`MidiMessageMethod2`](#MidiMessageMethod2)[`?`](/API/builtins/nil.md), sysex_callback : [`MidiMessageFunction`](#MidiMessageFunction) | [`MidiMessageMethod1`](#MidiMessageMethod1) | [`MidiMessageMethod2`](#MidiMessageMethod2)[`?`](/API/builtins/nil.md)) {#create_input_device}
-`->`[`renoise.Midi.MidiInputDevice`](/API/renoise/renoise.Midi.MidiInputDevice.md)  
+### `create_input_device`(device_name : [`string`](../../API/builtins/string.md), callback : [`MidiMessageFunction`](#MidiMessageFunction) | [`MidiMessageMethod1`](#MidiMessageMethod1) | [`MidiMessageMethod2`](#MidiMessageMethod2)[`?`](../../API/builtins/nil.md), sysex_callback : [`MidiMessageFunction`](#MidiMessageFunction) | [`MidiMessageMethod1`](#MidiMessageMethod1) | [`MidiMessageMethod2`](#MidiMessageMethod2)[`?`](../../API/builtins/nil.md)) {#create_input_device}
+`->`[`renoise.Midi.MidiInputDevice`](../../API/renoise/renoise.Midi.MidiInputDevice.md)  
 
 Listen to incoming MIDI data: opens access to a MIDI input device by
 specifying a device name.
@@ -34,8 +34,8 @@ When Renoise is already listening to this device, your callback *and* Renoise
 Messages are received until the device reference is manually closed (see
 renoise.Midi.MidiDevice:close()) or until the MidiInputDevice object gets garbage
 collected.
-### `create_output_device`(device_name : [`string`](/API/builtins/string.md)) {#create_output_device}
-`->`[`renoise.Midi.MidiOutputDevice`](/API/renoise/renoise.Midi.MidiOutputDevice.md)  
+### `create_output_device`(device_name : [`string`](../../API/builtins/string.md)) {#create_output_device}
+`->`[`renoise.Midi.MidiOutputDevice`](../../API/renoise/renoise.Midi.MidiOutputDevice.md)  
 
 Open access to a MIDI device by specifying the device name.
 Name must be one of `renoise.Midi.available_input_devices()`.
@@ -45,7 +45,7 @@ The real device driver gets automatically closed when the MidiOutputDevice
 object gets garbage collected or when the device is explicitly closed
 via midi_device:close() and nothing else references it.
 ### `devices_changed_observable()` {#devices_changed_observable}
-`->`[`renoise.Document.Observable`](/API/renoise/renoise.Document.Observable.md)  
+`->`[`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)  
 
 Fire notifications as soon as new devices become active or a previously
 added device gets removed/unplugged.
@@ -61,7 +61,7 @@ The messages will simply go into the void...
 ---  
 ## Aliases  
 # alias MidiMessage {#MidiMessage}
-[`integer`](/API/builtins/integer.md)`[]`  
+[`integer`](../../API/builtins/integer.md)`[]`  
   
   
 # alias MidiMessageFunction {#MidiMessageFunction}

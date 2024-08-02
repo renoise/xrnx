@@ -2,7 +2,6 @@
 set -e
 
 LUA_LS_VERSION=$1
-URL_ROOT=$2
 
 pushd generate
 echo "downloading lua-language-server-${LUA_LS_VERSION}..."
@@ -19,4 +18,4 @@ sed -i.bak -e '/if \#view > 200 then/,/end/s/^/-- /' "script/vm/infer.lua"
 popd # lua-language-server
 
 echo "generating api docs..."
-cargo run -- ../definitions/library ../docs $URL_ROOT
+cargo run -- ../definitions/library ../docs

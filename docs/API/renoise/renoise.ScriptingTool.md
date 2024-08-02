@@ -5,12 +5,12 @@ attaching it to some common tool related notifiers.
 
 ---  
 ## Properties
-### app_became_active_observable : [`renoise.Document.Observable`](/API/renoise/renoise.Document.Observable.md) {#app_became_active_observable}
+### app_became_active_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#app_became_active_observable}
 Invoked as soon as the application becomes the foreground window.
 For example, when you ATL-TAB to it, or activate it with the mouse
 from another app to Renoise.
 
-### app_idle_observable : [`renoise.Document.Observable`](/API/renoise/renoise.Document.Observable.md) {#app_idle_observable}
+### app_idle_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#app_idle_observable}
 Invoked periodically in the background, more often when the work load
 is low, less often when Renoise's work load is high.
 The exact interval is undefined and can not be relied on, but will be
@@ -18,30 +18,30 @@ around 10 times per sec.
 You can do stuff in the background without blocking the application here.
 Be gentle and don't do CPU heavy stuff please!
 
-### app_new_document_observable : [`renoise.Document.Observable`](/API/renoise/renoise.Document.Observable.md) {#app_new_document_observable}
+### app_new_document_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#app_new_document_observable}
 Invoked each time a new document (song) is created or loaded. In other words:
 each time the result of renoise.song() is changed. Also called when the script
 gets reloaded (only happens with the auto_reload debugging tools), in order
 to connect the new script instance to the already running document.
 
-### app_release_document_observable : [`renoise.Document.Observable`](/API/renoise/renoise.Document.Observable.md) {#app_release_document_observable}
+### app_release_document_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#app_release_document_observable}
 Invoked each time before a new document gets created or loaded: this is the
 last time renoise.song() still points to the old song before a new one arrives.
 You can explicitly release notifiers to the old document here, or do your own
 housekeeping. Also called right before the application exits.
 
-### app_resigned_active_observable : [`renoise.Document.Observable`](/API/renoise/renoise.Document.Observable.md) {#app_resigned_active_observable}
+### app_resigned_active_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#app_resigned_active_observable}
 Invoked as soon as the application looses focus and another app
 becomes the foreground window.
 
-### app_saved_document_observable : [`renoise.Document.Observable`](/API/renoise/renoise.Document.Observable.md) {#app_saved_document_observable}
+### app_saved_document_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#app_saved_document_observable}
 Invoked each time the app's document (song) is successfully saved.
 renoise.song().file_name will point to the filename that it was saved to.
 
-### bundle_path : [`string`](/API/builtins/string.md) {#bundle_path}
+### bundle_path : [`string`](../../API/builtins/string.md) {#bundle_path}
 **READ_ONLY** Full absolute path and name to your tool's bundle directory.
 
-### preferences : [`renoise.Document.DocumentNode`](/API/renoise/renoise.Document.DocumentNode.md) {#preferences}
+### preferences : [`renoise.Document.DocumentNode`](../../API/renoise/renoise.Document.DocumentNode.md) {#preferences}
 Get or set an optional renoise.Document.DocumentNode object, which will be
 used as set of persistent "options" or preferences for your tool.
 By default nil. When set, the assigned document object will automatically be
@@ -77,14 +77,14 @@ renoise.tool().preferences = my_options
 -- 'my_options' will be loaded/saved automatically with the tool now
 ```
 
-### tool_finished_loading_observable : [`renoise.Document.Observable`](/API/renoise/renoise.Document.Observable.md) {#tool_finished_loading_observable}
+### tool_finished_loading_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#tool_finished_loading_observable}
 Invoked when the tool finished loading/initializing and no errors happened.
 When the tool has preferences, they are loaded here as well when the
 notification fires, but 'renoise.song()' may not yet be available.
 
 See also 'renoise.tool().app_new_document_observable'.
 
-### tool_will_unload_observable : [`renoise.Document.Observable`](/API/renoise/renoise.Document.Observable.md) {#tool_will_unload_observable}
+### tool_will_unload_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#tool_will_unload_observable}
 Invoked right before a tool gets unloaded: either because it got disabled,
 reloaded or the application exists. You can cleanup resources or connections
 to other devices here if necessary.
@@ -93,15 +93,15 @@ to other devices here if necessary.
 
 ---  
 ## Functions
-### `add_file_import_hook`([*self*](/API/builtins/self.md), file_import_hook : [`ToolFileImportHook`](#toolfileimporthook)) {#add_file_import_hook}
+### `add_file_import_hook`([*self*](../../API/builtins/self.md), file_import_hook : [`ToolFileImportHook`](#toolfileimporthook)) {#add_file_import_hook}
 Add a new file import hook as described above.
-### `add_keybinding`([*self*](/API/builtins/self.md), keybinding : [`ToolKeybindingEntry`](#toolkeybindingentry)) {#add_keybinding}
+### `add_keybinding`([*self*](../../API/builtins/self.md), keybinding : [`ToolKeybindingEntry`](#toolkeybindingentry)) {#add_keybinding}
 Register key bindings somewhere in Renoise's existing set of bindings.
-### `add_menu_entry`([*self*](/API/builtins/self.md), entry : [`ToolMenuEntry`](#toolmenuentry)) {#add_menu_entry}
+### `add_menu_entry`([*self*](../../API/builtins/self.md), entry : [`ToolMenuEntry`](#toolmenuentry)) {#add_menu_entry}
 Add a new menu entry.
-### `add_midi_mapping`([*self*](/API/builtins/self.md), midi_mapping : [`ToolMidiMappingEntry`](#toolmidimappingentry)) {#add_midi_mapping}
+### `add_midi_mapping`([*self*](../../API/builtins/self.md), midi_mapping : [`ToolMidiMappingEntry`](#toolmidimappingentry)) {#add_midi_mapping}
 Add a new midi_mapping entry.
-### `add_timer`([*self*](/API/builtins/self.md), timer : [`TimerFunction`](#TimerFunction), interval_in_ms : [`number`](/API/builtins/number.md)) {#add_timer}
+### `add_timer`([*self*](../../API/builtins/self.md), timer : [`TimerFunction`](#TimerFunction), interval_in_ms : [`number`](../../API/builtins/number.md)) {#add_timer}
 Register a timer function or table with a function and context (a method)
 that periodically gets called by the `app_idle_observable` for your tool.
 
@@ -111,8 +111,8 @@ simply call remove_timer at the end of your timer function.
 `interval_in_ms` must be > 0. The exact interval your function is called
 will vary a bit, depending on workload; e.g. when enough CPU time is available
 the rounding error will be around +/- 5 ms.
-### `has_file_import_hook`([*self*](/API/builtins/self.md), category : [`FileHookCategory`](#FileHookCategory), extensions_table : [`string`](/API/builtins/string.md)`[]`) {#has_file_import_hook}
-`->`[`boolean`](/API/builtins/boolean.md)  
+### `has_file_import_hook`([*self*](../../API/builtins/self.md), category : [`FileHookCategory`](#FileHookCategory), extensions_table : [`string`](../../API/builtins/string.md)`[]`) {#has_file_import_hook}
+`->`[`boolean`](../../API/builtins/boolean.md)  
 
 Returns true when the given hook already exists, otherwise false.
 
@@ -127,23 +127,23 @@ category:
     | "sample"
     | "theme"
 ```
-### `has_keybinding`([*self*](/API/builtins/self.md), keybinding_name : [`string`](/API/builtins/string.md)) {#has_keybinding}
-`->`[`boolean`](/API/builtins/boolean.md)  
+### `has_keybinding`([*self*](../../API/builtins/self.md), keybinding_name : [`string`](../../API/builtins/string.md)) {#has_keybinding}
+`->`[`boolean`](../../API/builtins/boolean.md)  
 
 Returns true when the given keybinging already exists, otherwise false.
-### `has_menu_entry`([*self*](/API/builtins/self.md), entry_name : [`string`](/API/builtins/string.md)) {#has_menu_entry}
-`->`[`boolean`](/API/builtins/boolean.md)  
+### `has_menu_entry`([*self*](../../API/builtins/self.md), entry_name : [`string`](../../API/builtins/string.md)) {#has_menu_entry}
+`->`[`boolean`](../../API/builtins/boolean.md)  
 
 Returns true if the given entry already exists, otherwise false.
-### `has_midi_mapping`([*self*](/API/builtins/self.md), midi_mapping_name : [`string`](/API/builtins/string.md)) {#has_midi_mapping}
-`->`[`boolean`](/API/builtins/boolean.md)  
+### `has_midi_mapping`([*self*](../../API/builtins/self.md), midi_mapping_name : [`string`](../../API/builtins/string.md)) {#has_midi_mapping}
+`->`[`boolean`](../../API/builtins/boolean.md)  
 
 Returns true when the given mapping already exists, otherwise false.
-### `has_timer`([*self*](/API/builtins/self.md), timer : [`TimerFunction`](#TimerFunction)) {#has_timer}
-`->`[`boolean`](/API/builtins/boolean.md)  
+### `has_timer`([*self*](../../API/builtins/self.md), timer : [`TimerFunction`](#TimerFunction)) {#has_timer}
+`->`[`boolean`](../../API/builtins/boolean.md)  
 
 Returns true when the given function or method was registered as a timer.
-### `remove_file_import_hook`([*self*](/API/builtins/self.md), category : [`FileHookCategory`](#FileHookCategory), extensions_table : [`string`](/API/builtins/string.md)`[]`) {#remove_file_import_hook}
+### `remove_file_import_hook`([*self*](../../API/builtins/self.md), category : [`FileHookCategory`](#FileHookCategory), extensions_table : [`string`](../../API/builtins/string.md)`[]`) {#remove_file_import_hook}
 Remove a previously added file import hook by specifying its category
 and extension(s)
 
@@ -158,13 +158,13 @@ category:
     | "sample"
     | "theme"
 ```
-### `remove_keybinding`([*self*](/API/builtins/self.md), keybinding_name : [`string`](/API/builtins/string.md)) {#remove_keybinding}
+### `remove_keybinding`([*self*](../../API/builtins/self.md), keybinding_name : [`string`](../../API/builtins/string.md)) {#remove_keybinding}
 Remove a previously added key binding by specifying its name and path.
-### `remove_menu_entry`([*self*](/API/builtins/self.md), entry_name : [`string`](/API/builtins/string.md)) {#remove_menu_entry}
+### `remove_menu_entry`([*self*](../../API/builtins/self.md), entry_name : [`string`](../../API/builtins/string.md)) {#remove_menu_entry}
 Remove a previously added menu entry by specifying its full name.
-### `remove_midi_mapping`([*self*](/API/builtins/self.md), midi_mapping_name : [`string`](/API/builtins/string.md)) {#remove_midi_mapping}
+### `remove_midi_mapping`([*self*](../../API/builtins/self.md), midi_mapping_name : [`string`](../../API/builtins/string.md)) {#remove_midi_mapping}
 Remove a previously added midi mapping by specifying its name.
-### `remove_timer`([*self*](/API/builtins/self.md), timer : [`TimerFunction`](#TimerFunction)) {#remove_timer}
+### `remove_timer`([*self*](../../API/builtins/self.md), timer : [`TimerFunction`](#TimerFunction)) {#remove_timer}
 Remove a previously registered timer.  
 
 
@@ -190,11 +190,11 @@ Preloading/prehearing sample files is not supported via tools.
 In which disk browser category the file type shows up.
 One of
 
-### extensions : [`string`](/API/builtins/string.md)`[]` {#extensions}
+### extensions : [`string`](../../API/builtins/string.md)`[]` {#extensions}
 A list of strings, file extensions, that will invoke your hook, like for
 example {"txt", "s_wave"}
 
-### invoke : (file_name : [`string`](/API/builtins/string.md)) `->` [`boolean`](/API/builtins/boolean.md) {#invoke}
+### invoke : (file_name : [`string`](../../API/builtins/string.md)) `->` [`boolean`](../../API/builtins/boolean.md) {#invoke}
 function that is called to do the import. return true when the import
 succeeded, else false.
 
@@ -211,11 +211,11 @@ Renoise.
 
 ---  
 ## Properties
-### invoke : (repeated : [`boolean`](/API/builtins/boolean.md)) {#invoke}
+### invoke : (repeated : [`boolean`](../../API/builtins/boolean.md)) {#invoke}
 A function that is called as soon as the mapped key is pressed.
 The callback parameter "repeated", indicates if its a virtual key repeat.
 
-### name : [`string`](/API/builtins/string.md) {#name}
+### name : [`string`](../../API/builtins/string.md) {#name}
 The scope, name and category of the key binding use the form:
 `$scope:$topic_name:$binding_name`:
 
@@ -301,7 +301,7 @@ more dashes to the name, like "--- Main Menu:Tools:My Tool Group Starts Here"
 
 ---  
 ## Properties
-### active : () `->` [`boolean`](/API/builtins/boolean.md) {#active}
+### active : () `->` [`boolean`](../../API/builtins/boolean.md) {#active}
 A function that should return true or false. When returning false, the action
 will not be invoked and will be "greyed out" in menus. This function is always
 called before "invoke", and every time prior to a menu becoming visible.
@@ -309,11 +309,11 @@ called before "invoke", and every time prior to a menu becoming visible.
 ### invoke : fun() {#invoke}
 A function that is called as soon as the entry is clicked
 
-### name : [`string`](/API/builtins/string.md) {#name}
+### name : [`string`](../../API/builtins/string.md) {#name}
 Name and 'path' of the entry as shown in the global menus or context menus
 to the user.
 
-### selected : () `->` [`boolean`](/API/builtins/boolean.md) {#selected}
+### selected : () `->` [`boolean`](../../API/builtins/boolean.md) {#selected}
 A function that should return true or false. When returning true, the entry
 will be marked as "this is a selected option"
 
@@ -334,10 +334,10 @@ messages.
 
 ---  
 ## Properties
-### invoke : (message : [`renoise.ScriptingTool.MidiMessage`](/API/renoise/renoise.ScriptingTool.MidiMessage.md)) {#invoke}
+### invoke : (message : [`renoise.ScriptingTool.MidiMessage`](../../API/renoise/renoise.ScriptingTool.MidiMessage.md)) {#invoke}
 A function that is called to handle a bound MIDI message.
 
-### name : [`string`](/API/builtins/string.md) {#name}
+### name : [`string`](../../API/builtins/string.md) {#name}
 The group, name of the midi mapping; as visible to the user.
 
 The scope, name and category of the midi mapping use the form:
