@@ -16,7 +16,7 @@ jobs:
 
       - name: Build the book
         run: |
-          ./generate/build.sh "3.9.3" ""
+          ./generate/build.sh "3.9.3" "../"
           cargo install mdbook
           cargo install mdbook-linkcheck
           mdbook build
