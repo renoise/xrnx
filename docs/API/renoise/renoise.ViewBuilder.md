@@ -37,9 +37,8 @@ vb.views.my_view.visible = false
 --or
 vb.views["my_view"].visible = false
 ```  
+## Constants
 
----  
-## Properties
 ### DEFAULT_CONTROL_HEIGHT : [`integer`](../../API/builtins/integer.md) {#DEFAULT_CONTROL_HEIGHT}
 The default height for control views
 
@@ -60,7 +59,10 @@ The default spacing for dialogs
 
 ### DEFAULT_MINI_CONTROL_HEIGHT : [`integer`](../../API/builtins/integer.md) {#DEFAULT_MINI_CONTROL_HEIGHT}
 The default height for mini-sliders
+  
 
+---  
+## Properties
 ### views : table<[`string`](../../API/builtins/string.md), [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)> {#views}
   
 

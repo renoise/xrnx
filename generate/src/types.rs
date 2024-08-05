@@ -172,7 +172,7 @@ impl Var {
     pub fn is_constant(&self) -> bool {
         self.name
             .as_ref()
-            .is_some_and(|name| name.chars().all(char::is_uppercase))
+            .is_some_and(|name| name.chars().all(|c| c.is_uppercase() || c == '_'))
     }
 
     pub fn is_not_constant(&self) -> bool {

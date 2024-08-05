@@ -1,10 +1,12 @@
 # renoise.Pattern  
+## Constants
+
+### MAX_NUMBER_OF_LINES : [`integer`](../../API/builtins/integer.md) {#MAX_NUMBER_OF_LINES}
+Maximum number of lines that can be present in a pattern.
+  
 
 ---  
 ## Properties
-### MAX_NUMBER_OF_LINES : [`integer`](../../API/builtins/integer.md) {#MAX_NUMBER_OF_LINES}
-Maximum number of lines that can be present in a pattern.
-
 ### is_empty : [`boolean`](../../API/builtins/boolean.md) {#is_empty}
 Quickly check if any track in a pattern has some non empty pattern lines.
 This does not look at track automation.

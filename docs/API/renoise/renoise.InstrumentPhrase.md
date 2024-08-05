@@ -11,10 +11,6 @@ not instruments, but samples are addressed/triggered in phrases.
     KEY_TRACKING_OFFSET: integer = 3,
 }
 ```
-  
-
----  
-## Properties
 ### MAX_NUMBER_OF_EFFECT_COLUMNS : [`integer`](../../API/builtins/integer.md) {#MAX_NUMBER_OF_EFFECT_COLUMNS}
 ### MAX_NUMBER_OF_LINES : [`integer`](../../API/builtins/integer.md) {#MAX_NUMBER_OF_LINES}
 Maximum number of lines that can be present in a phrase.
@@ -25,7 +21,10 @@ Min/Maximum number of effect columns that can be present in a phrase.
 
 ### MIN_NUMBER_OF_NOTE_COLUMNS : [`integer`](../../API/builtins/integer.md) {#MIN_NUMBER_OF_NOTE_COLUMNS}
 Min/Maximum number of note columns that can be present in a phrase.
+  
 
+---  
+## Properties
 ### autoseek : [`boolean`](../../API/builtins/boolean.md) {#autoseek}
 Phrase autoseek settings
 

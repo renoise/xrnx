@@ -1,8 +1,7 @@
 # renoise  
 Holds all renoise related API functions and classes.  
+## Constants
 
----  
-## Properties
 ### API_VERSION : [`number`](../API/builtins/number.md) {#API_VERSION}
 Currently 6.1. Any changes in the API which are not backwards compatible,
 will increase the internal API's major version number (e.g. from 1.4 -> 2.0).
@@ -12,7 +11,6 @@ version number (e.g. 1.0 -> 1.1).
 
 ### RENOISE_VERSION : [`string`](../API/builtins/string.md) {#RENOISE_VERSION}
 Renoise Version "Major.Minor.Revision[AlphaBetaRcVersion][Demo]"
-
   
 
 ---  
