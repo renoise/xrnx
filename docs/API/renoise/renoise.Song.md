@@ -15,11 +15,10 @@ Renoise's main document - the song.
     SUB_COLUMN_EFFECT_AMOUNT: integer = 9,
 }
 ```
-  
+### MAX_NUMBER_OF_INSTRUMENTS : [`integer`](../../API/builtins/integer.md) {#MAX_NUMBER_OF_INSTRUMENTS}  
 
 ---  
 ## Properties
-### MAX_NUMBER_OF_INSTRUMENTS : [`integer`](../../API/builtins/integer.md) {#MAX_NUMBER_OF_INSTRUMENTS}
 ### artist : [`string`](../../API/builtins/string.md) {#artist}
 Song Comments
 

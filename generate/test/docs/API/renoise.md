@@ -3,7 +3,9 @@ Holds all renoise related API test functions and classes.
 
 ---  
 ## Properties
-### SomeClass : [`table`](/API/builtins/table.md) {#SomeClass}
+### API_VERSION : [`number`](../API/builtins/number.md) {#API_VERSION}
+This is a const
+
   
 
 ---  
@@ -28,12 +30,12 @@ SomeClass docs
 
 ---  
 ## Properties
-### some_property : table<[`string`](/API/builtins/string.md), [`integer`](/API/builtins/integer.md)> {#some_property}
+### some_property : table<[`string`](../API/builtins/string.md), [`integer`](../API/builtins/integer.md)> {#some_property}
   
 
 ---  
 ## Functions
-### `some_function`([*self*](/API/builtins/self.md)) {#some_function}
+### `some_function`([*self*](../API/builtins/self.md)) {#some_function}
 SomeFunction docs  
 
   
@@ -41,8 +43,8 @@ SomeFunction docs
 
 ---  
 ## Properties
-### field1 : [`number`](/API/builtins/number.md) {#field1}
-### field2 : [`string`](/API/builtins/string.md) {#field2}
+### field1 : [`number`](../API/builtins/number.md) {#field1}
+### field2 : [`string`](../API/builtins/string.md) {#field2}
   
 
   
@@ -63,7 +65,7 @@ This is an alias
 ---  
 ## Aliases  
 # alias SomeAlias {#SomeAlias}
-[`string`](/API/builtins/string.md)  
+[`string`](../API/builtins/string.md)  
 This is an alias  
   
 

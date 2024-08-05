@@ -1,7 +1,6 @@
 # renoise.PatternLine  
+## Constants
 
----  
-## Properties
 ### EMPTY_DELAY : [`integer`](../../API/builtins/integer.md) {#EMPTY_DELAY}
 ### EMPTY_EFFECT_AMOUNT : [`integer`](../../API/builtins/integer.md) {#EMPTY_EFFECT_AMOUNT}
 ### EMPTY_EFFECT_NUMBER : [`integer`](../../API/builtins/integer.md) {#EMPTY_EFFECT_NUMBER}
@@ -9,7 +8,10 @@
 ### EMPTY_NOTE : [`integer`](../../API/builtins/integer.md) {#EMPTY_NOTE}
 ### EMPTY_PANNING : [`integer`](../../API/builtins/integer.md) {#EMPTY_PANNING}
 ### EMPTY_VOLUME : [`integer`](../../API/builtins/integer.md) {#EMPTY_VOLUME}
-### NOTE_OFF : [`integer`](../../API/builtins/integer.md) {#NOTE_OFF}
+### NOTE_OFF : [`integer`](../../API/builtins/integer.md) {#NOTE_OFF}  
+
+---  
+## Properties
 ### effect_columns : [`renoise.EffectColumn`](../../API/renoise/renoise.EffectColumn.md)`[]` {#effect_columns}
 **READ-ONLY**
 

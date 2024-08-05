@@ -17,12 +17,11 @@
     PLAYMODE_CURVES: integer = 3,
 }
 ```
-  
+### MAX_NUMBER_OF_POINTS : [`integer`](../../API/builtins/integer.md) {#MAX_NUMBER_OF_POINTS}
+### MIN_NUMBER_OF_POINTS : [`integer`](../../API/builtins/integer.md) {#MIN_NUMBER_OF_POINTS}  
 
 ---  
 ## Properties
-### MAX_NUMBER_OF_POINTS : [`integer`](../../API/builtins/integer.md) {#MAX_NUMBER_OF_POINTS}
-### MIN_NUMBER_OF_POINTS : [`integer`](../../API/builtins/integer.md) {#MIN_NUMBER_OF_POINTS}
 ### bipolar : [`boolean`](../../API/builtins/boolean.md) {#bipolar}
 Modulation polarity:
 when bipolar, the device applies it's values in a -1 to 1 range,

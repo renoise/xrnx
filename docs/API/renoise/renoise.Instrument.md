@@ -32,12 +32,11 @@
     TAB_EXT_MIDI: integer = 3,
 }
 ```
-  
+### MAX_NUMBER_OF_PHRASES : [`integer`](../../API/builtins/integer.md) {#MAX_NUMBER_OF_PHRASES}
+### NUMBER_OF_MACROS : [`integer`](../../API/builtins/integer.md) {#NUMBER_OF_MACROS}  
 
 ---  
 ## Properties
-### MAX_NUMBER_OF_PHRASES : [`integer`](../../API/builtins/integer.md) {#MAX_NUMBER_OF_PHRASES}
-### NUMBER_OF_MACROS : [`integer`](../../API/builtins/integer.md) {#NUMBER_OF_MACROS}
 ### active_tab : [`renoise.Instrument.Tab`](renoise.Instrument.md#Tab) {#active_tab}
 Currently active tab in the instrument GUI (samples, plugin or MIDI).
 
