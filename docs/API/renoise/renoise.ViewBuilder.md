@@ -72,14 +72,6 @@ The default height for mini-sliders
 `->`[`renoise.Views.Bitmap`](../../API/renoise/renoise.Views.Bitmap.md)  
 
 See: [renoise.Views.Bitmap](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/bitmap.lua#63#10)
-### `bitmap`([*self*](../../API/builtins/self.md), properties : [`BitmapViewProperties`](#bitmapviewproperties)[`?`](../../API/builtins/nil.md)) {#bitmap}
-`->`[`renoise.Views.Bitmap`](../../API/renoise/renoise.Views.Bitmap.md)  
-
-See: [renoise.Views.Bitmap](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/bitmap.lua#63#10)
-### `button`([*self*](../../API/builtins/self.md), properties : [`ButtonProperties`](#buttonproperties)[`?`](../../API/builtins/nil.md)) {#button}
-`->`[`renoise.Views.Button`](../../API/renoise/renoise.Views.Button.md)  
-
-See: [renoise.Views.Button](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/button.lua#40#10)
 ### `button`([*self*](../../API/builtins/self.md), properties : [`ButtonProperties`](#buttonproperties)[`?`](../../API/builtins/nil.md)) {#button}
 `->`[`renoise.Views.Button`](../../API/renoise/renoise.Views.Button.md)  
 
@@ -88,34 +80,10 @@ See: [renoise.Views.Button](file:///c%3A/Users/emuell/Development/Renoise-XRNX/d
 `->`[`renoise.Views.CheckBox`](../../API/renoise/renoise.Views.CheckBox.md)  
 
 See: [renoise.Views.CheckBox](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/checkbox.lua#28#10)
-### `checkbox`([*self*](../../API/builtins/self.md), properties : [`CheckBoxProperties`](#checkboxproperties)[`?`](../../API/builtins/nil.md)) {#checkbox}
-`->`[`renoise.Views.CheckBox`](../../API/renoise/renoise.Views.CheckBox.md)  
-
-See: [renoise.Views.CheckBox](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/checkbox.lua#28#10)
 ### `chooser`([*self*](../../API/builtins/self.md), properties : [`ChooserProperties`](#chooserproperties)[`?`](../../API/builtins/nil.md)) {#chooser}
 `->`[`renoise.Views.Chooser`](../../API/renoise/renoise.Views.Chooser.md)  
 
 See: [renoise.Views.Chooser](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/chooser.lua#19#10)
-### `chooser`([*self*](../../API/builtins/self.md), properties : [`ChooserProperties`](#chooserproperties)[`?`](../../API/builtins/nil.md)) {#chooser}
-`->`[`renoise.Views.Chooser`](../../API/renoise/renoise.Views.Chooser.md)  
-
-See: [renoise.Views.Chooser](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/chooser.lua#19#10)
-### `column`([*self*](../../API/builtins/self.md), properties : [`RackViewProperties`](#rackviewproperties)) {#column}
-You can add nested child views when constructing a column or row
-by including them in the constructor table in the views property.
-
-### example:
-```lua
-vb:column {
-  margin = 1,
-  vb:text {
-    text = "Text1"
-  },
-  vb:text {
-    text = "Text2"
-  }
-}
-```
 ### `column`([*self*](../../API/builtins/self.md), properties : [`RackViewProperties`](#rackviewproperties)) {#column}
 You can add nested child views when constructing a column or row
 by including them in the constructor table in the views property.
@@ -148,26 +116,6 @@ vb:horizontal_aligner {
    }
 }
 ```
-### `horizontal_aligner`([*self*](../../API/builtins/self.md), properties : [`AlignerViewProperties`](#alignerviewproperties)) {#horizontal_aligner}
-You can add nested child views when constructing aligners by including them
-in the constructor table.
-
-### example:
-```lua
-vb:horizontal_aligner {
-   mode = "center",
-   vb:text {
-     text = "Text1"
-   },
-   vb:text {
-     text = "Text2"
-   }
-}
-```
-### `minislider`([*self*](../../API/builtins/self.md), properties : [`MiniSliderProperties`](#minisliderproperties)[`?`](../../API/builtins/nil.md)) {#minislider}
-`->`[`renoise.Views.MiniSlider`](../../API/renoise/renoise.Views.MiniSlider.md)  
-
-See: [renoise.Views.MiniSlider](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/minislider.lua#18#10)
 ### `minislider`([*self*](../../API/builtins/self.md), properties : [`MiniSliderProperties`](#minisliderproperties)[`?`](../../API/builtins/nil.md)) {#minislider}
 `->`[`renoise.Views.MiniSlider`](../../API/renoise/renoise.Views.MiniSlider.md)  
 
@@ -176,14 +124,6 @@ See: [renoise.Views.MiniSlider](file:///c%3A/Users/emuell/Development/Renoise-XR
 `->`[`renoise.Views.MultiLineText`](../../API/renoise/renoise.Views.MultiLineText.md)  
 
 See: [renoise.Views.MultiLineText](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/multiline_text.lua#44#10)
-### `multiline_text`([*self*](../../API/builtins/self.md), properties : [`MultilineTextViewProperties`](#multilinetextviewproperties)[`?`](../../API/builtins/nil.md)) {#multiline_text}
-`->`[`renoise.Views.MultiLineText`](../../API/renoise/renoise.Views.MultiLineText.md)  
-
-See: [renoise.Views.MultiLineText](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/multiline_text.lua#44#10)
-### `multiline_textfield`([*self*](../../API/builtins/self.md), properties : [`MultilineTextFieldProperties`](#multilinetextfieldproperties)[`?`](../../API/builtins/nil.md)) {#multiline_textfield}
-`->`[`renoise.Views.MultiLineTextField`](../../API/renoise/renoise.Views.MultiLineTextField.md)  
-
-See: [renoise.Views.MultiLineTextField](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/multiline_textfield.lua#22#10)
 ### `multiline_textfield`([*self*](../../API/builtins/self.md), properties : [`MultilineTextFieldProperties`](#multilinetextfieldproperties)[`?`](../../API/builtins/nil.md)) {#multiline_textfield}
 `->`[`renoise.Views.MultiLineTextField`](../../API/renoise/renoise.Views.MultiLineTextField.md)  
 
@@ -192,14 +132,6 @@ See: [renoise.Views.MultiLineTextField](file:///c%3A/Users/emuell/Development/Re
 `->`[`renoise.Views.Popup`](../../API/renoise/renoise.Views.Popup.md)  
 
 See: [renoise.Views.Popup](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/popup.lua#25#10)
-### `popup`([*self*](../../API/builtins/self.md), properties : [`PopUpMenuProperties`](#popupmenuproperties)[`?`](../../API/builtins/nil.md)) {#popup}
-`->`[`renoise.Views.Popup`](../../API/renoise/renoise.Views.Popup.md)  
-
-See: [renoise.Views.Popup](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/popup.lua#25#10)
-### `rotary`([*self*](../../API/builtins/self.md), properties : [`RotaryEncoderProperties`](#rotaryencoderproperties)[`?`](../../API/builtins/nil.md)) {#rotary}
-`->`[`renoise.Views.RotaryEncoder`](../../API/renoise/renoise.Views.RotaryEncoder.md)  
-
-See: [renoise.Views.RotaryEncoder](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/rotary.lua#23#10)
 ### `rotary`([*self*](../../API/builtins/self.md), properties : [`RotaryEncoderProperties`](#rotaryencoderproperties)[`?`](../../API/builtins/nil.md)) {#rotary}
 `->`[`renoise.Views.RotaryEncoder`](../../API/renoise/renoise.Views.RotaryEncoder.md)  
 
@@ -220,26 +152,6 @@ vb:column {
   }
 }
 ```
-### `row`([*self*](../../API/builtins/self.md), properties : [`RackViewProperties`](#rackviewproperties)) {#row}
-You can add nested child views when constructing a column or row
-by including them in the constructor table in the views property.
-
-### example:
-```lua
-vb:column {
-  margin = 1,
-  vb:text {
-    text = "Text1"
-  },
-  vb:text {
-    text = "Text2"
-  }
-}
-```
-### `slider`([*self*](../../API/builtins/self.md), properties : [`SliderProperties`](#sliderproperties)[`?`](../../API/builtins/nil.md)) {#slider}
-`->`[`renoise.Views.Slider`](../../API/renoise/renoise.Views.Slider.md)  
-
-See: [renoise.Views.Slider](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/slider.lua#42#10)
 ### `slider`([*self*](../../API/builtins/self.md), properties : [`SliderProperties`](#sliderproperties)[`?`](../../API/builtins/nil.md)) {#slider}
 `->`[`renoise.Views.Slider`](../../API/renoise/renoise.Views.Slider.md)  
 
@@ -262,28 +174,6 @@ vb:row {
   },
 }
 ```
-### `space`([*self*](../../API/builtins/self.md), properties : [`ViewProperties`](#viewproperties)) {#space}
-You can create an empty space in layouts with a space.
-
-### example:
-```lua
---Empty space in layouts
-vb:row {
-  vb:button {
-    text = "Some Button"
-  },
-  vb:space { -- extra spacing between buttons
-    width = 8
-  },
-  vb:button {
-    text = "Another Button"
-  },
-}
-```
-### `switch`([*self*](../../API/builtins/self.md), properties : [`ButtonSwitchProperties`](#buttonswitchproperties)[`?`](../../API/builtins/nil.md)) {#switch}
-`->`[`renoise.Views.Switch`](../../API/renoise/renoise.Views.Switch.md)  
-
-See: [renoise.Views.Switch](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/switch.lua#30#10)
 ### `switch`([*self*](../../API/builtins/self.md), properties : [`ButtonSwitchProperties`](#buttonswitchproperties)[`?`](../../API/builtins/nil.md)) {#switch}
 `->`[`renoise.Views.Switch`](../../API/renoise/renoise.Views.Switch.md)  
 
@@ -292,14 +182,6 @@ See: [renoise.Views.Switch](file:///c%3A/Users/emuell/Development/Renoise-XRNX/d
 `->`[`renoise.Views.Text`](../../API/renoise/renoise.Views.Text.md)  
 
 See: [renoise.Views.Text](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/text.lua#48#10)
-### `text`([*self*](../../API/builtins/self.md), properties : [`TextViewProperties`](#textviewproperties)[`?`](../../API/builtins/nil.md)) {#text}
-`->`[`renoise.Views.Text`](../../API/renoise/renoise.Views.Text.md)  
-
-See: [renoise.Views.Text](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/text.lua#48#10)
-### `textfield`([*self*](../../API/builtins/self.md), properties : [`TextFieldProperties`](#textfieldproperties)[`?`](../../API/builtins/nil.md)) {#textfield}
-`->`[`renoise.Views.TextField`](../../API/renoise/renoise.Views.TextField.md)  
-
-See: [renoise.Views.TextField](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/textfield.lua#41#10)
 ### `textfield`([*self*](../../API/builtins/self.md), properties : [`TextFieldProperties`](#textfieldproperties)[`?`](../../API/builtins/nil.md)) {#textfield}
 `->`[`renoise.Views.TextField`](../../API/renoise/renoise.Views.TextField.md)  
 
@@ -308,22 +190,10 @@ See: [renoise.Views.TextField](file:///c%3A/Users/emuell/Development/Renoise-XRN
 `->`[`renoise.Views.Value`](../../API/renoise/renoise.Views.Value.md)  
 
 See: [renoise.Views.Value](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/value.lua#20#10)
-### `value`([*self*](../../API/builtins/self.md), properties : [`ValueViewProperties`](#valueviewproperties)[`?`](../../API/builtins/nil.md)) {#value}
-`->`[`renoise.Views.Value`](../../API/renoise/renoise.Views.Value.md)  
-
-See: [renoise.Views.Value](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/value.lua#20#10)
 ### `valuebox`([*self*](../../API/builtins/self.md), properties : [`ValueBoxProperties`](#valueboxproperties)[`?`](../../API/builtins/nil.md)) {#valuebox}
 `->`[`renoise.Views.ValueBox`](../../API/renoise/renoise.Views.ValueBox.md)  
 
 See: [renoise.Views.ValueBox](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/valuebox.lua#51#10)
-### `valuebox`([*self*](../../API/builtins/self.md), properties : [`ValueBoxProperties`](#valueboxproperties)[`?`](../../API/builtins/nil.md)) {#valuebox}
-`->`[`renoise.Views.ValueBox`](../../API/renoise/renoise.Views.ValueBox.md)  
-
-See: [renoise.Views.ValueBox](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/valuebox.lua#51#10)
-### `valuefield`([*self*](../../API/builtins/self.md), properties : [`ValueFieldProperties`](#valuefieldproperties)[`?`](../../API/builtins/nil.md)) {#valuefield}
-`->`[`renoise.Views.ValueField`](../../API/renoise/renoise.Views.ValueField.md)  
-
-See: [renoise.Views.ValueField](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/valuefield.lua#20#10)
 ### `valuefield`([*self*](../../API/builtins/self.md), properties : [`ValueFieldProperties`](#valuefieldproperties)[`?`](../../API/builtins/nil.md)) {#valuefield}
 `->`[`renoise.Views.ValueField`](../../API/renoise/renoise.Views.ValueField.md)  
 
@@ -344,26 +214,6 @@ vb:horizontal_aligner {
    }
 }
 ```
-### `vertical_aligner`([*self*](../../API/builtins/self.md), properties : [`AlignerViewProperties`](#alignerviewproperties)) {#vertical_aligner}
-You can add nested child views when constructing aligners by including them
-in the constructor table.
-
-### example:
-```lua
-vb:horizontal_aligner {
-   mode = "center",
-   vb:text {
-     text = "Text1"
-   },
-   vb:text {
-     text = "Text2"
-   }
-}
-```
-### `xypad`([*self*](../../API/builtins/self.md), properties : [`XYPadProperties`](#xypadproperties)[`?`](../../API/builtins/nil.md)) {#xypad}
-`->`[`renoise.Views.XYPad`](../../API/renoise/renoise.Views.XYPad.md)  
-
-See: [renoise.Views.XYPad](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/xypad.lua#64#10)
 ### `xypad`([*self*](../../API/builtins/self.md), properties : [`XYPadProperties`](#xypadproperties)[`?`](../../API/builtins/nil.md)) {#xypad}
 `->`[`renoise.Views.XYPad`](../../API/renoise/renoise.Views.XYPad.md)  
 
