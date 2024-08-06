@@ -233,7 +233,16 @@ impl Library {
             }
         }
 
+        // extract constants, make functions, fields and constants unique and sort them
         for (_, c) in l.classes.iter_mut() {
+            let mut functions = c
+                .functions
+                .iter()
+                .unique_by(|f| f.to_string())
+                .cloned()
+                .collect::<Vec<_>>();
+            functions.sort_by(|a, b| a.name.cmp(&b.name));
+
             let mut fields = c
                 .fields
                 .clone()
@@ -245,6 +254,14 @@ impl Library {
                 .collect::<Vec<_>>();
             fields.sort_by(|a, b| a.name.cmp(&b.name));
 
+            let mut enums = c
+                .enums
+                .clone()
+                .into_iter()
+                .unique_by(|e| e.name.clone())
+                .collect::<Vec<_>>();
+            enums.sort_by(|a, b| a.name.cmp(&b.name));
+
             let mut constants = c
                 .fields
                 .clone()
@@ -252,10 +269,11 @@ impl Library {
                 .filter(Var::is_constant)
                 .unique_by(|f| f.name.clone())
                 .collect::<Vec<_>>();
-
             constants.sort_by(|a, b| a.name.cmp(&b.name));
 
+            c.functions = functions;
             c.fields = fields;
+            c.enums = enums;
             c.constants = constants;
         }
 

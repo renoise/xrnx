@@ -288,10 +288,8 @@ impl Class {
         }
 
         if !self.enums.is_empty() || !self.constants.is_empty() {
-            let mut enums = self.enums.clone();
-            enums.sort_by(|a, b| a.name.cmp(&b.name));
-            let mut constants = self.constants.clone();
-            constants.sort_by(|a, b| a.name.cmp(&b.name));
+            let enums = &self.enums;
+            let constants = &self.constants;
             m.push(format!(
                 "{}\n{}\n{}",
                 h2("Constants"),
@@ -325,8 +323,7 @@ impl Class {
             ))
         }
 
-        let mut functions = self.functions.clone();
-        functions.sort_by(|a, b| a.name.cmp(&b.name));
+        let functions = &self.functions;
         if !functions.is_empty() {
             m.push("\n---".to_string());
             m.push(format!(
