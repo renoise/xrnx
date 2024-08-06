@@ -1,5 +1,8 @@
 # Midi
 
+The Renoise API allows you to access raw MIDI input and output devices from within your tool.
+You can use this to add bi-directional MIDI controller support, for example.
+
 ## Midi input listener (function callback)
 
 ```lua

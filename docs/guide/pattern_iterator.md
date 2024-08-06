@@ -1,4 +1,8 @@
-# PatternIterator
+# Pattern Iterator
+
+As a quick and efficient way to access the pattern data in phrases and the Renoise song, you can use the existing pattern iterators. Here are a few examples of how to use them. 
+
+See also API docs for [renoise.PatternIterator](../API/renoise/renoise.PatternIterator.md).
 
 ## Change notes in selection
 

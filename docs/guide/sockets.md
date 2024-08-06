@@ -1,10 +1,12 @@
 # Sockets
 
+The Renoise API allows you to create [network sockets](https://en.wikipedia.org/wiki/Network_socket). This can be used to communicate with other devices via UDP and TCP. 
+
+Please note that there's no support for encrypted connections. So using protocols like HTTPs is not possible at the moment.
 
 ## HTTP / GET client
 
-Creates a TCP socket and connect it to www.wurst.de, http, giving up 
-the connection attempt after 2 seconds.
+Creates a TCP socket and connect it to www.wurst.de, http, giving up the connection attempt after 2 seconds.
 
 ```lua
 local connection_timeout = 2000
@@ -151,4 +153,3 @@ local echo_server = EchoServer(1025)
 -- will run and echo as long as the script runs or the EchoServer 
 -- object is garbage collected...
 ```
-

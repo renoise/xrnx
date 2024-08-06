@@ -24,7 +24,7 @@ Let's look at a basic tool to see what goes into these two files. You can find m
 
 The manifest is a short [XML](https://www.w3schools.com/XML/xml_whatis.asp) file with the name `manifest.xml`. It contains a few tag pairs like `<Tag>...</Tag>` and some text between them, Renoise reads these and loads your tool based on the information it finds inside.
 
-Here is an entire manifest file from our [HelloWorld](../guide/TODO.md#helloworld-folder) example
+Here is an entire manifest file from a HelloWorld tool.
 
 <!-- TODO copy data from the actual tool folder here -->
 ```xml
@@ -53,7 +53,7 @@ Let's go through what each of these tags mean and what you should put inside the
 * `<Version>` is the version of your tool, whenever you release a new update you should increase this. It is best to follow standard [semantic versioning](https://semver.org/) conventions here.
 * `<Author>` contains your name and contact information, whenever your tool crashes, this information is going to be provided for the user alongside the crash message, you should use some contact where you can accept possbile bug reports or questions
 * `<Name>` the human readable name of your tool, it can be anything you want and you can change it anytime you feel like it
-* `<Category>` the category for your tool, see the [categories you can choose from](../guide/TODO.md#tool-categories), this will be used to sort your tool on the [official Tools page](https://www.renoise.com/tools) if you ever decide to submit it there
+* `<Category>` the category for your tool, which will be used to sort your tool on the [official Tools page](https://www.renoise.com/tools) if you ever decide to submit it there
 * `<Description>` a short description of your tool which will be displayed inside the *Tool Browser* in Renoise and on the Tools page
 * `<Homepage>` your website's address if you have any, you could also put your forum topic or git repository here if you want
 * `<Icon>` the path to an optional icon to your tool
