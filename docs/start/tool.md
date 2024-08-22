@@ -24,7 +24,7 @@ Let's look at a basic tool to see what goes into these two files. You can find m
 
 The manifest is a short [XML](https://www.w3schools.com/XML/xml_whatis.asp) file with the name `manifest.xml`. It contains a few tag pairs like `<Tag>...</Tag>` and some text between them, Renoise reads these and loads your tool based on the information it finds inside.
 
-Here is an entire manifest file from a HelloWorld tool.
+Here is an entire manifest file from a HelloWorld tool:
 
 <!-- TODO copy data from the actual tool folder here -->
 ```xml

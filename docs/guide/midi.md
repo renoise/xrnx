@@ -6,10 +6,14 @@ You can use this to add bi-directional MIDI controller support, for example.
 ## Midi input listener (function callback)
 
 ```lua
-local inputs = renoise.Midi.available_input_devices()
+-- NOTE: the midi device will be closed when the local variable gets garbage
+-- collected. Make it global or assign it to something which is held globally
+-- to avoid that.
 local midi_device = nil
 
+local inputs = renoise.Midi.available_input_devices()
 if not table.is_empty(inputs) then
+  -- use the first avilable device in this example
   local device_name = inputs[1]
   
   local function midi_callback(message)
@@ -63,20 +67,21 @@ class "MidiDumper"
       self.device_name, #message))
   end
   
+-- NOTE: the midi device will be closed when the local variable gets garbage
+-- collected. Make it global or assign it to something which is held globally
+-- to avoid that.
+local midi_dumper = nil
   
 local inputs = renoise.Midi.available_input_devices()
 
 if not table.is_empty(inputs) then
+  -- use the first avilable device in this example
   local device_name = inputs[1]
-  
-  -- should be global to avoid premature garbage collection when
-  -- going out of scope.
+
   midi_dumper = MidiDumper(device_name)
-  
   -- will dump till midi_dumper:stop() is called or the MidiDumber object 
-  -- is garbage collected ...
+  -- is garbage collected...
   midi_dumper:start()  
-  
 end
 ```
 
@@ -84,17 +89,16 @@ end
 
 ```lua
 local outputs = renoise.Midi.available_output_devices()
-
 if not table.is_empty(outputs) then
   local device_name = outputs[1]
-  midi_device = renoise.Midi.create_output_device(device_name)
+  local midi_device = renoise.Midi.create_output_device(device_name)
   
   -- note on
-  midi_device:send {0x90, 0x10, 0x7F}
+  midi_device:send { 0x90, 0x10, 0x7F }
   -- sysex (MMC start)
-  midi_device:send {0xF0, 0x7F, 0x00, 0x06, 0x02, 0xF7}
+  midi_device:send { 0xF0, 0x7F, 0x00, 0x06, 0x02, 0xF7 }
  
-  -- no longer need the device...
+  -- no longer need the device in this example...
   midi_device:close()  
 end
 ```

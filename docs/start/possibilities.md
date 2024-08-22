@@ -1,6 +1,6 @@
 # Possibilities
 
-Before you delve into writing your own scripts and tools, it worth considering what is even possible to do with them. In general, you can automate and manage different aspects Renoise, add or modify song data using algorithms or create interfaces to connect with other software or hardware. You can see some examples below about what you can access inside Renoise, for a complete reference, check out the [API](https://github.com/renoise/definitions/). 
+Before you delve into writing your own scripts and tools, it worth considering what is even possible to do with them. In general, you can automate and manage different aspects Renoise, add or modify song data using algorithms or create interfaces to connect with other software or hardware. You can see some examples below about what you can access inside Renoise, for a complete reference, check out the [API Definitions](../API/README.md). 
 
 ### Process song data
 * Generate, modify or filter notes, patterns or phrases

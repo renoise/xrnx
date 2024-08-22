@@ -14,7 +14,6 @@
   - [Sockets](guide/sockets.md)
   - [MIDI](guide/midi.md)
   - [OSC](guide/osc.md)
-  - [Song](guide/song.md)
   - [Pattern Iterator](guide/pattern_iterator.md)
   - [Track Automation](guide/track_automation.md)
   - [Sample Buffers](guide/sample_buffer.md)

@@ -29,17 +29,17 @@ See API Docs for [KeyHandler](../API/renoise/renoise.Application.md#key_handler)
 
 ## Creating Custom Views
 
-Widgets are created with the `renoise.ViewBuilder` in the renoise API. 
+Widgets are created with the `renoise.ViewBuilder` class in the renoise API. 
 
 See API Docs for [ViewBuilder](../API/renoise/renoise.ViewBuilder.md) for more info.
 
 ### Hello World
 
 ```lua
--- we start by creating a view builder. we'll use it to create views.
+-- We start by instantiating a view builder object. We'll use it to create views.
 local vb = renoise.ViewBuilder()
 
--- now we are going to use a "column" view. a column can do three things:
+-- Now we are going to use a "column" view. A column can do three things:
 -- 1. showing a background (if you don't want your views on the plain dialogs
 --    back)
 -- 2. "stack" other views (its child views) either vertically, or horizontally
@@ -48,19 +48,19 @@ local vb = renoise.ViewBuilder()
 -- 3. align child views via "margins" -> borders for nested views
 
 local dialog_title = "Hello World"
-local dialog_buttons = {"OK"}
+local dialog_buttons = { "OK" }
 
--- get some consts to let the dialog look like Renoises default views...
+-- fetch some consts to let the dialog look like Renoises default views...
 local DEFAULT_MARGIN = renoise.ViewBuilder.DEFAULT_CONTROL_MARGIN
 
--- start with a 'column' to stack other views vertically:
+-- start with a 'column' view, to stack other views vertically:
 local dialog_content = vb:column {
   -- set a border of DEFAULT_MARGIN around our main content
   margin = DEFAULT_MARGIN,
 
   -- and create another column to align our text in a different background
   vb:column {
-    -- background that is usually used for "groups"
+    -- background style that is usually used for "groups"
     style = "group",
     -- add again some "borders" to make it more pretty
     margin = DEFAULT_MARGIN,
@@ -111,7 +111,7 @@ local my_column_view = vb:column{
   }
 }
 
--- in practice you should use a combination of the above two notations, but
+-- In practice you should use a combination of the above two notations, but
 -- its recommended to setup & prepare components in separate steps while
 -- still using the inlined / nested notation:
 
@@ -123,18 +123,18 @@ local my_second_column_view = vb:column {
   -- some more content
 }
 
--- then do the final layout:
+-- Then do the final layout:
 local my_final_layout = vb:row {
   my_first_column_view,
   my_second_column_view
 }
 
--- the inlined notation has a problem though: you can not memorize your views
+-- The inlined notation has a problem though: You can not memorize your views
 -- in local variables, in case you want to access them later (for example to
 -- hide/how them, change the text or whatever else). This is what viewbuilder
 -- "id"s are for.
 
--- lets build up a simple view that dynamically reacts on a button hit:
+-- Lets build up a simple view that dynamically reacts on a button hit:
 
 local DEFAULT_DIALOG_MARGIN = renoise.ViewBuilder.DEFAULT_DIALOG_MARGIN
 local DEFAULT_CONTROL_SPACING = renoise.ViewBuilder.DEFAULT_CONTROL_SPACING

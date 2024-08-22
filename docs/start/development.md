@@ -3,7 +3,7 @@
 By default Renoise has all scripting utilities hidden to keep it simple for users who don't wish to mess around with code. If you want to write scripts, the first thing you have to do is to enable the hidden development tools.
 
 * For a quick test you can launch the Renoise executable with the `--scripting-dev` argument
-* To have this mode enabled by default, you'll have to edit your `Config.xml` file inside Renoise's preferences folder. Search for the `<ShowScriptingDevelopmentTools>` property and set it to `true`.
+* To have this mode enabled by default, you'll have to edit your `Config.xml` file inside Renoise's preferences folder. Search for the `<ShowScriptingDevelopmentTools>` property and set it to `true`. To reveal the Config.xml path, click on the *Help / Show the Preferences Folder...* menu entry in Renoise.
 <!-- TODO consider exposing this setting in the Renoise GUI -->
 
 Once scripting is enabled, you'll have the following entries inside the *Tools* menu on the top bar.
