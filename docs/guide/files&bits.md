@@ -1,5 +1,9 @@
 # Files&Bits.lua
 
+In order to access the raw bits and bytes of some data, e.g. to read or write binary (file) streams, you can use the Lua `bit` library. It's built into the Renoise API. There's no need to `require` it.  
+
+See [bit documentation](https://bitop.luajit.org/) for more info and examples.
+
 ```lua
 -- reading integer numbers or raw bytes from a file
 
@@ -43,4 +47,3 @@ print(read_word(file) or "unexpected end of file")
 print(read_dword(file) or "unexpected end of file")
 ```
 
-more bit manipulation? -> See [bit documentation](https://bitop.luajit.org/)

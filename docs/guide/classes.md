@@ -1,19 +1,9 @@
 # Classes
 
-Renoises lua API has a simple OO support inbuilt -> `class "MyClass"`. All 
-Renoise API objects use such classes.
+The Lua language has by default no `class` construct. But the Renoises lua API has a simple OO support inbuilt -> `class "MyClass"`. All Renoise API objects use such classes and you can use them too in your tools.
 
 See [luabind docs](https://www.rasterbar.com/products/luabind/docs.html#defining-classes-in-lua)
 for more technical info and below for some simple examples
-
-Something to keep in mind:
-
-* constructor `function MyClass:__init(args)` must be defined for each class, 
-  or the class can't be used to instantiate objects.
-  
-* class defs are always global, so even locally defined classes will be 
-  registered globally.
-
 
 ## Examples
 
@@ -73,6 +63,15 @@ for _,animal in pairs(farm) do
   print(animal)
 end
 ```
+
+Something to keep in mind:
+
+* constructor `function MyClass:__init(args)` must be defined for each class, 
+  or the class can't be used to instantiate objects.
+  
+* class defs are always global, so even locally defined classes will be 
+  registered globally.
+
 
 ## Class operators
 

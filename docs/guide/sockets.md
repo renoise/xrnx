@@ -1,10 +1,12 @@
 # Sockets
 
+The Renoise API allows you to create [network sockets](https://en.wikipedia.org/wiki/Network_socket). This can be used to communicate with other devices via UDP and TCP, e.g. to send or receive [OSC messages](./osc.md). 
+
+> Please note that there's no support for encrypted connections. So using protocols like HTTPs is not easily possible with the socket API in Renoise.
 
 ## HTTP / GET client
 
-Creates a TCP socket and connect it to www.wurst.de, http, giving up 
-the connection attempt after 2 seconds.
+Creates a TCP socket and connect it to www.wurst.de, http, giving up the connection attempt after 2 seconds.
 
 ```lua
 local connection_timeout = 2000
@@ -77,7 +79,7 @@ else
 end
 ```
 
-## Echo udp server (using a table as notifier)
+## Echo UDP Server (using a table as notifier)
 
 ```lua
 local server, socket_error = renoise.Socket.create_server(
@@ -88,15 +90,19 @@ if socket_error then
      "Failed to start the echo server: " .. socket_error)
 else
   server:run {
+    ---@param socket_error string
     socket_error = function(socket_error)
       renoise.app():show_warning(socket_error)
     end,
     
+    ---@param socket renoise.Socket.SocketClient
     socket_accepted = function(socket)
       print(("client %s:%d connected"):format(
         socket.peer_address, socket.peer_port))
     end,
   
+    ---@param socket renoise.Socket.SocketClient
+    ---@param message string
     socket_message = function(socket, message)
       print(("client %s:%d sent '%s'"):format(
         socket.peer_address, socket.peer_port,  message))
@@ -105,11 +111,10 @@ else
     end    
   }
 end
-
 -- will run and echo as long as the script runs...
 ```
 
-## Echo TCP server (using a class as notifier)
+## Echo TCP Server (using a class as notifier)
 
 ...and allowing any addresses to connect by not specifying an address:
 
@@ -129,15 +134,19 @@ class "EchoServer"
    end
   end
 
+  ---@param socket_error string
   function EchoServer:socket_error(socket_error)
     renoise.app():show_warning(socket_error)
   end
   
+  ---@param socket renoise.Socket.SocketClient
   function EchoServer:socket_accepted(socket)
     print(("client %s:%d connected"):format(
       socket.peer_address, socket.peer_port))
   end
 
+  ---@param message string
+  ---@param socket renoise.Socket.SocketClient
   function EchoServer:socket_message(socket, message)
     print(("client %s:%d sent '%s'"):format(
       socket.peer_address, socket.peer_port,  message))
@@ -151,4 +160,3 @@ local echo_server = EchoServer(1025)
 -- will run and echo as long as the script runs or the EchoServer 
 -- object is garbage collected...
 ```
-

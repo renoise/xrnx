@@ -1,10 +1,12 @@
 # Osc
 
-NB: when using TCP instead of UDP as socket protocol, manual SLIP en/decoding
-of OSC message data would be required too. This is left out here, so the examples 
-below only work with UDP servers/clients.
+The Renoise API allows you to create web sockets and provides tools to receive and send OSC data. This allows you to connect your tools to other OSC servers and send OSC data to existing clients.
 
-## Osc server (receive Osc from one or more clients)
+In general, this can be used as an alternative to MIDI, e.g. to connect to OSC-enabled devices such as [monome](https://monome.org/docs/serialosc/osc).
+
+Note: Using TCP instead of UDP as the socket protocol would likely also require manual [SLIP encoding/decoding](https://en.wikipedia.org/wiki/Serial_Line_Internet_Protocol) of OSC message data. This is omitted here, so the examples below will only work with UDP servers/clients.
+
+## Osc Server (receive Osc from one or more Clients)
 
 ```lua
 -- create some shortcuts
@@ -61,7 +63,7 @@ server:run {
 ```
 
 
-## Osc client & message construction (send Osc to a server)
+## Osc Client & Message Construction (send Osc to a Server)
 
 ```lua
 -- create some shortcuts

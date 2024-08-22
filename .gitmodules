@@ -1,4 +1,4 @@
 [submodule "definitions"]
 	path = definitions
 	url = git@github.com:renoise/definitions
-	branch = feature/api-docs
+	branch = master

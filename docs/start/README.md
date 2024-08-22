@@ -5,4 +5,4 @@
 
 If you are only interested in downloading tools for Renoise and not in developing your own tools, please have a look at the [Renoise Tools Page](http://tools.renoise.com/).
 
-If you want to develop your own tools for Renoise, just keep reading :)
+If you want to develop your own tools for Renoise, just keep reading.
