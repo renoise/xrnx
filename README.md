@@ -25,3 +25,9 @@ The scripting development book, API definition and example tools, can also be do
 For any questions regarding the Lua API or this repository, please have a look at the [Renoise Scripting Development Forum](https://forum.renoise.com/c/renoise-tool-development).
 
 *Have fun scripting and hacking Renoise!*
+
+### Contribute
+
+Contributions such as typo fixes, new user guides, and other forms of documentation improvement are welcome!
+
+Please report issues [here](https://github.com/renoise/xrnx/issues) or fork the latest git repository and create a feature or bugfix branch.
