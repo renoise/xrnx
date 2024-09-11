@@ -1,8 +1,7 @@
 use std::collections::HashMap;
 use std::vec;
 
-use crate::library::Library;
-use crate::types::*;
+use crate::{library::Library, types::*};
 
 impl Library {
     /// render each page inside the library as a list of string tuples (name, content)
@@ -36,31 +35,21 @@ impl Library {
         docs
     }
 
-    // sort the list of docs so that lowercase names come first
-    // and classes starting with "renoise" come before built-in class pages
     fn sort(docs: &mut [(String, String)]) {
-        docs.sort_by(
-            |(a, _), (b, _)| match (a.chars().next(), b.chars().next()) {
-                (Some(ac), Some(bc)) => {
-                    if ac.is_lowercase() && bc.is_lowercase() {
-                        if a.starts_with("renoise") && !b.starts_with("renoise") {
-                            std::cmp::Ordering::Less
-                        } else if b.starts_with("renoise") && !a.starts_with("renoise") {
-                            std::cmp::Ordering::Greater
-                        } else {
-                            a.cmp(b)
-                        }
-                    } else if ac.is_uppercase() && bc.is_uppercase() {
-                        a.cmp(b)
-                    } else if ac.is_lowercase() && bc.is_uppercase() {
-                        std::cmp::Ordering::Less
-                    } else {
-                        std::cmp::Ordering::Greater
-                    }
-                }
-                _ => a.cmp(b),
-            },
-        )
+        let custom_weight = |name: &str| -> usize {
+            if name == "global" {
+                0
+            } else if name.starts_with("renoise") {
+                1
+            } else if name.starts_with("modules") {
+                99
+            } else if name.starts_with("builtins") {
+                100
+            } else {
+                10
+            }
+        };
+        docs.sort_by_key(|(name, _)| (custom_weight(name), name.to_lowercase()));
     }
 }
 
@@ -89,13 +78,21 @@ fn enum_link(text: &str, url: &str, hash: &str) -> String {
 fn alias_link(text: &str, hash: &str) -> String {
     format!("[`{}`](#{})", text, hash)
 }
+
 fn local_class_link(text: &str, hash: &str) -> String {
     format!("[`{}`](#{})", text, hash.to_lowercase())
 }
 
-// fn quote(text: &str) -> String {
-//     format!("> {}", text)
-// }
+fn quote(text: &str) -> String {
+    format!("> {}", text.replace('\n', "\n> "))
+}
+
+fn description(desc: &str) -> String {
+    quote(
+        desc.replace("### examples", "#### examples")
+            .trim_matches('\n'),
+    )
+}
 
 // fn item(text: &str) -> String {
 //     format!("* {}", text)
@@ -139,7 +136,7 @@ impl Kind {
                 Class::get_end(name).unwrap_or_default(),
             ),
             Kind::SelfArg => format!("[*self*]({}API/builtins/self.md)", url_root),
-            Kind::Array(k) => format!("{}`[]`", k.link(url_root)),
+            Kind::Array(k) => format!("{}[]", k.link(url_root)),
             Kind::Nullable(k) => format!(
                 "{}{}",
                 k.as_ref().link(url_root),
@@ -189,7 +186,7 @@ impl Var {
             if desc.is_empty() {
                 desc
             } else {
-                format!("\n{}\n", desc.trim_matches('\n'))
+                format!("\n{}\n", description(&desc))
             }
         )
     }
@@ -199,9 +196,12 @@ impl Alias {
     fn render(&self, url_root: &str) -> String {
         format!(
             "{}\n{}  \n{}",
-            hash(&h1(&format!("alias {}", &self.name)), &self.name),
+            hash(&h3(&format!("{}", &self.name)), &self.name),
             self.kind.link(url_root),
-            self.desc.clone().unwrap_or_default()
+            self.desc
+                .clone()
+                .map(|d| description(d.as_str()))
+                .unwrap_or_default()
         )
     }
 }
@@ -221,7 +221,7 @@ impl Function {
                 .join(", ");
 
             self.with_desc(&self.with_returns(
-                &hash(&format!("### `{}`({})", &name, params), &name),
+                &hash(&format!("### {}({})", &name, params), &name),
                 url_root,
             ))
         }
@@ -256,7 +256,7 @@ impl Function {
         if desc.is_empty() {
             head.to_string()
         } else {
-            format!("{}\n{}", head, desc)
+            format!("{}\n{}", head, description(&desc))
         }
     }
     fn with_returns(&self, head: &str, url_root: &str) -> String {
@@ -284,8 +284,10 @@ impl Class {
         let mut m = vec![h1(&self.name)];
 
         if !self.desc.is_empty() {
-            m.push(self.desc.clone())
+            m.push(description(&self.desc))
         }
+
+        m.push("\n<!-- toc -->\n".to_string());
 
         if !self.enums.is_empty() || !self.constants.is_empty() {
             let enums = &self.enums;
@@ -298,7 +300,7 @@ impl Class {
                     .map(|e| {
                         let name = e.name.clone();
                         let end = Class::get_end(&name).unwrap_or(&name);
-                        format!("{}\n{}", hash(&h3(end), end), e.desc)
+                        format!("{}\n{}", hash(&h3(end), end), description(&e.desc))
                     })
                     .collect::<Vec<String>>()
                     .join("\n"),
@@ -344,7 +346,7 @@ impl Class {
             // append all used local classes
             if !local_class_names.is_empty() {
                 m.push("\n\n\n---".to_string());
-                m.push(h2("Structs"));
+                m.push(h2("Local Structs"));
                 let mut class_names: Vec<&String> = structs.keys().collect();
                 class_names.sort();
                 for name in class_names {
@@ -358,7 +360,7 @@ impl Class {
             // append all used local aliases
             if !local_alias_names.is_empty() {
                 m.push("\n\n\n---".to_string());
-                m.push(h2("Aliases"));
+                m.push(h2("Local Aliases"));
                 let mut alias_names: Vec<&String> = aliases.keys().collect();
                 alias_names.sort();
                 for name in alias_names {

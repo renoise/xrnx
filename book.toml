@@ -10,7 +10,11 @@ create-missing = false
 
 [output.html]
 default-theme = "dark"
-preferred-dark-theme = "coal"
+preferred-dark-theme = "ayu"
+additional-css = [ "docs/styles.css" ]
 
 [output.linkcheck]
 warning-policy = "ignore"
+
+[preprocessor.toc]
+[preprocessor.alerts]
