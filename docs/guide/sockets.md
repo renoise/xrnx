@@ -2,7 +2,8 @@
 
 The Renoise API allows you to create [network sockets](https://en.wikipedia.org/wiki/Network_socket). This can be used to communicate with other devices via UDP and TCP, e.g. to send or receive [OSC messages](./osc.md). 
 
-> Please note that there's no support for encrypted connections. So using protocols like HTTPs is not easily possible with the socket API in Renoise.
+> [!NOTE]
+> There's no support for encrypted connections. So using protocols like HTTPs is not easily possible with the socket API in Renoise.
 
 ## HTTP / GET client
 

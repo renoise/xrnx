@@ -17,8 +17,7 @@ jobs:
       - name: Build the book
         run: |
           ./generate/build.sh "3.9.3"
-          cargo install mdbook
-          cargo install mdbook-linkcheck
+          cargo install mdbook mdbook-linkcheck mdbook-toc mdbook-alerts
           mdbook build
 
       - name: Create XRNX_Starter_Pack
