@@ -1,3 +1,6 @@
 # renoise.Views  
-Namespace for renoise view widgets.  
+> Namespace for renoise view widgets.  
+
+<!-- toc -->
+  
 
