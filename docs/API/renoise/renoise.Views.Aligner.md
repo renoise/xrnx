@@ -11,31 +11,17 @@
 
 ---  
 ## Properties
-### height : [`ViewDimension`](#ViewDimension) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
 ### margin : [`RackMargin`](#RackMargin) {#margin}
 > Set the "borders" of a rack (left, right, top and bottom inclusively)
 > *  Default: 0 (no borders)
-
-### mode : [`AlignerMode`](#AlignerMode) {#mode}
-> * Default: "left" (for horizontal_aligner) "top" (for vertical_aligner)
 
 ### spacing : [`RackSpacing`](#RackSpacing) {#spacing}
 > Set the amount stacked child views are separated by (horizontally in
 > rows, vertically in columns).
 > *  Default: 0 (no spacing)
 
-### tooltip : [`ViewTooltip`](#ViewTooltip) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-### views : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)[] {#views}
-> **READ-ONLY** Empty for all controls, for layout views this contains the
-> layout child views in the order they got added
+### mode : [`AlignerMode`](#AlignerMode) {#mode}
+> * Default: "left" (for horizontal_aligner) "top" (for vertical_aligner)
 
 ### visible : [`ViewVisibility`](#ViewVisibility) {#visible}
 > Set visible to false to hide a view (make it invisible without removing
@@ -48,6 +34,20 @@
 > For nested views you can also specify relative size
 > for example `vb:text { width = "80%"}`. The percentage values are
 > relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension) {#height}
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### tooltip : [`ViewTooltip`](#ViewTooltip) {#tooltip}
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+### views : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)[] {#views}
+> **READ-ONLY** Empty for all controls, for layout views this contains the
+> layout child views in the order they got added
 
   
 

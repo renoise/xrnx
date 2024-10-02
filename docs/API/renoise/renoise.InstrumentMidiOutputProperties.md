@@ -15,24 +15,13 @@
 
 ---  
 ## Properties
-### bank : [`integer`](../../API/builtins/integer.md) {#bank}
-> Range: (1 - 65536) 0 = OFF
+### instrument_type : [`renoise.InstrumentMidiOutputProperties.Type`](renoise.InstrumentMidiOutputProperties.md#Type) {#instrument_type}
+>  Note: ReWire device always start with "ReWire: " in the device_name and
+>  will always ignore the instrument_type and channel properties. MIDI
+>  channels are not configurable for ReWire MIDI, and instrument_type will
+>  always be "TYPE_INTERNAL" for ReWire devices.
 
-### bank_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#bank_observable}
-> Track changes to document properties or general states by attaching listener
-> functions to it.
-
-### channel : [`integer`](../../API/builtins/integer.md) {#channel}
-> Range: (1 - 16)
-
-### channel_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#channel_observable}
-> Track changes to document properties or general states by attaching listener
-> functions to it.
-
-### delay : [`integer`](../../API/builtins/integer.md) {#delay}
-> Range: (0 - 100)
-
-### delay_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#delay_observable}
+### instrument_type_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#instrument_type_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
@@ -46,20 +35,17 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### duration : [`integer`](../../API/builtins/integer.md) {#duration}
-> Range: (1 - 8000) 8000 = INF
+### channel : [`integer`](../../API/builtins/integer.md) {#channel}
+> Range: (1 - 16)
 
-### duration_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#duration_observable}
+### channel_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#channel_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### instrument_type : [`renoise.InstrumentMidiOutputProperties.Type`](renoise.InstrumentMidiOutputProperties.md#Type) {#instrument_type}
->  Note: ReWire device always start with "ReWire: " in the device_name and
->  will always ignore the instrument_type and channel properties. MIDI
->  channels are not configurable for ReWire MIDI, and instrument_type will
->  always be "TYPE_INTERNAL" for ReWire devices.
+### transpose : [`integer`](../../API/builtins/integer.md) {#transpose}
+> Range: (-120 - 120)
 
-### instrument_type_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#instrument_type_observable}
+### transpose_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#transpose_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
@@ -70,10 +56,24 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### transpose : [`integer`](../../API/builtins/integer.md) {#transpose}
-> Range: (-120 - 120)
+### bank : [`integer`](../../API/builtins/integer.md) {#bank}
+> Range: (1 - 65536) 0 = OFF
 
-### transpose_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#transpose_observable}
+### bank_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#bank_observable}
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
+### delay : [`integer`](../../API/builtins/integer.md) {#delay}
+> Range: (0 - 100)
+
+### delay_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#delay_observable}
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
+### duration : [`integer`](../../API/builtins/integer.md) {#duration}
+> Range: (1 - 8000) 8000 = INF
+
+### duration_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#duration_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 

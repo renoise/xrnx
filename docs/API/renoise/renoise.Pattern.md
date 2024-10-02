@@ -37,17 +37,15 @@
 
 ---  
 ## Functions
-### add_line_edited_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#add_line_edited_notifier}
-### add_line_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#add_line_notifier}
 ### clear([*self*](../../API/builtins/self.md)) {#clear}
 > Deletes all lines & automation.
 ### copy_from([*self*](../../API/builtins/self.md), other : [`renoise.Pattern`](../../API/renoise/renoise.Pattern.md)) {#copy_from}
 > Copy contents from other patterns, including automation, when possible.
-### has_line_edited_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#has_line_edited_notifier}
-`->`[`boolean`](../../API/builtins/boolean.md)  
+### track([*self*](../../API/builtins/self.md), index : [`integer`](../../API/builtins/integer.md)) {#track}
+`->`[`renoise.PatternTrack`](../../API/renoise/renoise.PatternTrack.md)  
 
-> Same as `line_notifier`, but the notifier only fires when the user
-> added, changed or deleted a line with the computer or MIDI keyboard.
+> Access to a single pattern track by index. Use properties 'tracks' to
+> iterate over all tracks and to query the track count.
 ### has_line_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#has_line_notifier}
 `->`[`boolean`](../../API/builtins/boolean.md)  
 
@@ -73,13 +71,15 @@
 > If you are only interested in changes that are made to the currently edited
 > pattern, dynamically attach and detach to the selected pattern's line
 > notifiers by listening to "renoise.song().selected_pattern_observable".
-### remove_line_edited_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#remove_line_edited_notifier}
+### add_line_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#add_line_notifier}
 ### remove_line_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#remove_line_notifier}
-### track([*self*](../../API/builtins/self.md), index : [`integer`](../../API/builtins/integer.md)) {#track}
-`->`[`renoise.PatternTrack`](../../API/renoise/renoise.PatternTrack.md)  
+### has_line_edited_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#has_line_edited_notifier}
+`->`[`boolean`](../../API/builtins/boolean.md)  
 
-> Access to a single pattern track by index. Use properties 'tracks' to
-> iterate over all tracks and to query the track count.  
+> Same as `line_notifier`, but the notifier only fires when the user
+> added, changed or deleted a line with the computer or MIDI keyboard.
+### add_line_edited_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#add_line_edited_notifier}
+### remove_line_edited_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#remove_line_edited_notifier}  
 
 
 
@@ -93,9 +93,9 @@
 
 ---  
 ## Properties
-### line : [`integer`](../../API/builtins/integer.md) {#line}
 ### pattern : [`integer`](../../API/builtins/integer.md) {#pattern}
 ### track : [`integer`](../../API/builtins/integer.md) {#track}
+### line : [`integer`](../../API/builtins/integer.md) {#line}
   
 
   

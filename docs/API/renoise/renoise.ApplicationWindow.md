@@ -4,11 +4,11 @@
 <!-- toc -->
   
 ## Constants
-### LowerFrame {#LowerFrame}
+### UpperFrame {#UpperFrame}
 > ```lua
 > {
->     LOWER_FRAME_TRACK_DSPS: integer = 1,
->     LOWER_FRAME_TRACK_AUTOMATION: integer = 2,
+>     UPPER_FRAME_TRACK_SCOPES: integer = 1,
+>     UPPER_FRAME_MASTER_SPECTRUM: integer = 2,
 > }
 > ```
 ### MiddleFrame {#MiddleFrame}
@@ -25,6 +25,13 @@
 >     MIDDLE_FRAME_INSTRUMENT_MIDI_EDITOR: integer = 9,
 > }
 > ```
+### LowerFrame {#LowerFrame}
+> ```lua
+> {
+>     LOWER_FRAME_TRACK_DSPS: integer = 1,
+>     LOWER_FRAME_TRACK_AUTOMATION: integer = 2,
+> }
+> ```
 ### MixerFader {#MixerFader}
 > ```lua
 > {
@@ -34,33 +41,25 @@
 >     MIXER_FADER_TYPE_LINEAR: integer = 4,
 > }
 > ```
-### UpperFrame {#UpperFrame}
-> ```lua
-> {
->     UPPER_FRAME_TRACK_SCOPES: integer = 1,
->     UPPER_FRAME_MASTER_SPECTRUM: integer = 2,
-> }
-> ```
   
 
 ---  
 ## Properties
-### active_lower_frame : [`renoise.ApplicationWindow.LowerFrame`](renoise.ApplicationWindow.md#LowerFrame) {#active_lower_frame}
-### active_lower_frame_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#active_lower_frame_observable}
-> Track changes to document properties or general states by attaching listener
-> functions to it.
+### fullscreen : [`boolean`](../../API/builtins/boolean.md) {#fullscreen}
+> Get/set if the application is running fullscreen.
 
-### active_middle_frame : [`renoise.ApplicationWindow.MiddleFrame`](renoise.ApplicationWindow.md#MiddleFrame) {#active_middle_frame}
-> Frame with the pattern editor, mixer...
+### is_maximized : [`boolean`](../../API/builtins/boolean.md) {#is_maximized}
+> **READ-ONLY**. Window status flag.
 
-### active_middle_frame_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#active_middle_frame_observable}
-> Track changes to document properties or general states by attaching listener
-> functions to it.
+### is_minimized : [`boolean`](../../API/builtins/boolean.md) {#is_minimized}
+> **READ-ONLY**. Window status flag.
 
-### active_upper_frame : [`renoise.ApplicationWindow.UpperFrame`](renoise.ApplicationWindow.md#UpperFrame) {#active_upper_frame}
-### active_upper_frame_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#active_upper_frame_observable}
-> Track changes to document properties or general states by attaching listener
-> functions to it.
+### lock_keyboard_focus : [`boolean`](../../API/builtins/boolean.md) {#lock_keyboard_focus}
+> When true, the middle frame views (like the pattern editor) will
+> stay focused unless alt or middle mouse is clicked.
+
+### sample_record_dialog_is_visible : [`boolean`](../../API/builtins/boolean.md) {#sample_record_dialog_is_visible}
+> Dialog for recording new samples, floating above the main window.
 
 ### disk_browser_is_visible : [`boolean`](../../API/builtins/boolean.md) {#disk_browser_is_visible}
 > Diskbrowser Panel.
@@ -68,9 +67,6 @@
 ### disk_browser_is_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#disk_browser_is_visible_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
-
-### fullscreen : [`boolean`](../../API/builtins/boolean.md) {#fullscreen}
-> Get/set if the application is running fullscreen.
 
 ### instrument_box_is_visible : [`boolean`](../../API/builtins/boolean.md) {#instrument_box_is_visible}
 > InstrumentBox
@@ -86,15 +82,31 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### is_maximized : [`boolean`](../../API/builtins/boolean.md) {#is_maximized}
-> **READ-ONLY**. Window status flag.
+### mixer_view_is_detached : [`boolean`](../../API/builtins/boolean.md) {#mixer_view_is_detached}
+> Mixer View detaching.
 
-### is_minimized : [`boolean`](../../API/builtins/boolean.md) {#is_minimized}
-> **READ-ONLY**. Window status flag.
+### mixer_view_is_detached_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#mixer_view_is_detached_observable}
+> Track changes to document properties or general states by attaching listener
+> functions to it.
 
-### lock_keyboard_focus : [`boolean`](../../API/builtins/boolean.md) {#lock_keyboard_focus}
-> When true, the middle frame views (like the pattern editor) will
-> stay focused unless alt or middle mouse is clicked.
+### upper_frame_is_visible : [`boolean`](../../API/builtins/boolean.md) {#upper_frame_is_visible}
+> Frame with the scopes/master spectrum...
+
+### upper_frame_is_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#upper_frame_is_visible_observable}
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
+### active_upper_frame : [`renoise.ApplicationWindow.UpperFrame`](renoise.ApplicationWindow.md#UpperFrame) {#active_upper_frame}
+### active_upper_frame_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#active_upper_frame_observable}
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
+### active_middle_frame : [`renoise.ApplicationWindow.MiddleFrame`](renoise.ApplicationWindow.md#MiddleFrame) {#active_middle_frame}
+> Frame with the pattern editor, mixer...
+
+### active_middle_frame_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#active_middle_frame_observable}
+> Track changes to document properties or general states by attaching listener
+> functions to it.
 
 ### lower_frame_is_visible : [`boolean`](../../API/builtins/boolean.md) {#lower_frame_is_visible}
 > Frame with the DSP chain view, automation, etc.
@@ -103,31 +115,8 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### mixer_fader_type : [`renoise.ApplicationWindow.MixerFader`](renoise.ApplicationWindow.md#MixerFader) {#mixer_fader_type}
-> Mixer fader type setting.
-
-### mixer_fader_type_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#mixer_fader_type_observable}
-> Track changes to document properties or general states by attaching listener
-> functions to it.
-
-### mixer_view_is_detached : [`boolean`](../../API/builtins/boolean.md) {#mixer_view_is_detached}
-> Mixer View detaching.
-
-### mixer_view_is_detached_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#mixer_view_is_detached_observable}
-> Track changes to document properties or general states by attaching listener
-> functions to it.
-
-### mixer_view_post_fx : [`boolean`](../../API/builtins/boolean.md) {#mixer_view_post_fx}
-> Mixer views Pre/Post volume setting.
-
-### mixer_view_post_fx_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#mixer_view_post_fx_observable}
-> Track changes to document properties or general states by attaching listener
-> functions to it.
-
-### pattern_advanced_edit_is_visible : [`boolean`](../../API/builtins/boolean.md) {#pattern_advanced_edit_is_visible}
-> Pattern advanced edit, visible in pattern editor only...
-
-### pattern_advanced_edit_is_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#pattern_advanced_edit_is_visible_observable}
+### active_lower_frame : [`renoise.ApplicationWindow.LowerFrame`](renoise.ApplicationWindow.md#LowerFrame) {#active_lower_frame}
+### active_lower_frame_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#active_lower_frame_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
@@ -138,13 +127,24 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### sample_record_dialog_is_visible : [`boolean`](../../API/builtins/boolean.md) {#sample_record_dialog_is_visible}
-> Dialog for recording new samples, floating above the main window.
+### pattern_advanced_edit_is_visible : [`boolean`](../../API/builtins/boolean.md) {#pattern_advanced_edit_is_visible}
+> Pattern advanced edit, visible in pattern editor only...
 
-### upper_frame_is_visible : [`boolean`](../../API/builtins/boolean.md) {#upper_frame_is_visible}
-> Frame with the scopes/master spectrum...
+### pattern_advanced_edit_is_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#pattern_advanced_edit_is_visible_observable}
+> Track changes to document properties or general states by attaching listener
+> functions to it.
 
-### upper_frame_is_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#upper_frame_is_visible_observable}
+### mixer_view_post_fx : [`boolean`](../../API/builtins/boolean.md) {#mixer_view_post_fx}
+> Mixer views Pre/Post volume setting.
+
+### mixer_view_post_fx_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#mixer_view_post_fx_observable}
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
+### mixer_fader_type : [`renoise.ApplicationWindow.MixerFader`](renoise.ApplicationWindow.md#MixerFader) {#mixer_fader_type}
+> Mixer fader type setting.
+
+### mixer_fader_type_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#mixer_fader_type_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 

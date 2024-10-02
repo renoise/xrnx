@@ -29,9 +29,6 @@
 > Destination device's parameter. Can in some rare circumstances be nil,
 > i.e. when a device or track is about to be deleted.
 
-### length : [`integer`](../../API/builtins/integer.md) {#length}
-> Range: (1 - NUM_LINES_IN_PATTERN)
-
 ### playmode : [`renoise.PatternTrackAutomation.Playmode`](renoise.PatternTrackAutomation.md#Playmode) {#playmode}
 > play-mode (interpolation mode).
 
@@ -39,17 +36,15 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### points : [`EnvelopePoint`](#envelopepoint)[] {#points}
-> Get all points of the automation. When setting a new list of points,
-> items may be unsorted by time, but there may not be multiple points
-> for the same time. Returns a copy of the list, so changing
-> `points[1].value` will not do anything. Instead, change them via
-> `points = { modified_points }`.
+### length : [`integer`](../../API/builtins/integer.md) {#length}
+> Range: (1 - NUM_LINES_IN_PATTERN)
 
-### points_observable : [`renoise.Document.ObservableList`](../../API/renoise/renoise.Document.ObservableList.md) {#points_observable}
-> Track changes to document lists by attaching listener functions to it.
-> NB: Notifiers will not broadcast changes made to list items, but only changes
-> to the lists **layout** (items got added, removed, swapped).
+### selection_start : [`integer`](../../API/builtins/integer.md) {#selection_start}
+> Range: (1 - automation.length + 1)
+
+### selection_start_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#selection_start_observable}
+> Track changes to document properties or general states by attaching listener
+> functions to it.
 
 ### selection_end : [`integer`](../../API/builtins/integer.md) {#selection_end}
 > Range: (1  -  automation.length + 1)
@@ -67,20 +62,22 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### selection_start : [`integer`](../../API/builtins/integer.md) {#selection_start}
-> Range: (1 - automation.length + 1)
+### points : [`EnvelopePoint`](#envelopepoint)[] {#points}
+> Get all points of the automation. When setting a new list of points,
+> items may be unsorted by time, but there may not be multiple points
+> for the same time. Returns a copy of the list, so changing
+> `points[1].value` will not do anything. Instead, change them via
+> `points = { modified_points }`.
 
-### selection_start_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#selection_start_observable}
-> Track changes to document properties or general states by attaching listener
-> functions to it.
+### points_observable : [`renoise.Document.ObservableList`](../../API/renoise/renoise.Document.ObservableList.md) {#points_observable}
+> Track changes to document lists by attaching listener functions to it.
+> NB: Notifiers will not broadcast changes made to list items, but only changes
+> to the lists **layout** (items got added, removed, swapped).
 
   
 
 ---  
 ## Functions
-### add_point_at([*self*](../../API/builtins/self.md), time : [`integer`](../../API/builtins/integer.md), value : [`number`](../../API/builtins/number.md), scaling : [`number`](../../API/builtins/number.md)[`?`](../../API/builtins/nil.md)) {#add_point_at}
-> Insert a new point, or change an existing one, if a point in
-> time already exists.
 ### clear([*self*](../../API/builtins/self.md)) {#clear}
 > Removes all points from the automation. Will not delete the automation
 > from tracks[]:automation, instead the resulting automation will not do
@@ -94,6 +91,9 @@
 `->`[`boolean`](../../API/builtins/boolean.md)  
 
 > Test if a point exists at the given time
+### add_point_at([*self*](../../API/builtins/self.md), time : [`integer`](../../API/builtins/integer.md), value : [`number`](../../API/builtins/number.md), scaling : [`number`](../../API/builtins/number.md)[`?`](../../API/builtins/nil.md)) {#add_point_at}
+> Insert a new point, or change an existing one, if a point in
+> time already exists.
 ### remove_point_at([*self*](../../API/builtins/self.md), time : [`integer`](../../API/builtins/integer.md)) {#remove_point_at}
 > Removes a point at the given time. Point must exist.  
 
@@ -109,14 +109,14 @@
 
 ---  
 ## Properties
-### scaling : [`number`](../../API/builtins/number.md) {#scaling}
-> Automation point scaling. Used in 'lines' playback mode only - 0.0 is linear.
-
 ### time : [`integer`](../../API/builtins/integer.md) {#time}
 > Automation point's time in pattern lines in Range: (1 - NUM_LINES_IN_PATTERN).
 
 ### value : [`number`](../../API/builtins/number.md) {#value}
 > Automation point value in Range: (0 - 1.0)
+
+### scaling : [`number`](../../API/builtins/number.md) {#scaling}
+> Automation point scaling. Used in 'lines' playback mode only - 0.0 is linear.
 
   
 

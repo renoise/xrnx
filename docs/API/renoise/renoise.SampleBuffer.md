@@ -17,8 +17,32 @@
 
 ---  
 ## Properties
+### has_sample_data : [`boolean`](../../API/builtins/boolean.md) {#has_sample_data}
+> **READ-ONLY** Check this before accessing properties
+
+### read_only : [`boolean`](../../API/builtins/boolean.md) {#read_only}
+> **READ-ONLY** True, when the sample buffer can only be read, but not be
+> modified. true for sample aliases of sliced samples. To modify such sample
+> buffers, modify the sliced master sample buffer instead.
+
+### sample_rate : [`integer`](../../API/builtins/integer.md) {#sample_rate}
+> **READ-ONLY** The current sample rate in Hz, like 44100.
+
 ### bit_depth : [`integer`](../../API/builtins/integer.md) {#bit_depth}
 > **READ-ONLY** The current bit depth, like 32, 16, 8.
+
+### number_of_channels : [`integer`](../../API/builtins/integer.md) {#number_of_channels}
+> **READ-ONLY** The integer of sample channels (1 or 2)
+
+### number_of_frames : [`integer`](../../API/builtins/integer.md) {#number_of_frames}
+> **READ-ONLY** The sample frame count (integer of samples per channel)
+
+### display_start : [`integer`](../../API/builtins/integer.md) {#display_start}
+> Range: (1 - number_of_frames)
+
+### display_start_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#display_start_observable}
+> Track changes to document properties or general states by attaching listener
+> functions to it.
 
 ### display_length : [`integer`](../../API/builtins/integer.md) {#display_length}
 > Range: (1 - number_of_frames)
@@ -34,34 +58,17 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### display_start : [`integer`](../../API/builtins/integer.md) {#display_start}
-> Range: (1 - number_of_frames)
+### vertical_zoom_factor : [`number`](../../API/builtins/number.md) {#vertical_zoom_factor}
+> Range(0.0-1.0)
 
-### display_start_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#display_start_observable}
+### vertical_zoom_factor_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#vertical_zoom_factor_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### has_sample_data : [`boolean`](../../API/builtins/boolean.md) {#has_sample_data}
-> **READ-ONLY** Check this before accessing properties
+### selection_start : [`integer`](../../API/builtins/integer.md) {#selection_start}
+> Range: (1 - number_of_frames)
 
-### number_of_channels : [`integer`](../../API/builtins/integer.md) {#number_of_channels}
-> **READ-ONLY** The integer of sample channels (1 or 2)
-
-### number_of_frames : [`integer`](../../API/builtins/integer.md) {#number_of_frames}
-> **READ-ONLY** The sample frame count (integer of samples per channel)
-
-### read_only : [`boolean`](../../API/builtins/boolean.md) {#read_only}
-> **READ-ONLY** True, when the sample buffer can only be read, but not be
-> modified. true for sample aliases of sliced samples. To modify such sample
-> buffers, modify the sliced master sample buffer instead.
-
-### sample_rate : [`integer`](../../API/builtins/integer.md) {#sample_rate}
-> **READ-ONLY** The current sample rate in Hz, like 44100.
-
-### selected_channel : [`renoise.SampleBuffer.Channel`](renoise.SampleBuffer.md#Channel) {#selected_channel}
-> The selected channel.
-
-### selected_channel_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#selected_channel_observable}
+### selection_start_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#selection_start_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
@@ -79,17 +86,10 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### selection_start : [`integer`](../../API/builtins/integer.md) {#selection_start}
-> Range: (1 - number_of_frames)
+### selected_channel : [`renoise.SampleBuffer.Channel`](renoise.SampleBuffer.md#Channel) {#selected_channel}
+> The selected channel.
 
-### selection_start_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#selection_start_observable}
-> Track changes to document properties or general states by attaching listener
-> functions to it.
-
-### vertical_zoom_factor : [`number`](../../API/builtins/number.md) {#vertical_zoom_factor}
-> Range(0.0-1.0)
-
-### vertical_zoom_factor_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#vertical_zoom_factor_observable}
+### selected_channel_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#selected_channel_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
@@ -106,6 +106,22 @@
 > of memory). All other errors are fired as usual.
 ### delete_sample_data([*self*](../../API/builtins/self.md)) {#delete_sample_data}
 > Delete existing sample data.
+### sample_data([*self*](../../API/builtins/self.md), channel_index : [`integer`](../../API/builtins/integer.md), frame_index : [`integer`](../../API/builtins/integer.md)) {#sample_data}
+`->`values : [`number`](../../API/builtins/number.md)[]  
+
+> Read access to samples in a sample data buffer.
+### set_sample_data([*self*](../../API/builtins/self.md), channel_index : [`integer`](../../API/builtins/integer.md), frame_index : [`integer`](../../API/builtins/integer.md), sample_value : [`integer`](../../API/builtins/integer.md)) {#set_sample_data}
+> Write access to samples in a sample data buffer. New samples values must be
+> within [-1, 1] and will be clipped automatically. Sample buffers may be
+> read-only (see property 'read_only'). Attempts to write on such buffers
+> will result into errors.
+> IMPORTANT: before modifying buffers, call 'prepare_sample_data_changes'.
+> When you are done, call 'finalize_sample_data_changes' to generate undo/redo
+> data for your changes and update sample overview caches!
+### prepare_sample_data_changes([*self*](../../API/builtins/self.md)) {#prepare_sample_data_changes}
+> To be called once BEFORE sample data gets manipulated via 'set_sample_data'.
+> This will prepare undo/redo data for the whole sample. See also
+> 'finalize_sample_data_changes'.
 ### finalize_sample_data_changes([*self*](../../API/builtins/self.md)) {#finalize_sample_data_changes}
 > To be called once AFTER the sample data is manipulated via 'set_sample_data'.
 > This will create undo/redo data for the whole sample, and also  update the
@@ -118,14 +134,6 @@
 
 > Load sample data from a file. Files can be any audio format Renoise supports.
 > Possible errors are shown to the user, otherwise success is returned.
-### prepare_sample_data_changes([*self*](../../API/builtins/self.md)) {#prepare_sample_data_changes}
-> To be called once BEFORE sample data gets manipulated via 'set_sample_data'.
-> This will prepare undo/redo data for the whole sample. See also
-> 'finalize_sample_data_changes'.
-### sample_data([*self*](../../API/builtins/self.md), channel_index : [`integer`](../../API/builtins/integer.md), frame_index : [`integer`](../../API/builtins/integer.md)) {#sample_data}
-`->`values : [`number`](../../API/builtins/number.md)[]  
-
-> Read access to samples in a sample data buffer.
 ### save_as([*self*](../../API/builtins/self.md), filename : [`string`](../../API/builtins/string.md), format : [`SampleBuffer.ExportType`](#SampleBuffer.ExportType)) {#save_as}
 `->`success : [`boolean`](../../API/builtins/boolean.md)  
 
@@ -136,15 +144,7 @@
 > format:
 >     | "wav"
 >     | "flac"
-> ```
-### set_sample_data([*self*](../../API/builtins/self.md), channel_index : [`integer`](../../API/builtins/integer.md), frame_index : [`integer`](../../API/builtins/integer.md), sample_value : [`integer`](../../API/builtins/integer.md)) {#set_sample_data}
-> Write access to samples in a sample data buffer. New samples values must be
-> within [-1, 1] and will be clipped automatically. Sample buffers may be
-> read-only (see property 'read_only'). Attempts to write on such buffers
-> will result into errors.
-> IMPORTANT: before modifying buffers, call 'prepare_sample_data_changes'.
-> When you are done, call 'finalize_sample_data_changes' to generate undo/redo
-> data for your changes and update sample overview caches!  
+> ```  
 
 
 

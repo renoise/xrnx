@@ -21,17 +21,17 @@
 > **READ-ONLY** Linked parameter.
 > Can be a sample FX- or modulation parameter. Never nil.
 
-### parameter_max : [`number`](../../API/builtins/number.md) {#parameter_max}
-> Range: (0 - 1)
-
-### parameter_max_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#parameter_max_observable}
-> Track changes to document properties or general states by attaching listener
-> functions to it.
-
 ### parameter_min : [`number`](../../API/builtins/number.md) {#parameter_min}
 > Range: (0 - 1)
 
 ### parameter_min_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#parameter_min_observable}
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
+### parameter_max : [`number`](../../API/builtins/number.md) {#parameter_max}
+> Range: (0 - 1)
+
+### parameter_max_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#parameter_max_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 

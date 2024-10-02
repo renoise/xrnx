@@ -239,12 +239,7 @@ impl Library {
                 .unique_by(|f| f.to_string())
                 .cloned()
                 .collect::<Vec<_>>();
-            functions.sort_by(|a, b| a.name.cmp(&b.name));
-            /*functions.sort_by(|a, b| {
-                a.line_number
-                    .unwrap_or_default()
-                    .cmp(&b.line_number.unwrap_or_default())
-            });*/
+            functions.sort_by_key(|f| (f.file.clone(), f.line_number));
 
             let mut enums = c
                 .enums
@@ -252,12 +247,7 @@ impl Library {
                 .into_iter()
                 .unique_by(|e| e.name.clone())
                 .collect::<Vec<_>>();
-            enums.sort_by(|a, b| a.name.cmp(&b.name));
-            /*enums.sort_by(|a, b| {
-                a.line_number
-                    .unwrap_or_default()
-                    .cmp(&b.line_number.unwrap_or_default())
-            });*/
+            enums.sort_by_key(|e| (e.file.clone(), e.line_number));
 
             let mut fields = c
                 .fields
@@ -268,12 +258,7 @@ impl Library {
                 .filter(|v| !matches!(v.kind, Kind::Lua(LuaKind::Table)))
                 .unique_by(|f| f.name.clone())
                 .collect::<Vec<_>>();
-            fields.sort_by(|a, b| a.name.cmp(&b.name));
-            /*fields.sort_by(|a, b| {
-                a.line_number
-                    .unwrap_or_default()
-                    .cmp(&b.line_number.unwrap_or_default())
-            });*/
+            fields.sort_by_key(|f| (f.file.clone(), f.line_number));
 
             let mut constants = c
                 .fields
@@ -282,12 +267,7 @@ impl Library {
                 .filter(Var::is_constant)
                 .unique_by(|f| f.name.clone())
                 .collect::<Vec<_>>();
-            constants.sort_by(|a, b| a.name.cmp(&b.name));
-            /*constants.sort_by(|a, b| {
-                a.line_number
-                    .unwrap_or_default()
-                    .cmp(&b.line_number.unwrap_or_default())
-            });*/
+            constants.sort_by_key(|c| (c.file.clone(), c.line_number));
 
             c.functions = functions;
             c.fields = fields;

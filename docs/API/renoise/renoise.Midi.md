@@ -19,6 +19,17 @@
 > Return a list of strings with currently available MIDI output devices.
 > This list can change when devices are hot-plugged.
 > See `renoise.Midi.devices_changed_observable`
+### `devices_changed_observable()` {#devices_changed_observable}
+`->`[`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)  
+
+> Fire notifications as soon as new devices become active or a previously
+> added device gets removed/unplugged.
+> This will only happen on Linux and OSX with real devices. On Windows this
+> may happen when using ReWire slaves. ReWire adds virtual MIDI devices to
+> Renoise.
+> Already opened references to devices which are no longer available will
+> do nothing: ou can use them as before and they will not fire any errors.
+> The messages will simply go into the void...
 ### create_input_device(device_name : [`string`](../../API/builtins/string.md), callback : [`MidiMessageFunction`](#MidiMessageFunction) | [`MidiMessageMethod1`](#MidiMessageMethod1) | [`MidiMessageMethod2`](#MidiMessageMethod2)[`?`](../../API/builtins/nil.md), sysex_callback : [`MidiMessageFunction`](#MidiMessageFunction) | [`MidiMessageMethod1`](#MidiMessageMethod1) | [`MidiMessageMethod2`](#MidiMessageMethod2)[`?`](../../API/builtins/nil.md)) {#create_input_device}
 `->`[`renoise.Midi.MidiInputDevice`](../../API/renoise/renoise.Midi.MidiInputDevice.md)  
 
@@ -46,18 +57,7 @@
 > 
 > The real device driver gets automatically closed when the MidiOutputDevice
 > object gets garbage collected or when the device is explicitly closed
-> via midi_device:close() and nothing else references it.
-### `devices_changed_observable()` {#devices_changed_observable}
-`->`[`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)  
-
-> Fire notifications as soon as new devices become active or a previously
-> added device gets removed/unplugged.
-> This will only happen on Linux and OSX with real devices. On Windows this
-> may happen when using ReWire slaves. ReWire adds virtual MIDI devices to
-> Renoise.
-> Already opened references to devices which are no longer available will
-> do nothing: ou can use them as before and they will not fire any errors.
-> The messages will simply go into the void...  
+> via midi_device:close() and nothing else references it.  
 
 
 

@@ -15,6 +15,27 @@
 
 ---  
 ## Properties
+### name : [`string`](../../API/builtins/string.md) {#name}
+> **READ-ONLY**
+
+### polarity : [`renoise.DeviceParameter.Polarity`](renoise.DeviceParameter.md#Polarity) {#polarity}
+> **READ-ONLY**
+
+### value_min : [`number`](../../API/builtins/number.md) {#value_min}
+> **READ-ONLY**
+
+### value_max : [`number`](../../API/builtins/number.md) {#value_max}
+> **READ-ONLY**
+
+### value_quantum : [`number`](../../API/builtins/number.md) {#value_quantum}
+> **READ-ONLY**
+
+### value_default : [`number`](../../API/builtins/number.md) {#value_default}
+> **READ-ONLY**
+
+### time_quantum : [`number`](../../API/builtins/number.md) {#time_quantum}
+> **READ-ONLY**
+
 ### is_automatable : [`boolean`](../../API/builtins/boolean.md) {#is_automatable}
 > **READ-ONLY**
 
@@ -32,12 +53,6 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### name : [`string`](../../API/builtins/string.md) {#name}
-> **READ-ONLY**
-
-### polarity : [`renoise.DeviceParameter.Polarity`](renoise.DeviceParameter.md#Polarity) {#polarity}
-> **READ-ONLY**
-
 ### show_in_mixer : [`boolean`](../../API/builtins/boolean.md) {#show_in_mixer}
 > Show in mixer. Not valid for parameters of instrument devices.
 
@@ -45,27 +60,12 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### time_quantum : [`number`](../../API/builtins/number.md) {#time_quantum}
-> **READ-ONLY**
-
 ### value : [`number`](../../API/builtins/number.md) {#value}
 > value in Range: (value_min - value_max)
-
-### value_default : [`number`](../../API/builtins/number.md) {#value_default}
-> **READ-ONLY**
-
-### value_max : [`number`](../../API/builtins/number.md) {#value_max}
-> **READ-ONLY**
-
-### value_min : [`number`](../../API/builtins/number.md) {#value_min}
-> **READ-ONLY**
 
 ### value_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#value_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
-
-### value_quantum : [`number`](../../API/builtins/number.md) {#value_quantum}
-> **READ-ONLY**
 
 ### value_string : [`string`](../../API/builtins/string.md) {#value_string}
 ### value_string_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#value_string_observable}

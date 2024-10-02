@@ -6,17 +6,6 @@
 
 ---  
 ## Functions
-### Bundle(time : [`integer`](../../API/builtins/integer.md), arguments : [`renoise.Osc.Message`](../../API/renoise/renoise.Osc.Message.md) | [`renoise.Osc.Message`](../../API/renoise/renoise.Osc.Message.md)[]) {#Bundle}
-`->`[`renoise.Osc.Bundle`](../../API/renoise/renoise.Osc.Bundle.md)  
-
-> Create a new bundle by specifying a time-tag and one or more messages.
-> If you do not know what to do with the time-tag, use `os.clock()`,
-> which simply means "now". Messages must be renoise.Osc.Message objects.
-> Nested bundles (bundles in bundles) are right now not supported.
-### Message(pattern : [`string`](../../API/builtins/string.md), arguments : [`OscValue`](#oscvalue)[][`?`](../../API/builtins/nil.md)) {#Message}
-`->`[`renoise.Osc.Message`](../../API/renoise/renoise.Osc.Message.md)  
-
-> Create a new OSC message with the given pattern and optional arguments.
 ### from_binary_data(binary_data : [`string`](../../API/builtins/string.md)) {#from_binary_data}
 `->`[`renoise.Osc.Bundle`](../../API/renoise/renoise.Osc.Bundle.md) | [`renoise.Osc.Message`](../../API/renoise/renoise.Osc.Message.md)[`?`](../../API/builtins/nil.md), [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
 
@@ -25,7 +14,18 @@
 > look like an OSC message, or the message contains errors, nil is returned
 > as first argument and the second return value will contain the error.
 > If de-packetizing was successful, either a renoise.Osc.Bundle or Message
-> object is returned. Bundles may contain multiple messages or nested bundles.  
+> object is returned. Bundles may contain multiple messages or nested bundles.
+### Message(pattern : [`string`](../../API/builtins/string.md), arguments : [`OscValue`](#oscvalue)[][`?`](../../API/builtins/nil.md)) {#Message}
+`->`[`renoise.Osc.Message`](../../API/renoise/renoise.Osc.Message.md)  
+
+> Create a new OSC message with the given pattern and optional arguments.
+### Bundle(time : [`integer`](../../API/builtins/integer.md), arguments : [`renoise.Osc.Message`](../../API/renoise/renoise.Osc.Message.md) | [`renoise.Osc.Message`](../../API/renoise/renoise.Osc.Message.md)[]) {#Bundle}
+`->`[`renoise.Osc.Bundle`](../../API/renoise/renoise.Osc.Bundle.md)  
+
+> Create a new bundle by specifying a time-tag and one or more messages.
+> If you do not know what to do with the time-tag, use `os.clock()`,
+> which simply means "now". Messages must be renoise.Osc.Message objects.
+> Nested bundles (bundles in bundles) are right now not supported.  
 
 
 

@@ -12,34 +12,20 @@
 
 ---  
 ## Properties
-### align : [`TextAlignment`](#TextAlignment) {#align}
-> Setup the text's alignment. Applies only when the view's size is larger than
-> the needed size to draw the text
-
-### font : [`TextFontStyle`](#TextFontStyle) {#font}
-> The style that the text should be displayed with.
-
-### height : [`ViewDimension`](#ViewDimension) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### style : [`TextStyle`](#TextStyle) {#style}
-> Get/set the color style the text should be displayed with.
-
 ### text : [`TextSingleLineString`](#TextSingleLineString) {#text}
 > The text that should be displayed. Setting a new text will resize
 > the view in order to make the text fully visible (expanding only).
 > * Default: ""
 
-### tooltip : [`ViewTooltip`](#ViewTooltip) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
+### font : [`TextFontStyle`](#TextFontStyle) {#font}
+> The style that the text should be displayed with.
 
-### views : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)[] {#views}
-> **READ-ONLY** Empty for all controls, for layout views this contains the
-> layout child views in the order they got added
+### style : [`TextStyle`](#TextStyle) {#style}
+> Get/set the color style the text should be displayed with.
+
+### align : [`TextAlignment`](#TextAlignment) {#align}
+> Setup the text's alignment. Applies only when the view's size is larger than
+> the needed size to draw the text
 
 ### visible : [`ViewVisibility`](#ViewVisibility) {#visible}
 > Set visible to false to hide a view (make it invisible without removing
@@ -52,6 +38,20 @@
 > For nested views you can also specify relative size
 > for example `vb:text { width = "80%"}`. The percentage values are
 > relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension) {#height}
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### tooltip : [`ViewTooltip`](#ViewTooltip) {#tooltip}
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+### views : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)[] {#views}
+> **READ-ONLY** Empty for all controls, for layout views this contains the
+> layout child views in the order they got added
 
   
 
