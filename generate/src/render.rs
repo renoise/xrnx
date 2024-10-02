@@ -8,7 +8,6 @@ impl Library {
     pub fn export_docs(&self) -> Vec<(String, String)> {
         // split classes int renoise, builtins and structs
         let mut renoise = vec![];
-        let mut builtins = vec![];
         let mut modules = vec![];
         for (name, class) in &self.classes {
             // url_root is the path to /API folder
@@ -16,11 +15,18 @@ impl Library {
             let content = class.render(url_root, &self.classes, &self.aliases);
             match class.scope {
                 Scope::Global => renoise.push((name.clone(), content)),
-                Scope::Builtins => builtins.push((String::from("builtins/") + name, content)),
                 Scope::Local => (), // inlined in classes
                 Scope::Modules => modules.push((String::from("modules/") + name, content)),
             }
         }
+        
+        let mut builtins = vec![];
+        for class in Library::builtin_classes() {
+            let url_root = "../../";
+            let content = class.render(url_root, &self.classes, &self.aliases);
+            builtins.push((String::from("builtins/") + &class.name, content));
+        }
+
         let mut docs: Vec<(String, String)> = vec![];
         docs.append(&mut renoise);
         if !builtins.is_empty() {
@@ -121,19 +127,22 @@ impl Kind {
                 LuaKind::Integer | LuaKind::Number => format!("`{}`", s.clone()),
                 _ => s.clone(),
             },
-            Kind::Class(scope, name) => match scope {
-                Scope::Local => local_class_link(name, name),
-                _ => link(name, &(url_root.to_string() + &scope.path_prefix() + name)),
+            Kind::Class(class) => match class.scope {
+                Scope::Local => local_class_link(&class.name, &class.name),
+                _ => link(
+                    &class.name,
+                    &(url_root.to_string() + &class.scope.path_prefix() + &class.name),
+                ),
             },
             Kind::Enum(kinds) => kinds
                 .iter()
                 .map(|k| k.link(url_root))
                 .collect::<Vec<String>>()
                 .join(" | "),
-            Kind::EnumRef(name) => enum_link(
-                name,
-                Class::get_base(name).unwrap_or(name),
-                Class::get_end(name).unwrap_or_default(),
+            Kind::EnumRef(enum_ref) => enum_link(
+                &enum_ref.name,
+                Class::get_base(&enum_ref.name).unwrap_or(&enum_ref.name),
+                Class::get_end(&enum_ref.name).unwrap_or_default(),
             ),
             Kind::SelfArg => format!("[*self*]({}API/builtins/self.md)", url_root),
             Kind::Array(k) => format!("{}[]", k.link(url_root)),
@@ -142,7 +151,7 @@ impl Kind {
                 k.as_ref().link(url_root),
                 link("?", &format!("{}API/builtins/nil", url_root))
             ),
-            Kind::Alias(name) => alias_link(name, name),
+            Kind::Alias(alias) => alias_link(&alias.name, &alias.name),
             Kind::Function(f) => f.short(url_root),
             Kind::Table(k, v) => format!(
                 "table<{}, {}>",
@@ -196,7 +205,7 @@ impl Alias {
     fn render(&self, url_root: &str) -> String {
         format!(
             "{}\n{}  \n{}",
-            hash(&h3(&format!("{}", &self.name)), &self.name),
+            hash(&h3(&self.name), &self.name),
             self.kind.link(url_root),
             self.desc
                 .clone()

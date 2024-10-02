@@ -110,6 +110,20 @@
 > Target strings are not verified. When they point to nothing, the mapped MIDI
 > message will do nothing and no error is fired.  
   
+### SliderMaxValue {#SliderMaxValue}
+[`number`](../../API/builtins/number.md)  
+> The maximum value that can be set using the view
+> * Default: 1.0  
+  
+### SliderMinValue {#SliderMinValue}
+[`number`](../../API/builtins/number.md)  
+> The minimum value that can be set using the view
+> * Default: 0  
+  
+### SliderNumberValue {#SliderNumberValue}
+[`number`](../../API/builtins/number.md)  
+> The current value of the view  
+  
 ### ViewDimension {#ViewDimension}
 [`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
 > The dimensions of a view has to be larger than 0.

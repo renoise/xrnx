@@ -123,6 +123,7 @@
     - [io](API/modules/io.md)
     - [math](API/modules/math.md)
     - [os](API/modules/os.md)
+    - [table](API/modules/table.md)
   - [Builtin Types](API/builtins.md)
     - [any](API/builtins/any.md)
     - [boolean](API/builtins/boolean.md)

@@ -71,6 +71,14 @@
 (message : [`MidiMessage`](#MidiMessage))  
   
   
+### MidiMessageMemberContext {#MidiMessageMemberContext}
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### MidiMessageMemberFunction {#MidiMessageMemberFunction}
+(self : [`MidiMessageMemberContext`](#MidiMessageMemberContext), message : [`MidiMessage`](#MidiMessage))  
+  
+  
 ### MidiMessageMethod1 {#MidiMessageMethod1}
 { 1 : [`MidiMessageMemberContext`](#MidiMessageMemberContext), 2 : [`MidiMessageMemberFunction`](#MidiMessageMemberFunction) }  
   
