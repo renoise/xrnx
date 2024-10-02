@@ -20,7 +20,7 @@
 > Register a function or method as a notifier, which will be called as soon as
 > the observable's value changed. The passed notifier can either be a function
 > or a table with a function and some context (an "object") -> method.
-> ### example:
+> #### examples:
 > ```lua
 > renoise.song().transport.bpm_observable:add_notifier(function()
 >   print("BPM changed")

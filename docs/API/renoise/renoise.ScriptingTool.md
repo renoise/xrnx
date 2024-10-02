@@ -64,7 +64,7 @@
 > The preference XML file is saved/loaded within the tool bundle as
 > "com.example.your_tool.xrnx/preferences.xml".
 > 
-> ### example:
+> #### examples:
 > ```lua
 > -- create a document via "Document.create"
 > my_options = renoise.Document.create("ScriptingToolPreferences") {

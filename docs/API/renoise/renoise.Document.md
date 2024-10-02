@@ -16,7 +16,7 @@
 > `add_property` function. Existing properties can also be removed again with the
 > `remove_property` function.
 > 
-> ### example:
+> #### examples:
 > ```lua
 > -- Creates an empty document, using "MyDoc" as the model name (a type name)
 > local my_document = renoise.Document.create("MyDoc"){ }
@@ -40,7 +40,7 @@
 > This is especially recommended when dealing with more complex docs, because
 > you can also use additional methods to deal with your properties, the data.
 > 
-> ### example:
+> #### examples:
 > ```lua
 > class "MyDocument" (renoise.Document.DocumentNode)
 >   function MyDocument:__init()
@@ -79,7 +79,7 @@
 > type when loading/saving. It also allows you to instantiate new document
 > objects (see renoise.Document.instantiate).
 > 
-> ### example:
+> #### examples:
 > ```lua
 > my_document = renoise.Document.create("MyDoc") {
 >   age = 1,
@@ -106,7 +106,7 @@
 > Additionally, once "create" is called, you can use the specified model name to
 > create new instances.
 > 
-> ### example:
+> #### examples:
 > ```lua
 > -- create a new instance of "MyDoc"
 > my_other_document = renoise.Document.instantiate("MyDoc")

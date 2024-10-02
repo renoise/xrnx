@@ -57,7 +57,7 @@
 > A single argument is passed to the notifier function: "pos", a table with the
 > fields "pattern", "track" and "line", which defines where the change has
 > happened.
-> ### example:
+> #### examples:
 > ```lua
 > function my_pattern_line_notifier(pos)
 >   -- check pos.pattern, pos.track, pos.line (all are indices)
