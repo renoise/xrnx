@@ -60,7 +60,7 @@
 > All callback properties are optional. So you can, for example, skip specifying
 > "socket_accepted" if you have no use for this.
 > 
-> ### example:
+> #### examples:
 > ```lua
 > class "MyNotifier"
 > function MyNotifier:__init()
@@ -94,7 +94,7 @@
 > All callback properties are optional. So you can, for example, skip specifying
 > "socket_accepted" if you have no use for this.
 > 
-> ### example:
+> #### examples:
 > ```lua
 > {
 >   socket_error = function(error_message)

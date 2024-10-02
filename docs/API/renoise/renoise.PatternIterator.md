@@ -5,7 +5,7 @@
 > General remarks: Iterators can only be use in "for" loops like you would use
 > "pairs" in Lua.
 > 
-> ### example:
+> #### examples:
 > ```lua
 > for pos,line in renoise.song().pattern_iterator:lines_in_song() do [...] end
 > ```

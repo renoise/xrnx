@@ -15,6 +15,7 @@ Once scripting is enabled, you'll have the following entries inside the *Tools* 
 
 Tools in Renoise are written using the [Lua programming language](https://www.lua.org/). Lua is a dynamic language with a friendly syntax and good performance. While Renoise itself is written in C++, it has an [API](https://en.wikipedia.org/wiki/API) layer that exposes all sorts of aspects of the tracker so that tools can implement new functionality without the dangers of crashing Renoise itself or having to worry about low level programming challenges.
 
+> [!NOTE]
 > Teaching you programming is out of the scope of this guide but you can check out the book [Programming in Lua](https://www.lua.org/pil/contents.html) to get a complete overview of the language. That said, you will probably be able to pick up a lot of things just by reading through this guide and checking out the examples. If you are the kind of person who learns best by doing stuff, getting straight into tinkering might be right up your alley.
 
 ### Language Server

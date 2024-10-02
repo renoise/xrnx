@@ -13,7 +13,9 @@
 >   `vb.views.SomeString` or `vb.views["SomeString"]`
 > 
 > * Nested child views: Add child views to the currently specified view.
->  ### example:
+> 
+> #### examples:
+> Creates a column view with `margin = 1` and adds two text views to the column.
 > ```lua
 > vb:column {
 >   margin = 1,
@@ -24,18 +26,6 @@
 >     text = "Text1"
 >   }
 > }
-> ```
-> Creates a column view with `margin = 1` and adds two text views to the column.
-> 
-> Table of views, which got registered via the "id" property
-> View id is the table key, the table's value is the view's object.
-> 
-> ### example
-> ```lua
-> vb:text { id="my_view", text="some_text"}
-> vb.views.my_view.visible = false
-> --or
-> vb.views["my_view"].visible = false
 > ```  
 
 <!-- toc -->
@@ -67,6 +57,17 @@
 ---  
 ## Properties
 ### views : table<[`string`](../../API/builtins/string.md), [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)> {#views}
+> Table of views, which got registered via the "id" property
+> View id is the table key, the table's value is the view's object.
+> 
+> #### examples:
+> ```lua
+> vb:text { id="my_view", text="some_text"}
+> vb.views.my_view.visible = false
+> --or
+> vb.views["my_view"].visible = false
+> ```
+
   
 
 ---  
@@ -75,7 +76,7 @@
 > You can add nested child views when constructing a column or row
 > by including them in the constructor table in the views property.
 > 
-> ### example:
+> #### examples:
 > ```lua
 > vb:column {
 >   margin = 1,
@@ -91,7 +92,7 @@
 > You can add nested child views when constructing a column or row
 > by including them in the constructor table in the views property.
 > 
-> ### example:
+> #### examples:
 > ```lua
 > vb:column {
 >   margin = 1,
@@ -107,7 +108,7 @@
 > You can add nested child views when constructing aligners by including them
 > in the constructor table.
 > 
-> ### example:
+> #### examples:
 > ```lua
 > vb:horizontal_aligner {
 >    mode = "center",
@@ -123,7 +124,7 @@
 > You can add nested child views when constructing aligners by including them
 > in the constructor table.
 > 
-> ### example:
+> #### examples:
 > ```lua
 > vb:horizontal_aligner {
 >    mode = "center",
@@ -138,7 +139,7 @@
 ### space([*self*](../../API/builtins/self.md), properties : [`ViewProperties`](#viewproperties)) {#space}
 > You can create an empty space in layouts with a space.
 > 
-> ### example:
+> #### examples:
 > ```lua
 > --Empty space in layouts
 > vb:row {

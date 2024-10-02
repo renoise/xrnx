@@ -10,7 +10,7 @@
 
 > Converts a linear value to a db value. db values will be clipped to
 > math.infdb.
-> ### example:
+> #### examples:
 > ```lua
 > print(math.lin2db(1.0)) --> 0
 > print(math.lin2db(0.0)) --> -200 (math.infdb)
@@ -19,7 +19,7 @@
 `->`[`number`](../../API/builtins/number.md)  
 
 > Converts a dB value to a linear value.
-> ### example:
+> #### examples:
 > ```lua
 > print(math.db2lin(math.infdb)) --> 0
 > print(math.db2lin(6.0)) --> 1.9952623149689
@@ -29,7 +29,7 @@
 
 > Converts a dB value to a normalized linear fader value between 0-1 within
 > the given dB range.
-> ### example:
+> #### examples:
 > ```lua
 > print(math.db2fader(-96, 0, 1)) --> 0
 > print(math.db2fader(-48, 6, 0)) --> 0.73879611492157
@@ -39,7 +39,7 @@
 
 > Converts a normalized linear mixer fader value to a db value within
 > the given dB range.
-> ### example:
+> #### examples:
 > ```lua
 > print(math.fader2db(-96, 0, 1)) --> 0
 > print(math.fader2db(-96, 0, 0)) --> -96
