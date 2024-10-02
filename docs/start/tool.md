@@ -12,7 +12,8 @@ com.name_of_creator.name_of_tool.xrnx
 └── main.lua
 ```
 
-> Note: You'll see that names of folders for most tools follow [reverse domain notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation), but don't worry, you don't have to actually own a domain to create and share your tools. Just use whatever nickname you want, just make sure it's not already taken by other devs to avoid confusion.
+> [!NOTE] 
+> You'll see that names of folders for most tools follow [reverse domain notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation), but don't worry, you don't have to actually own a domain to create and share your tools. Just use whatever nickname you want, just make sure it's not already taken by other devs to avoid confusion.
 
 If needed, you can split your tool into multiple files and use the ["require" function](https://www.lua.org/pil/8.1.html) to load them inside your main script, but first you will be fine just using a single main script.
 

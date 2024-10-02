@@ -12,7 +12,8 @@ It is based on [matt-allan's](https://github.com/matt-allan) [mdbook-luacat](htt
 - [rust](https://www.rust-lang.org/tools/install) v1.56 or higher
 - [LuaLS](https://github.com/luals/lua-language-server) installation
 
-Note: The LuaLS installation must be placed into the folder [./lua-language-server](./lua-language-server) folder and **must be patched**. 
+> [!NOTE]
+> The LuaLS installation must be placed into the folder [./lua-language-server](./lua-language-server) folder and **must be patched**. 
 
 See [build.sh](./build.sh) for details.
 
