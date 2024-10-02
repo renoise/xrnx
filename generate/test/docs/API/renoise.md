@@ -1,11 +1,12 @@
 # renoise  
-Holds all renoise related API test functions and classes.  
+> Holds all renoise related API test functions and classes.  
 
----  
-## Properties
+<!-- toc -->
+  
+## Constants
+
 ### API_VERSION : [`number`](../API/builtins/number.md) {#API_VERSION}
-This is a const
-
+> This is a const
   
 
 ---  
@@ -13,20 +14,23 @@ This is a const
 ### `SomeClass()` {#SomeClass}
 `->`[`SomeClassInstance`](#someclassinstance)  
 
-SomeClassInstance Docs
+> SomeClassInstance Docs
 ### `global_function()` {#global_function}
-Global function docs
+> Global function docs
 ### `global_function2()` {#global_function2}
 `->`[`TestClass1`](#testclass1) | [`TestClass2`](#testclass2)  
 
-More global function docs  
+> More global function docs  
 
 
 
 ---  
-## Structs  
+## Local Structs  
 # SomeClassInstance  
-SomeClass docs  
+> SomeClass docs  
+
+<!-- toc -->
+  
 
 ---  
 ## Properties
@@ -35,11 +39,14 @@ SomeClass docs
 
 ---  
 ## Functions
-### `some_function`([*self*](../API/builtins/self.md)) {#some_function}
-SomeFunction docs  
+### some_function([*self*](../API/builtins/self.md)) {#some_function}
+> SomeFunction docs  
 
   
 # TestClass1  
+
+<!-- toc -->
+  
 
 ---  
 ## Properties
@@ -50,10 +57,13 @@ SomeFunction docs
   
 # TestClass2  
 
+<!-- toc -->
+  
+
 ---  
 ## Properties
 ### alias : [`SomeAlias`](#SomeAlias) {#alias}
-This is an alias
+> This is an alias
 
 ### field : [`TestClass1`](#testclass1) {#field}
   
@@ -63,9 +73,9 @@ This is an alias
 
 
 ---  
-## Aliases  
-# alias SomeAlias {#SomeAlias}
+## Local Aliases  
+### SomeAlias {#SomeAlias}
 [`string`](../API/builtins/string.md)  
-This is an alias  
+> This is an alias  
   
 
