@@ -70,6 +70,38 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.  
   
+### ListElementAdded {#ListElementAdded}
+{ index : [`integer`](../../API/builtins/integer.md), type : `"insert"` }  
+  
+  
+### ListElementChange {#ListElementChange}
+[`ListElementAdded`](#ListElementAdded) | [`ListElementRemoved`](#ListElementRemoved) | [`ListElementsSwapped`](#ListElementsSwapped)  
+  
+  
+### ListElementRemoved {#ListElementRemoved}
+{ index : [`integer`](../../API/builtins/integer.md), type : `"removed"` }  
+  
+  
+### ListElementsSwapped {#ListElementsSwapped}
+{ index1 : [`integer`](../../API/builtins/integer.md), index2 : [`integer`](../../API/builtins/integer.md), type : `"swapped"` }  
+  
+  
+### ListNotifierFunction {#ListNotifierFunction}
+(change : [`ListElementChange`](#ListElementChange))  
+  
+  
+### ListNotifierMemberContext {#ListNotifierMemberContext}
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### NotifierFunction {#NotifierFunction}
+fun()  
+  
+  
+### NotifierMemberContext {#NotifierMemberContext}
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
 ### ObservableProperties {#ObservableProperties}
 table<[`string`](../../API/builtins/string.md), [`ObservableTypes`](#ObservableTypes) | [`renoise.Document.DocumentList`](../../API/renoise/renoise.Document.DocumentList.md) | [`renoise.Document.DocumentNode`](../../API/renoise/renoise.Document.DocumentNode.md)>  
   

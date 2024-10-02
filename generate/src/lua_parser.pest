@@ -8,14 +8,14 @@ valid_name = @{ASCII_ALPHA ~ (ASCII_ALPHANUMERIC | "_" )*}
 id = @{ valid_name ~ ("." ~ valid_name)*}
 string = { (!"\"" ~ ANY)* }
 string_literal = ${"\"" ~ string ~ "\""}
-number_literal = @{(ASCII_NONZERO_DIGIT ~ ASCII_DIGIT*)}
+number_literal = ${ ASCII_DIGIT+ }
 
 _value = _{ number_literal | string_literal }
 
-_simple = _{ lua_type | id | _value }
+_simple = _{ lua_type | _value | id }
 
 
-_key = _{("[" ~ number_literal ~ "]") | id}
+_key = _{("[" ~ number_literal ~ "]") | ("[" ~ "string" ~ "]") | id}
 field  = ${ _key ~ W ~ ":" ~ W ~ _enum_or_complex }
 
 object = ${"{" ~ W ~ field ~ W ~ (","  ~ W ~ field )* ~ W ~ "}"}

@@ -1629,6 +1629,10 @@
 (value : [`boolean`](../../API/builtins/boolean.md))  
   
   
+### BooleanValueNotifierMemberFunction {#BooleanValueNotifierMemberFunction}
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`boolean`](../../API/builtins/boolean.md))  
+  
+  
 ### BooleanValueNotifierMethod1 {#BooleanValueNotifierMethod1}
 { 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`BooleanValueNotifierMemberFunction`](#BooleanValueNotifierMemberFunction) }  
   
@@ -1696,6 +1700,10 @@
 (value : [`integer`](../../API/builtins/integer.md))  
   
   
+### IntegerValueNotifierMemberFunction {#IntegerValueNotifierMemberFunction}
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`integer`](../../API/builtins/integer.md))  
+  
+  
 ### IntegerValueNotifierMethod1 {#IntegerValueNotifierMethod1}
 { 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`IntegerValueNotifierMemberFunction`](#IntegerValueNotifierMemberFunction) }  
   
@@ -1708,8 +1716,40 @@
 [`string`](../../API/builtins/string.md)[]  
 > A list of buttons labels to show in order. Must have more than one item.  
   
+### ListElementAdded {#ListElementAdded}
+{ index : [`integer`](../../API/builtins/integer.md), type : `"insert"` }  
+  
+  
+### ListElementChange {#ListElementChange}
+[`ListElementAdded`](#ListElementAdded) | [`ListElementRemoved`](#ListElementRemoved) | [`ListElementsSwapped`](#ListElementsSwapped)  
+  
+  
+### ListElementRemoved {#ListElementRemoved}
+{ index : [`integer`](../../API/builtins/integer.md), type : `"removed"` }  
+  
+  
+### ListElementsSwapped {#ListElementsSwapped}
+{ index1 : [`integer`](../../API/builtins/integer.md), index2 : [`integer`](../../API/builtins/integer.md), type : `"swapped"` }  
+  
+  
+### ListNotifierFunction {#ListNotifierFunction}
+(change : [`ListElementChange`](#ListElementChange))  
+  
+  
+### ListNotifierMemberContext {#ListNotifierMemberContext}
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
 ### NotifierFunction {#NotifierFunction}
 fun()  
+  
+  
+### NotifierMemberContext {#NotifierMemberContext}
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### NotifierMemberFunction {#NotifierMemberFunction}
+(self : [`NotifierMemberContext`](#NotifierMemberContext))  
   
   
 ### NotifierMethod1 {#NotifierMethod1}
@@ -1726,6 +1766,10 @@ fun()
   
 ### NumberValueNotifierFunction {#NumberValueNotifierFunction}
 (value : [`number`](../../API/builtins/number.md))  
+  
+  
+### NumberValueNotifierMemberFunction {#NumberValueNotifierMemberFunction}
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`number`](../../API/builtins/number.md))  
   
   
 ### NumberValueNotifierMethod1 {#NumberValueNotifierMethod1}
@@ -1820,6 +1864,10 @@ fun()
   
 ### StringValueNotifierFunction {#StringValueNotifierFunction}
 (value : [`string`](../../API/builtins/string.md))  
+  
+  
+### StringValueNotifierMemberFunction {#StringValueNotifierMemberFunction}
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`string`](../../API/builtins/string.md))  
   
   
 ### StringValueNotifierMethod1 {#StringValueNotifierMethod1}
@@ -2032,6 +2080,10 @@ fun()
   
 ### XYValueNotifierFunction {#XYValueNotifierFunction}
 (value : [`XYPadValues`](#XYPadValues))  
+  
+  
+### XYValueNotifierMemberFunction {#XYValueNotifierMemberFunction}
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`XYPadValues`](#XYPadValues))  
   
   
 ### XYValueNotifierMethod1 {#XYValueNotifierMethod1}

@@ -127,9 +127,11 @@ pub enum Doc {
 pub enum Type {
     Doc(Doc),
     // fields, defines
+    GetField,
     SetField,
     SetMethod,
     // definitions
+    #[serde(rename = "type")]
     Def,
     Variable,
     #[serde(rename = "luals.config")]
@@ -137,6 +139,9 @@ pub enum Type {
     // defines
     TableField,
     SetGlobal,
+    // function returns
+    #[serde(rename = "function.return")]
+    FunctionReturn,
     // extends
     Lua(LuaKind),
 }
@@ -150,10 +155,12 @@ impl<'de> Deserialize<'de> for Type {
         match s {
             "type" => Ok(Type::Def),
             "variable" => Ok(Type::Variable),
+            "getfield" => Ok(Type::GetField),
             "setfield" => Ok(Type::SetField),
             "setmethod" => Ok(Type::SetMethod),
             "setglobal" => Ok(Type::SetGlobal),
             "tablefield" => Ok(Type::TableField),
+            "function.return" => Ok(Type::FunctionReturn),
             "luals.config" => Ok(Type::LuaLsConfig),
             _ => {
                 let quoted = format!("\"{}\"", s);
@@ -177,6 +184,8 @@ pub struct Field {
     #[serde(rename = "type")]
     pub lua_type: Type,
     pub file: String,
+    pub start: u32,
+    pub finish: u32,
     pub visible: VisibleType,
     #[serde(default, deserialize_with = "deserialize_extends")]
     pub extends: Option<Extend>,
@@ -196,11 +205,11 @@ impl fmt::Display for Field {
 
 #[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord, Serialize, Deserialize)]
 pub struct Definition {
-    pub desc: Option<String>,
-    pub rawdesc: Option<String>,
-    pub name: String,
     #[serde(rename = "type")]
     pub lua_type: Type,
+    pub name: String,
+    pub desc: Option<String>,
+    pub rawdesc: Option<String>,
     pub defines: Vec<Define>,
     #[serde(default)]
     pub fields: Vec<Field>,
@@ -273,8 +282,9 @@ pub struct Define {
     #[serde(rename = "type")]
     pub lua_type: Type,
     pub file: String,
-    #[serde(default)]
-    #[serde(deserialize_with = "deserialize_extends")]
+    pub start: u32,
+    pub finish: u32,
+    #[serde(default, deserialize_with = "deserialize_extends")]
     pub extends: Option<Extend>,
 }
 
@@ -288,6 +298,8 @@ impl fmt::Display for Define {
 pub struct ExtendType {
     #[serde(rename = "type")]
     pub lua_type: Type,
+    pub start: u32,
+    pub finish: u32,
     pub view: String,
 }
 
@@ -296,6 +308,8 @@ pub struct Extend {
     #[serde(rename = "type")]
     pub lua_type: Type,
     pub types: Option<Vec<ExtendType>>,
+    pub start: u32,
+    pub finish: u32,
     pub view: String,
     pub desc: Option<String>,
     pub rawdesc: Option<String>,
@@ -315,23 +329,31 @@ where
     #[derive(Deserialize, Debug)]
     #[serde(untagged)]
     enum ExtendInput {
-        None(),
+        None,
         Map(Extend),
         Array(Vec<Extend>),
+        Object(Extend),
+        Other(serde_json::Value),
     }
 
     impl From<ExtendInput> for Option<Extend> {
         fn from(input: ExtendInput) -> Self {
             match input {
-                ExtendInput::None() => None,
+                ExtendInput::None => None,
                 ExtendInput::Map(extend) => Some(extend),
-                // there is only one possible extends per define in the renoise API
+                // there is only one possible extends per define in the API
                 ExtendInput::Array(vec) => vec.first().cloned(),
+                ExtendInput::Object(extend) => Some(extend),
+                ExtendInput::Other(value) => {
+                    #[cfg(debug_assertions)]
+                    panic!("Unexpected extend {:?}", value);
+                    #[cfg(not(debug_assertions))]
+                    None
+                }
             }
         }
     }
-    let input = ExtendInput::deserialize(deserializer)?;
-    Ok(input.into())
+    Ok(ExtendInput::deserialize(deserializer)?.into())
 }
 
 #[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord, Serialize, Deserialize)]
@@ -346,68 +368,17 @@ pub enum ArgType {
 
 #[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord, Serialize, Deserialize)]
 pub struct ArgDef {
-    pub name: Option<String>,
     #[serde(rename = "type")]
     pub lua_type: ArgType,
+    pub name: Option<String>,
     pub view: String,
 }
 
 #[derive(Clone, Debug, Eq, PartialEq, PartialOrd, Ord, Serialize, Deserialize)]
 pub struct ReturnDef {
+    // NB: type for returns will always be "function.return"
+    #[serde(rename = "type")]
+    pub lua_type: Type,
     pub name: Option<String>,
     pub view: String,
-    // the type for returns will always be "function.return" so we can skip parsing it
-    // #[serde(rename = "type")]
-    // pub lua_type: LuaType,
 }
-
-/*
-TODO
-UNHANDLED EXTEND doc.type -> "types" doc.type.function -> args -> name is an object
-  {
-    "defines": [
-      {
-        "extends": {
-          "finish": 9500057,
-          "start": 9500034,
-          "type": "doc.type",
-          "types": [
-            {
-              "args": [
-                {
-                  "finish": 9500056,
-                  "name": {
-                    "[1]": "value",
-                    "finish": 9500043,
-                    "start": 9500038,
-                    "type": "doc.type.arg.name",
-                    "view": "value"
-                  },
-                  "start": 9500038,
-                  "type": "doc.type.arg",
-                  "view": "{ x: number, y: number }"
-                }
-              ],
-              "finish": 9500057,
-              "returns": {
-                "view": "unknown"
-              },
-              "start": 9500034,
-              "type": "doc.type.function",
-              "view": "fun(value: { x: number, y: number })"
-            }
-          ],
-          "view": "fun(value: { x: number, y: number })"
-        },
-        "file": "file://library/renoise/view_builder.lua",
-        "finish": 9500057,
-        "start": 9500010,
-        "type": "doc.alias"
-      }
-    ],
-    "fields": [],
-    "name": "XYValueNotifierFunction",
-    "type": "type"
-  },
-
- */
