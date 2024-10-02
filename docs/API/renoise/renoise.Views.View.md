@@ -7,6 +7,18 @@
 
 ---  
 ## Properties
+### visible : [`ViewVisibility`](#ViewVisibility) {#visible}
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### width : [`ViewDimension`](#ViewDimension) {#width}
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
 ### height : [`ViewDimension`](#ViewDimension) {#height}
 > The dimensions of a view has to be larger than 0.
 > For nested views you can also specify relative size
@@ -20,18 +32,6 @@
 ### views : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)[] {#views}
 > **READ-ONLY** Empty for all controls, for layout views this contains the
 > layout child views in the order they got added
-
-### visible : [`ViewVisibility`](#ViewVisibility) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### width : [`ViewDimension`](#ViewDimension) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
 
   
 

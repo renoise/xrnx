@@ -7,6 +7,10 @@
 
 ---  
 ## Functions
+### has_notifier([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#has_notifier}
+`->`[`boolean`](../../API/builtins/boolean.md)  
+
+> Checks if the given function, method was already registered as notifier.
 ### add_notifier([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#add_notifier}
 > Register a function or method as a notifier, which will be called as soon as
 > the observable's value changed. The passed notifier can either be a function
@@ -26,10 +30,6 @@
 >   end
 > })
 > ```
-### has_notifier([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#has_notifier}
-`->`[`boolean`](../../API/builtins/boolean.md)  
-
-> Checks if the given function, method was already registered as notifier.
 ### remove_notifier([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction) | [`NotifierMemberContext`](#NotifierMemberContext)) {#remove_notifier}
 > Unregister a previously registered notifier. When only passing an object,
 > all notifier functions that match the given object will be removed.

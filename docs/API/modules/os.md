@@ -5,12 +5,17 @@
 
 ---  
 ## Functions
-### `clock()` {#clock}
-`->`[`number`](../../API/builtins/number.md)  
+### `platform()` {#platform}
+`->``"LINUX"` | `"MACINTOSH"` | `"WINDOWS"`  
 
-> Returns an approximation of the amount in seconds of CPU time used by the program.
+> Returns the platform the script is running on:
 > 
-> [View documents](http://www.lua.org/manual/5.4/manual.html#pdf-os.clock)
+> ```lua
+> return #1:
+>     | "WINDOWS"
+>     | "MACINTOSH"
+>     | "LINUX"
+> ```
 ### `currentdir()` {#currentdir}
 `->`path : [`string`](../../API/builtins/string.md)  
 
@@ -21,10 +26,6 @@
 
 > Returns a list of directory names (names, not full paths) for the given
 > parent directory. Passed directory must be valid, or an error will be thrown.
-### `exit()` {#exit}
-> Calls the ISO C function `exit` to terminate the host program.
-> 
-> [View documents](http://www.lua.org/manual/5.4/manual.html#pdf-os.exit)
 ### filenames(path : [`string`](../../API/builtins/string.md), file_extensions : [`string`](../../API/builtins/string.md)[][`?`](../../API/builtins/nil.md)) {#filenames}
 `->`paths : [`string`](../../API/builtins/string.md)[]  
 
@@ -46,21 +47,20 @@
 > this also supports moving a file from one file system to another one. Returns
 > true if the operation was successful; in case of error, it returns nil plus
 > an error string.
-### `platform()` {#platform}
-`->``"LINUX"` | `"MACINTOSH"` | `"WINDOWS"`  
-
-> Returns the platform the script is running on:
-> 
-> ```lua
-> return #1:
->     | "WINDOWS"
->     | "MACINTOSH"
->     | "LINUX"
-> ```
 ### tmpname(extension : [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)) {#tmpname}
 `->`[`string`](../../API/builtins/string.md)  
 
 > Returns a string with a file name that can be used for a temporary file.
 > 
-> [View documents](http://www.lua.org/manual/5.4/manual.html#pdf-os.tmpname)  
+> [View documents](http://www.lua.org/manual/5.4/manual.html#pdf-os.tmpname)
+### `clock()` {#clock}
+`->`[`number`](../../API/builtins/number.md)  
+
+> Returns an approximation of the amount in seconds of CPU time used by the program.
+> 
+> [View documents](http://www.lua.org/manual/5.4/manual.html#pdf-os.clock)
+### `exit()` {#exit}
+> Calls the ISO C function `exit` to terminate the host program.
+> 
+> [View documents](http://www.lua.org/manual/5.4/manual.html#pdf-os.exit)  
 

@@ -12,6 +12,10 @@
 
 ---  
 ## Functions
+### has_notifier([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#has_notifier}
+`->`[`boolean`](../../API/builtins/boolean.md)  
+
+> Checks if the given function, method was already registered as notifier.
 ### add_notifier([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#add_notifier}
 > Register a function or method as a notifier, which will be called as soon as
 > the observable's value changed. The passed notifier can either be a function
@@ -31,15 +35,6 @@
 >   end
 > })
 > ```
-### from_string([*self*](../../API/builtins/self.md), string : [`any`](../../API/builtins/any.md)) {#from_string}
-`->`[`string`](../../API/builtins/string.md)  
-
-> Assign the object's value from a string - when possible. Errors are
-> silently ignored.
-### has_notifier([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#has_notifier}
-`->`[`boolean`](../../API/builtins/boolean.md)  
-
-> Checks if the given function, method was already registered as notifier.
 ### remove_notifier([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction) | [`NotifierMemberContext`](#NotifierMemberContext)) {#remove_notifier}
 > Unregister a previously registered notifier. When only passing an object,
 > all notifier functions that match the given object will be removed.
@@ -49,7 +44,12 @@
 ### to_string([*self*](../../API/builtins/self.md)) {#to_string}
 `->`[`string`](../../API/builtins/string.md)  
 
-> Serialize an object to a string.  
+> Serialize an object to a string.
+### from_string([*self*](../../API/builtins/self.md), string : [`any`](../../API/builtins/any.md)) {#from_string}
+`->`[`string`](../../API/builtins/string.md)  
+
+> Assign the object's value from a string - when possible. Errors are
+> silently ignored.  
 
 
 

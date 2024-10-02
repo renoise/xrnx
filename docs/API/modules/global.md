@@ -5,6 +5,35 @@
 
 ---  
 ## Functions
+### tostring(pattern_line : [`renoise.PatternLine`](../../API/renoise/renoise.PatternLine.md)) {#tostring}
+`->`[`string`](../../API/builtins/string.md)  
+
+> Receives a value of any type and converts it to a string in a human-readable format.
+> 
+> If the metatable of `v` has a `__tostring` field, then `tostring` calls the corresponding value with `v` as argument, and uses the result of the call as its result. Otherwise, if the metatable of `v` has a `__name` field with a string value, `tostring` may use that string in its final result.
+> 
+> For complete control of how numbers are converted, use [string.format](http://www.lua.org/manual/5.4/manual.html#pdf-string.format).
+> 
+> 
+> [View documents](http://www.lua.org/manual/5.4/manual.html#pdf-tostring)
+### ripairs(table : <T:table>) {#ripairs}
+`->`fun(table: <V>[], i?: integer):integer, <V>, <T:table>, i : [`integer`](../../API/builtins/integer.md)  
+
+> An iterator like ipairs, but in reverse order.
+> #### examples:
+> ```lua
+> t = {"a", "b", "c"}
+> for k,v in ripairs(t) do print(k, v) end -> "3 c, 2 b, 1 a"
+> ```
+### objinfo(object : [`userdata`](../../API/builtins/userdata.md)) {#objinfo}
+`->`[`string`](../../API/builtins/string.md)[]  
+
+> Return a string which lists properties and methods of class objects.
+### oprint(object : [`userdata`](../../API/builtins/userdata.md)) {#oprint}
+> Dumps properties and methods of class objects (like renoise.app()).
+### rprint(value : [`any`](../../API/builtins/any.md)) {#rprint}
+> Recursively dumps a table and all its members to the std out (console).
+> This works for standard Lua types and class objects as well.
 ### class(name : [`string`](../../API/builtins/string.md)) {#class}
 `->`[`function`](../../API/builtins/function.md)  
 
@@ -46,39 +75,6 @@
 > local mamal = Mammal("Cow")
 > mamal:show()
 > ```
-### objinfo(object : [`userdata`](../../API/builtins/userdata.md)) {#objinfo}
-`->`[`string`](../../API/builtins/string.md)[]  
-
-> Return a string which lists properties and methods of class objects.
-### oprint(object : [`userdata`](../../API/builtins/userdata.md)) {#oprint}
-> Dumps properties and methods of class objects (like renoise.app()).
-### rawequal(obj1 : [`any`](../../API/builtins/any.md), obj2 : [`any`](../../API/builtins/any.md)) {#rawequal}
-> Checks whether v1 is equal to v2, without invoking the `__eq` metamethod.
-> 
-> [View documents](http://www.lua.org/manual/5.4/manual.html#pdf-rawequal)
-### ripairs(table : <T:table>) {#ripairs}
-`->`fun(table: <V>[], i?: integer):integer, <V>, <T:table>, i : [`integer`](../../API/builtins/integer.md)  
-
-> An iterator like ipairs, but in reverse order.
-> #### examples:
-> ```lua
-> t = {"a", "b", "c"}
-> for k,v in ripairs(t) do print(k, v) end -> "3 c, 2 b, 1 a"
-> ```
-### rprint(value : [`any`](../../API/builtins/any.md)) {#rprint}
-> Recursively dumps a table and all its members to the std out (console).
-> This works for standard Lua types and class objects as well.
-### tostring(pattern_line : [`renoise.PatternLine`](../../API/renoise/renoise.PatternLine.md)) {#tostring}
-`->`[`string`](../../API/builtins/string.md)  
-
-> Receives a value of any type and converts it to a string in a human-readable format.
-> 
-> If the metatable of `v` has a `__tostring` field, then `tostring` calls the corresponding value with `v` as argument, and uses the result of the call as its result. Otherwise, if the metatable of `v` has a `__name` field with a string value, `tostring` may use that string in its final result.
-> 
-> For complete control of how numbers are converted, use [string.format](http://www.lua.org/manual/5.4/manual.html#pdf-string.format).
-> 
-> 
-> [View documents](http://www.lua.org/manual/5.4/manual.html#pdf-tostring)
 ### type(value : [`any`](../../API/builtins/any.md)) {#type}
 `->`[`string`](../../API/builtins/string.md)  
 
@@ -98,5 +94,9 @@
 >     | "function"
 >     | "thread"
 >     | "userdata"
-> ```  
+> ```
+### rawequal(obj1 : [`any`](../../API/builtins/any.md), obj2 : [`any`](../../API/builtins/any.md)) {#rawequal}
+> Checks whether v1 is equal to v2, without invoking the `__eq` metamethod.
+> 
+> [View documents](http://www.lua.org/manual/5.4/manual.html#pdf-rawequal)  
 

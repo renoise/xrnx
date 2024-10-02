@@ -8,22 +8,22 @@
 
 ---  
 ## Functions
+### size([*self*](../../API/builtins/self.md)) {#size}
+`->`[`integer`](../../API/builtins/integer.md)  
+
+> Returns the number of entries of the list.
+### has_notifier([*self*](../../API/builtins/self.md), notifier : [`ListNotifierFunction`](#ListNotifierFunction)) {#has_notifier}
+> Checks if the given function, method was already registered as notifier.
 ### add_notifier([*self*](../../API/builtins/self.md), notifier : [`ListNotifierFunction`](#ListNotifierFunction)) {#add_notifier}
 > Register a function or method as a notifier, which will be called as soon as
 > the observable lists layout changed. The passed notifier can either be a function
 > or a table with a function and some context (an "object") -> method.
-### has_notifier([*self*](../../API/builtins/self.md), notifier : [`ListNotifierFunction`](#ListNotifierFunction)) {#has_notifier}
-> Checks if the given function, method was already registered as notifier.
 ### remove_notifier([*self*](../../API/builtins/self.md), notifier : [`ListNotifierFunction`](#ListNotifierFunction) | [`ListNotifierMemberContext`](#ListNotifierMemberContext)) {#remove_notifier}
 > Unregister a previously registered list notifier. When only passing an object,
 > all notifier functions that match the given object will be removed.
 > This will not fire errors when no methods for the given object are attached.
 > Trying to unregister a function or method which wasn't registered, will resolve
-> into an error.
-### size([*self*](../../API/builtins/self.md)) {#size}
-`->`[`integer`](../../API/builtins/integer.md)  
-
-> Returns the number of entries of the list.  
+> into an error.  
 
 
 

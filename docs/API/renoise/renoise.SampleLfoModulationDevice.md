@@ -16,20 +16,11 @@
 
 ---  
 ## Properties
-### amount : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md) {#amount}
-> with range (0-1)
+### name : [`string`](../../API/builtins/string.md) {#name}
+> **READ-ONLY** Fixed name of the device.
 
-### bipolar : [`boolean`](../../API/builtins/boolean.md) {#bipolar}
-> Modulation polarity:
-> when bipolar, the device applies it's values in a -1 to 1 range,
-> when unipolar in a 0 to 1 range.
-
-### bipolar_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#bipolar_observable}
-> Track changes to document properties or general states by attaching listener
-> functions to it.
-
-### delay : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md) {#delay}
-> Delay.
+### short_name : [`string`](../../API/builtins/string.md) {#short_name}
+> **READ-ONLY**
 
 ### display_name : [`string`](../../API/builtins/string.md) {#display_name}
 > Configurable device display name.
@@ -43,18 +34,12 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### frequency : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md) {#frequency}
-> with range (0-1)
-
 ### is_active : [`boolean`](../../API/builtins/boolean.md) {#is_active}
 > not active = bypassed
 
 ### is_active_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#is_active_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
-
-### is_active_parameter : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md) {#is_active_parameter}
-> **READ-ONLY** Generic access to all parameters of this device.
 
 ### is_maximized : [`boolean`](../../API/builtins/boolean.md) {#is_maximized}
 > Maximize state in modulation chain.
@@ -63,11 +48,9 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### mode : [`renoise.SampleLfoModulationDevice.Mode`](renoise.SampleLfoModulationDevice.md#Mode) {#mode}
-> LFO mode.
-
-### name : [`string`](../../API/builtins/string.md) {#name}
-> **READ-ONLY** Fixed name of the device.
+### target : [`renoise.SampleModulationDevice.TargetType`](renoise.SampleModulationDevice.md#TargetType) {#target}
+> **READ-ONLY** Where the modulation gets applied (Volume,
+> Pan, Pitch, Cutoff, Resonance).
 
 ### operator : [`renoise.SampleModulationDevice.OperatorType`](renoise.SampleModulationDevice.md#OperatorType) {#operator}
 > Modulation operator: how the device applies.
@@ -76,18 +59,14 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### parameters : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md)[] {#parameters}
-> **READ-ONLY**
+### bipolar : [`boolean`](../../API/builtins/boolean.md) {#bipolar}
+> Modulation polarity:
+> when bipolar, the device applies it's values in a -1 to 1 range,
+> when unipolar in a 0 to 1 range.
 
-### phase : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md) {#phase}
-> with range (0-360)
-
-### short_name : [`string`](../../API/builtins/string.md) {#short_name}
-> **READ-ONLY**
-
-### target : [`renoise.SampleModulationDevice.TargetType`](renoise.SampleModulationDevice.md#TargetType) {#target}
-> **READ-ONLY** Where the modulation gets applied (Volume,
-> Pan, Pitch, Cutoff, Resonance).
+### bipolar_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#bipolar_observable}
+> Track changes to document properties or general states by attaching listener
+> functions to it.
 
 ### tempo_sync_switching_allowed : [`boolean`](../../API/builtins/boolean.md) {#tempo_sync_switching_allowed}
 > **READ-ONLY** When true, the device has one of more time parameters,
@@ -103,15 +82,36 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
+### is_active_parameter : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md) {#is_active_parameter}
+> **READ-ONLY** Generic access to all parameters of this device.
+
+### parameters : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md)[] {#parameters}
+> **READ-ONLY**
+
+### mode : [`renoise.SampleLfoModulationDevice.Mode`](renoise.SampleLfoModulationDevice.md#Mode) {#mode}
+> LFO mode.
+
+### phase : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md) {#phase}
+> with range (0-360)
+
+### frequency : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md) {#frequency}
+> with range (0-1)
+
+### amount : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md) {#amount}
+> with range (0-1)
+
+### delay : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md) {#delay}
+> Delay.
+
   
 
 ---  
 ## Functions
+### init([*self*](../../API/builtins/self.md)) {#init}
+> Reset the device to its default state.
 ### copy_from([*self*](../../API/builtins/self.md), other_device : [`renoise.SampleModulationDevice`](../../API/renoise/renoise.SampleModulationDevice.md)) {#copy_from}
 > Copy a device's state from another device. 'other_device' must be of the
 > same type.
-### init([*self*](../../API/builtins/self.md)) {#init}
-> Reset the device to its default state.
 ### parameter([*self*](../../API/builtins/self.md), index : [`integer`](../../API/builtins/integer.md)) {#parameter}
 `->`[`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md)  
 

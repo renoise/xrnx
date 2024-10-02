@@ -17,8 +17,8 @@
 
 ---  
 ## Functions
-### close([*self*](../../API/builtins/self.md)) {#close}
->  Close a visible dialog.
 ### show([*self*](../../API/builtins/self.md)) {#show}
->  Bring an already visible dialog to front and make it the key window.  
+>  Bring an already visible dialog to front and make it the key window.
+### close([*self*](../../API/builtins/self.md)) {#close}
+>  Close a visible dialog.  
 

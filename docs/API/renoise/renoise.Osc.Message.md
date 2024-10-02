@@ -5,6 +5,9 @@
 
 ---  
 ## Properties
+### pattern : [`string`](../../API/builtins/string.md) {#pattern}
+> **READ-ONLY** The message pattern (e.g. "/renoise/transport/start")
+
 ### arguments : [`OscValue`](#oscvalue)[] {#arguments}
 > **READ-ONLY** Table of `{tag="X", value=SomeValue}` that represents the
 > message arguments. See `renoise.Osc.Message.create` for more info.
@@ -12,9 +15,6 @@
 ### binary_data : [`string`](../../API/builtins/string.md) {#binary_data}
 > **READ-ONLY** Raw binary representation of the message, as needed when e.g.
 > sending the message over the network through sockets.
-
-### pattern : [`string`](../../API/builtins/string.md) {#pattern}
-> **READ-ONLY** The message pattern (e.g. "/renoise/transport/start")
 
   
 

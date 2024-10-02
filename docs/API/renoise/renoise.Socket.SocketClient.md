@@ -48,6 +48,15 @@
 > errors. Can be useful to explicitly release a connection without waiting for
 > the dead object to be garbage collected, or if you want to actively refuse a
 > connection.
+### send([*self*](../../API/builtins/self.md), message : [`string`](../../API/builtins/string.md)) {#send}
+`->`success : [`boolean`](../../API/builtins/boolean.md), error : [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
+
+> Send a message string (or OSC messages or bundles) to the connected server.
+> When sending fails, "success" return value will be false and "error_message"
+> is set, describing the error in a human readable format.
+> NB: when using TCP instead of UDP as protocol for OSC messages, !no! SLIP
+> encoding and no size prefixing of the passed OSC data will be done here.
+> So, when necessary, do this manually by your own please.
 ### receive([*self*](../../API/builtins/self.md), mode : [`SocketReceiveMode`](#SocketReceiveMode), timeout_ms : [`number`](../../API/builtins/number.md)) {#receive}
 `->`success : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md), error : [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
 
@@ -88,16 +97,7 @@
 > mode:
 >     | "*line"
 >     | "*all"
-> ```
-### send([*self*](../../API/builtins/self.md), message : [`string`](../../API/builtins/string.md)) {#send}
-`->`success : [`boolean`](../../API/builtins/boolean.md), error : [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
-
-> Send a message string (or OSC messages or bundles) to the connected server.
-> When sending fails, "success" return value will be false and "error_message"
-> is set, describing the error in a human readable format.
-> NB: when using TCP instead of UDP as protocol for OSC messages, !no! SLIP
-> encoding and no size prefixing of the passed OSC data will be done here.
-> So, when necessary, do this manually by your own please.  
+> ```  
 
 
 
