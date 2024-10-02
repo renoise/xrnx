@@ -4,7 +4,8 @@ The Renoise API allows you to create web sockets and provides tools to receive a
 
 In general, this can be used as an alternative to MIDI, e.g. to connect to OSC-enabled devices such as [monome](https://monome.org/docs/serialosc/osc).
 
-Note: Using TCP instead of UDP as the socket protocol would likely also require manual [SLIP encoding/decoding](https://en.wikipedia.org/wiki/Serial_Line_Internet_Protocol) of OSC message data. This is omitted here, so the examples below will only work with UDP servers/clients.
+> [!NOTE] 
+> Using TCP instead of UDP as the socket protocol would likely also require manual [SLIP encoding/decoding](https://en.wikipedia.org/wiki/Serial_Line_Internet_Protocol) of OSC message data. This is omitted here, so the examples below will only work with UDP servers/clients.
 
 ## Osc Server (receive Osc from one or more Clients)
 
