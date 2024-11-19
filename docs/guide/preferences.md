@@ -64,49 +64,42 @@ function show_options()
 
   local dialog_content = vb:vertical_aligner {
     margin = renoise.ViewBuilder.DEFAULT_CONTROL_MARGIN,
-    views = {
-      vb:row {
-        views = {
-          vb:text {
-            text = "Randomize BPM"
-          },
-          -- here we are binding our observable value to this checkbox
-          vb:checkbox {
-            bind = options.randomize_bpm
-          }
-        }
+
+    vb:row {
+      vb:text {
+        text = "Randomize BPM"
       },
-      vb:row {
-        views = {
-          vb:text {
-            text = "Randomize Tracks"
-          },
-          -- the same thing for the boolean for tracks
-          vb:checkbox {
-            bind = options.randomize_tracks
-          }
-        }
+      -- here we are binding our observable value to this checkbox
+      vb:checkbox {
+        bind = options.randomize_bpm
+      }
+    },
+    vb:row {
+      vb:text {
+        text = "Randomize Tracks"
       },
-      vb:row {
-        views = {
-          vb:text {
-            text = "Max Tracks"
-          },
-          -- for the maximum tracks we create a value box 
-          -- and restrict it to a range of [1..16]
-          vb:valuebox {
-            min = 1,
-            max = 16,
-            bind = options.max_tracks
-          }
-        }
+      -- the same thing for the boolean for tracks
+      vb:checkbox {
+        bind = options.randomize_tracks
+      }
+    },
+    vb:row {
+      vb:text {
+        text = "Max Tracks"
       },
-      -- add a button that will execute the randomization based on our options
-      vb:row {
-        vb:button {
-          text = "Randomize",
-          pressed = randomize_song
-        }
+      -- for the maximum tracks we create a value box 
+      -- and restrict it to a range of [1..16]
+      vb:valuebox {
+        min = 1,
+        max = 16,
+        bind = options.max_tracks
+      }
+    },
+    -- add a button that will execute the randomization based on our options
+    vb:row {
+      vb:button {
+        text = "Randomize",
+        pressed = randomize_song
       }
     }
   }
