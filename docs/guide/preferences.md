@@ -153,7 +153,7 @@ local options = RandomizerToolPreferences()
 renoise.tool().preferences = options
 ```
 
-This allows you to create more complex documents. Have a look at the complete [Document API](https://github.com/renoise/definitions/blob/main/library/renoise/document.lua) for more info and details about what else you can load/store this way.
+This allows you to create more complex documents. Have a look at the complete [Document API](../API/renoise/renoise.Document.md) for more info and details about what else you can load/store this way.
 
 > [!NOTE]
 > This time we also included type annotations (like `---@class RandomizerToolPreferences`). These can help you with development but they aren't strictly necessary. You can read more about how to use them at the [LuaLS website](https://luals.github.io/).
