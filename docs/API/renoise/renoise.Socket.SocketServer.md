@@ -39,7 +39,7 @@
 > errors. Can be useful to explicitly release a connection without waiting for
 > the dead object to be garbage collected, or if you want to actively refuse a
 > connection.
-### run([*self*](../../API/builtins/self.md), notifier_table : [`NotifierClass`](#notifierclass) | [`NotifierTable`](#notifiertable)) {#run}
+### run([*self*](../../API/builtins/self.md), notifier_table : [`SocketNotifierClass`](#socketnotifierclass) | [`SocketNotifierTable`](#socketnotifiertable)) {#run}
 > Start running the server by specifying a class or table which defines the
 > callback functions for the server.
 ### stop([*self*](../../API/builtins/self.md)) {#stop}
@@ -53,7 +53,7 @@
 
 ---  
 ## Local Structs  
-# NotifierClass  
+# SocketNotifierClass  
 > Custom notifier class for `renoise.Socket.SocketServer:run`.
 > Note: You must pass an instance of a class, like server_socket:run(MyNotifier())
 > 
@@ -82,13 +82,13 @@
 
 ---  
 ## Properties
-### socket_error : (self : [`any`](../../API/builtins/any.md), error_message : [`string`](../../API/builtins/string.md))[`?`](../../API/builtins/nil.md) {#socket_error}
-### socket_accepted : (self : [`any`](../../API/builtins/any.md), socket : [`renoise.Socket.SocketClient`](../../API/renoise/renoise.Socket.SocketClient.md))[`?`](../../API/builtins/nil.md) {#socket_accepted}
-### socket_message : (self : [`any`](../../API/builtins/any.md), socket : [`renoise.Socket.SocketClient`](../../API/renoise/renoise.Socket.SocketClient.md), message : [`string`](../../API/builtins/string.md))[`?`](../../API/builtins/nil.md) {#socket_message}
+### socket_error : (self : [`SocketNotifierClass`](#socketnotifierclass), error_message : [`string`](../../API/builtins/string.md))[`?`](../../API/builtins/nil.md) {#socket_error}
+### socket_accepted : (self : [`SocketNotifierClass`](#socketnotifierclass), socket : [`renoise.Socket.SocketClient`](../../API/renoise/renoise.Socket.SocketClient.md))[`?`](../../API/builtins/nil.md) {#socket_accepted}
+### socket_message : (self : [`SocketNotifierClass`](#socketnotifierclass), socket : [`renoise.Socket.SocketClient`](../../API/renoise/renoise.Socket.SocketClient.md), message : [`string`](../../API/builtins/string.md))[`?`](../../API/builtins/nil.md) {#socket_message}
   
 
   
-# NotifierTable  
+# SocketNotifierTable  
 > Notifier table for `renoise.Socket.SocketServer:run`.
 > 
 > All callback properties are optional. So you can, for example, skip specifying

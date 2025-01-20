@@ -18,3 +18,11 @@
 
   
 
+---  
+## Functions
+### close([*self*](../../API/builtins/self.md)) {#close}
+> Close a running MIDI device. When no other client is using a device, Renoise
+> will also shut off the device driver so that, for example, Windows OS other
+> applications can use the device again. This is automatically done when
+> scripts are closed or your device objects are garbage collected.  
+

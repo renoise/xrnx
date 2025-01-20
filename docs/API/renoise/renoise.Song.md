@@ -94,7 +94,7 @@
 > -**READ-ONLY** number of send tracks in song.
 
 ### instruments : [`renoise.Instrument`](../../API/renoise/renoise.Instrument.md)[] {#instruments}
-> **READ-ONLY** Instrument, Pattern, and Track arrays
+> **READ-ONLY** Instrument arrays
 
 ### instruments_observable : [`renoise.Document.ObservableList`](../../API/renoise/renoise.Document.ObservableList.md) {#instruments_observable}
 > Track changes to document lists by attaching listener functions to it.
@@ -102,12 +102,16 @@
 > to the lists **layout** (items got added, removed, swapped).
 
 ### patterns : [`renoise.Pattern`](../../API/renoise/renoise.Pattern.md)[] {#patterns}
+> **READ-ONLY** Pattern arrays
+
 ### patterns_observable : [`renoise.Document.ObservableList`](../../API/renoise/renoise.Document.ObservableList.md) {#patterns_observable}
 > Track changes to document lists by attaching listener functions to it.
 > NB: Notifiers will not broadcast changes made to list items, but only changes
 > to the lists **layout** (items got added, removed, swapped).
 
 ### tracks : [`renoise.Track`](../../API/renoise/renoise.Track.md)[] {#tracks}
+> **READ-ONLY** Track array
+
 ### tracks_observable : [`renoise.Document.ObservableList`](../../API/renoise/renoise.Document.ObservableList.md) {#tracks_observable}
 > Track changes to document lists by attaching listener functions to it.
 > NB: Notifiers will not broadcast changes made to list items, but only changes
@@ -121,28 +125,34 @@
 > functions to it.
 
 ### selected_instrument_index : [`integer`](../../API/builtins/integer.md) {#selected_instrument_index}
+> **READ-ONLY** Selected instrument index in the instrument box.
+
 ### selected_instrument_index_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#selected_instrument_index_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
 ### selected_phrase : [`renoise.InstrumentPhrase`](../../API/renoise/renoise.InstrumentPhrase.md) {#selected_phrase}
-> **READ-ONLY** Currently selected phrase the instrument's phrase map piano
-> view.
+> **READ-ONLY** Selected phrase the instrument's phrase map piano view.
 
 ### selected_phrase_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#selected_phrase_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
 ### selected_phrase_index : [`integer`](../../API/builtins/integer.md) {#selected_phrase_index}
+> **READ-ONLY** Selected phrase index the instrument's phrase map piano view.
+
 ### selected_sample : [`renoise.Sample`](../../API/renoise/renoise.Sample.md) {#selected_sample}
-> **READ-ONLY** Selected in the instrument's sample list. Only nil when no
-> samples are present in the selected instrument.
+> **READ-ONLY** Selected in the instrument's sample list.
+> Only nil when no samples are present in the selected instrument.
 
 ### selected_sample_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#selected_sample_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
 ### selected_sample_index : [`integer`](../../API/builtins/integer.md) {#selected_sample_index}
+> **READ-ONLY** Selected sample index in the instrument's sample list. 
+> Only 0 when no samples are present in the selected instrument.
+
 ### selected_sample_modulation_set : [`renoise.SampleModulationSet`](../../API/renoise/renoise.SampleModulationSet.md) {#selected_sample_modulation_set}
 > **READ-ONLY** Selected in the instrument's modulation view.
 
@@ -151,6 +161,8 @@
 > functions to it.
 
 ### selected_sample_modulation_set_index : [`integer`](../../API/builtins/integer.md) {#selected_sample_modulation_set_index}
+> **READ-ONLY** Selected modulation set index in the instrument's modulation view.
+
 ### selected_sample_device_chain : [`renoise.SampleDeviceChain`](../../API/renoise/renoise.SampleDeviceChain.md) {#selected_sample_device_chain}
 > **READ-ONLY** Selected in the instrument's effects view.
 
@@ -159,6 +171,8 @@
 > functions to it.
 
 ### selected_sample_device_chain_index : [`integer`](../../API/builtins/integer.md) {#selected_sample_device_chain_index}
+> **READ-ONLY** Selected chain index in the instrument's effects view.
+
 ### selected_sample_device : [`renoise.AudioDevice`](../../API/renoise/renoise.AudioDevice.md) {#selected_sample_device}
 > **READ-ONLY** Selected in the sample effect mixer.
 
@@ -167,6 +181,8 @@
 > functions to it.
 
 ### selected_sample_device_index : [`integer`](../../API/builtins/integer.md) {#selected_sample_device_index}
+> **READ-ONLY** Selected device index in the sample effect mixer.
+
 ### selected_track : [`renoise.Track`](../../API/renoise/renoise.Track.md) {#selected_track}
 > **READ-ONLY** Selected in the pattern editor or mixer.
 
@@ -175,6 +191,8 @@
 > functions to it.
 
 ### selected_track_index : [`integer`](../../API/builtins/integer.md) {#selected_track_index}
+> **READ-ONLY** Selected track index in the pattern editor or mixer.
+
 ### selected_track_index_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#selected_track_index_observable}
 > Track changes to document properties or general states by attaching listener
 > functions to it.
@@ -187,6 +205,8 @@
 > functions to it.
 
 ### selected_track_device_index : [`integer`](../../API/builtins/integer.md) {#selected_track_device_index}
+> **READ-ONLY** Selected device index in the track DSP chain editor.
+
 ### selected_device : [`renoise.AudioDevice`](../../API/renoise/renoise.AudioDevice.md) {#selected_device}
 ### selected_device_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#selected_device_observable}
 > Track changes to document properties or general states by attaching listener
