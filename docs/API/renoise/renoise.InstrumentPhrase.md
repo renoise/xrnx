@@ -187,7 +187,7 @@
 
 > Check/add/remove notifier functions or methods, which are called by
 > Renoise as soon as any of the phrases's lines have changed.
-> See: [renoise.Pattern.has_line_notifier](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/song/pattern.lua#85#9) for more details.
+> See: [renoise.Pattern.has_line_notifier](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/song/pattern.lua#86#9) for more details.
 ### add_line_notifier([*self*](../../API/builtins/self.md), func : [`PhraseLineChangeCallbackWithContext`](#PhraseLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#add_line_notifier}
 ### remove_line_notifier([*self*](../../API/builtins/self.md), func : [`PhraseLineChangeCallbackWithContext`](#PhraseLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#remove_line_notifier}
 ### has_line_edited_notifier([*self*](../../API/builtins/self.md), func : [`PhraseLineChangeCallbackWithContext`](#PhraseLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#has_line_edited_notifier}

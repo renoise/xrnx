@@ -20,6 +20,11 @@
 
 ---  
 ## Functions
+### close([*self*](../../API/builtins/self.md)) {#close}
+> Close a running MIDI device. When no other client is using a device, Renoise
+> will also shut off the device driver so that, for example, Windows OS other
+> applications can use the device again. This is automatically done when
+> scripts are closed or your device objects are garbage collected.
 ### send([*self*](../../API/builtins/self.md), message : [`integer`](../../API/builtins/integer.md)[]) {#send}
 > Send raw 1-3 byte MIDI messages or sysex messages. Message is expected
 > to be an array of numbers. It must not be empty and can only contain

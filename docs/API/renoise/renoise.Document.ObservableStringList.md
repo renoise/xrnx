@@ -1,5 +1,5 @@
 # renoise.Document.ObservableStringList  
-> A observable list of number values.  
+> A observable list of string values.  
 
 <!-- toc -->
   
