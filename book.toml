@@ -11,6 +11,9 @@ create-missing = false
 [output.html]
 default-theme = "dark"
 preferred-dark-theme = "ayu"
+git-repository-url = "https://github.com/renoise/xrnx"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/renoise/xrnx/edit/master/{path}"
 additional-css = [ "docs/styles.css" ]
 
 [output.linkcheck]
