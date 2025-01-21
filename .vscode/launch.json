@@ -16,11 +16,6 @@
                     "kind": "bin"
                 }
             },
-            "args": [
-                // remove /generate/test prefix here to debug the production doc generation
-                "${workspaceFolder}/generate/test/definitions/library",
-                "${workspaceFolder}/generate/test/docs"
-            ],
         },
     ]
 }
