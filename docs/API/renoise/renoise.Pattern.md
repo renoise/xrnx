@@ -1,35 +1,35 @@
-# renoise.Pattern  
+# renoise.Pattern<a name="renoise.Pattern"></a>  
 
 <!-- toc -->
   
 ## Constants
 
-### MAX_NUMBER_OF_LINES : [`integer`](../../API/builtins/integer.md) {#MAX_NUMBER_OF_LINES}
+### MAX_NUMBER_OF_LINES : [`integer`](../../API/builtins/integer.md)<a name="MAX_NUMBER_OF_LINES"></a>
 > Maximum number of lines that can be present in a pattern.
   
 
 ---  
 ## Properties
-### is_empty : [`boolean`](../../API/builtins/boolean.md) {#is_empty}
+### is_empty : [`boolean`](../../API/builtins/boolean.md)<a name="is_empty"></a>
 > Quickly check if any track in a pattern has some non empty pattern lines.
 > This does not look at track automation.
 
-### name : [`string`](../../API/builtins/string.md) {#name}
+### name : [`string`](../../API/builtins/string.md)<a name="name"></a>
 > Name of the pattern, as visible in the pattern sequencer.
 
-### name_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#name_observable}
+### name_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="name_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### number_of_lines : [`integer`](../../API/builtins/integer.md) {#number_of_lines}
+### number_of_lines : [`integer`](../../API/builtins/integer.md)<a name="number_of_lines"></a>
 > Number of lines the pattern currently has. 64 by default. Max is
 > renoise.Pattern.MAX_NUMBER_OF_LINES, min is 1.
 
-### number_of_lines_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#number_of_lines_observable}
+### number_of_lines_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="number_of_lines_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### tracks : [`renoise.PatternTrack`](../../API/renoise/renoise.PatternTrack.md)[] {#tracks}
+### tracks : [`renoise.PatternTrack`](../../API/renoise/renoise.PatternTrack.md)[]<a name="tracks"></a>
 > **READ-ONLY** Access to the pattern tracks. Each pattern has
 > #renoise.song().tracks amount of tracks.
 
@@ -37,16 +37,16 @@
 
 ---  
 ## Functions
-### clear([*self*](../../API/builtins/self.md)) {#clear}
+### clear([*self*](../../API/builtins/self.md))<a name="clear"></a>
 > Deletes all lines & automation.
-### copy_from([*self*](../../API/builtins/self.md), other : [`renoise.Pattern`](../../API/renoise/renoise.Pattern.md)) {#copy_from}
+### copy_from([*self*](../../API/builtins/self.md), other : [`renoise.Pattern`](../../API/renoise/renoise.Pattern.md))<a name="copy_from"></a>
 > Copy contents from other patterns, including automation, when possible.
-### track([*self*](../../API/builtins/self.md), index : [`integer`](../../API/builtins/integer.md)) {#track}
+### track([*self*](../../API/builtins/self.md), index : [`integer`](../../API/builtins/integer.md))<a name="track"></a>
 `->`[`renoise.PatternTrack`](../../API/renoise/renoise.PatternTrack.md)  
 
 > Access to a single pattern track by index. Use properties 'tracks' to
 > iterate over all tracks and to query the track count.
-### has_line_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#has_line_notifier}
+### has_line_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md))<a name="has_line_notifier"></a>
 `->`[`boolean`](../../API/builtins/boolean.md)  
 
 > Check/add/remove notifier functions or methods, which are called by Renoise
@@ -72,31 +72,28 @@
 > If you are only interested in changes that are made to the currently edited
 > pattern, dynamically attach and detach to the selected pattern's line
 > notifiers by listening to "renoise.song().selected_pattern_observable".
-### add_line_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#add_line_notifier}
-### remove_line_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#remove_line_notifier}
-### has_line_edited_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#has_line_edited_notifier}
+### add_line_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md))<a name="add_line_notifier"></a>
+### remove_line_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md))<a name="remove_line_notifier"></a>
+### has_line_edited_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md))<a name="has_line_edited_notifier"></a>
 `->`[`boolean`](../../API/builtins/boolean.md)  
 
 > Same as `line_notifier`, but the notifier only fires when the user
 > added, changed or deleted a line with the computer or MIDI keyboard.
-### add_line_edited_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#add_line_edited_notifier}
-### remove_line_edited_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)) {#remove_line_edited_notifier}  
+### add_line_edited_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md))<a name="add_line_edited_notifier"></a>
+### remove_line_edited_notifier([*self*](../../API/builtins/self.md), func : [`PatternLineChangeCallbackWithContext`](#PatternLineChangeCallbackWithContext), obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md))<a name="remove_line_edited_notifier"></a>  
 
 
 
 ---  
-## Local Structs  
-# PatternLinePosition  
+## Structs  
+# PatternLinePosition<a name="PatternLinePosition"></a>  
 > Line iterator position.  
-
-<!-- toc -->
-  
 
 ---  
 ## Properties
-### pattern : [`integer`](../../API/builtins/integer.md) {#pattern}
-### track : [`integer`](../../API/builtins/integer.md) {#track}
-### line : [`integer`](../../API/builtins/integer.md) {#line}
+### pattern : [`integer`](../../API/builtins/integer.md)<a name="pattern"></a>
+### track : [`integer`](../../API/builtins/integer.md)<a name="track"></a>
+### line : [`integer`](../../API/builtins/integer.md)<a name="line"></a>
   
 
   
@@ -104,8 +101,8 @@
 
 
 ---  
-## Local Aliases  
-### PatternLineChangeCallbackWithContext {#PatternLineChangeCallbackWithContext}
+## Aliases  
+### PatternLineChangeCallbackWithContext<a name="PatternLineChangeCallbackWithContext"></a>
 (obj : [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md), pos : [`PatternLinePosition`](#patternlineposition))  
   
   

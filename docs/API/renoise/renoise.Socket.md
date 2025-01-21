@@ -1,4 +1,4 @@
-# renoise.Socket  
+# renoise.Socket<a name="renoise.Socket"></a>  
 > Interfaces for built-in socket support for Lua scripts in Renoise.
 > 
 > Right now UDP and TCP protocols are supported. The class interfaces for UDP
@@ -8,7 +8,7 @@
 <!-- toc -->
   
 ## Constants
-### Protocol {#Protocol}
+### Protocol<a name="Protocol"></a>
 > ```lua
 > {
 >     PROTOCOL_TCP: integer = 1,
@@ -19,7 +19,7 @@
 
 ---  
 ## Functions
-### create_server(server_address : [`string`](../../API/builtins/string.md), server_port : [`integer`](../../API/builtins/integer.md), protocol : [`renoise.Socket.Protocol`](renoise.Socket.md#Protocol)[`?`](../../API/builtins/nil.md)) {#create_server}
+### create_server(server_address : [`string`](../../API/builtins/string.md), server_port : [`integer`](../../API/builtins/integer.md), protocol : [`renoise.Socket.Protocol`](renoise.Socket.md#Protocol)[`?`](../../API/builtins/nil.md))<a name="create_server"></a>
 `->`[`renoise.Socket.SocketServer`](../../API/renoise/renoise.Socket.SocketServer.md)[`?`](../../API/builtins/nil.md), [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
 
 > Creates a connected UPD or TCP server object. Use "localhost" to use your
@@ -30,7 +30,7 @@
 > Using the create function with no server_address allows you to create a
 > server which allows connections to any address (for example localhost
 > and some IP)
-### create_client(server_address : [`string`](../../API/builtins/string.md), server_port : [`integer`](../../API/builtins/integer.md), protocol : [`renoise.Socket.Protocol`](renoise.Socket.md#Protocol)[`?`](../../API/builtins/nil.md), timeout : [`integer`](../../API/builtins/integer.md)[`?`](../../API/builtins/nil.md)) {#create_client}
+### create_client(server_address : [`string`](../../API/builtins/string.md), server_port : [`integer`](../../API/builtins/integer.md), protocol : [`renoise.Socket.Protocol`](renoise.Socket.md#Protocol)[`?`](../../API/builtins/nil.md), timeout : [`integer`](../../API/builtins/integer.md)[`?`](../../API/builtins/nil.md))<a name="create_client"></a>
 `->`client : [`renoise.Socket.SocketClient`](../../API/renoise/renoise.Socket.SocketClient.md)[`?`](../../API/builtins/nil.md), error : [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
 
 > Create a connected UPD or TCP client.

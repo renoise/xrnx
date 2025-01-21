@@ -1,4 +1,4 @@
-# renoise.ViewBuilder  
+# renoise.ViewBuilder<a name="renoise.ViewBuilder"></a>  
 > Class which is used to construct new views. All view properties can optionally
 > be in-lined in a passed construction table:
 > ```lua
@@ -32,31 +32,31 @@
   
 ## Constants
 
-### DEFAULT_CONTROL_MARGIN : [`integer`](../../API/builtins/integer.md) {#DEFAULT_CONTROL_MARGIN}
+### DEFAULT_CONTROL_MARGIN : [`integer`](../../API/builtins/integer.md)<a name="DEFAULT_CONTROL_MARGIN"></a>
 > The default margin for all control views
 
-### DEFAULT_CONTROL_SPACING : [`integer`](../../API/builtins/integer.md) {#DEFAULT_CONTROL_SPACING}
+### DEFAULT_CONTROL_SPACING : [`integer`](../../API/builtins/integer.md)<a name="DEFAULT_CONTROL_SPACING"></a>
 > The default spacing for all control views
 
-### DEFAULT_CONTROL_HEIGHT : [`integer`](../../API/builtins/integer.md) {#DEFAULT_CONTROL_HEIGHT}
+### DEFAULT_CONTROL_HEIGHT : [`integer`](../../API/builtins/integer.md)<a name="DEFAULT_CONTROL_HEIGHT"></a>
 > The default height for control views
 
-### DEFAULT_MINI_CONTROL_HEIGHT : [`integer`](../../API/builtins/integer.md) {#DEFAULT_MINI_CONTROL_HEIGHT}
+### DEFAULT_MINI_CONTROL_HEIGHT : [`integer`](../../API/builtins/integer.md)<a name="DEFAULT_MINI_CONTROL_HEIGHT"></a>
 > The default height for mini-sliders
 
-### DEFAULT_DIALOG_MARGIN : [`integer`](../../API/builtins/integer.md) {#DEFAULT_DIALOG_MARGIN}
+### DEFAULT_DIALOG_MARGIN : [`integer`](../../API/builtins/integer.md)<a name="DEFAULT_DIALOG_MARGIN"></a>
 > The default margin for dialogs
 
-### DEFAULT_DIALOG_SPACING : [`integer`](../../API/builtins/integer.md) {#DEFAULT_DIALOG_SPACING}
+### DEFAULT_DIALOG_SPACING : [`integer`](../../API/builtins/integer.md)<a name="DEFAULT_DIALOG_SPACING"></a>
 > The default spacing for dialogs
 
-### DEFAULT_DIALOG_BUTTON_HEIGHT : [`integer`](../../API/builtins/integer.md) {#DEFAULT_DIALOG_BUTTON_HEIGHT}
+### DEFAULT_DIALOG_BUTTON_HEIGHT : [`integer`](../../API/builtins/integer.md)<a name="DEFAULT_DIALOG_BUTTON_HEIGHT"></a>
 > The default height for buttons
   
 
 ---  
 ## Properties
-### views : table<[`string`](../../API/builtins/string.md), [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)> {#views}
+### views : table<[`string`](../../API/builtins/string.md), [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)><a name="views"></a>
 > Table of views, which got registered via the "id" property
 > View id is the table key, the table's value is the view's object.
 > 
@@ -72,7 +72,7 @@
 
 ---  
 ## Functions
-### column([*self*](../../API/builtins/self.md), properties : [`RackViewProperties`](#rackviewproperties)) {#column}
+### column([*self*](../../API/builtins/self.md), properties : [`RackViewProperties`](#rackviewproperties))<a name="column"></a>
 > You can add nested child views when constructing a column or row
 > by including them in the constructor table in the views property.
 > 
@@ -88,7 +88,7 @@
 >   }
 > }
 > ```
-### row([*self*](../../API/builtins/self.md), properties : [`RackViewProperties`](#rackviewproperties)) {#row}
+### row([*self*](../../API/builtins/self.md), properties : [`RackViewProperties`](#rackviewproperties))<a name="row"></a>
 > You can add nested child views when constructing a column or row
 > by including them in the constructor table in the views property.
 > 
@@ -104,7 +104,7 @@
 >   }
 > }
 > ```
-### horizontal_aligner([*self*](../../API/builtins/self.md), properties : [`AlignerViewProperties`](#alignerviewproperties)) {#horizontal_aligner}
+### horizontal_aligner([*self*](../../API/builtins/self.md), properties : [`AlignerViewProperties`](#alignerviewproperties))<a name="horizontal_aligner"></a>
 > You can add nested child views when constructing aligners by including them
 > in the constructor table.
 > 
@@ -120,7 +120,7 @@
 >    }
 > }
 > ```
-### vertical_aligner([*self*](../../API/builtins/self.md), properties : [`AlignerViewProperties`](#alignerviewproperties)) {#vertical_aligner}
+### vertical_aligner([*self*](../../API/builtins/self.md), properties : [`AlignerViewProperties`](#alignerviewproperties))<a name="vertical_aligner"></a>
 > You can add nested child views when constructing aligners by including them
 > in the constructor table.
 > 
@@ -136,7 +136,7 @@
 >    }
 > }
 > ```
-### space([*self*](../../API/builtins/self.md), properties : [`ViewProperties`](#viewproperties)) {#space}
+### space([*self*](../../API/builtins/self.md), properties : [`ViewProperties`](#viewproperties))<a name="space"></a>
 > You can create an empty space in layouts with a space.
 > 
 > #### examples:
@@ -154,71 +154,71 @@
 >   },
 > }
 > ```
-### text([*self*](../../API/builtins/self.md), properties : [`TextViewProperties`](#textviewproperties)[`?`](../../API/builtins/nil.md)) {#text}
+### text([*self*](../../API/builtins/self.md), properties : [`TextViewProperties`](#textviewproperties)[`?`](../../API/builtins/nil.md))<a name="text"></a>
 `->`[`renoise.Views.Text`](../../API/renoise/renoise.Views.Text.md)  
 
 > See: [renoise.Views.Text](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/text.lua#48#10)
-### multiline_text([*self*](../../API/builtins/self.md), properties : [`MultilineTextViewProperties`](#multilinetextviewproperties)[`?`](../../API/builtins/nil.md)) {#multiline_text}
+### multiline_text([*self*](../../API/builtins/self.md), properties : [`MultilineTextViewProperties`](#multilinetextviewproperties)[`?`](../../API/builtins/nil.md))<a name="multiline_text"></a>
 `->`[`renoise.Views.MultiLineText`](../../API/renoise/renoise.Views.MultiLineText.md)  
 
 > See: [renoise.Views.MultiLineText](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/multiline_text.lua#44#10)
-### textfield([*self*](../../API/builtins/self.md), properties : [`TextFieldProperties`](#textfieldproperties)[`?`](../../API/builtins/nil.md)) {#textfield}
+### textfield([*self*](../../API/builtins/self.md), properties : [`TextFieldProperties`](#textfieldproperties)[`?`](../../API/builtins/nil.md))<a name="textfield"></a>
 `->`[`renoise.Views.TextField`](../../API/renoise/renoise.Views.TextField.md)  
 
 > See: [renoise.Views.TextField](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/textfield.lua#41#10)
-### multiline_textfield([*self*](../../API/builtins/self.md), properties : [`MultilineTextFieldProperties`](#multilinetextfieldproperties)[`?`](../../API/builtins/nil.md)) {#multiline_textfield}
+### multiline_textfield([*self*](../../API/builtins/self.md), properties : [`MultilineTextFieldProperties`](#multilinetextfieldproperties)[`?`](../../API/builtins/nil.md))<a name="multiline_textfield"></a>
 `->`[`renoise.Views.MultiLineTextField`](../../API/renoise/renoise.Views.MultiLineTextField.md)  
 
 > See: [renoise.Views.MultiLineTextField](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/multiline_textfield.lua#22#10)
-### bitmap([*self*](../../API/builtins/self.md), properties : [`BitmapViewProperties`](#bitmapviewproperties)[`?`](../../API/builtins/nil.md)) {#bitmap}
+### bitmap([*self*](../../API/builtins/self.md), properties : [`BitmapViewProperties`](#bitmapviewproperties)[`?`](../../API/builtins/nil.md))<a name="bitmap"></a>
 `->`[`renoise.Views.Bitmap`](../../API/renoise/renoise.Views.Bitmap.md)  
 
 > See: [renoise.Views.Bitmap](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/bitmap.lua#63#10)
-### button([*self*](../../API/builtins/self.md), properties : [`ButtonProperties`](#buttonproperties)[`?`](../../API/builtins/nil.md)) {#button}
+### button([*self*](../../API/builtins/self.md), properties : [`ButtonProperties`](#buttonproperties)[`?`](../../API/builtins/nil.md))<a name="button"></a>
 `->`[`renoise.Views.Button`](../../API/renoise/renoise.Views.Button.md)  
 
 > See: [renoise.Views.Button](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/button.lua#40#10)
-### checkbox([*self*](../../API/builtins/self.md), properties : [`CheckBoxProperties`](#checkboxproperties)[`?`](../../API/builtins/nil.md)) {#checkbox}
+### checkbox([*self*](../../API/builtins/self.md), properties : [`CheckBoxProperties`](#checkboxproperties)[`?`](../../API/builtins/nil.md))<a name="checkbox"></a>
 `->`[`renoise.Views.CheckBox`](../../API/renoise/renoise.Views.CheckBox.md)  
 
 > See: [renoise.Views.CheckBox](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/checkbox.lua#28#10)
-### switch([*self*](../../API/builtins/self.md), properties : [`ButtonSwitchProperties`](#buttonswitchproperties)[`?`](../../API/builtins/nil.md)) {#switch}
+### switch([*self*](../../API/builtins/self.md), properties : [`ButtonSwitchProperties`](#buttonswitchproperties)[`?`](../../API/builtins/nil.md))<a name="switch"></a>
 `->`[`renoise.Views.Switch`](../../API/renoise/renoise.Views.Switch.md)  
 
 > See: [renoise.Views.Switch](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/switch.lua#30#10)
-### popup([*self*](../../API/builtins/self.md), properties : [`PopUpMenuProperties`](#popupmenuproperties)[`?`](../../API/builtins/nil.md)) {#popup}
+### popup([*self*](../../API/builtins/self.md), properties : [`PopUpMenuProperties`](#popupmenuproperties)[`?`](../../API/builtins/nil.md))<a name="popup"></a>
 `->`[`renoise.Views.Popup`](../../API/renoise/renoise.Views.Popup.md)  
 
 > See: [renoise.Views.Popup](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/popup.lua#25#10)
-### chooser([*self*](../../API/builtins/self.md), properties : [`ChooserProperties`](#chooserproperties)[`?`](../../API/builtins/nil.md)) {#chooser}
+### chooser([*self*](../../API/builtins/self.md), properties : [`ChooserProperties`](#chooserproperties)[`?`](../../API/builtins/nil.md))<a name="chooser"></a>
 `->`[`renoise.Views.Chooser`](../../API/renoise/renoise.Views.Chooser.md)  
 
 > See: [renoise.Views.Chooser](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/chooser.lua#19#10)
-### valuebox([*self*](../../API/builtins/self.md), properties : [`ValueBoxProperties`](#valueboxproperties)[`?`](../../API/builtins/nil.md)) {#valuebox}
+### valuebox([*self*](../../API/builtins/self.md), properties : [`ValueBoxProperties`](#valueboxproperties)[`?`](../../API/builtins/nil.md))<a name="valuebox"></a>
 `->`[`renoise.Views.ValueBox`](../../API/renoise/renoise.Views.ValueBox.md)  
 
 > See: [renoise.Views.ValueBox](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/valuebox.lua#51#10)
-### value([*self*](../../API/builtins/self.md), properties : [`ValueViewProperties`](#valueviewproperties)[`?`](../../API/builtins/nil.md)) {#value}
+### value([*self*](../../API/builtins/self.md), properties : [`ValueViewProperties`](#valueviewproperties)[`?`](../../API/builtins/nil.md))<a name="value"></a>
 `->`[`renoise.Views.Value`](../../API/renoise/renoise.Views.Value.md)  
 
 > See: [renoise.Views.Value](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/value.lua#20#10)
-### valuefield([*self*](../../API/builtins/self.md), properties : [`ValueFieldProperties`](#valuefieldproperties)[`?`](../../API/builtins/nil.md)) {#valuefield}
+### valuefield([*self*](../../API/builtins/self.md), properties : [`ValueFieldProperties`](#valuefieldproperties)[`?`](../../API/builtins/nil.md))<a name="valuefield"></a>
 `->`[`renoise.Views.ValueField`](../../API/renoise/renoise.Views.ValueField.md)  
 
 > See: [renoise.Views.ValueField](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/valuefield.lua#20#10)
-### slider([*self*](../../API/builtins/self.md), properties : [`SliderProperties`](#sliderproperties)[`?`](../../API/builtins/nil.md)) {#slider}
+### slider([*self*](../../API/builtins/self.md), properties : [`SliderProperties`](#sliderproperties)[`?`](../../API/builtins/nil.md))<a name="slider"></a>
 `->`[`renoise.Views.Slider`](../../API/renoise/renoise.Views.Slider.md)  
 
 > See: [renoise.Views.Slider](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/slider.lua#42#10)
-### minislider([*self*](../../API/builtins/self.md), properties : [`MiniSliderProperties`](#minisliderproperties)[`?`](../../API/builtins/nil.md)) {#minislider}
+### minislider([*self*](../../API/builtins/self.md), properties : [`MiniSliderProperties`](#minisliderproperties)[`?`](../../API/builtins/nil.md))<a name="minislider"></a>
 `->`[`renoise.Views.MiniSlider`](../../API/renoise/renoise.Views.MiniSlider.md)  
 
 > See: [renoise.Views.MiniSlider](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/minislider.lua#18#10)
-### rotary([*self*](../../API/builtins/self.md), properties : [`RotaryEncoderProperties`](#rotaryencoderproperties)[`?`](../../API/builtins/nil.md)) {#rotary}
+### rotary([*self*](../../API/builtins/self.md), properties : [`RotaryEncoderProperties`](#rotaryencoderproperties)[`?`](../../API/builtins/nil.md))<a name="rotary"></a>
 `->`[`renoise.Views.RotaryEncoder`](../../API/renoise/renoise.Views.RotaryEncoder.md)  
 
 > See: [renoise.Views.RotaryEncoder](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/rotary.lua#23#10)
-### xypad([*self*](../../API/builtins/self.md), properties : [`XYPadProperties`](#xypadproperties)[`?`](../../API/builtins/nil.md)) {#xypad}
+### xypad([*self*](../../API/builtins/self.md), properties : [`XYPadProperties`](#xypadproperties)[`?`](../../API/builtins/nil.md))<a name="xypad"></a>
 `->`[`renoise.Views.XYPad`](../../API/renoise/renoise.Views.XYPad.md)  
 
 > See: [renoise.Views.XYPad](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/xypad.lua#64#10)  
@@ -226,1357 +226,57 @@
 
 
 ---  
-## Local Structs  
-# AlignerViewProperties  
-
-<!-- toc -->
-  
+## Structs  
+# AlignerViewProperties<a name="AlignerViewProperties"></a>  
 
 ---  
 ## Properties
-### margin : [`RackMargin`](#RackMargin)[`?`](../../API/builtins/nil.md) {#margin}
+### margin : [`RackMargin`](#RackMargin)[`?`](../../API/builtins/nil.md)<a name="margin"></a>
 > Set the "borders" of a rack (left, right, top and bottom inclusively)
 > *  Default: 0 (no borders)
 
-### spacing : [`RackSpacing`](#RackSpacing)[`?`](../../API/builtins/nil.md) {#spacing}
+### spacing : [`RackSpacing`](#RackSpacing)[`?`](../../API/builtins/nil.md)<a name="spacing"></a>
 > Set the amount stacked child views are separated by (horizontally in
 > rows, vertically in columns).
 > *  Default: 0 (no spacing)
 
-### mode : [`AlignerMode`](#AlignerMode)[`?`](../../API/builtins/nil.md) {#mode}
+### mode : [`AlignerMode`](#AlignerMode)[`?`](../../API/builtins/nil.md)<a name="mode"></a>
 > * Default: "left" (for horizontal_aligner) "top" (for vertical_aligner)
 
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
 > Unique identifier to resolve the view later on in the viewbuilder, 
 > e.g. `vb.views.SomeString` or `vb.views["Some String"]`
 > View ids must be unique within a single view builder instance. 
 
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
 > The dimensions of a view has to be larger than 0.
 > For nested views you can also specify relative size
 > for example `vb:text { width = "80%"}`. The percentage values are
 > relative to the view's parent size and will automatically update on size changes.
 
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
 > The dimensions of a view has to be larger than 0.
 > For nested views you can also specify relative size
 > for example `vb:text { width = "80%"}`. The percentage values are
 > relative to the view's parent size and will automatically update on size changes.
 
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
 > Set visible to false to hide a view (make it invisible without removing
 > it). Please note that view.visible will also return false when any of its
 > parents are invisible (when its implicitly invisible).
 > * Default: true
 
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
 > A tooltip text that should be shown for this view on mouse hover.
 > * Default: "" (no tip will be shown)
-
-  
-
-  
-# BitmapViewProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### mode : [`BitmapMode`](#BitmapMode)[`?`](../../API/builtins/nil.md) {#mode}
-> Setup how the bitmap should be drawn, recolored. Available modes are:
-
-### bitmap : [`BitmapPath`](#BitmapPath)[`?`](../../API/builtins/nil.md) {#bitmap}
-> Supported bitmap file formats are *.bmp, *.png or *.tif (no transparency).
-
-### notifier : [`ButtonNotifier`](#ButtonNotifier)[`?`](../../API/builtins/nil.md) {#notifier}
-> A click notifier
-
-### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md) {#active}
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.
-
-### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md) {#midi_mapping}
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# ButtonProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### text : [`ButtonLabel`](#ButtonLabel)[`?`](../../API/builtins/nil.md) {#text}
-> The text label of the button
-> * Default: ""
-
-### bitmap : [`ButtonBitmapPath`](#ButtonBitmapPath)[`?`](../../API/builtins/nil.md) {#bitmap}
-> If set, existing text is removed and the loaded image is displayed instead.
-> Supported bitmap file formats are ".bmp", ".png" and ".tiff".
-> Colors in bitmaps will be overridden by the button's theme color, using black
-> as the transparent color for BMPs and TIFFS, and the alpha channel for PNGs.
-> All other colors are mapped to the theme color according to their grey value,
-> so plain white is the target theme color, and all other colors blend into the
-> button's background color of the theme.
-
-### color : [`ButtonColor`](#ButtonColor)[`?`](../../API/builtins/nil.md) {#color}
-> When set, the unpressed button's background will be drawn in the specified color.
-> A text color is automatically selected unless explicitly set, to make sure it's
-> always visible.
-> Set color {0,0,0} to enable the theme colors for the button again.
-
-### notifier : [`ButtonNotifier`](#ButtonNotifier)[`?`](../../API/builtins/nil.md) {#notifier}
-> A click notifier
-
-### pressed : [`ButtonNotifier`](#ButtonNotifier)[`?`](../../API/builtins/nil.md) {#pressed}
-> A click notifier
-
-### released : [`ButtonNotifier`](#ButtonNotifier)[`?`](../../API/builtins/nil.md) {#released}
-> A click notifier
-
-### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md) {#active}
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.
-
-### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md) {#midi_mapping}
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# ButtonSwitchProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md) {#active}
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.
-
-### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md) {#midi_mapping}
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.
-
-### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md) {#bind}
-> Bind the view's value to a renoise.Document.ObservableNumber object.
-> Automatically keep them in sync.
-> The view will change the Observable value as soon as its value changes
-> and change the view's value as soon as the Observable's value changes.
-> Notifiers can be added to either the view or the Observable object.
-
-### value : [`SelectedItem`](#SelectedItem)[`?`](../../API/builtins/nil.md) {#value}
-> The currently selected item's index
-
-### notifier : [`IntegerNotifier`](#IntegerNotifier)[`?`](../../API/builtins/nil.md) {#notifier}
-> Set up a notifier that will be called whenever a new item is picked
-
-### items : [`ItemLabels`](#ItemLabels)[`?`](../../API/builtins/nil.md) {#items}
-> A list of buttons labels to show in order. Must have more than one item.
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# CheckBoxProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### bind : [`ViewBooleanObservable`](#ViewBooleanObservable)[`?`](../../API/builtins/nil.md) {#bind}
-> Bind the view's value to a renoise.Document.ObservableBoolean object.
-> Automatically keep them in sync.
-> The view will change the Observable value as soon as its value changes
-> and change the view's value as soon as the Observable's value changes.
-> Notifiers can be added to either the view or the Observable object.
-
-### value : [`CheckBoxBoolean`](#CheckBoxBoolean)[`?`](../../API/builtins/nil.md) {#value}
-> The current state of the checkbox, expressed as boolean.
-> * Default: false
-
-### notifier : [`CheckBoxBooleanNotifier`](#CheckBoxBooleanNotifier)[`?`](../../API/builtins/nil.md) {#notifier}
-> A notifier for when the checkbox is toggled
-
-### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md) {#active}
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.
-
-### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md) {#midi_mapping}
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# ChooserProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md) {#bind}
-> Bind the view's value to a renoise.Document.ObservableNumber object.
-> Automatically keep them in sync.
-> The view will change the Observable value as soon as its value changes
-> and change the view's value as soon as the Observable's value changes.
-> Notifiers can be added to either the view or the Observable object.
-
-### value : [`SelectedItem`](#SelectedItem)[`?`](../../API/builtins/nil.md) {#value}
-> The currently selected item's index
-
-### notifier : [`IntegerNotifier`](#IntegerNotifier)[`?`](../../API/builtins/nil.md) {#notifier}
-> Set up a notifier that will be called whenever a new item is picked
-
-### items : [`ItemLabels`](#ItemLabels)[`?`](../../API/builtins/nil.md) {#items}
-> A list of buttons labels to show in order. Must have more than one item.
-
-### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md) {#active}
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.
-
-### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md) {#midi_mapping}
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# MiniSliderProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md) {#active}
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.
-
-### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md) {#midi_mapping}
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.
-
-### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md) {#bind}
-> Bind the view's value to a renoise.Document.ObservableNumber object.
-> Automatically keep them in sync.
-> The view will change the Observable value as soon as its value changes
-> and change the view's value as soon as the Observable's value changes.
-> Notifiers can be added to either the view or the Observable object.
-
-### value : [`SliderNumberValue`](#SliderNumberValue)[`?`](../../API/builtins/nil.md) {#value}
-> The current value of the view
-
-### notifier : [`NumberValueNotifier`](#NumberValueNotifier)[`?`](../../API/builtins/nil.md) {#notifier}
-> Set up a value notifier that will be called whenever the value changes
-
-### min : [`SliderMinValue`](#SliderMinValue)[`?`](../../API/builtins/nil.md) {#min}
-> The minimum value that can be set using the view
-> * Default: 0
-
-### max : [`SliderMaxValue`](#SliderMaxValue)[`?`](../../API/builtins/nil.md) {#max}
-> The maximum value that can be set using the view
-> * Default: 1.0
-
-### default : [`SliderDefaultValue`](#SliderDefaultValue)[`?`](../../API/builtins/nil.md) {#default}
-> The default value that will be re-applied on double-click
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# MultilineTextFieldProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### bind : [`ViewStringListObservable`](#ViewStringListObservable)[`?`](../../API/builtins/nil.md) {#bind}
-> Bind the view's value to a renoise.Document.ObservableStringList object.
-> Automatically keep them in sync.
-> The view will change the Observable value as soon as its value changes
-> and change the view's value as soon as the Observable's value changes.
-> Notifiers can be added to either the view or the Observable object.
-
-### active : [`TextActive`](#TextActive)[`?`](../../API/builtins/nil.md) {#active}
-> When false, text is displayed but can not be entered/modified by the user.
-> * Default: true
-
-### value : [`TextMultilineString`](#TextMultilineString)[`?`](../../API/builtins/nil.md) {#value}
-> The text that should be displayed.
-> Newlines (Windows, Mac or Unix styled) in the text can be used to create
-> paragraphs.
-
-### notifier : [`StringChangeNotifier`](#StringChangeNotifier)[`?`](../../API/builtins/nil.md) {#notifier}
-> Set up a notifier for text changes
-
-### text : [`TextValueAlias`](#TextValueAlias)[`?`](../../API/builtins/nil.md) {#text}
-> Exactly the same as "value"; provided for consistency.
-> * Default: ""
-
-### paragraphs : [`TextParagraphs`](#TextParagraphs)[`?`](../../API/builtins/nil.md) {#paragraphs}
-> A table of text lines to be used instead of specifying a single text
-> line with newline characters like "text"
-> * Default: []
-
-### font : [`TextFontStyle`](#TextFontStyle)[`?`](../../API/builtins/nil.md) {#font}
-> The style that the text should be displayed with.
-
-### style : [`TextBackgroundStyle`](#TextBackgroundStyle)[`?`](../../API/builtins/nil.md) {#style}
-> Setup the text view's background:
-
-### edit_mode : [`TextEditMode`](#TextEditMode)[`?`](../../API/builtins/nil.md) {#edit_mode}
-> True when the text field is focused. setting it at run-time programmatically
-> will focus the text field or remove the focus (focus the dialog) accordingly.
-> * Default: false
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# MultilineTextViewProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### text : [`TextMultilineString`](#TextMultilineString)[`?`](../../API/builtins/nil.md) {#text}
-> The text that should be displayed.
-> Newlines (Windows, Mac or Unix styled) in the text can be used to create
-> paragraphs.
-
-### paragraphs : [`TextParagraphs`](#TextParagraphs)[`?`](../../API/builtins/nil.md) {#paragraphs}
-> A table of text lines to be used instead of specifying a single text
-> line with newline characters like "text"
-> * Default: []
-
-### font : [`TextFontStyle`](#TextFontStyle)[`?`](../../API/builtins/nil.md) {#font}
-> The style that the text should be displayed with.
-
-### style : [`TextBackgroundStyle`](#TextBackgroundStyle)[`?`](../../API/builtins/nil.md) {#style}
-> Setup the text view's background:
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# PopUpMenuProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md) {#active}
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.
-
-### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md) {#midi_mapping}
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.
-
-### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md) {#bind}
-> Bind the view's value to a renoise.Document.ObservableNumber object.
-> Automatically keep them in sync.
-> The view will change the Observable value as soon as its value changes
-> and change the view's value as soon as the Observable's value changes.
-> Notifiers can be added to either the view or the Observable object.
-
-### value : [`SelectedItem`](#SelectedItem)[`?`](../../API/builtins/nil.md) {#value}
-> The currently selected item's index
-
-### notifier : [`IntegerNotifier`](#IntegerNotifier)[`?`](../../API/builtins/nil.md) {#notifier}
-> Set up a notifier that will be called whenever a new item is picked
-
-### items : [`PopupItemLabels`](#PopupItemLabels)[`?`](../../API/builtins/nil.md) {#items}
-> A list of buttons labels to show in order
-> The list can be empty, then "None" is displayed and the value won't change.
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# RackViewProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### margin : [`RackMargin`](#RackMargin)[`?`](../../API/builtins/nil.md) {#margin}
-> Set the "borders" of a rack (left, right, top and bottom inclusively)
-> *  Default: 0 (no borders)
-
-### spacing : [`RackSpacing`](#RackSpacing)[`?`](../../API/builtins/nil.md) {#spacing}
-> Set the amount stacked child views are separated by (horizontally in
-> rows, vertically in columns).
-> *  Default: 0 (no spacing)
-
-### style : [`ViewBackgroundStyle`](#ViewBackgroundStyle)[`?`](../../API/builtins/nil.md) {#style}
-> Setup a background style for the view. 
-
-### uniform : [`RackUniformity`](#RackUniformity)[`?`](../../API/builtins/nil.md) {#uniform}
-> When set to true, all child views in the rack are automatically resized to
-> the max size of all child views (width in ViewBuilder.column, height in
-> ViewBuilder.row). This can be useful to automatically align all sub
-> columns/panels to the same size. Resizing is done automatically, as soon
-> as a child view size changes or new children are added.
-> * Default: false
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# RotaryEncoderProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md) {#active}
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.
-
-### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md) {#midi_mapping}
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.
-
-### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md) {#bind}
-> Bind the view's value to a renoise.Document.ObservableNumber object.
-> Automatically keep them in sync.
-> The view will change the Observable value as soon as its value changes
-> and change the view's value as soon as the Observable's value changes.
-> Notifiers can be added to either the view or the Observable object.
-
-### value : [`SliderNumberValue`](#SliderNumberValue)[`?`](../../API/builtins/nil.md) {#value}
-> The current value of the view
-
-### notifier : [`NumberValueNotifier`](#NumberValueNotifier)[`?`](../../API/builtins/nil.md) {#notifier}
-> Set up a value notifier that will be called whenever the value changes
-
-### min : [`SliderMinValue`](#SliderMinValue)[`?`](../../API/builtins/nil.md) {#min}
-> The minimum value that can be set using the view
-> * Default: 0
-
-### max : [`SliderMaxValue`](#SliderMaxValue)[`?`](../../API/builtins/nil.md) {#max}
-> The maximum value that can be set using the view
-> * Default: 1.0
-
-### default : [`SliderDefaultValue`](#SliderDefaultValue)[`?`](../../API/builtins/nil.md) {#default}
-> The default value that will be re-applied on double-click
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# SliderProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md) {#active}
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.
-
-### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md) {#midi_mapping}
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.
-
-### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md) {#bind}
-> Bind the view's value to a renoise.Document.ObservableNumber object.
-> Automatically keep them in sync.
-> The view will change the Observable value as soon as its value changes
-> and change the view's value as soon as the Observable's value changes.
-> Notifiers can be added to either the view or the Observable object.
-
-### value : [`SliderNumberValue`](#SliderNumberValue)[`?`](../../API/builtins/nil.md) {#value}
-> The current value of the view
-
-### notifier : [`NumberValueNotifier`](#NumberValueNotifier)[`?`](../../API/builtins/nil.md) {#notifier}
-> Set up a value notifier that will be called whenever the value changes
-
-### min : [`SliderMinValue`](#SliderMinValue)[`?`](../../API/builtins/nil.md) {#min}
-> The minimum value that can be set using the view
-> * Default: 0
-
-### max : [`SliderMaxValue`](#SliderMaxValue)[`?`](../../API/builtins/nil.md) {#max}
-> The maximum value that can be set using the view
-> * Default: 1.0
-
-### steps : [`SliderStepAmounts`](#SliderStepAmounts)[`?`](../../API/builtins/nil.md) {#steps}
-> A table containing two numbers representing the step amounts for incrementing
-> and decrementing by clicking the <> buttons.
-> The first value is the small step (applied on left clicks)
-> second value is the big step (applied on right clicks)
-
-### default : [`SliderDefaultValue`](#SliderDefaultValue)[`?`](../../API/builtins/nil.md) {#default}
-> The default value that will be re-applied on double-click
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# TextFieldProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### bind : [`ViewStringObservable`](#ViewStringObservable)[`?`](../../API/builtins/nil.md) {#bind}
-> Bind the view's value to a renoise.Document.ObservableString object.
-> Automatically keep them in sync.
-> The view will change the Observable value as soon as its value changes
-> and change the view's value as soon as the Observable's value changes.
-> Notifiers can be added to either the view or the Observable object.
-
-### active : [`TextActive`](#TextActive)[`?`](../../API/builtins/nil.md) {#active}
-> When false, text is displayed but can not be entered/modified by the user.
-> * Default: true
-
-### value : [`TextValue`](#TextValue)[`?`](../../API/builtins/nil.md) {#value}
-> The currently shown text. The text will not be updated when editing,
-> rather only after editing is complete (return is pressed, or focus is lost).
-> * Default: ""
-
-### notifier : [`StringChangeNotifier`](#StringChangeNotifier)[`?`](../../API/builtins/nil.md) {#notifier}
-> Set up a notifier for text changes
-
-### text : [`TextValueAlias`](#TextValueAlias)[`?`](../../API/builtins/nil.md) {#text}
-> Exactly the same as "value"; provided for consistency.
-> * Default: ""
-
-### align : [`TextAlignment`](#TextAlignment)[`?`](../../API/builtins/nil.md) {#align}
-> Setup the text's alignment. Applies only when the view's size is larger than
-> the needed size to draw the text
-
-### edit_mode : [`TextEditMode`](#TextEditMode)[`?`](../../API/builtins/nil.md) {#edit_mode}
-> True when the text field is focused. setting it at run-time programmatically
-> will focus the text field or remove the focus (focus the dialog) accordingly.
-> * Default: false
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# TextViewProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### text : [`TextSingleLineString`](#TextSingleLineString)[`?`](../../API/builtins/nil.md) {#text}
-> The text that should be displayed. Setting a new text will resize
-> the view in order to make the text fully visible (expanding only).
-> * Default: ""
-
-### font : [`TextFontStyle`](#TextFontStyle)[`?`](../../API/builtins/nil.md) {#font}
-> The style that the text should be displayed with.
-
-### style : [`TextStyle`](#TextStyle)[`?`](../../API/builtins/nil.md) {#style}
-> Get/set the color style the text should be displayed with.
-
-### align : [`TextAlignment`](#TextAlignment)[`?`](../../API/builtins/nil.md) {#align}
-> Setup the text's alignment. Applies only when the view's size is larger than
-> the needed size to draw the text
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# ValueBoxProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md) {#active}
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.
-
-### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md) {#midi_mapping}
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.
-
-### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md) {#bind}
-> Bind the view's value to a renoise.Document.ObservableNumber object.
-> Automatically keep them in sync.
-> The view will change the Observable value as soon as its value changes
-> and change the view's value as soon as the Observable's value changes.
-> Notifiers can be added to either the view or the Observable object.
-
-### value : [`SliderNumberValue`](#SliderNumberValue)[`?`](../../API/builtins/nil.md) {#value}
-> The current value of the view
-
-### notifier : [`NumberValueNotifier`](#NumberValueNotifier)[`?`](../../API/builtins/nil.md) {#notifier}
-> Set up a value notifier that will be called whenever the value changes
-
-### min : [`ValueBoxMinValue`](#ValueBoxMinValue)[`?`](../../API/builtins/nil.md) {#min}
-> The minimum value that can be set using the view
-> * Default: 0
-
-### max : [`ValueBoxMaxValue`](#ValueBoxMaxValue)[`?`](../../API/builtins/nil.md) {#max}
-> The maximum value that can be set using the view
-> * Default: 100
-
-### steps : [`SliderStepAmounts`](#SliderStepAmounts)[`?`](../../API/builtins/nil.md) {#steps}
-> A table containing two numbers representing the step amounts for incrementing
-> and decrementing by clicking the <> buttons.
-> The first value is the small step (applied on left clicks)
-> second value is the big step (applied on right clicks)
-
-### tostring : [`PairedShowNumberAsString`](#PairedShowNumberAsString)[`?`](../../API/builtins/nil.md) {#tostring}
-> Make sure to also set `tonumber` if you set this.
-
-### tonumber : [`PairedParseStringAsNumber`](#PairedParseStringAsNumber)[`?`](../../API/builtins/nil.md) {#tonumber}
-> Make sure to also set `tostring` if you set this.
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# ValueFieldProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md) {#active}
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.
-
-### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md) {#midi_mapping}
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.
-
-### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md) {#bind}
-> Bind the view's value to a renoise.Document.ObservableNumber object.
-> Automatically keep them in sync.
-> The view will change the Observable value as soon as its value changes
-> and change the view's value as soon as the Observable's value changes.
-> Notifiers can be added to either the view or the Observable object.
-
-### value : [`SliderNumberValue`](#SliderNumberValue)[`?`](../../API/builtins/nil.md) {#value}
-> The current value of the view
-
-### notifier : [`NumberValueNotifier`](#NumberValueNotifier)[`?`](../../API/builtins/nil.md) {#notifier}
-> Set up a value notifier that will be called whenever the value changes
-
-### min : [`SliderMinValue`](#SliderMinValue)[`?`](../../API/builtins/nil.md) {#min}
-> The minimum value that can be set using the view
-> * Default: 0
-
-### max : [`SliderMaxValue`](#SliderMaxValue)[`?`](../../API/builtins/nil.md) {#max}
-> The maximum value that can be set using the view
-> * Default: 1.0
-
-### align : [`TextAlignment`](#TextAlignment)[`?`](../../API/builtins/nil.md) {#align}
-> Setup the text's alignment. Applies only when the view's size is larger than
-> the needed size to draw the text
-
-### tostring : [`PairedShowNumberAsString`](#PairedShowNumberAsString)[`?`](../../API/builtins/nil.md) {#tostring}
-> Make sure to also set `tonumber` if you set this.
-
-### tonumber : [`PairedParseStringAsNumber`](#PairedParseStringAsNumber)[`?`](../../API/builtins/nil.md) {#tonumber}
-> Make sure to also set `tostring` if you set this.
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# ValueViewProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md) {#bind}
-> Bind the view's value to a renoise.Document.ObservableNumber object.
-> Automatically keep them in sync.
-> The view will change the Observable value as soon as its value changes
-> and change the view's value as soon as the Observable's value changes.
-> Notifiers can be added to either the view or the Observable object.
-
-### value : [`SliderNumberValue`](#SliderNumberValue)[`?`](../../API/builtins/nil.md) {#value}
-> The current value of the view
-
-### notifier : [`NumberValueNotifier`](#NumberValueNotifier)[`?`](../../API/builtins/nil.md) {#notifier}
-> Set up a value notifier that will be called whenever the value changes
-
-### align : [`TextAlignment`](#TextAlignment)[`?`](../../API/builtins/nil.md) {#align}
-> Setup the text's alignment. Applies only when the view's size is larger than
-> the needed size to draw the text
-
-### font : [`TextFontStyle`](#TextFontStyle)[`?`](../../API/builtins/nil.md) {#font}
-> The style that the text should be displayed with.
-
-### tostring : [`ShowNumberAsString`](#ShowNumberAsString)[`?`](../../API/builtins/nil.md) {#tostring}
-> Set a custom rule on how a number value should be displayed.
-> Useful for showing units like decibel or note values etc.
-> If none are set, a default string/number conversion is done, which
-> simply shows the number with 3 digits after the decimal point.
-> Note: When the callback fails with an error, it will be disabled to avoid
-> a flood of error messages.
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# ViewProperties  
->  Base for all View constructor tables in the viewbuilder.  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-  
-
-  
-# XYPadProperties  
-
-<!-- toc -->
-  
-
----  
-## Properties
-### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md) {#active}
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.
-
-### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md) {#midi_mapping}
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.
-
-### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md) {#id}
-> Unique identifier to resolve the view later on in the viewbuilder, 
-> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
-> View ids must be unique within a single view builder instance. 
-
-### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#width}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md) {#height}
-> The dimensions of a view has to be larger than 0.
-> For nested views you can also specify relative size
-> for example `vb:text { width = "80%"}`. The percentage values are
-> relative to the view's parent size and will automatically update on size changes.
-
-### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md) {#visible}
-> Set visible to false to hide a view (make it invisible without removing
-> it). Please note that view.visible will also return false when any of its
-> parents are invisible (when its implicitly invisible).
-> * Default: true
-
-### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md) {#tooltip}
-> A tooltip text that should be shown for this view on mouse hover.
-> * Default: "" (no tip will be shown)
-
-### bind : [`XYPadObservables`](#XYPadObservables)[`?`](../../API/builtins/nil.md) {#bind}
-> Bind the view's value to a pair of renoise.Document.ObservableNumber objects.
-> Automatically keep both values in sync.
-> Will change the Observables' values as soon as the view's value changes,
-> and change the view's values as soon as the Observable's value changes.
-> Notifiers can be added to either the view or the Observable object.
-> Just like in the other XYPad properties, a table with the fields X and Y
-> is expected here and not a single value. So you have to bind two
-> ObservableNumber object to the pad.
-
-### value : [`XYPadValues`](#XYPadValues)[`?`](../../API/builtins/nil.md) {#value}
-> A table of the XYPad's current values on each axis
-
-### snapback : [`XYPadSnapbackValues`](#XYPadSnapbackValues)[`?`](../../API/builtins/nil.md) {#snapback}
-> A table of snapback values for each axis
-> When snapback is enabled, the pad will revert its values to the specified
-> snapback values as soon as the mouse button is released in the pad.
-> When disabled, releasing the mouse button will not change the value.
-> You can disable snapback at runtime by setting it to nil or an empty table.
-
-### notifier : [`XYValueNotifier`](#XYValueNotifier)[`?`](../../API/builtins/nil.md) {#notifier}
-> Set up a value notifier function that will be used whenever the pad's values change
-
-### min : [`XYPadMinValues`](#XYPadMinValues)[`?`](../../API/builtins/nil.md) {#min}
-> A table of allowed minimum values for each axis
-> * Default: {x: 0.0, y: 0.0}
-
-### max : [`XYPadMaxValues`](#XYPadMaxValues)[`?`](../../API/builtins/nil.md) {#max}
-> A table of allowed maximum values for each axis
-> * Default: {x: 1.0, y: 1.0}
-
-  
 
   
 
 
 
 ---  
-## Local Aliases  
-### AlignerMode {#AlignerMode}
+## Aliases  
+### AlignerMode<a name="AlignerMode"></a>
 `"bottom"` | `"center"` | `"distribute"` | `"justify"` | `"left"` | `"right"` | `"top"`  
 > ```lua
 > -- * Default: "left" (for horizontal_aligner) "top" (for vertical_aligner)
@@ -1590,7 +290,105 @@
 >     | "distribute" -- equally distributes views over the aligners width/height
 > ```  
   
-### BitmapImagePath {#BitmapImagePath}
+### RackMargin<a name="RackMargin"></a>
+[`integer`](../../API/builtins/integer.md)  
+> Set the "borders" of a rack (left, right, top and bottom inclusively)
+> *  Default: 0 (no borders)  
+  
+### RackSpacing<a name="RackSpacing"></a>
+[`integer`](../../API/builtins/integer.md)  
+> Set the amount stacked child views are separated by (horizontally in
+> rows, vertically in columns).
+> *  Default: 0 (no spacing)  
+  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# BitmapViewProperties<a name="BitmapViewProperties"></a>  
+
+---  
+## Properties
+### mode : [`BitmapMode`](#BitmapMode)[`?`](../../API/builtins/nil.md)<a name="mode"></a>
+> Setup how the bitmap should be drawn, recolored. Available modes are:
+
+### bitmap : [`BitmapPath`](#BitmapPath)[`?`](../../API/builtins/nil.md)<a name="bitmap"></a>
+> Supported bitmap file formats are *.bmp, *.png or *.tif (no transparency).
+
+### notifier : [`ButtonNotifier`](#ButtonNotifier)[`?`](../../API/builtins/nil.md)<a name="notifier"></a>
+> A click notifier
+
+### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md)<a name="active"></a>
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.
+
+### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md)<a name="midi_mapping"></a>
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### BitmapImagePath<a name="BitmapImagePath"></a>
 [`string`](../../API/builtins/string.md)  
 > You can load an image from your tool's directory,
 > or use one from Renoise's built-in icons.  
@@ -1610,7 +408,7 @@
 > * For all other UI scaling > 125% the "@4x" variants are used and downscaled as needed,
 > except when there is an exact match for the current UI scaling factor (e.g. `BitmapName@1.5x.bmp` for 150%)  
   
-### BitmapMode {#BitmapMode}
+### BitmapMode<a name="BitmapMode"></a>
 `"body_color"` | `"button_color"` | `"main_color"` | `"plain"` | `"transparent"`  
 > ```lua
 > -- Setup how the bitmap should be drawn, recolored. Available modes are:
@@ -1622,27 +420,177 @@
 >     | "main_color" -- same as 'button_back' but with main text/back colors
 > ```  
   
-### BitmapPath {#BitmapPath}
+### BitmapPath<a name="BitmapPath"></a>
 [`BitmapImagePath`](#BitmapImagePath)  
 > Supported bitmap file formats are *.bmp, *.png or *.tif (no transparency).  
   
-### BooleanValueNotifierFunction {#BooleanValueNotifierFunction}
-(value : [`boolean`](../../API/builtins/boolean.md))  
+### ButtonNotifier<a name="ButtonNotifier"></a>
+[`NotifierFunction`](#NotifierFunction) | [`NotifierMethod1`](#NotifierMethod1) | [`NotifierMethod2`](#NotifierMethod2)  
+> A click notifier  
+  
+### ControlActive<a name="ControlActive"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.  
+  
+### ControlMidiMappingString<a name="ControlMidiMappingString"></a>
+[`string`](../../API/builtins/string.md)  
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.  
+  
+### NotifierFunction<a name="NotifierFunction"></a>
+fun()  
   
   
-### BooleanValueNotifierMemberFunction {#BooleanValueNotifierMemberFunction}
-(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`boolean`](../../API/builtins/boolean.md))  
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
   
   
-### BooleanValueNotifierMethod1 {#BooleanValueNotifierMethod1}
-{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`BooleanValueNotifierMemberFunction`](#BooleanValueNotifierMemberFunction) }  
+### NotifierMemberFunction<a name="NotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext))  
   
   
-### BooleanValueNotifierMethod2 {#BooleanValueNotifierMethod2}
-{ 1 : [`BooleanValueNotifierMemberFunction`](#BooleanValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+### NotifierMethod1<a name="NotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`NotifierMemberFunction`](#NotifierMemberFunction) }  
   
   
-### ButtonBitmapPath {#ButtonBitmapPath}
+### NotifierMethod2<a name="NotifierMethod2"></a>
+{ 1 : [`NotifierMemberFunction`](#NotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# ButtonProperties<a name="ButtonProperties"></a>  
+
+---  
+## Properties
+### text : [`ButtonLabel`](#ButtonLabel)[`?`](../../API/builtins/nil.md)<a name="text"></a>
+> The text label of the button
+> * Default: ""
+
+### bitmap : [`ButtonBitmapPath`](#ButtonBitmapPath)[`?`](../../API/builtins/nil.md)<a name="bitmap"></a>
+> If set, existing text is removed and the loaded image is displayed instead.
+> Supported bitmap file formats are ".bmp", ".png" and ".tiff".
+> Colors in bitmaps will be overridden by the button's theme color, using black
+> as the transparent color for BMPs and TIFFS, and the alpha channel for PNGs.
+> All other colors are mapped to the theme color according to their grey value,
+> so plain white is the target theme color, and all other colors blend into the
+> button's background color of the theme.
+
+### color : [`ButtonColor`](#ButtonColor)[`?`](../../API/builtins/nil.md)<a name="color"></a>
+> When set, the unpressed button's background will be drawn in the specified color.
+> A text color is automatically selected unless explicitly set, to make sure it's
+> always visible.
+> Set color {0,0,0} to enable the theme colors for the button again.
+
+### notifier : [`ButtonNotifier`](#ButtonNotifier)[`?`](../../API/builtins/nil.md)<a name="notifier"></a>
+> A click notifier
+
+### pressed : [`ButtonNotifier`](#ButtonNotifier)[`?`](../../API/builtins/nil.md)<a name="pressed"></a>
+> A click notifier
+
+### released : [`ButtonNotifier`](#ButtonNotifier)[`?`](../../API/builtins/nil.md)<a name="released"></a>
+> A click notifier
+
+### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md)<a name="active"></a>
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.
+
+### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md)<a name="midi_mapping"></a>
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### BitmapImagePath<a name="BitmapImagePath"></a>
+[`string`](../../API/builtins/string.md)  
+> You can load an image from your tool's directory,
+> or use one from Renoise's built-in icons.  
+> * For the built-in icons, use "Icons/ArrowRight.bmp"
+> * For custom images, use a path relative to your tool's root folder.
+> 
+> For example "Images/MyBitmap.bmp" will load the image from
+> "com.me.MyTool.xrnx/Images/MyBitmap.bmp".  
+> If your custom path matches a built-in icon's (like "Icons/ArrowRight.bmp"),
+> your image will be loaded instead of the one from Renoise.  
+> 
+> If you want to support high DPI UI scaling with your bitmaps like the built-in Icons,
+> include high resolution versions with their filenames ending with "@4x"  
+> The following rules will be used when loading bitmaps  
+> * When UI scaling is 100%, only the base bitmaps are used.
+> * When UI scaling is 125%, the base bitmaps are used, except if there is a `BitmapName@x1.25.bmp` variant.
+> * For all other UI scaling > 125% the "@4x" variants are used and downscaled as needed,
+> except when there is an exact match for the current UI scaling factor (e.g. `BitmapName@1.5x.bmp` for 150%)  
+  
+### ButtonBitmapPath<a name="ButtonBitmapPath"></a>
 [`BitmapImagePath`](#BitmapImagePath)  
 > If set, existing text is removed and the loaded image is displayed instead.
 > Supported bitmap file formats are ".bmp", ".png" and ".tiff".
@@ -1652,39 +600,30 @@
 > so plain white is the target theme color, and all other colors blend into the
 > button's background color of the theme.  
   
-### ButtonColor {#ButtonColor}
+### ButtonColor<a name="ButtonColor"></a>
 [`RGBColor`](#RGBColor)  
 > When set, the unpressed button's background will be drawn in the specified color.
 > A text color is automatically selected unless explicitly set, to make sure it's
 > always visible.
 > Set color {0,0,0} to enable the theme colors for the button again.  
   
-### ButtonLabel {#ButtonLabel}
+### ButtonLabel<a name="ButtonLabel"></a>
 [`string`](../../API/builtins/string.md)  
 > The text label of the button
 > * Default: ""  
   
-### ButtonNotifier {#ButtonNotifier}
+### ButtonNotifier<a name="ButtonNotifier"></a>
 [`NotifierFunction`](#NotifierFunction) | [`NotifierMethod1`](#NotifierMethod1) | [`NotifierMethod2`](#NotifierMethod2)  
 > A click notifier  
   
-### CheckBoxBoolean {#CheckBoxBoolean}
-[`boolean`](../../API/builtins/boolean.md)  
-> The current state of the checkbox, expressed as boolean.
-> * Default: false  
-  
-### CheckBoxBooleanNotifier {#CheckBoxBooleanNotifier}
-[`BooleanValueNotifierFunction`](#BooleanValueNotifierFunction) | [`BooleanValueNotifierMethod1`](#BooleanValueNotifierMethod1) | [`BooleanValueNotifierMethod2`](#BooleanValueNotifierMethod2)  
-> A notifier for when the checkbox is toggled  
-  
-### ControlActive {#ControlActive}
+### ControlActive<a name="ControlActive"></a>
 [`boolean`](../../API/builtins/boolean.md)  
 > Instead of making a control invisible, you can also make it inactive.
 > Deactivated controls will still be shown, and will still show their
 > currently assigned values, but will not allow changes. Most controls will
 > display as "grayed out" to visualize the deactivated state.  
   
-### ControlMidiMappingString {#ControlMidiMappingString}
+### ControlMidiMappingString<a name="ControlMidiMappingString"></a>
 [`string`](../../API/builtins/string.md)  
 > When set, the control will be highlighted when Renoise's MIDI mapping dialog
 > is open. When clicked, it selects the specified string as a MIDI mapping
@@ -1693,209 +632,819 @@
 > Target strings are not verified. When they point to nothing, the mapped MIDI
 > message will do nothing and no error is fired.  
   
-### IntegerNotifier {#IntegerNotifier}
-[`IntegerValueNotifierFunction`](#IntegerValueNotifierFunction) | [`IntegerValueNotifierMethod1`](#IntegerValueNotifierMethod1) | [`IntegerValueNotifierMethod2`](#IntegerValueNotifierMethod2)  
-> Set up a notifier that will be called whenever a new item is picked  
-  
-### IntegerValueNotifierFunction {#IntegerValueNotifierFunction}
-(value : [`integer`](../../API/builtins/integer.md))  
-  
-  
-### IntegerValueNotifierMemberFunction {#IntegerValueNotifierMemberFunction}
-(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`integer`](../../API/builtins/integer.md))  
-  
-  
-### IntegerValueNotifierMethod1 {#IntegerValueNotifierMethod1}
-{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`IntegerValueNotifierMemberFunction`](#IntegerValueNotifierMemberFunction) }  
-  
-  
-### IntegerValueNotifierMethod2 {#IntegerValueNotifierMethod2}
-{ 1 : [`IntegerValueNotifierMemberFunction`](#IntegerValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
-  
-  
-### ItemLabels {#ItemLabels}
-[`string`](../../API/builtins/string.md)[]  
-> A list of buttons labels to show in order. Must have more than one item.  
-  
-### ListElementAdded {#ListElementAdded}
-{ index : [`integer`](../../API/builtins/integer.md), type : `"insert"` }  
-  
-  
-### ListElementChange {#ListElementChange}
-[`ListElementAdded`](#ListElementAdded) | [`ListElementRemoved`](#ListElementRemoved) | [`ListElementsSwapped`](#ListElementsSwapped)  
-  
-  
-### ListElementRemoved {#ListElementRemoved}
-{ index : [`integer`](../../API/builtins/integer.md), type : `"removed"` }  
-  
-  
-### ListElementsSwapped {#ListElementsSwapped}
-{ index1 : [`integer`](../../API/builtins/integer.md), index2 : [`integer`](../../API/builtins/integer.md), type : `"swapped"` }  
-  
-  
-### ListNotifierFunction {#ListNotifierFunction}
-(change : [`ListElementChange`](#ListElementChange))  
-  
-  
-### ListNotifierMemberContext {#ListNotifierMemberContext}
-[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
-  
-  
-### NotifierFunction {#NotifierFunction}
+### NotifierFunction<a name="NotifierFunction"></a>
 fun()  
   
   
-### NotifierMemberContext {#NotifierMemberContext}
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
 [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
   
   
-### NotifierMemberFunction {#NotifierMemberFunction}
+### NotifierMemberFunction<a name="NotifierMemberFunction"></a>
 (self : [`NotifierMemberContext`](#NotifierMemberContext))  
   
   
-### NotifierMethod1 {#NotifierMethod1}
+### NotifierMethod1<a name="NotifierMethod1"></a>
 { 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`NotifierMemberFunction`](#NotifierMemberFunction) }  
   
   
-### NotifierMethod2 {#NotifierMethod2}
+### NotifierMethod2<a name="NotifierMethod2"></a>
 { 1 : [`NotifierMemberFunction`](#NotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
   
   
-### NumberValueNotifier {#NumberValueNotifier}
-[`NumberValueNotifierFunction`](#NumberValueNotifierFunction) | [`NumberValueNotifierMethod1`](#NumberValueNotifierMethod1) | [`NumberValueNotifierMethod2`](#NumberValueNotifierMethod2)  
-> Set up a value notifier that will be called whenever the value changes  
-  
-### NumberValueNotifierFunction {#NumberValueNotifierFunction}
-(value : [`number`](../../API/builtins/number.md))  
-  
-  
-### NumberValueNotifierMemberFunction {#NumberValueNotifierMemberFunction}
-(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`number`](../../API/builtins/number.md))  
-  
-  
-### NumberValueNotifierMethod1 {#NumberValueNotifierMethod1}
-{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction) }  
-  
-  
-### NumberValueNotifierMethod2 {#NumberValueNotifierMethod2}
-{ 1 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
-  
-  
-### PairedParseStringAsNumber {#PairedParseStringAsNumber}
-(value : [`string`](../../API/builtins/string.md)) `->` [`number`](../../API/builtins/number.md)[`?`](../../API/builtins/nil.md)  
-> Make sure to also set `tostring` if you set this.  
-  
-### PairedShowNumberAsString {#PairedShowNumberAsString}
-[`ShowNumberAsString`](#ShowNumberAsString)  
-> Make sure to also set `tonumber` if you set this.  
-  
-### PopupItemLabels {#PopupItemLabels}
-[`string`](../../API/builtins/string.md)[]  
-> A list of buttons labels to show in order
-> The list can be empty, then "None" is displayed and the value won't change.  
-  
-### RGBColor {#RGBColor}
+### RGBColor<a name="RGBColor"></a>
 { 1 : [`integer`](../../API/builtins/integer.md), 2 : [`integer`](../../API/builtins/integer.md), 3 : [`integer`](../../API/builtins/integer.md) }  
 > A table of 3 bytes (ranging from 0 to 255)
 > representing the red, green and blue channels of a color.
 > {0xFF, 0xFF, 0xFF} is white
 > {165, 73, 35} is the red from the Renoise logo  
   
-### RackMargin {#RackMargin}
-[`integer`](../../API/builtins/integer.md)  
-> Set the "borders" of a rack (left, right, top and bottom inclusively)
-> *  Default: 0 (no borders)  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
   
-### RackSpacing {#RackSpacing}
-[`integer`](../../API/builtins/integer.md)  
-> Set the amount stacked child views are separated by (horizontally in
-> rows, vertically in columns).
-> *  Default: 0 (no spacing)  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
   
-### RackUniformity {#RackUniformity}
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
 [`boolean`](../../API/builtins/boolean.md)  
-> When set to true, all child views in the rack are automatically resized to
-> the max size of all child views (width in ViewBuilder.column, height in
-> ViewBuilder.row). This can be useful to automatically align all sub
-> columns/panels to the same size. Resizing is done automatically, as soon
-> as a child view size changes or new children are added.
-> * Default: false  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
   
-### SelectedItem {#SelectedItem}
+
+  
+# ButtonSwitchProperties<a name="ButtonSwitchProperties"></a>  
+
+---  
+## Properties
+### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md)<a name="active"></a>
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.
+
+### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md)<a name="midi_mapping"></a>
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.
+
+### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md)<a name="bind"></a>
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.
+
+### value : [`SelectedItem`](#SelectedItem)[`?`](../../API/builtins/nil.md)<a name="value"></a>
+> The currently selected item's index
+
+### notifier : [`IntegerNotifier`](#IntegerNotifier)[`?`](../../API/builtins/nil.md)<a name="notifier"></a>
+> Set up a notifier that will be called whenever a new item is picked
+
+### items : [`ItemLabels`](#ItemLabels)[`?`](../../API/builtins/nil.md)<a name="items"></a>
+> A list of buttons labels to show in order. Must have more than one item.
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### ControlActive<a name="ControlActive"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.  
+  
+### ControlMidiMappingString<a name="ControlMidiMappingString"></a>
+[`string`](../../API/builtins/string.md)  
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.  
+  
+### IntegerNotifier<a name="IntegerNotifier"></a>
+[`IntegerValueNotifierFunction`](#IntegerValueNotifierFunction) | [`IntegerValueNotifierMethod1`](#IntegerValueNotifierMethod1) | [`IntegerValueNotifierMethod2`](#IntegerValueNotifierMethod2)  
+> Set up a notifier that will be called whenever a new item is picked  
+  
+### IntegerValueNotifierFunction<a name="IntegerValueNotifierFunction"></a>
+(value : [`integer`](../../API/builtins/integer.md))  
+  
+  
+### IntegerValueNotifierMemberFunction<a name="IntegerValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`integer`](../../API/builtins/integer.md))  
+  
+  
+### IntegerValueNotifierMethod1<a name="IntegerValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`IntegerValueNotifierMemberFunction`](#IntegerValueNotifierMemberFunction) }  
+  
+  
+### IntegerValueNotifierMethod2<a name="IntegerValueNotifierMethod2"></a>
+{ 1 : [`IntegerValueNotifierMemberFunction`](#IntegerValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### ItemLabels<a name="ItemLabels"></a>
+[`string`](../../API/builtins/string.md)[]  
+> A list of buttons labels to show in order. Must have more than one item.  
+  
+### NotifierFunction<a name="NotifierFunction"></a>
+fun()  
+  
+  
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### SelectedItem<a name="SelectedItem"></a>
 [`integer`](../../API/builtins/integer.md)  
 > The currently selected item's index  
   
-### ShowNumberAsString {#ShowNumberAsString}
-(value : [`number`](../../API/builtins/number.md)) `->` [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
-> Set a custom rule on how a number value should be displayed.
-> Useful for showing units like decibel or note values etc.
-> If none are set, a default string/number conversion is done, which
-> simply shows the number with 3 digits after the decimal point.
-> Note: When the callback fails with an error, it will be disabled to avoid
-> a flood of error messages.  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
   
-### SliderDefaultValue {#SliderDefaultValue}
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewNumberObservable<a name="ViewNumberObservable"></a>
+[`renoise.Document.ObservableNumber`](../../API/renoise/renoise.Document.ObservableNumber.md)  
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.  
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# CheckBoxProperties<a name="CheckBoxProperties"></a>  
+
+---  
+## Properties
+### bind : [`ViewBooleanObservable`](#ViewBooleanObservable)[`?`](../../API/builtins/nil.md)<a name="bind"></a>
+> Bind the view's value to a renoise.Document.ObservableBoolean object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.
+
+### value : [`CheckBoxBoolean`](#CheckBoxBoolean)[`?`](../../API/builtins/nil.md)<a name="value"></a>
+> The current state of the checkbox, expressed as boolean.
+> * Default: false
+
+### notifier : [`CheckBoxBooleanNotifier`](#CheckBoxBooleanNotifier)[`?`](../../API/builtins/nil.md)<a name="notifier"></a>
+> A notifier for when the checkbox is toggled
+
+### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md)<a name="active"></a>
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.
+
+### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md)<a name="midi_mapping"></a>
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### BooleanValueNotifierFunction<a name="BooleanValueNotifierFunction"></a>
+(value : [`boolean`](../../API/builtins/boolean.md))  
+  
+  
+### BooleanValueNotifierMemberFunction<a name="BooleanValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`boolean`](../../API/builtins/boolean.md))  
+  
+  
+### BooleanValueNotifierMethod1<a name="BooleanValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`BooleanValueNotifierMemberFunction`](#BooleanValueNotifierMemberFunction) }  
+  
+  
+### BooleanValueNotifierMethod2<a name="BooleanValueNotifierMethod2"></a>
+{ 1 : [`BooleanValueNotifierMemberFunction`](#BooleanValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### CheckBoxBoolean<a name="CheckBoxBoolean"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> The current state of the checkbox, expressed as boolean.
+> * Default: false  
+  
+### CheckBoxBooleanNotifier<a name="CheckBoxBooleanNotifier"></a>
+[`BooleanValueNotifierFunction`](#BooleanValueNotifierFunction) | [`BooleanValueNotifierMethod1`](#BooleanValueNotifierMethod1) | [`BooleanValueNotifierMethod2`](#BooleanValueNotifierMethod2)  
+> A notifier for when the checkbox is toggled  
+  
+### ControlActive<a name="ControlActive"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.  
+  
+### ControlMidiMappingString<a name="ControlMidiMappingString"></a>
+[`string`](../../API/builtins/string.md)  
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.  
+  
+### NotifierFunction<a name="NotifierFunction"></a>
+fun()  
+  
+  
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### ViewBooleanObservable<a name="ViewBooleanObservable"></a>
+[`renoise.Document.ObservableBoolean`](../../API/renoise/renoise.Document.ObservableBoolean.md)  
+> Bind the view's value to a renoise.Document.ObservableBoolean object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.  
+  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# ChooserProperties<a name="ChooserProperties"></a>  
+
+---  
+## Properties
+### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md)<a name="bind"></a>
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.
+
+### value : [`SelectedItem`](#SelectedItem)[`?`](../../API/builtins/nil.md)<a name="value"></a>
+> The currently selected item's index
+
+### notifier : [`IntegerNotifier`](#IntegerNotifier)[`?`](../../API/builtins/nil.md)<a name="notifier"></a>
+> Set up a notifier that will be called whenever a new item is picked
+
+### items : [`ItemLabels`](#ItemLabels)[`?`](../../API/builtins/nil.md)<a name="items"></a>
+> A list of buttons labels to show in order. Must have more than one item.
+
+### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md)<a name="active"></a>
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.
+
+### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md)<a name="midi_mapping"></a>
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### ControlActive<a name="ControlActive"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.  
+  
+### ControlMidiMappingString<a name="ControlMidiMappingString"></a>
+[`string`](../../API/builtins/string.md)  
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.  
+  
+### IntegerNotifier<a name="IntegerNotifier"></a>
+[`IntegerValueNotifierFunction`](#IntegerValueNotifierFunction) | [`IntegerValueNotifierMethod1`](#IntegerValueNotifierMethod1) | [`IntegerValueNotifierMethod2`](#IntegerValueNotifierMethod2)  
+> Set up a notifier that will be called whenever a new item is picked  
+  
+### IntegerValueNotifierFunction<a name="IntegerValueNotifierFunction"></a>
+(value : [`integer`](../../API/builtins/integer.md))  
+  
+  
+### IntegerValueNotifierMemberFunction<a name="IntegerValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`integer`](../../API/builtins/integer.md))  
+  
+  
+### IntegerValueNotifierMethod1<a name="IntegerValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`IntegerValueNotifierMemberFunction`](#IntegerValueNotifierMemberFunction) }  
+  
+  
+### IntegerValueNotifierMethod2<a name="IntegerValueNotifierMethod2"></a>
+{ 1 : [`IntegerValueNotifierMemberFunction`](#IntegerValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### ItemLabels<a name="ItemLabels"></a>
+[`string`](../../API/builtins/string.md)[]  
+> A list of buttons labels to show in order. Must have more than one item.  
+  
+### NotifierFunction<a name="NotifierFunction"></a>
+fun()  
+  
+  
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### SelectedItem<a name="SelectedItem"></a>
+[`integer`](../../API/builtins/integer.md)  
+> The currently selected item's index  
+  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewNumberObservable<a name="ViewNumberObservable"></a>
+[`renoise.Document.ObservableNumber`](../../API/renoise/renoise.Document.ObservableNumber.md)  
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.  
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# MiniSliderProperties<a name="MiniSliderProperties"></a>  
+
+---  
+## Properties
+### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md)<a name="active"></a>
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.
+
+### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md)<a name="midi_mapping"></a>
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.
+
+### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md)<a name="bind"></a>
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.
+
+### value : [`SliderNumberValue`](#SliderNumberValue)[`?`](../../API/builtins/nil.md)<a name="value"></a>
+> The current value of the view
+
+### notifier : [`NumberValueNotifier`](#NumberValueNotifier)[`?`](../../API/builtins/nil.md)<a name="notifier"></a>
+> Set up a value notifier that will be called whenever the value changes
+
+### min : [`SliderMinValue`](#SliderMinValue)[`?`](../../API/builtins/nil.md)<a name="min"></a>
+> The minimum value that can be set using the view
+> * Default: 0
+
+### max : [`SliderMaxValue`](#SliderMaxValue)[`?`](../../API/builtins/nil.md)<a name="max"></a>
+> The maximum value that can be set using the view
+> * Default: 1.0
+
+### default : [`SliderDefaultValue`](#SliderDefaultValue)[`?`](../../API/builtins/nil.md)<a name="default"></a>
+> The default value that will be re-applied on double-click
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### ControlActive<a name="ControlActive"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.  
+  
+### ControlMidiMappingString<a name="ControlMidiMappingString"></a>
+[`string`](../../API/builtins/string.md)  
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.  
+  
+### NotifierFunction<a name="NotifierFunction"></a>
+fun()  
+  
+  
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### NumberValueNotifier<a name="NumberValueNotifier"></a>
+[`NumberValueNotifierFunction`](#NumberValueNotifierFunction) | [`NumberValueNotifierMethod1`](#NumberValueNotifierMethod1) | [`NumberValueNotifierMethod2`](#NumberValueNotifierMethod2)  
+> Set up a value notifier that will be called whenever the value changes  
+  
+### NumberValueNotifierFunction<a name="NumberValueNotifierFunction"></a>
+(value : [`number`](../../API/builtins/number.md))  
+  
+  
+### NumberValueNotifierMemberFunction<a name="NumberValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`number`](../../API/builtins/number.md))  
+  
+  
+### NumberValueNotifierMethod1<a name="NumberValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction) }  
+  
+  
+### NumberValueNotifierMethod2<a name="NumberValueNotifierMethod2"></a>
+{ 1 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### SliderDefaultValue<a name="SliderDefaultValue"></a>
 [`number`](../../API/builtins/number.md)  
 > The default value that will be re-applied on double-click  
   
-### SliderMaxValue {#SliderMaxValue}
+### SliderMaxValue<a name="SliderMaxValue"></a>
 [`number`](../../API/builtins/number.md)  
 > The maximum value that can be set using the view
 > * Default: 1.0  
   
-### SliderMinValue {#SliderMinValue}
+### SliderMinValue<a name="SliderMinValue"></a>
 [`number`](../../API/builtins/number.md)  
 > The minimum value that can be set using the view
 > * Default: 0  
   
-### SliderNumberValue {#SliderNumberValue}
+### SliderNumberValue<a name="SliderNumberValue"></a>
 [`number`](../../API/builtins/number.md)  
 > The current value of the view  
   
-### SliderStepAmounts {#SliderStepAmounts}
-{ 1 : [`number`](../../API/builtins/number.md), 2 : [`number`](../../API/builtins/number.md) }  
-> A table containing two numbers representing the step amounts for incrementing
-> and decrementing by clicking the <> buttons.
-> The first value is the small step (applied on left clicks)
-> second value is the big step (applied on right clicks)  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
   
-### StringChangeNotifier {#StringChangeNotifier}
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewNumberObservable<a name="ViewNumberObservable"></a>
+[`renoise.Document.ObservableNumber`](../../API/renoise/renoise.Document.ObservableNumber.md)  
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.  
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# MultilineTextFieldProperties<a name="MultilineTextFieldProperties"></a>  
+
+---  
+## Properties
+### bind : [`ViewStringListObservable`](#ViewStringListObservable)[`?`](../../API/builtins/nil.md)<a name="bind"></a>
+> Bind the view's value to a renoise.Document.ObservableStringList object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.
+
+### active : [`TextActive`](#TextActive)[`?`](../../API/builtins/nil.md)<a name="active"></a>
+> When false, text is displayed but can not be entered/modified by the user.
+> * Default: true
+
+### value : [`TextMultilineString`](#TextMultilineString)[`?`](../../API/builtins/nil.md)<a name="value"></a>
+> The text that should be displayed.
+> Newlines (Windows, Mac or Unix styled) in the text can be used to create
+> paragraphs.
+
+### notifier : [`StringChangeNotifier`](#StringChangeNotifier)[`?`](../../API/builtins/nil.md)<a name="notifier"></a>
+> Set up a notifier for text changes
+
+### text : [`TextValueAlias`](#TextValueAlias)[`?`](../../API/builtins/nil.md)<a name="text"></a>
+> Exactly the same as "value"; provided for consistency.
+> * Default: ""
+
+### paragraphs : [`TextParagraphs`](#TextParagraphs)[`?`](../../API/builtins/nil.md)<a name="paragraphs"></a>
+> A table of text lines to be used instead of specifying a single text
+> line with newline characters like "text"
+> * Default: []
+
+### font : [`TextFontStyle`](#TextFontStyle)[`?`](../../API/builtins/nil.md)<a name="font"></a>
+> The style that the text should be displayed with.
+
+### style : [`TextBackgroundStyle`](#TextBackgroundStyle)[`?`](../../API/builtins/nil.md)<a name="style"></a>
+> Setup the text view's background:
+
+### edit_mode : [`TextEditMode`](#TextEditMode)[`?`](../../API/builtins/nil.md)<a name="edit_mode"></a>
+> True when the text field is focused. setting it at run-time programmatically
+> will focus the text field or remove the focus (focus the dialog) accordingly.
+> * Default: false
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### ListElementAdded<a name="ListElementAdded"></a>
+{ index : [`integer`](../../API/builtins/integer.md), type : `"insert"` }  
+  
+  
+### ListElementChange<a name="ListElementChange"></a>
+[`ListElementAdded`](#ListElementAdded) | [`ListElementRemoved`](#ListElementRemoved) | [`ListElementsSwapped`](#ListElementsSwapped)  
+  
+  
+### ListElementRemoved<a name="ListElementRemoved"></a>
+{ index : [`integer`](../../API/builtins/integer.md), type : `"removed"` }  
+  
+  
+### ListElementsSwapped<a name="ListElementsSwapped"></a>
+{ index1 : [`integer`](../../API/builtins/integer.md), index2 : [`integer`](../../API/builtins/integer.md), type : `"swapped"` }  
+  
+  
+### ListNotifierFunction<a name="ListNotifierFunction"></a>
+(change : [`ListElementChange`](#ListElementChange))  
+  
+  
+### ListNotifierMemberContext<a name="ListNotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### StringChangeNotifier<a name="StringChangeNotifier"></a>
 [`StringValueNotifierFunction`](#StringValueNotifierFunction) | [`StringValueNotifierMethod1`](#StringValueNotifierMethod1) | [`StringValueNotifierMethod2`](#StringValueNotifierMethod2)  
 > Set up a notifier for text changes  
   
-### StringValueNotifierFunction {#StringValueNotifierFunction}
+### StringValueNotifierFunction<a name="StringValueNotifierFunction"></a>
 (value : [`string`](../../API/builtins/string.md))  
   
   
-### StringValueNotifierMemberFunction {#StringValueNotifierMemberFunction}
+### StringValueNotifierMemberFunction<a name="StringValueNotifierMemberFunction"></a>
 (self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`string`](../../API/builtins/string.md))  
   
   
-### StringValueNotifierMethod1 {#StringValueNotifierMethod1}
+### StringValueNotifierMethod1<a name="StringValueNotifierMethod1"></a>
 { 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`StringValueNotifierMemberFunction`](#StringValueNotifierMemberFunction) }  
   
   
-### StringValueNotifierMethod2 {#StringValueNotifierMethod2}
+### StringValueNotifierMethod2<a name="StringValueNotifierMethod2"></a>
 { 1 : [`StringValueNotifierMemberFunction`](#StringValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
   
   
-### TextActive {#TextActive}
+### TextActive<a name="TextActive"></a>
 [`boolean`](../../API/builtins/boolean.md)  
 > When false, text is displayed but can not be entered/modified by the user.
 > * Default: true  
   
-### TextAlignment {#TextAlignment}
-`"center"` | `"left"` | `"right"`  
-> ```lua
-> -- Setup the text's alignment. Applies only when the view's size is larger than
-> -- the needed size to draw the text
-> TextAlignment:
->     | "left" -- (Default)
->     | "right" -- aligned to the right
->     | "center" -- center text
-> ```  
-  
-### TextBackgroundStyle {#TextBackgroundStyle}
+### TextBackgroundStyle<a name="TextBackgroundStyle"></a>
 `"body"` | `"border"` | `"strong"`  
 > ```lua
 > -- Setup the text view's background:
@@ -1905,13 +1454,13 @@ fun()
 >     | "border" -- text on a bordered background
 > ```  
   
-### TextEditMode {#TextEditMode}
+### TextEditMode<a name="TextEditMode"></a>
 [`boolean`](../../API/builtins/boolean.md)  
 > True when the text field is focused. setting it at run-time programmatically
 > will focus the text field or remove the focus (focus the dialog) accordingly.
 > * Default: false  
   
-### TextFontStyle {#TextFontStyle}
+### TextFontStyle<a name="TextFontStyle"></a>
 `"big"` | `"bold"` | `"italic"` | `"mono"` | `"normal"`  
 > ```lua
 > -- The style that the text should be displayed with.
@@ -1923,56 +1472,406 @@ fun()
 >     | "mono" -- monospace font
 > ```  
   
-### TextMultilineString {#TextMultilineString}
+### TextMultilineString<a name="TextMultilineString"></a>
 [`string`](../../API/builtins/string.md)  
 > The text that should be displayed.
 > Newlines (Windows, Mac or Unix styled) in the text can be used to create
 > paragraphs.  
   
-### TextParagraphs {#TextParagraphs}
+### TextParagraphs<a name="TextParagraphs"></a>
 [`string`](../../API/builtins/string.md)[]  
 > A table of text lines to be used instead of specifying a single text
 > line with newline characters like "text"
 > * Default: []  
   
-### TextSingleLineString {#TextSingleLineString}
-[`string`](../../API/builtins/string.md)  
-> The text that should be displayed. Setting a new text will resize
-> the view in order to make the text fully visible (expanding only).
-> * Default: ""  
-  
-### TextStyle {#TextStyle}
-`"disabled"` | `"normal"` | `"strong"`  
-> ```lua
-> -- Get/set the color style the text should be displayed with.
-> TextStyle:
->     | "normal" -- (Default)
->     | "strong" -- highlighted color
->     | "disabled" -- greyed out color
-> ```  
-  
-### TextValue {#TextValue}
-[`string`](../../API/builtins/string.md)  
-> The currently shown text. The text will not be updated when editing,
-> rather only after editing is complete (return is pressed, or focus is lost).
-> * Default: ""  
-  
-### TextValueAlias {#TextValueAlias}
+### TextValueAlias<a name="TextValueAlias"></a>
 [`string`](../../API/builtins/string.md)  
 > Exactly the same as "value"; provided for consistency.
 > * Default: ""  
   
-### ValueBoxMaxValue {#ValueBoxMaxValue}
-[`number`](../../API/builtins/number.md)  
-> The maximum value that can be set using the view
-> * Default: 100  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
   
-### ValueBoxMinValue {#ValueBoxMinValue}
-[`number`](../../API/builtins/number.md)  
-> The minimum value that can be set using the view
-> * Default: 0  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
   
-### ViewBackgroundStyle {#ViewBackgroundStyle}
+### ViewStringListObservable<a name="ViewStringListObservable"></a>
+[`renoise.Document.ObservableStringList`](../../API/renoise/renoise.Document.ObservableStringList.md)  
+> Bind the view's value to a renoise.Document.ObservableStringList object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.  
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# MultilineTextViewProperties<a name="MultilineTextViewProperties"></a>  
+
+---  
+## Properties
+### text : [`TextMultilineString`](#TextMultilineString)[`?`](../../API/builtins/nil.md)<a name="text"></a>
+> The text that should be displayed.
+> Newlines (Windows, Mac or Unix styled) in the text can be used to create
+> paragraphs.
+
+### paragraphs : [`TextParagraphs`](#TextParagraphs)[`?`](../../API/builtins/nil.md)<a name="paragraphs"></a>
+> A table of text lines to be used instead of specifying a single text
+> line with newline characters like "text"
+> * Default: []
+
+### font : [`TextFontStyle`](#TextFontStyle)[`?`](../../API/builtins/nil.md)<a name="font"></a>
+> The style that the text should be displayed with.
+
+### style : [`TextBackgroundStyle`](#TextBackgroundStyle)[`?`](../../API/builtins/nil.md)<a name="style"></a>
+> Setup the text view's background:
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### TextBackgroundStyle<a name="TextBackgroundStyle"></a>
+`"body"` | `"border"` | `"strong"`  
+> ```lua
+> -- Setup the text view's background:
+> TextBackgroundStyle:
+>     | "body" -- simple text color with no background
+>     | "strong" -- stronger text color with no background
+>     | "border" -- text on a bordered background
+> ```  
+  
+### TextFontStyle<a name="TextFontStyle"></a>
+`"big"` | `"bold"` | `"italic"` | `"mono"` | `"normal"`  
+> ```lua
+> -- The style that the text should be displayed with.
+> TextFontStyle:
+>     | "normal" -- (Default)
+>     | "big" -- big text
+>     | "bold" -- bold font
+>     | "italic" -- italic font
+>     | "mono" -- monospace font
+> ```  
+  
+### TextMultilineString<a name="TextMultilineString"></a>
+[`string`](../../API/builtins/string.md)  
+> The text that should be displayed.
+> Newlines (Windows, Mac or Unix styled) in the text can be used to create
+> paragraphs.  
+  
+### TextParagraphs<a name="TextParagraphs"></a>
+[`string`](../../API/builtins/string.md)[]  
+> A table of text lines to be used instead of specifying a single text
+> line with newline characters like "text"
+> * Default: []  
+  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# PopUpMenuProperties<a name="PopUpMenuProperties"></a>  
+
+---  
+## Properties
+### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md)<a name="active"></a>
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.
+
+### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md)<a name="midi_mapping"></a>
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.
+
+### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md)<a name="bind"></a>
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.
+
+### value : [`SelectedItem`](#SelectedItem)[`?`](../../API/builtins/nil.md)<a name="value"></a>
+> The currently selected item's index
+
+### notifier : [`IntegerNotifier`](#IntegerNotifier)[`?`](../../API/builtins/nil.md)<a name="notifier"></a>
+> Set up a notifier that will be called whenever a new item is picked
+
+### items : [`PopupItemLabels`](#PopupItemLabels)[`?`](../../API/builtins/nil.md)<a name="items"></a>
+> A list of buttons labels to show in order
+> The list can be empty, then "None" is displayed and the value won't change.
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### ControlActive<a name="ControlActive"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.  
+  
+### ControlMidiMappingString<a name="ControlMidiMappingString"></a>
+[`string`](../../API/builtins/string.md)  
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.  
+  
+### IntegerNotifier<a name="IntegerNotifier"></a>
+[`IntegerValueNotifierFunction`](#IntegerValueNotifierFunction) | [`IntegerValueNotifierMethod1`](#IntegerValueNotifierMethod1) | [`IntegerValueNotifierMethod2`](#IntegerValueNotifierMethod2)  
+> Set up a notifier that will be called whenever a new item is picked  
+  
+### IntegerValueNotifierFunction<a name="IntegerValueNotifierFunction"></a>
+(value : [`integer`](../../API/builtins/integer.md))  
+  
+  
+### IntegerValueNotifierMemberFunction<a name="IntegerValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`integer`](../../API/builtins/integer.md))  
+  
+  
+### IntegerValueNotifierMethod1<a name="IntegerValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`IntegerValueNotifierMemberFunction`](#IntegerValueNotifierMemberFunction) }  
+  
+  
+### IntegerValueNotifierMethod2<a name="IntegerValueNotifierMethod2"></a>
+{ 1 : [`IntegerValueNotifierMemberFunction`](#IntegerValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### NotifierFunction<a name="NotifierFunction"></a>
+fun()  
+  
+  
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### PopupItemLabels<a name="PopupItemLabels"></a>
+[`string`](../../API/builtins/string.md)[]  
+> A list of buttons labels to show in order
+> The list can be empty, then "None" is displayed and the value won't change.  
+  
+### SelectedItem<a name="SelectedItem"></a>
+[`integer`](../../API/builtins/integer.md)  
+> The currently selected item's index  
+  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewNumberObservable<a name="ViewNumberObservable"></a>
+[`renoise.Document.ObservableNumber`](../../API/renoise/renoise.Document.ObservableNumber.md)  
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.  
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# RackViewProperties<a name="RackViewProperties"></a>  
+
+---  
+## Properties
+### margin : [`RackMargin`](#RackMargin)[`?`](../../API/builtins/nil.md)<a name="margin"></a>
+> Set the "borders" of a rack (left, right, top and bottom inclusively)
+> *  Default: 0 (no borders)
+
+### spacing : [`RackSpacing`](#RackSpacing)[`?`](../../API/builtins/nil.md)<a name="spacing"></a>
+> Set the amount stacked child views are separated by (horizontally in
+> rows, vertically in columns).
+> *  Default: 0 (no spacing)
+
+### style : [`ViewBackgroundStyle`](#ViewBackgroundStyle)[`?`](../../API/builtins/nil.md)<a name="style"></a>
+> Setup a background style for the view. 
+
+### uniform : [`RackUniformity`](#RackUniformity)[`?`](../../API/builtins/nil.md)<a name="uniform"></a>
+> When set to true, all child views in the rack are automatically resized to
+> the max size of all child views (width in ViewBuilder.column, height in
+> ViewBuilder.row). This can be useful to automatically align all sub
+> columns/panels to the same size. Resizing is done automatically, as soon
+> as a child view size changes or new children are added.
+> * Default: false
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### RackMargin<a name="RackMargin"></a>
+[`integer`](../../API/builtins/integer.md)  
+> Set the "borders" of a rack (left, right, top and bottom inclusively)
+> *  Default: 0 (no borders)  
+  
+### RackSpacing<a name="RackSpacing"></a>
+[`integer`](../../API/builtins/integer.md)  
+> Set the amount stacked child views are separated by (horizontally in
+> rows, vertically in columns).
+> *  Default: 0 (no spacing)  
+  
+### RackUniformity<a name="RackUniformity"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> When set to true, all child views in the rack are automatically resized to
+> the max size of all child views (width in ViewBuilder.column, height in
+> ViewBuilder.row). This can be useful to automatically align all sub
+> columns/panels to the same size. Resizing is done automatically, as soon
+> as a child view size changes or new children are added.
+> * Default: false  
+  
+### ViewBackgroundStyle<a name="ViewBackgroundStyle"></a>
 `"body"` | `"border"` | `"group"` | `"invisible"` | `"panel"` | `"plain"`  
 > ```lua
 > -- Setup a background style for the view. 
@@ -1985,28 +1884,184 @@ fun()
 >     | "group" -- background for "nested" groups within body
 > ```  
   
-### ViewBooleanObservable {#ViewBooleanObservable}
-[`renoise.Document.ObservableBoolean`](../../API/renoise/renoise.Document.ObservableBoolean.md)  
-> Bind the view's value to a renoise.Document.ObservableBoolean object.
-> Automatically keep them in sync.
-> The view will change the Observable value as soon as its value changes
-> and change the view's value as soon as the Observable's value changes.
-> Notifiers can be added to either the view or the Observable object.  
-  
-### ViewDimension {#ViewDimension}
+### ViewDimension<a name="ViewDimension"></a>
 [`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
 > The dimensions of a view has to be larger than 0.
 > For nested views you can also specify relative size
 > for example `vb:text { width = "80%"}`. The percentage values are
 > relative to the view's parent size and will automatically update on size changes.  
   
-### ViewId {#ViewId}
+### ViewId<a name="ViewId"></a>
 [`string`](../../API/builtins/string.md)  
 > Unique identifier to resolve the view later on in the viewbuilder, 
 > e.g. `vb.views.SomeString` or `vb.views["Some String"]`
 > View ids must be unique within a single view builder instance.   
   
-### ViewNumberObservable {#ViewNumberObservable}
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# RotaryEncoderProperties<a name="RotaryEncoderProperties"></a>  
+
+---  
+## Properties
+### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md)<a name="active"></a>
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.
+
+### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md)<a name="midi_mapping"></a>
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.
+
+### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md)<a name="bind"></a>
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.
+
+### value : [`SliderNumberValue`](#SliderNumberValue)[`?`](../../API/builtins/nil.md)<a name="value"></a>
+> The current value of the view
+
+### notifier : [`NumberValueNotifier`](#NumberValueNotifier)[`?`](../../API/builtins/nil.md)<a name="notifier"></a>
+> Set up a value notifier that will be called whenever the value changes
+
+### min : [`SliderMinValue`](#SliderMinValue)[`?`](../../API/builtins/nil.md)<a name="min"></a>
+> The minimum value that can be set using the view
+> * Default: 0
+
+### max : [`SliderMaxValue`](#SliderMaxValue)[`?`](../../API/builtins/nil.md)<a name="max"></a>
+> The maximum value that can be set using the view
+> * Default: 1.0
+
+### default : [`SliderDefaultValue`](#SliderDefaultValue)[`?`](../../API/builtins/nil.md)<a name="default"></a>
+> The default value that will be re-applied on double-click
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### ControlActive<a name="ControlActive"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.  
+  
+### ControlMidiMappingString<a name="ControlMidiMappingString"></a>
+[`string`](../../API/builtins/string.md)  
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.  
+  
+### NotifierFunction<a name="NotifierFunction"></a>
+fun()  
+  
+  
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### NumberValueNotifier<a name="NumberValueNotifier"></a>
+[`NumberValueNotifierFunction`](#NumberValueNotifierFunction) | [`NumberValueNotifierMethod1`](#NumberValueNotifierMethod1) | [`NumberValueNotifierMethod2`](#NumberValueNotifierMethod2)  
+> Set up a value notifier that will be called whenever the value changes  
+  
+### NumberValueNotifierFunction<a name="NumberValueNotifierFunction"></a>
+(value : [`number`](../../API/builtins/number.md))  
+  
+  
+### NumberValueNotifierMemberFunction<a name="NumberValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`number`](../../API/builtins/number.md))  
+  
+  
+### NumberValueNotifierMethod1<a name="NumberValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction) }  
+  
+  
+### NumberValueNotifierMethod2<a name="NumberValueNotifierMethod2"></a>
+{ 1 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### SliderDefaultValue<a name="SliderDefaultValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The default value that will be re-applied on double-click  
+  
+### SliderMaxValue<a name="SliderMaxValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The maximum value that can be set using the view
+> * Default: 1.0  
+  
+### SliderMinValue<a name="SliderMinValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The minimum value that can be set using the view
+> * Default: 0  
+  
+### SliderNumberValue<a name="SliderNumberValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The current value of the view  
+  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewNumberObservable<a name="ViewNumberObservable"></a>
 [`renoise.Document.ObservableNumber`](../../API/renoise/renoise.Document.ObservableNumber.md)  
 > Bind the view's value to a renoise.Document.ObservableNumber object.
 > Automatically keep them in sync.
@@ -2014,15 +2069,349 @@ fun()
 > and change the view's value as soon as the Observable's value changes.
 > Notifiers can be added to either the view or the Observable object.  
   
-### ViewStringListObservable {#ViewStringListObservable}
-[`renoise.Document.ObservableStringList`](../../API/renoise/renoise.Document.ObservableStringList.md)  
-> Bind the view's value to a renoise.Document.ObservableStringList object.
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# SliderProperties<a name="SliderProperties"></a>  
+
+---  
+## Properties
+### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md)<a name="active"></a>
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.
+
+### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md)<a name="midi_mapping"></a>
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.
+
+### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md)<a name="bind"></a>
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.
+
+### value : [`SliderNumberValue`](#SliderNumberValue)[`?`](../../API/builtins/nil.md)<a name="value"></a>
+> The current value of the view
+
+### notifier : [`NumberValueNotifier`](#NumberValueNotifier)[`?`](../../API/builtins/nil.md)<a name="notifier"></a>
+> Set up a value notifier that will be called whenever the value changes
+
+### min : [`SliderMinValue`](#SliderMinValue)[`?`](../../API/builtins/nil.md)<a name="min"></a>
+> The minimum value that can be set using the view
+> * Default: 0
+
+### max : [`SliderMaxValue`](#SliderMaxValue)[`?`](../../API/builtins/nil.md)<a name="max"></a>
+> The maximum value that can be set using the view
+> * Default: 1.0
+
+### steps : [`SliderStepAmounts`](#SliderStepAmounts)[`?`](../../API/builtins/nil.md)<a name="steps"></a>
+> A table containing two numbers representing the step amounts for incrementing
+> and decrementing by clicking the <> buttons.
+> The first value is the small step (applied on left clicks)
+> second value is the big step (applied on right clicks)
+
+### default : [`SliderDefaultValue`](#SliderDefaultValue)[`?`](../../API/builtins/nil.md)<a name="default"></a>
+> The default value that will be re-applied on double-click
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### ControlActive<a name="ControlActive"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.  
+  
+### ControlMidiMappingString<a name="ControlMidiMappingString"></a>
+[`string`](../../API/builtins/string.md)  
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.  
+  
+### NotifierFunction<a name="NotifierFunction"></a>
+fun()  
+  
+  
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### NumberValueNotifier<a name="NumberValueNotifier"></a>
+[`NumberValueNotifierFunction`](#NumberValueNotifierFunction) | [`NumberValueNotifierMethod1`](#NumberValueNotifierMethod1) | [`NumberValueNotifierMethod2`](#NumberValueNotifierMethod2)  
+> Set up a value notifier that will be called whenever the value changes  
+  
+### NumberValueNotifierFunction<a name="NumberValueNotifierFunction"></a>
+(value : [`number`](../../API/builtins/number.md))  
+  
+  
+### NumberValueNotifierMemberFunction<a name="NumberValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`number`](../../API/builtins/number.md))  
+  
+  
+### NumberValueNotifierMethod1<a name="NumberValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction) }  
+  
+  
+### NumberValueNotifierMethod2<a name="NumberValueNotifierMethod2"></a>
+{ 1 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### SliderDefaultValue<a name="SliderDefaultValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The default value that will be re-applied on double-click  
+  
+### SliderMaxValue<a name="SliderMaxValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The maximum value that can be set using the view
+> * Default: 1.0  
+  
+### SliderMinValue<a name="SliderMinValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The minimum value that can be set using the view
+> * Default: 0  
+  
+### SliderNumberValue<a name="SliderNumberValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The current value of the view  
+  
+### SliderStepAmounts<a name="SliderStepAmounts"></a>
+{ 1 : [`number`](../../API/builtins/number.md), 2 : [`number`](../../API/builtins/number.md) }  
+> A table containing two numbers representing the step amounts for incrementing
+> and decrementing by clicking the <> buttons.
+> The first value is the small step (applied on left clicks)
+> second value is the big step (applied on right clicks)  
+  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewNumberObservable<a name="ViewNumberObservable"></a>
+[`renoise.Document.ObservableNumber`](../../API/renoise/renoise.Document.ObservableNumber.md)  
+> Bind the view's value to a renoise.Document.ObservableNumber object.
 > Automatically keep them in sync.
 > The view will change the Observable value as soon as its value changes
 > and change the view's value as soon as the Observable's value changes.
 > Notifiers can be added to either the view or the Observable object.  
   
-### ViewStringObservable {#ViewStringObservable}
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# TextFieldProperties<a name="TextFieldProperties"></a>  
+
+---  
+## Properties
+### bind : [`ViewStringObservable`](#ViewStringObservable)[`?`](../../API/builtins/nil.md)<a name="bind"></a>
+> Bind the view's value to a renoise.Document.ObservableString object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.
+
+### active : [`TextActive`](#TextActive)[`?`](../../API/builtins/nil.md)<a name="active"></a>
+> When false, text is displayed but can not be entered/modified by the user.
+> * Default: true
+
+### value : [`TextValue`](#TextValue)[`?`](../../API/builtins/nil.md)<a name="value"></a>
+> The currently shown text. The text will not be updated when editing,
+> rather only after editing is complete (return is pressed, or focus is lost).
+> * Default: ""
+
+### notifier : [`StringChangeNotifier`](#StringChangeNotifier)[`?`](../../API/builtins/nil.md)<a name="notifier"></a>
+> Set up a notifier for text changes
+
+### text : [`TextValueAlias`](#TextValueAlias)[`?`](../../API/builtins/nil.md)<a name="text"></a>
+> Exactly the same as "value"; provided for consistency.
+> * Default: ""
+
+### align : [`TextAlignment`](#TextAlignment)[`?`](../../API/builtins/nil.md)<a name="align"></a>
+> Setup the text's alignment. Applies only when the view's size is larger than
+> the needed size to draw the text
+
+### edit_mode : [`TextEditMode`](#TextEditMode)[`?`](../../API/builtins/nil.md)<a name="edit_mode"></a>
+> True when the text field is focused. setting it at run-time programmatically
+> will focus the text field or remove the focus (focus the dialog) accordingly.
+> * Default: false
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### NotifierFunction<a name="NotifierFunction"></a>
+fun()  
+  
+  
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### StringChangeNotifier<a name="StringChangeNotifier"></a>
+[`StringValueNotifierFunction`](#StringValueNotifierFunction) | [`StringValueNotifierMethod1`](#StringValueNotifierMethod1) | [`StringValueNotifierMethod2`](#StringValueNotifierMethod2)  
+> Set up a notifier for text changes  
+  
+### StringValueNotifierFunction<a name="StringValueNotifierFunction"></a>
+(value : [`string`](../../API/builtins/string.md))  
+  
+  
+### StringValueNotifierMemberFunction<a name="StringValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`string`](../../API/builtins/string.md))  
+  
+  
+### StringValueNotifierMethod1<a name="StringValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`StringValueNotifierMemberFunction`](#StringValueNotifierMemberFunction) }  
+  
+  
+### StringValueNotifierMethod2<a name="StringValueNotifierMethod2"></a>
+{ 1 : [`StringValueNotifierMemberFunction`](#StringValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### TextActive<a name="TextActive"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> When false, text is displayed but can not be entered/modified by the user.
+> * Default: true  
+  
+### TextAlignment<a name="TextAlignment"></a>
+`"center"` | `"left"` | `"right"`  
+> ```lua
+> -- Setup the text's alignment. Applies only when the view's size is larger than
+> -- the needed size to draw the text
+> TextAlignment:
+>     | "left" -- (Default)
+>     | "right" -- aligned to the right
+>     | "center" -- center text
+> ```  
+  
+### TextEditMode<a name="TextEditMode"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> True when the text field is focused. setting it at run-time programmatically
+> will focus the text field or remove the focus (focus the dialog) accordingly.
+> * Default: false  
+  
+### TextValue<a name="TextValue"></a>
+[`string`](../../API/builtins/string.md)  
+> The currently shown text. The text will not be updated when editing,
+> rather only after editing is complete (return is pressed, or focus is lost).
+> * Default: ""  
+  
+### TextValueAlias<a name="TextValueAlias"></a>
+[`string`](../../API/builtins/string.md)  
+> Exactly the same as "value"; provided for consistency.
+> * Default: ""  
+  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewStringObservable<a name="ViewStringObservable"></a>
 [`renoise.Document.ObservableString`](../../API/renoise/renoise.Document.ObservableString.md)  
 > Bind the view's value to a renoise.Document.ObservableString object.
 > Automatically keep them in sync.
@@ -2030,29 +2419,927 @@ fun()
 > and change the view's value as soon as the Observable's value changes.
 > Notifiers can be added to either the view or the Observable object.  
   
-### ViewTooltip {#ViewTooltip}
+### ViewTooltip<a name="ViewTooltip"></a>
 [`string`](../../API/builtins/string.md)  
 > A tooltip text that should be shown for this view on mouse hover.
 > * Default: "" (no tip will be shown)  
   
-### ViewVisibility {#ViewVisibility}
+### ViewVisibility<a name="ViewVisibility"></a>
 [`boolean`](../../API/builtins/boolean.md)  
 > Set visible to false to hide a view (make it invisible without removing
 > it). Please note that view.visible will also return false when any of its
 > parents are invisible (when its implicitly invisible).
 > * Default: true  
   
-### XYPadMaxValues {#XYPadMaxValues}
+
+  
+# TextViewProperties<a name="TextViewProperties"></a>  
+
+---  
+## Properties
+### text : [`TextSingleLineString`](#TextSingleLineString)[`?`](../../API/builtins/nil.md)<a name="text"></a>
+> The text that should be displayed. Setting a new text will resize
+> the view in order to make the text fully visible (expanding only).
+> * Default: ""
+
+### font : [`TextFontStyle`](#TextFontStyle)[`?`](../../API/builtins/nil.md)<a name="font"></a>
+> The style that the text should be displayed with.
+
+### style : [`TextStyle`](#TextStyle)[`?`](../../API/builtins/nil.md)<a name="style"></a>
+> Get/set the color style the text should be displayed with.
+
+### align : [`TextAlignment`](#TextAlignment)[`?`](../../API/builtins/nil.md)<a name="align"></a>
+> Setup the text's alignment. Applies only when the view's size is larger than
+> the needed size to draw the text
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### TextAlignment<a name="TextAlignment"></a>
+`"center"` | `"left"` | `"right"`  
+> ```lua
+> -- Setup the text's alignment. Applies only when the view's size is larger than
+> -- the needed size to draw the text
+> TextAlignment:
+>     | "left" -- (Default)
+>     | "right" -- aligned to the right
+>     | "center" -- center text
+> ```  
+  
+### TextFontStyle<a name="TextFontStyle"></a>
+`"big"` | `"bold"` | `"italic"` | `"mono"` | `"normal"`  
+> ```lua
+> -- The style that the text should be displayed with.
+> TextFontStyle:
+>     | "normal" -- (Default)
+>     | "big" -- big text
+>     | "bold" -- bold font
+>     | "italic" -- italic font
+>     | "mono" -- monospace font
+> ```  
+  
+### TextSingleLineString<a name="TextSingleLineString"></a>
+[`string`](../../API/builtins/string.md)  
+> The text that should be displayed. Setting a new text will resize
+> the view in order to make the text fully visible (expanding only).
+> * Default: ""  
+  
+### TextStyle<a name="TextStyle"></a>
+`"disabled"` | `"normal"` | `"strong"`  
+> ```lua
+> -- Get/set the color style the text should be displayed with.
+> TextStyle:
+>     | "normal" -- (Default)
+>     | "strong" -- highlighted color
+>     | "disabled" -- greyed out color
+> ```  
+  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# ValueBoxProperties<a name="ValueBoxProperties"></a>  
+
+---  
+## Properties
+### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md)<a name="active"></a>
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.
+
+### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md)<a name="midi_mapping"></a>
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.
+
+### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md)<a name="bind"></a>
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.
+
+### value : [`SliderNumberValue`](#SliderNumberValue)[`?`](../../API/builtins/nil.md)<a name="value"></a>
+> The current value of the view
+
+### notifier : [`NumberValueNotifier`](#NumberValueNotifier)[`?`](../../API/builtins/nil.md)<a name="notifier"></a>
+> Set up a value notifier that will be called whenever the value changes
+
+### min : [`ValueBoxMinValue`](#ValueBoxMinValue)[`?`](../../API/builtins/nil.md)<a name="min"></a>
+> The minimum value that can be set using the view
+> * Default: 0
+
+### max : [`ValueBoxMaxValue`](#ValueBoxMaxValue)[`?`](../../API/builtins/nil.md)<a name="max"></a>
+> The maximum value that can be set using the view
+> * Default: 100
+
+### steps : [`SliderStepAmounts`](#SliderStepAmounts)[`?`](../../API/builtins/nil.md)<a name="steps"></a>
+> A table containing two numbers representing the step amounts for incrementing
+> and decrementing by clicking the <> buttons.
+> The first value is the small step (applied on left clicks)
+> second value is the big step (applied on right clicks)
+
+### tostring : [`PairedShowNumberAsString`](#PairedShowNumberAsString)[`?`](../../API/builtins/nil.md)<a name="tostring"></a>
+> Make sure to also set `tonumber` if you set this.
+
+### tonumber : [`PairedParseStringAsNumber`](#PairedParseStringAsNumber)[`?`](../../API/builtins/nil.md)<a name="tonumber"></a>
+> Make sure to also set `tostring` if you set this.
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### ControlActive<a name="ControlActive"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.  
+  
+### ControlMidiMappingString<a name="ControlMidiMappingString"></a>
+[`string`](../../API/builtins/string.md)  
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.  
+  
+### NotifierFunction<a name="NotifierFunction"></a>
+fun()  
+  
+  
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### NumberValueNotifier<a name="NumberValueNotifier"></a>
+[`NumberValueNotifierFunction`](#NumberValueNotifierFunction) | [`NumberValueNotifierMethod1`](#NumberValueNotifierMethod1) | [`NumberValueNotifierMethod2`](#NumberValueNotifierMethod2)  
+> Set up a value notifier that will be called whenever the value changes  
+  
+### NumberValueNotifierFunction<a name="NumberValueNotifierFunction"></a>
+(value : [`number`](../../API/builtins/number.md))  
+  
+  
+### NumberValueNotifierMemberFunction<a name="NumberValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`number`](../../API/builtins/number.md))  
+  
+  
+### NumberValueNotifierMethod1<a name="NumberValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction) }  
+  
+  
+### NumberValueNotifierMethod2<a name="NumberValueNotifierMethod2"></a>
+{ 1 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### PairedParseStringAsNumber<a name="PairedParseStringAsNumber"></a>
+(value : [`string`](../../API/builtins/string.md)) `->` [`number`](../../API/builtins/number.md)[`?`](../../API/builtins/nil.md)  
+> Make sure to also set `tostring` if you set this.  
+  
+### PairedShowNumberAsString<a name="PairedShowNumberAsString"></a>
+[`ShowNumberAsString`](#ShowNumberAsString)  
+> Make sure to also set `tonumber` if you set this.  
+  
+### ShowNumberAsString<a name="ShowNumberAsString"></a>
+(value : [`number`](../../API/builtins/number.md)) `->` [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
+> Set a custom rule on how a number value should be displayed.
+> Useful for showing units like decibel or note values etc.
+> If none are set, a default string/number conversion is done, which
+> simply shows the number with 3 digits after the decimal point.
+> Note: When the callback fails with an error, it will be disabled to avoid
+> a flood of error messages.  
+  
+### SliderNumberValue<a name="SliderNumberValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The current value of the view  
+  
+### SliderStepAmounts<a name="SliderStepAmounts"></a>
+{ 1 : [`number`](../../API/builtins/number.md), 2 : [`number`](../../API/builtins/number.md) }  
+> A table containing two numbers representing the step amounts for incrementing
+> and decrementing by clicking the <> buttons.
+> The first value is the small step (applied on left clicks)
+> second value is the big step (applied on right clicks)  
+  
+### ValueBoxMaxValue<a name="ValueBoxMaxValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The maximum value that can be set using the view
+> * Default: 100  
+  
+### ValueBoxMinValue<a name="ValueBoxMinValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The minimum value that can be set using the view
+> * Default: 0  
+  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewNumberObservable<a name="ViewNumberObservable"></a>
+[`renoise.Document.ObservableNumber`](../../API/renoise/renoise.Document.ObservableNumber.md)  
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.  
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# ValueFieldProperties<a name="ValueFieldProperties"></a>  
+
+---  
+## Properties
+### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md)<a name="active"></a>
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.
+
+### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md)<a name="midi_mapping"></a>
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.
+
+### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md)<a name="bind"></a>
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.
+
+### value : [`SliderNumberValue`](#SliderNumberValue)[`?`](../../API/builtins/nil.md)<a name="value"></a>
+> The current value of the view
+
+### notifier : [`NumberValueNotifier`](#NumberValueNotifier)[`?`](../../API/builtins/nil.md)<a name="notifier"></a>
+> Set up a value notifier that will be called whenever the value changes
+
+### min : [`SliderMinValue`](#SliderMinValue)[`?`](../../API/builtins/nil.md)<a name="min"></a>
+> The minimum value that can be set using the view
+> * Default: 0
+
+### max : [`SliderMaxValue`](#SliderMaxValue)[`?`](../../API/builtins/nil.md)<a name="max"></a>
+> The maximum value that can be set using the view
+> * Default: 1.0
+
+### align : [`TextAlignment`](#TextAlignment)[`?`](../../API/builtins/nil.md)<a name="align"></a>
+> Setup the text's alignment. Applies only when the view's size is larger than
+> the needed size to draw the text
+
+### tostring : [`PairedShowNumberAsString`](#PairedShowNumberAsString)[`?`](../../API/builtins/nil.md)<a name="tostring"></a>
+> Make sure to also set `tonumber` if you set this.
+
+### tonumber : [`PairedParseStringAsNumber`](#PairedParseStringAsNumber)[`?`](../../API/builtins/nil.md)<a name="tonumber"></a>
+> Make sure to also set `tostring` if you set this.
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### ControlActive<a name="ControlActive"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.  
+  
+### ControlMidiMappingString<a name="ControlMidiMappingString"></a>
+[`string`](../../API/builtins/string.md)  
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.  
+  
+### NotifierFunction<a name="NotifierFunction"></a>
+fun()  
+  
+  
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### NumberValueNotifier<a name="NumberValueNotifier"></a>
+[`NumberValueNotifierFunction`](#NumberValueNotifierFunction) | [`NumberValueNotifierMethod1`](#NumberValueNotifierMethod1) | [`NumberValueNotifierMethod2`](#NumberValueNotifierMethod2)  
+> Set up a value notifier that will be called whenever the value changes  
+  
+### NumberValueNotifierFunction<a name="NumberValueNotifierFunction"></a>
+(value : [`number`](../../API/builtins/number.md))  
+  
+  
+### NumberValueNotifierMemberFunction<a name="NumberValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`number`](../../API/builtins/number.md))  
+  
+  
+### NumberValueNotifierMethod1<a name="NumberValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction) }  
+  
+  
+### NumberValueNotifierMethod2<a name="NumberValueNotifierMethod2"></a>
+{ 1 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### PairedParseStringAsNumber<a name="PairedParseStringAsNumber"></a>
+(value : [`string`](../../API/builtins/string.md)) `->` [`number`](../../API/builtins/number.md)[`?`](../../API/builtins/nil.md)  
+> Make sure to also set `tostring` if you set this.  
+  
+### PairedShowNumberAsString<a name="PairedShowNumberAsString"></a>
+[`ShowNumberAsString`](#ShowNumberAsString)  
+> Make sure to also set `tonumber` if you set this.  
+  
+### ShowNumberAsString<a name="ShowNumberAsString"></a>
+(value : [`number`](../../API/builtins/number.md)) `->` [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
+> Set a custom rule on how a number value should be displayed.
+> Useful for showing units like decibel or note values etc.
+> If none are set, a default string/number conversion is done, which
+> simply shows the number with 3 digits after the decimal point.
+> Note: When the callback fails with an error, it will be disabled to avoid
+> a flood of error messages.  
+  
+### SliderMaxValue<a name="SliderMaxValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The maximum value that can be set using the view
+> * Default: 1.0  
+  
+### SliderMinValue<a name="SliderMinValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The minimum value that can be set using the view
+> * Default: 0  
+  
+### SliderNumberValue<a name="SliderNumberValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The current value of the view  
+  
+### TextAlignment<a name="TextAlignment"></a>
+`"center"` | `"left"` | `"right"`  
+> ```lua
+> -- Setup the text's alignment. Applies only when the view's size is larger than
+> -- the needed size to draw the text
+> TextAlignment:
+>     | "left" -- (Default)
+>     | "right" -- aligned to the right
+>     | "center" -- center text
+> ```  
+  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewNumberObservable<a name="ViewNumberObservable"></a>
+[`renoise.Document.ObservableNumber`](../../API/renoise/renoise.Document.ObservableNumber.md)  
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.  
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# ValueViewProperties<a name="ValueViewProperties"></a>  
+
+---  
+## Properties
+### bind : [`ViewNumberObservable`](#ViewNumberObservable)[`?`](../../API/builtins/nil.md)<a name="bind"></a>
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.
+
+### value : [`SliderNumberValue`](#SliderNumberValue)[`?`](../../API/builtins/nil.md)<a name="value"></a>
+> The current value of the view
+
+### notifier : [`NumberValueNotifier`](#NumberValueNotifier)[`?`](../../API/builtins/nil.md)<a name="notifier"></a>
+> Set up a value notifier that will be called whenever the value changes
+
+### align : [`TextAlignment`](#TextAlignment)[`?`](../../API/builtins/nil.md)<a name="align"></a>
+> Setup the text's alignment. Applies only when the view's size is larger than
+> the needed size to draw the text
+
+### font : [`TextFontStyle`](#TextFontStyle)[`?`](../../API/builtins/nil.md)<a name="font"></a>
+> The style that the text should be displayed with.
+
+### tostring : [`ShowNumberAsString`](#ShowNumberAsString)[`?`](../../API/builtins/nil.md)<a name="tostring"></a>
+> Set a custom rule on how a number value should be displayed.
+> Useful for showing units like decibel or note values etc.
+> If none are set, a default string/number conversion is done, which
+> simply shows the number with 3 digits after the decimal point.
+> Note: When the callback fails with an error, it will be disabled to avoid
+> a flood of error messages.
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### NotifierFunction<a name="NotifierFunction"></a>
+fun()  
+  
+  
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### NumberValueNotifier<a name="NumberValueNotifier"></a>
+[`NumberValueNotifierFunction`](#NumberValueNotifierFunction) | [`NumberValueNotifierMethod1`](#NumberValueNotifierMethod1) | [`NumberValueNotifierMethod2`](#NumberValueNotifierMethod2)  
+> Set up a value notifier that will be called whenever the value changes  
+  
+### NumberValueNotifierFunction<a name="NumberValueNotifierFunction"></a>
+(value : [`number`](../../API/builtins/number.md))  
+  
+  
+### NumberValueNotifierMemberFunction<a name="NumberValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`number`](../../API/builtins/number.md))  
+  
+  
+### NumberValueNotifierMethod1<a name="NumberValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction) }  
+  
+  
+### NumberValueNotifierMethod2<a name="NumberValueNotifierMethod2"></a>
+{ 1 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### ShowNumberAsString<a name="ShowNumberAsString"></a>
+(value : [`number`](../../API/builtins/number.md)) `->` [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
+> Set a custom rule on how a number value should be displayed.
+> Useful for showing units like decibel or note values etc.
+> If none are set, a default string/number conversion is done, which
+> simply shows the number with 3 digits after the decimal point.
+> Note: When the callback fails with an error, it will be disabled to avoid
+> a flood of error messages.  
+  
+### SliderNumberValue<a name="SliderNumberValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The current value of the view  
+  
+### TextAlignment<a name="TextAlignment"></a>
+`"center"` | `"left"` | `"right"`  
+> ```lua
+> -- Setup the text's alignment. Applies only when the view's size is larger than
+> -- the needed size to draw the text
+> TextAlignment:
+>     | "left" -- (Default)
+>     | "right" -- aligned to the right
+>     | "center" -- center text
+> ```  
+  
+### TextFontStyle<a name="TextFontStyle"></a>
+`"big"` | `"bold"` | `"italic"` | `"mono"` | `"normal"`  
+> ```lua
+> -- The style that the text should be displayed with.
+> TextFontStyle:
+>     | "normal" -- (Default)
+>     | "big" -- big text
+>     | "bold" -- bold font
+>     | "italic" -- italic font
+>     | "mono" -- monospace font
+> ```  
+  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewNumberObservable<a name="ViewNumberObservable"></a>
+[`renoise.Document.ObservableNumber`](../../API/renoise/renoise.Document.ObservableNumber.md)  
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.  
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# ViewProperties<a name="ViewProperties"></a>  
+>  Base for all View constructor tables in the viewbuilder.  
+
+---  
+## Properties
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+  
+
+
+
+---  
+## Aliases  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+
+  
+# XYPadProperties<a name="XYPadProperties"></a>  
+
+---  
+## Properties
+### active : [`ControlActive`](#ControlActive)[`?`](../../API/builtins/nil.md)<a name="active"></a>
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.
+
+### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)[`?`](../../API/builtins/nil.md)<a name="midi_mapping"></a>
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.
+
+### id : [`ViewId`](#ViewId)[`?`](../../API/builtins/nil.md)<a name="id"></a>
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance. 
+
+### width : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="width"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### height : [`ViewDimension`](#ViewDimension)[`?`](../../API/builtins/nil.md)<a name="height"></a>
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.
+
+### visible : [`ViewVisibility`](#ViewVisibility)[`?`](../../API/builtins/nil.md)<a name="visible"></a>
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true
+
+### tooltip : [`ViewTooltip`](#ViewTooltip)[`?`](../../API/builtins/nil.md)<a name="tooltip"></a>
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)
+
+### bind : [`XYPadObservables`](#XYPadObservables)[`?`](../../API/builtins/nil.md)<a name="bind"></a>
+> Bind the view's value to a pair of renoise.Document.ObservableNumber objects.
+> Automatically keep both values in sync.
+> Will change the Observables' values as soon as the view's value changes,
+> and change the view's values as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.
+> Just like in the other XYPad properties, a table with the fields X and Y
+> is expected here and not a single value. So you have to bind two
+> ObservableNumber object to the pad.
+
+### value : [`XYPadValues`](#XYPadValues)[`?`](../../API/builtins/nil.md)<a name="value"></a>
+> A table of the XYPad's current values on each axis
+
+### snapback : [`XYPadSnapbackValues`](#XYPadSnapbackValues)[`?`](../../API/builtins/nil.md)<a name="snapback"></a>
+> A table of snapback values for each axis
+> When snapback is enabled, the pad will revert its values to the specified
+> snapback values as soon as the mouse button is released in the pad.
+> When disabled, releasing the mouse button will not change the value.
+> You can disable snapback at runtime by setting it to nil or an empty table.
+
+### notifier : [`XYValueNotifier`](#XYValueNotifier)[`?`](../../API/builtins/nil.md)<a name="notifier"></a>
+> Set up a value notifier function that will be used whenever the pad's values change
+
+### min : [`XYPadMinValues`](#XYPadMinValues)[`?`](../../API/builtins/nil.md)<a name="min"></a>
+> A table of allowed minimum values for each axis
+> * Default: {x: 0.0, y: 0.0}
+
+### max : [`XYPadMaxValues`](#XYPadMaxValues)[`?`](../../API/builtins/nil.md)<a name="max"></a>
+> A table of allowed maximum values for each axis
+> * Default: {x: 1.0, y: 1.0}
+
+  
+
+
+
+---  
+## Aliases  
+### ControlActive<a name="ControlActive"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.  
+  
+### ControlMidiMappingString<a name="ControlMidiMappingString"></a>
+[`string`](../../API/builtins/string.md)  
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.  
+  
+### NotifierFunction<a name="NotifierFunction"></a>
+fun()  
+  
+  
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### SliderMaxValue<a name="SliderMaxValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The maximum value that can be set using the view
+> * Default: 1.0  
+  
+### SliderMinValue<a name="SliderMinValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The minimum value that can be set using the view
+> * Default: 0  
+  
+### SliderNumberValue<a name="SliderNumberValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The current value of the view  
+  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+### XYPadMaxValues<a name="XYPadMaxValues"></a>
 { x : [`SliderMaxValue`](#SliderMaxValue), y : [`SliderMaxValue`](#SliderMaxValue) }  
 > A table of allowed maximum values for each axis
 > * Default: {x: 1.0, y: 1.0}  
   
-### XYPadMinValues {#XYPadMinValues}
+### XYPadMinValues<a name="XYPadMinValues"></a>
 { x : [`SliderMinValue`](#SliderMinValue), y : [`SliderMinValue`](#SliderMinValue) }  
 > A table of allowed minimum values for each axis
 > * Default: {x: 0.0, y: 0.0}  
   
-### XYPadObservables {#XYPadObservables}
+### XYPadObservables<a name="XYPadObservables"></a>
 { x : [`renoise.Document.ObservableNumber`](../../API/renoise/renoise.Document.ObservableNumber.md), y : [`renoise.Document.ObservableNumber`](../../API/renoise/renoise.Document.ObservableNumber.md) }  
 > Bind the view's value to a pair of renoise.Document.ObservableNumber objects.
 > Automatically keep both values in sync.
@@ -2063,7 +3350,7 @@ fun()
 > is expected here and not a single value. So you have to bind two
 > ObservableNumber object to the pad.  
   
-### XYPadSnapbackValues {#XYPadSnapbackValues}
+### XYPadSnapbackValues<a name="XYPadSnapbackValues"></a>
 { x : [`number`](../../API/builtins/number.md), y : [`number`](../../API/builtins/number.md) }  
 > A table of snapback values for each axis
 > When snapback is enabled, the pad will revert its values to the specified
@@ -2071,27 +3358,553 @@ fun()
 > When disabled, releasing the mouse button will not change the value.
 > You can disable snapback at runtime by setting it to nil or an empty table.  
   
-### XYPadValues {#XYPadValues}
+### XYPadValues<a name="XYPadValues"></a>
 { x : [`SliderNumberValue`](#SliderNumberValue), y : [`SliderNumberValue`](#SliderNumberValue) }  
 > A table of the XYPad's current values on each axis  
   
-### XYValueNotifier {#XYValueNotifier}
+### XYValueNotifier<a name="XYValueNotifier"></a>
 [`XYValueNotifierFunction`](#XYValueNotifierFunction) | [`XYValueNotifierMethod1`](#XYValueNotifierMethod1) | [`XYValueNotifierMethod2`](#XYValueNotifierMethod2)  
 > Set up a value notifier function that will be used whenever the pad's values change  
   
-### XYValueNotifierFunction {#XYValueNotifierFunction}
+### XYValueNotifierFunction<a name="XYValueNotifierFunction"></a>
 (value : [`XYPadValues`](#XYPadValues))  
   
   
-### XYValueNotifierMemberFunction {#XYValueNotifierMemberFunction}
+### XYValueNotifierMemberFunction<a name="XYValueNotifierMemberFunction"></a>
 (self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`XYPadValues`](#XYPadValues))  
   
   
-### XYValueNotifierMethod1 {#XYValueNotifierMethod1}
+### XYValueNotifierMethod1<a name="XYValueNotifierMethod1"></a>
 { 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`XYValueNotifierMemberFunction`](#XYValueNotifierMemberFunction) }  
   
   
-### XYValueNotifierMethod2 {#XYValueNotifierMethod2}
+### XYValueNotifierMethod2<a name="XYValueNotifierMethod2"></a>
+{ 1 : [`XYValueNotifierMemberFunction`](#XYValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+
+  
+
+
+
+---  
+## Aliases  
+### AlignerMode<a name="AlignerMode"></a>
+`"bottom"` | `"center"` | `"distribute"` | `"justify"` | `"left"` | `"right"` | `"top"`  
+> ```lua
+> -- * Default: "left" (for horizontal_aligner) "top" (for vertical_aligner)
+> AlignerMode:
+>     | "left" -- align from left to right (for horizontal_aligner only)
+>     | "right" -- align from right to left (for horizontal_aligner only)
+>     | "top" -- align from top to bottom (for vertical_aligner only)
+>     | "bottom" -- align from bottom to top (for vertical_aligner only)
+>     | "center" -- center all views
+>     | "justify" -- keep outer views at the borders, distribute the rest
+>     | "distribute" -- equally distributes views over the aligners width/height
+> ```  
+  
+### BitmapImagePath<a name="BitmapImagePath"></a>
+[`string`](../../API/builtins/string.md)  
+> You can load an image from your tool's directory,
+> or use one from Renoise's built-in icons.  
+> * For the built-in icons, use "Icons/ArrowRight.bmp"
+> * For custom images, use a path relative to your tool's root folder.
+> 
+> For example "Images/MyBitmap.bmp" will load the image from
+> "com.me.MyTool.xrnx/Images/MyBitmap.bmp".  
+> If your custom path matches a built-in icon's (like "Icons/ArrowRight.bmp"),
+> your image will be loaded instead of the one from Renoise.  
+> 
+> If you want to support high DPI UI scaling with your bitmaps like the built-in Icons,
+> include high resolution versions with their filenames ending with "@4x"  
+> The following rules will be used when loading bitmaps  
+> * When UI scaling is 100%, only the base bitmaps are used.
+> * When UI scaling is 125%, the base bitmaps are used, except if there is a `BitmapName@x1.25.bmp` variant.
+> * For all other UI scaling > 125% the "@4x" variants are used and downscaled as needed,
+> except when there is an exact match for the current UI scaling factor (e.g. `BitmapName@1.5x.bmp` for 150%)  
+  
+### BitmapMode<a name="BitmapMode"></a>
+`"body_color"` | `"button_color"` | `"main_color"` | `"plain"` | `"transparent"`  
+> ```lua
+> -- Setup how the bitmap should be drawn, recolored. Available modes are:
+> BitmapMode:
+>     | "plain" -- bitmap is drawn as is, no recoloring is done (Default)
+>     | "transparent" -- same as plain, but black pixels will be fully transparent
+>     | "button_color" -- recolor the bitmap, using the theme's button color
+>     | "body_color" -- same as 'button_back' but with body text/back color
+>     | "main_color" -- same as 'button_back' but with main text/back colors
+> ```  
+  
+### BitmapPath<a name="BitmapPath"></a>
+[`BitmapImagePath`](#BitmapImagePath)  
+> Supported bitmap file formats are *.bmp, *.png or *.tif (no transparency).  
+  
+### BooleanValueNotifierFunction<a name="BooleanValueNotifierFunction"></a>
+(value : [`boolean`](../../API/builtins/boolean.md))  
+  
+  
+### BooleanValueNotifierMemberFunction<a name="BooleanValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`boolean`](../../API/builtins/boolean.md))  
+  
+  
+### BooleanValueNotifierMethod1<a name="BooleanValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`BooleanValueNotifierMemberFunction`](#BooleanValueNotifierMemberFunction) }  
+  
+  
+### BooleanValueNotifierMethod2<a name="BooleanValueNotifierMethod2"></a>
+{ 1 : [`BooleanValueNotifierMemberFunction`](#BooleanValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### ButtonBitmapPath<a name="ButtonBitmapPath"></a>
+[`BitmapImagePath`](#BitmapImagePath)  
+> If set, existing text is removed and the loaded image is displayed instead.
+> Supported bitmap file formats are ".bmp", ".png" and ".tiff".
+> Colors in bitmaps will be overridden by the button's theme color, using black
+> as the transparent color for BMPs and TIFFS, and the alpha channel for PNGs.
+> All other colors are mapped to the theme color according to their grey value,
+> so plain white is the target theme color, and all other colors blend into the
+> button's background color of the theme.  
+  
+### ButtonColor<a name="ButtonColor"></a>
+[`RGBColor`](#RGBColor)  
+> When set, the unpressed button's background will be drawn in the specified color.
+> A text color is automatically selected unless explicitly set, to make sure it's
+> always visible.
+> Set color {0,0,0} to enable the theme colors for the button again.  
+  
+### ButtonLabel<a name="ButtonLabel"></a>
+[`string`](../../API/builtins/string.md)  
+> The text label of the button
+> * Default: ""  
+  
+### ButtonNotifier<a name="ButtonNotifier"></a>
+[`NotifierFunction`](#NotifierFunction) | [`NotifierMethod1`](#NotifierMethod1) | [`NotifierMethod2`](#NotifierMethod2)  
+> A click notifier  
+  
+### CheckBoxBoolean<a name="CheckBoxBoolean"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> The current state of the checkbox, expressed as boolean.
+> * Default: false  
+  
+### CheckBoxBooleanNotifier<a name="CheckBoxBooleanNotifier"></a>
+[`BooleanValueNotifierFunction`](#BooleanValueNotifierFunction) | [`BooleanValueNotifierMethod1`](#BooleanValueNotifierMethod1) | [`BooleanValueNotifierMethod2`](#BooleanValueNotifierMethod2)  
+> A notifier for when the checkbox is toggled  
+  
+### ControlActive<a name="ControlActive"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Instead of making a control invisible, you can also make it inactive.
+> Deactivated controls will still be shown, and will still show their
+> currently assigned values, but will not allow changes. Most controls will
+> display as "grayed out" to visualize the deactivated state.  
+  
+### ControlMidiMappingString<a name="ControlMidiMappingString"></a>
+[`string`](../../API/builtins/string.md)  
+> When set, the control will be highlighted when Renoise's MIDI mapping dialog
+> is open. When clicked, it selects the specified string as a MIDI mapping
+> target action. This target acton can either be one of the globally available
+> mappings in Renoise, or those that were created by the tool itself.
+> Target strings are not verified. When they point to nothing, the mapped MIDI
+> message will do nothing and no error is fired.  
+  
+### IntegerNotifier<a name="IntegerNotifier"></a>
+[`IntegerValueNotifierFunction`](#IntegerValueNotifierFunction) | [`IntegerValueNotifierMethod1`](#IntegerValueNotifierMethod1) | [`IntegerValueNotifierMethod2`](#IntegerValueNotifierMethod2)  
+> Set up a notifier that will be called whenever a new item is picked  
+  
+### IntegerValueNotifierFunction<a name="IntegerValueNotifierFunction"></a>
+(value : [`integer`](../../API/builtins/integer.md))  
+  
+  
+### IntegerValueNotifierMemberFunction<a name="IntegerValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`integer`](../../API/builtins/integer.md))  
+  
+  
+### IntegerValueNotifierMethod1<a name="IntegerValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`IntegerValueNotifierMemberFunction`](#IntegerValueNotifierMemberFunction) }  
+  
+  
+### IntegerValueNotifierMethod2<a name="IntegerValueNotifierMethod2"></a>
+{ 1 : [`IntegerValueNotifierMemberFunction`](#IntegerValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### ItemLabels<a name="ItemLabels"></a>
+[`string`](../../API/builtins/string.md)[]  
+> A list of buttons labels to show in order. Must have more than one item.  
+  
+### ListElementAdded<a name="ListElementAdded"></a>
+{ index : [`integer`](../../API/builtins/integer.md), type : `"insert"` }  
+  
+  
+### ListElementChange<a name="ListElementChange"></a>
+[`ListElementAdded`](#ListElementAdded) | [`ListElementRemoved`](#ListElementRemoved) | [`ListElementsSwapped`](#ListElementsSwapped)  
+  
+  
+### ListElementRemoved<a name="ListElementRemoved"></a>
+{ index : [`integer`](../../API/builtins/integer.md), type : `"removed"` }  
+  
+  
+### ListElementsSwapped<a name="ListElementsSwapped"></a>
+{ index1 : [`integer`](../../API/builtins/integer.md), index2 : [`integer`](../../API/builtins/integer.md), type : `"swapped"` }  
+  
+  
+### ListNotifierFunction<a name="ListNotifierFunction"></a>
+(change : [`ListElementChange`](#ListElementChange))  
+  
+  
+### ListNotifierMemberContext<a name="ListNotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### NotifierFunction<a name="NotifierFunction"></a>
+fun()  
+  
+  
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
+[`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
+  
+  
+### NotifierMemberFunction<a name="NotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext))  
+  
+  
+### NotifierMethod1<a name="NotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`NotifierMemberFunction`](#NotifierMemberFunction) }  
+  
+  
+### NotifierMethod2<a name="NotifierMethod2"></a>
+{ 1 : [`NotifierMemberFunction`](#NotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### NumberValueNotifier<a name="NumberValueNotifier"></a>
+[`NumberValueNotifierFunction`](#NumberValueNotifierFunction) | [`NumberValueNotifierMethod1`](#NumberValueNotifierMethod1) | [`NumberValueNotifierMethod2`](#NumberValueNotifierMethod2)  
+> Set up a value notifier that will be called whenever the value changes  
+  
+### NumberValueNotifierFunction<a name="NumberValueNotifierFunction"></a>
+(value : [`number`](../../API/builtins/number.md))  
+  
+  
+### NumberValueNotifierMemberFunction<a name="NumberValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`number`](../../API/builtins/number.md))  
+  
+  
+### NumberValueNotifierMethod1<a name="NumberValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction) }  
+  
+  
+### NumberValueNotifierMethod2<a name="NumberValueNotifierMethod2"></a>
+{ 1 : [`NumberValueNotifierMemberFunction`](#NumberValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### PairedParseStringAsNumber<a name="PairedParseStringAsNumber"></a>
+(value : [`string`](../../API/builtins/string.md)) `->` [`number`](../../API/builtins/number.md)[`?`](../../API/builtins/nil.md)  
+> Make sure to also set `tostring` if you set this.  
+  
+### PairedShowNumberAsString<a name="PairedShowNumberAsString"></a>
+[`ShowNumberAsString`](#ShowNumberAsString)  
+> Make sure to also set `tonumber` if you set this.  
+  
+### PopupItemLabels<a name="PopupItemLabels"></a>
+[`string`](../../API/builtins/string.md)[]  
+> A list of buttons labels to show in order
+> The list can be empty, then "None" is displayed and the value won't change.  
+  
+### RGBColor<a name="RGBColor"></a>
+{ 1 : [`integer`](../../API/builtins/integer.md), 2 : [`integer`](../../API/builtins/integer.md), 3 : [`integer`](../../API/builtins/integer.md) }  
+> A table of 3 bytes (ranging from 0 to 255)
+> representing the red, green and blue channels of a color.
+> {0xFF, 0xFF, 0xFF} is white
+> {165, 73, 35} is the red from the Renoise logo  
+  
+### RackMargin<a name="RackMargin"></a>
+[`integer`](../../API/builtins/integer.md)  
+> Set the "borders" of a rack (left, right, top and bottom inclusively)
+> *  Default: 0 (no borders)  
+  
+### RackSpacing<a name="RackSpacing"></a>
+[`integer`](../../API/builtins/integer.md)  
+> Set the amount stacked child views are separated by (horizontally in
+> rows, vertically in columns).
+> *  Default: 0 (no spacing)  
+  
+### RackUniformity<a name="RackUniformity"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> When set to true, all child views in the rack are automatically resized to
+> the max size of all child views (width in ViewBuilder.column, height in
+> ViewBuilder.row). This can be useful to automatically align all sub
+> columns/panels to the same size. Resizing is done automatically, as soon
+> as a child view size changes or new children are added.
+> * Default: false  
+  
+### SelectedItem<a name="SelectedItem"></a>
+[`integer`](../../API/builtins/integer.md)  
+> The currently selected item's index  
+  
+### ShowNumberAsString<a name="ShowNumberAsString"></a>
+(value : [`number`](../../API/builtins/number.md)) `->` [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
+> Set a custom rule on how a number value should be displayed.
+> Useful for showing units like decibel or note values etc.
+> If none are set, a default string/number conversion is done, which
+> simply shows the number with 3 digits after the decimal point.
+> Note: When the callback fails with an error, it will be disabled to avoid
+> a flood of error messages.  
+  
+### SliderDefaultValue<a name="SliderDefaultValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The default value that will be re-applied on double-click  
+  
+### SliderMaxValue<a name="SliderMaxValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The maximum value that can be set using the view
+> * Default: 1.0  
+  
+### SliderMinValue<a name="SliderMinValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The minimum value that can be set using the view
+> * Default: 0  
+  
+### SliderNumberValue<a name="SliderNumberValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The current value of the view  
+  
+### SliderStepAmounts<a name="SliderStepAmounts"></a>
+{ 1 : [`number`](../../API/builtins/number.md), 2 : [`number`](../../API/builtins/number.md) }  
+> A table containing two numbers representing the step amounts for incrementing
+> and decrementing by clicking the <> buttons.
+> The first value is the small step (applied on left clicks)
+> second value is the big step (applied on right clicks)  
+  
+### StringChangeNotifier<a name="StringChangeNotifier"></a>
+[`StringValueNotifierFunction`](#StringValueNotifierFunction) | [`StringValueNotifierMethod1`](#StringValueNotifierMethod1) | [`StringValueNotifierMethod2`](#StringValueNotifierMethod2)  
+> Set up a notifier for text changes  
+  
+### StringValueNotifierFunction<a name="StringValueNotifierFunction"></a>
+(value : [`string`](../../API/builtins/string.md))  
+  
+  
+### StringValueNotifierMemberFunction<a name="StringValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`string`](../../API/builtins/string.md))  
+  
+  
+### StringValueNotifierMethod1<a name="StringValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`StringValueNotifierMemberFunction`](#StringValueNotifierMemberFunction) }  
+  
+  
+### StringValueNotifierMethod2<a name="StringValueNotifierMethod2"></a>
+{ 1 : [`StringValueNotifierMemberFunction`](#StringValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
+  
+  
+### TextActive<a name="TextActive"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> When false, text is displayed but can not be entered/modified by the user.
+> * Default: true  
+  
+### TextAlignment<a name="TextAlignment"></a>
+`"center"` | `"left"` | `"right"`  
+> ```lua
+> -- Setup the text's alignment. Applies only when the view's size is larger than
+> -- the needed size to draw the text
+> TextAlignment:
+>     | "left" -- (Default)
+>     | "right" -- aligned to the right
+>     | "center" -- center text
+> ```  
+  
+### TextBackgroundStyle<a name="TextBackgroundStyle"></a>
+`"body"` | `"border"` | `"strong"`  
+> ```lua
+> -- Setup the text view's background:
+> TextBackgroundStyle:
+>     | "body" -- simple text color with no background
+>     | "strong" -- stronger text color with no background
+>     | "border" -- text on a bordered background
+> ```  
+  
+### TextEditMode<a name="TextEditMode"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> True when the text field is focused. setting it at run-time programmatically
+> will focus the text field or remove the focus (focus the dialog) accordingly.
+> * Default: false  
+  
+### TextFontStyle<a name="TextFontStyle"></a>
+`"big"` | `"bold"` | `"italic"` | `"mono"` | `"normal"`  
+> ```lua
+> -- The style that the text should be displayed with.
+> TextFontStyle:
+>     | "normal" -- (Default)
+>     | "big" -- big text
+>     | "bold" -- bold font
+>     | "italic" -- italic font
+>     | "mono" -- monospace font
+> ```  
+  
+### TextMultilineString<a name="TextMultilineString"></a>
+[`string`](../../API/builtins/string.md)  
+> The text that should be displayed.
+> Newlines (Windows, Mac or Unix styled) in the text can be used to create
+> paragraphs.  
+  
+### TextParagraphs<a name="TextParagraphs"></a>
+[`string`](../../API/builtins/string.md)[]  
+> A table of text lines to be used instead of specifying a single text
+> line with newline characters like "text"
+> * Default: []  
+  
+### TextSingleLineString<a name="TextSingleLineString"></a>
+[`string`](../../API/builtins/string.md)  
+> The text that should be displayed. Setting a new text will resize
+> the view in order to make the text fully visible (expanding only).
+> * Default: ""  
+  
+### TextStyle<a name="TextStyle"></a>
+`"disabled"` | `"normal"` | `"strong"`  
+> ```lua
+> -- Get/set the color style the text should be displayed with.
+> TextStyle:
+>     | "normal" -- (Default)
+>     | "strong" -- highlighted color
+>     | "disabled" -- greyed out color
+> ```  
+  
+### TextValue<a name="TextValue"></a>
+[`string`](../../API/builtins/string.md)  
+> The currently shown text. The text will not be updated when editing,
+> rather only after editing is complete (return is pressed, or focus is lost).
+> * Default: ""  
+  
+### TextValueAlias<a name="TextValueAlias"></a>
+[`string`](../../API/builtins/string.md)  
+> Exactly the same as "value"; provided for consistency.
+> * Default: ""  
+  
+### ValueBoxMaxValue<a name="ValueBoxMaxValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The maximum value that can be set using the view
+> * Default: 100  
+  
+### ValueBoxMinValue<a name="ValueBoxMinValue"></a>
+[`number`](../../API/builtins/number.md)  
+> The minimum value that can be set using the view
+> * Default: 0  
+  
+### ViewBackgroundStyle<a name="ViewBackgroundStyle"></a>
+`"body"` | `"border"` | `"group"` | `"invisible"` | `"panel"` | `"plain"`  
+> ```lua
+> -- Setup a background style for the view. 
+> ViewBackgroundStyle:
+>     | "invisible" -- no background (Default)
+>     | "plain" -- undecorated, single coloured background
+>     | "border" -- same as plain, but with a bold nested border
+>     | "body" -- main "background" style, as used in dialog backgrounds
+>     | "panel" -- alternative "background" style, beveled
+>     | "group" -- background for "nested" groups within body
+> ```  
+  
+### ViewBooleanObservable<a name="ViewBooleanObservable"></a>
+[`renoise.Document.ObservableBoolean`](../../API/renoise/renoise.Document.ObservableBoolean.md)  
+> Bind the view's value to a renoise.Document.ObservableBoolean object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.  
+  
+### ViewDimension<a name="ViewDimension"></a>
+[`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)  
+> The dimensions of a view has to be larger than 0.
+> For nested views you can also specify relative size
+> for example `vb:text { width = "80%"}`. The percentage values are
+> relative to the view's parent size and will automatically update on size changes.  
+  
+### ViewId<a name="ViewId"></a>
+[`string`](../../API/builtins/string.md)  
+> Unique identifier to resolve the view later on in the viewbuilder, 
+> e.g. `vb.views.SomeString` or `vb.views["Some String"]`
+> View ids must be unique within a single view builder instance.   
+  
+### ViewNumberObservable<a name="ViewNumberObservable"></a>
+[`renoise.Document.ObservableNumber`](../../API/renoise/renoise.Document.ObservableNumber.md)  
+> Bind the view's value to a renoise.Document.ObservableNumber object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.  
+  
+### ViewStringListObservable<a name="ViewStringListObservable"></a>
+[`renoise.Document.ObservableStringList`](../../API/renoise/renoise.Document.ObservableStringList.md)  
+> Bind the view's value to a renoise.Document.ObservableStringList object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.  
+  
+### ViewStringObservable<a name="ViewStringObservable"></a>
+[`renoise.Document.ObservableString`](../../API/renoise/renoise.Document.ObservableString.md)  
+> Bind the view's value to a renoise.Document.ObservableString object.
+> Automatically keep them in sync.
+> The view will change the Observable value as soon as its value changes
+> and change the view's value as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.  
+  
+### ViewTooltip<a name="ViewTooltip"></a>
+[`string`](../../API/builtins/string.md)  
+> A tooltip text that should be shown for this view on mouse hover.
+> * Default: "" (no tip will be shown)  
+  
+### ViewVisibility<a name="ViewVisibility"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Set visible to false to hide a view (make it invisible without removing
+> it). Please note that view.visible will also return false when any of its
+> parents are invisible (when its implicitly invisible).
+> * Default: true  
+  
+### XYPadMaxValues<a name="XYPadMaxValues"></a>
+{ x : [`SliderMaxValue`](#SliderMaxValue), y : [`SliderMaxValue`](#SliderMaxValue) }  
+> A table of allowed maximum values for each axis
+> * Default: {x: 1.0, y: 1.0}  
+  
+### XYPadMinValues<a name="XYPadMinValues"></a>
+{ x : [`SliderMinValue`](#SliderMinValue), y : [`SliderMinValue`](#SliderMinValue) }  
+> A table of allowed minimum values for each axis
+> * Default: {x: 0.0, y: 0.0}  
+  
+### XYPadObservables<a name="XYPadObservables"></a>
+{ x : [`renoise.Document.ObservableNumber`](../../API/renoise/renoise.Document.ObservableNumber.md), y : [`renoise.Document.ObservableNumber`](../../API/renoise/renoise.Document.ObservableNumber.md) }  
+> Bind the view's value to a pair of renoise.Document.ObservableNumber objects.
+> Automatically keep both values in sync.
+> Will change the Observables' values as soon as the view's value changes,
+> and change the view's values as soon as the Observable's value changes.
+> Notifiers can be added to either the view or the Observable object.
+> Just like in the other XYPad properties, a table with the fields X and Y
+> is expected here and not a single value. So you have to bind two
+> ObservableNumber object to the pad.  
+  
+### XYPadSnapbackValues<a name="XYPadSnapbackValues"></a>
+{ x : [`number`](../../API/builtins/number.md), y : [`number`](../../API/builtins/number.md) }  
+> A table of snapback values for each axis
+> When snapback is enabled, the pad will revert its values to the specified
+> snapback values as soon as the mouse button is released in the pad.
+> When disabled, releasing the mouse button will not change the value.
+> You can disable snapback at runtime by setting it to nil or an empty table.  
+  
+### XYPadValues<a name="XYPadValues"></a>
+{ x : [`SliderNumberValue`](#SliderNumberValue), y : [`SliderNumberValue`](#SliderNumberValue) }  
+> A table of the XYPad's current values on each axis  
+  
+### XYValueNotifier<a name="XYValueNotifier"></a>
+[`XYValueNotifierFunction`](#XYValueNotifierFunction) | [`XYValueNotifierMethod1`](#XYValueNotifierMethod1) | [`XYValueNotifierMethod2`](#XYValueNotifierMethod2)  
+> Set up a value notifier function that will be used whenever the pad's values change  
+  
+### XYValueNotifierFunction<a name="XYValueNotifierFunction"></a>
+(value : [`XYPadValues`](#XYPadValues))  
+  
+  
+### XYValueNotifierMemberFunction<a name="XYValueNotifierMemberFunction"></a>
+(self : [`NotifierMemberContext`](#NotifierMemberContext), value : [`XYPadValues`](#XYPadValues))  
+  
+  
+### XYValueNotifierMethod1<a name="XYValueNotifierMethod1"></a>
+{ 1 : [`NotifierMemberContext`](#NotifierMemberContext), 2 : [`XYValueNotifierMemberFunction`](#XYValueNotifierMemberFunction) }  
+  
+  
+### XYValueNotifierMethod2<a name="XYValueNotifierMethod2"></a>
 { 1 : [`XYValueNotifierMemberFunction`](#XYValueNotifierMemberFunction), 2 : [`NotifierMemberContext`](#NotifierMemberContext) }  
   
   

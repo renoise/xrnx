@@ -1,4 +1,4 @@
-# renoise.Document  
+# renoise.Document<a name="renoise.Document"></a>  
 > renoise.Document classes are wrappers for Renoise's internal document
 > classes.
 > 
@@ -71,7 +71,7 @@
 
 ---  
 ## Functions
-### create(model_name : [`string`](../../API/builtins/string.md)) {#create}
+### create(model_name : [`string`](../../API/builtins/string.md))<a name="create"></a>
 `->`(properties : [`ObservableProperties`](#ObservableProperties)) `->` [`renoise.Document.DocumentNode`](../../API/renoise/renoise.Document.DocumentNode.md)  
 
 > Create an empty DocumentNode or a DocumentNode that is modeled after the
@@ -111,7 +111,7 @@
 > -- create a new instance of "MyDoc"
 > my_other_document = renoise.Document.instantiate("MyDoc")
 > ```
-### instantiate(model_name : [`string`](../../API/builtins/string.md)) {#instantiate}
+### instantiate(model_name : [`string`](../../API/builtins/string.md))<a name="instantiate"></a>
 `->`[`renoise.Document.DocumentNode`](../../API/renoise/renoise.Document.DocumentNode.md)  
 
 > Create a new instance of the given document model. Given `model_name` must
@@ -120,49 +120,49 @@
 
 
 ---  
-## Local Aliases  
-### DocumentMember {#DocumentMember}
+## Aliases  
+### DocumentMember<a name="DocumentMember"></a>
 [`renoise.Document.DocumentList`](../../API/renoise/renoise.Document.DocumentList.md) | [`renoise.Document.DocumentNode`](../../API/renoise/renoise.Document.DocumentNode.md) | [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) | [`renoise.Document.ObservableList`](../../API/renoise/renoise.Document.ObservableList.md)  
 > Track changes to document properties or general states by attaching listener
 > functions to it.  
   
-### ListElementAdded {#ListElementAdded}
+### ListElementAdded<a name="ListElementAdded"></a>
 { index : [`integer`](../../API/builtins/integer.md), type : `"insert"` }  
   
   
-### ListElementChange {#ListElementChange}
+### ListElementChange<a name="ListElementChange"></a>
 [`ListElementAdded`](#ListElementAdded) | [`ListElementRemoved`](#ListElementRemoved) | [`ListElementsSwapped`](#ListElementsSwapped)  
   
   
-### ListElementRemoved {#ListElementRemoved}
+### ListElementRemoved<a name="ListElementRemoved"></a>
 { index : [`integer`](../../API/builtins/integer.md), type : `"removed"` }  
   
   
-### ListElementsSwapped {#ListElementsSwapped}
+### ListElementsSwapped<a name="ListElementsSwapped"></a>
 { index1 : [`integer`](../../API/builtins/integer.md), index2 : [`integer`](../../API/builtins/integer.md), type : `"swapped"` }  
   
   
-### ListNotifierFunction {#ListNotifierFunction}
+### ListNotifierFunction<a name="ListNotifierFunction"></a>
 (change : [`ListElementChange`](#ListElementChange))  
   
   
-### ListNotifierMemberContext {#ListNotifierMemberContext}
+### ListNotifierMemberContext<a name="ListNotifierMemberContext"></a>
 [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
   
   
-### NotifierFunction {#NotifierFunction}
+### NotifierFunction<a name="NotifierFunction"></a>
 fun()  
   
   
-### NotifierMemberContext {#NotifierMemberContext}
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
 [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
   
   
-### ObservableProperties {#ObservableProperties}
+### ObservableProperties<a name="ObservableProperties"></a>
 table<[`string`](../../API/builtins/string.md), [`ObservableTypes`](#ObservableTypes) | [`renoise.Document.DocumentList`](../../API/renoise/renoise.Document.DocumentList.md) | [`renoise.Document.DocumentNode`](../../API/renoise/renoise.Document.DocumentNode.md)>  
   
   
-### ObservableTypes {#ObservableTypes}
+### ObservableTypes<a name="ObservableTypes"></a>
 [`boolean`](../../API/builtins/boolean.md) | [`string`](../../API/builtins/string.md) | [`number`](../../API/builtins/number.md) | [`boolean`](../../API/builtins/boolean.md)[] | [`number`](../../API/builtins/number.md)[] | [`string`](../../API/builtins/string.md)[]  
   
   
