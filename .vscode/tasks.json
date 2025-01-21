@@ -7,10 +7,6 @@
 			"problemMatcher": [
 				"$rustc"
 			],
-			"args": [
-				"${workspaceFolder}/definitions/library",
-				"${workspaceFolder}/docs"
-			],
 			"group": "build",
 			"label": "build: API docs"
 		},
