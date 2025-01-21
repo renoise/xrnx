@@ -1,4 +1,4 @@
-# renoise.Dialog  
+# renoise.Dialog<a name="renoise.Dialog"></a>  
 > A custom dialog created via the scripting API. Dialogs can be created
 > via `renoise.app():show_custom_dialog`.
 > 
@@ -10,15 +10,15 @@
 
 ---  
 ## Properties
-### visible : [`boolean`](../../API/builtins/boolean.md) {#visible}
+### visible : [`boolean`](../../API/builtins/boolean.md)<a name="visible"></a>
 >  **READ-ONLY** Check if a dialog is alive and visible.
 
   
 
 ---  
 ## Functions
-### show([*self*](../../API/builtins/self.md)) {#show}
+### show([*self*](../../API/builtins/self.md))<a name="show"></a>
 >  Bring an already visible dialog to front and make it the key window.
-### close([*self*](../../API/builtins/self.md)) {#close}
+### close([*self*](../../API/builtins/self.md))<a name="close"></a>
 >  Close a visible dialog.  
 

@@ -1,4 +1,4 @@
-# renoise.ScriptingTool  
+# renoise.ScriptingTool<a name="renoise.ScriptingTool"></a>  
 > The scripting tool interface allows your tool to interact with Renoise by
 > injecting or creating menu entries and keybindings into Renoise; or by
 > attaching it to some common tool related notifiers.  
@@ -8,31 +8,31 @@
 
 ---  
 ## Properties
-### bundle_path : [`string`](../../API/builtins/string.md) {#bundle_path}
+### bundle_path : [`string`](../../API/builtins/string.md)<a name="bundle_path"></a>
 > **READ_ONLY** Full absolute path and name to your tool's bundle directory.
 
-### tool_finished_loading_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#tool_finished_loading_observable}
+### tool_finished_loading_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="tool_finished_loading_observable"></a>
 > Invoked when the tool finished loading/initializing and no errors happened.
 > When the tool has preferences, they are loaded here as well when the
 > notification fires, but 'renoise.song()' may not yet be available.
 > 
 > See also 'renoise.tool().app_new_document_observable'.
 
-### tool_will_unload_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#tool_will_unload_observable}
+### tool_will_unload_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="tool_will_unload_observable"></a>
 > Invoked right before a tool gets unloaded: either because it got disabled,
 > reloaded or the application exists. You can cleanup resources or connections
 > to other devices here if necessary.
 
-### app_became_active_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#app_became_active_observable}
+### app_became_active_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="app_became_active_observable"></a>
 > Invoked as soon as the application becomes the foreground window.
 > For example, when you ATL-TAB to it, or activate it with the mouse
 > from another app to Renoise.
 
-### app_resigned_active_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#app_resigned_active_observable}
+### app_resigned_active_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="app_resigned_active_observable"></a>
 > Invoked as soon as the application looses focus and another app
 > becomes the foreground window.
 
-### app_idle_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#app_idle_observable}
+### app_idle_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="app_idle_observable"></a>
 > Invoked periodically in the background, more often when the work load
 > is low, less often when Renoise's work load is high.
 > The exact interval is undefined and can not be relied on, but will be
@@ -40,23 +40,23 @@
 > You can do stuff in the background without blocking the application here.
 > Be gentle and don't do CPU heavy stuff please!
 
-### app_release_document_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#app_release_document_observable}
+### app_release_document_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="app_release_document_observable"></a>
 > Invoked each time before a new document gets created or loaded: this is the
 > last time renoise.song() still points to the old song before a new one arrives.
 > You can explicitly release notifiers to the old document here, or do your own
 > housekeeping. Also called right before the application exits.
 
-### app_new_document_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#app_new_document_observable}
+### app_new_document_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="app_new_document_observable"></a>
 > Invoked each time a new document (song) is created or loaded. In other words:
 > each time the result of renoise.song() is changed. Also called when the script
 > gets reloaded (only happens with the auto_reload debugging tools), in order
 > to connect the new script instance to the already running document.
 
-### app_saved_document_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#app_saved_document_observable}
+### app_saved_document_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="app_saved_document_observable"></a>
 > Invoked each time the app's document (song) is successfully saved.
 > renoise.song().file_name will point to the filename that it was saved to.
 
-### preferences : [`renoise.Document.DocumentNode`](../../API/renoise/renoise.Document.DocumentNode.md) {#preferences}
+### preferences : [`renoise.Document.DocumentNode`](../../API/renoise/renoise.Document.DocumentNode.md)<a name="preferences"></a>
 > Get or set an optional renoise.Document.DocumentNode object, which will be
 > used as set of persistent "options" or preferences for your tool.
 > By default nil. When set, the assigned document object will automatically be
@@ -96,31 +96,31 @@
 
 ---  
 ## Functions
-### has_menu_entry([*self*](../../API/builtins/self.md), entry_name : [`string`](../../API/builtins/string.md)) {#has_menu_entry}
+### has_menu_entry([*self*](../../API/builtins/self.md), entry_name : [`string`](../../API/builtins/string.md))<a name="has_menu_entry"></a>
 `->`[`boolean`](../../API/builtins/boolean.md)  
 
 > Returns true if the given entry already exists, otherwise false.
-### add_menu_entry([*self*](../../API/builtins/self.md), entry : [`ToolMenuEntry`](#toolmenuentry)) {#add_menu_entry}
+### add_menu_entry([*self*](../../API/builtins/self.md), entry : [`ToolMenuEntry`](#toolmenuentry))<a name="add_menu_entry"></a>
 > Add a new menu entry.
-### remove_menu_entry([*self*](../../API/builtins/self.md), entry_name : [`string`](../../API/builtins/string.md)) {#remove_menu_entry}
+### remove_menu_entry([*self*](../../API/builtins/self.md), entry_name : [`string`](../../API/builtins/string.md))<a name="remove_menu_entry"></a>
 > Remove a previously added menu entry by specifying its full name.
-### has_keybinding([*self*](../../API/builtins/self.md), keybinding_name : [`string`](../../API/builtins/string.md)) {#has_keybinding}
+### has_keybinding([*self*](../../API/builtins/self.md), keybinding_name : [`string`](../../API/builtins/string.md))<a name="has_keybinding"></a>
 `->`[`boolean`](../../API/builtins/boolean.md)  
 
 > Returns true when the given keybinging already exists, otherwise false.
-### add_keybinding([*self*](../../API/builtins/self.md), keybinding : [`ToolKeybindingEntry`](#toolkeybindingentry)) {#add_keybinding}
+### add_keybinding([*self*](../../API/builtins/self.md), keybinding : [`ToolKeybindingEntry`](#toolkeybindingentry))<a name="add_keybinding"></a>
 > Register key bindings somewhere in Renoise's existing set of bindings.
-### remove_keybinding([*self*](../../API/builtins/self.md), keybinding_name : [`string`](../../API/builtins/string.md)) {#remove_keybinding}
+### remove_keybinding([*self*](../../API/builtins/self.md), keybinding_name : [`string`](../../API/builtins/string.md))<a name="remove_keybinding"></a>
 > Remove a previously added key binding by specifying its name and path.
-### has_midi_mapping([*self*](../../API/builtins/self.md), midi_mapping_name : [`string`](../../API/builtins/string.md)) {#has_midi_mapping}
+### has_midi_mapping([*self*](../../API/builtins/self.md), midi_mapping_name : [`string`](../../API/builtins/string.md))<a name="has_midi_mapping"></a>
 `->`[`boolean`](../../API/builtins/boolean.md)  
 
 > Returns true when the given mapping already exists, otherwise false.
-### add_midi_mapping([*self*](../../API/builtins/self.md), midi_mapping : [`ToolMidiMappingEntry`](#toolmidimappingentry)) {#add_midi_mapping}
+### add_midi_mapping([*self*](../../API/builtins/self.md), midi_mapping : [`ToolMidiMappingEntry`](#toolmidimappingentry))<a name="add_midi_mapping"></a>
 > Add a new midi_mapping entry.
-### remove_midi_mapping([*self*](../../API/builtins/self.md), midi_mapping_name : [`string`](../../API/builtins/string.md)) {#remove_midi_mapping}
+### remove_midi_mapping([*self*](../../API/builtins/self.md), midi_mapping_name : [`string`](../../API/builtins/string.md))<a name="remove_midi_mapping"></a>
 > Remove a previously added midi mapping by specifying its name.
-### has_file_import_hook([*self*](../../API/builtins/self.md), category : [`FileHookCategory`](#FileHookCategory), extensions_table : [`string`](../../API/builtins/string.md)[]) {#has_file_import_hook}
+### has_file_import_hook([*self*](../../API/builtins/self.md), category : [`FileHookCategory`](#FileHookCategory), extensions_table : [`string`](../../API/builtins/string.md)[])<a name="has_file_import_hook"></a>
 `->`[`boolean`](../../API/builtins/boolean.md)  
 
 > Returns true when the given hook already exists, otherwise false.
@@ -136,9 +136,9 @@
 >     | "sample"
 >     | "theme"
 > ```
-### add_file_import_hook([*self*](../../API/builtins/self.md), file_import_hook : [`ToolFileImportHook`](#toolfileimporthook)) {#add_file_import_hook}
+### add_file_import_hook([*self*](../../API/builtins/self.md), file_import_hook : [`ToolFileImportHook`](#toolfileimporthook))<a name="add_file_import_hook"></a>
 > Add a new file import hook as described above.
-### remove_file_import_hook([*self*](../../API/builtins/self.md), category : [`FileHookCategory`](#FileHookCategory), extensions_table : [`string`](../../API/builtins/string.md)[]) {#remove_file_import_hook}
+### remove_file_import_hook([*self*](../../API/builtins/self.md), category : [`FileHookCategory`](#FileHookCategory), extensions_table : [`string`](../../API/builtins/string.md)[])<a name="remove_file_import_hook"></a>
 > Remove a previously added file import hook by specifying its category
 > and extension(s)
 > 
@@ -153,11 +153,11 @@
 >     | "sample"
 >     | "theme"
 > ```
-### has_timer([*self*](../../API/builtins/self.md), timer : [`TimerFunction`](#TimerFunction)) {#has_timer}
+### has_timer([*self*](../../API/builtins/self.md), timer : [`TimerFunction`](#TimerFunction))<a name="has_timer"></a>
 `->`[`boolean`](../../API/builtins/boolean.md)  
 
 > Returns true when the given function or method was registered as a timer.
-### add_timer([*self*](../../API/builtins/self.md), timer : [`TimerFunction`](#TimerFunction), interval_in_ms : [`number`](../../API/builtins/number.md)) {#add_timer}
+### add_timer([*self*](../../API/builtins/self.md), timer : [`TimerFunction`](#TimerFunction), interval_in_ms : [`number`](../../API/builtins/number.md))<a name="add_timer"></a>
 > Register a timer function or table with a function and context (a method)
 > that periodically gets called by the `app_idle_observable` for your tool.
 > 
@@ -167,14 +167,14 @@
 > `interval_in_ms` must be > 0. The exact interval your function is called
 > will vary a bit, depending on workload; e.g. when enough CPU time is available
 > the rounding error will be around +/- 5 ms.
-### remove_timer([*self*](../../API/builtins/self.md), timer : [`TimerFunction`](#TimerFunction)) {#remove_timer}
+### remove_timer([*self*](../../API/builtins/self.md), timer : [`TimerFunction`](#TimerFunction))<a name="remove_timer"></a>
 > Remove a previously registered timer.  
 
 
 
 ---  
-## Local Structs  
-# ToolFileImportHook  
+## Structs  
+# ToolFileImportHook<a name="ToolFileImportHook"></a>  
 > Add support for new filetypes in Renoise. Registered file types will show up
 > in Renoise's disk browser and can also be loaded by drag and dropping the
 > files onto the Renoise window. When adding hooks for files which Renoise
@@ -186,27 +186,43 @@
 > 
 > Preloading/prehearing sample files is not supported via tools.  
 
-<!-- toc -->
-  
-
 ---  
 ## Properties
-### category : [`FileHookCategory`](#FileHookCategory) {#category}
+### category : [`FileHookCategory`](#FileHookCategory)<a name="category"></a>
 > In which disk browser category the file type shows up.
 > One of
 
-### extensions : [`string`](../../API/builtins/string.md)[] {#extensions}
+### extensions : [`string`](../../API/builtins/string.md)[]<a name="extensions"></a>
 > A list of strings, file extensions, that will invoke your hook, like for
 > example {"txt", "s_wave"}
 
-### invoke : (file_name : [`string`](../../API/builtins/string.md)) `->` [`boolean`](../../API/builtins/boolean.md) {#invoke}
+### invoke : (file_name : [`string`](../../API/builtins/string.md)) `->` [`boolean`](../../API/builtins/boolean.md)<a name="invoke"></a>
 > function that is called to do the import. return true when the import
 > succeeded, else false.
 
   
 
+
+
+---  
+## Aliases  
+### FileHookCategory<a name="FileHookCategory"></a>
+`"effect chain"` | `"effect preset"` | `"instrument"` | `"modulation set"` | `"phrase"` | `"sample"` | `"song"` | `"theme"`  
+> ```lua
+> FileHookCategory:
+>     | "song"
+>     | "instrument"
+>     | "effect chain"
+>     | "effect preset"
+>     | "modulation set"
+>     | "phrase"
+>     | "sample"
+>     | "theme"
+> ```  
   
-# ToolKeybindingEntry  
+
+  
+# ToolKeybindingEntry<a name="ToolKeybindingEntry"></a>  
 > Register tool key bindings somewhere in Renoise's existing set of bindings.
 > 
 > Please note: there's no way to define default keyboard shortcuts for your
@@ -214,12 +230,9 @@
 > As soon as they do, they'll get saved just like any other key binding in
 > Renoise.  
 
-<!-- toc -->
-  
-
 ---  
 ## Properties
-### name : [`string`](../../API/builtins/string.md) {#name}
+### name : [`string`](../../API/builtins/string.md)<a name="name"></a>
 > The scope, name and category of the key binding use the form:
 > `$scope:$topic_name:$binding_name`:
 > 
@@ -252,14 +265,14 @@
 > + "Sample Modulation Matrix"
 > ```
 
-### invoke : (repeated : [`boolean`](../../API/builtins/boolean.md)) {#invoke}
+### invoke : (repeated : [`boolean`](../../API/builtins/boolean.md))<a name="invoke"></a>
 > A function that is called as soon as the mapped key is pressed.
 > The callback parameter "repeated", indicates if its a virtual key repeat.
 
   
 
   
-# ToolMenuEntry  
+# ToolMenuEntry<a name="ToolMenuEntry"></a>  
 > Defines a menu entry somewhere in Renoise's existing context menus or the
 > global app menu. Insertion can be done during script initialization, but
 > can also be done dynamically later on.
@@ -307,31 +320,28 @@
 > To divide entries into groups (separate entries with a line), prepend one or
 > more dashes to the name, like "--- Main Menu:Tools:My Tool Group Starts Here"  
 
-<!-- toc -->
-  
-
 ---  
 ## Properties
-### name : [`string`](../../API/builtins/string.md) {#name}
+### name : [`string`](../../API/builtins/string.md)<a name="name"></a>
 > Name and 'path' of the entry as shown in the global menus or context menus
 > to the user.
 
-### invoke : fun() {#invoke}
+### invoke : fun()<a name="invoke"></a>
 > A function that is called as soon as the entry is clicked
 
-### active : () `->` [`boolean`](../../API/builtins/boolean.md) {#active}
+### active : () `->` [`boolean`](../../API/builtins/boolean.md)<a name="active"></a>
 > A function that should return true or false. When returning false, the action
 > will not be invoked and will be "greyed out" in menus. This function is always
 > called before "invoke", and every time prior to a menu becoming visible.
 
-### selected : () `->` [`boolean`](../../API/builtins/boolean.md) {#selected}
+### selected : () `->` [`boolean`](../../API/builtins/boolean.md)<a name="selected"></a>
 > A function that should return true or false. When returning true, the entry
 > will be marked as "this is a selected option"
 
   
 
   
-# ToolMidiMappingEntry  
+# ToolMidiMappingEntry<a name="ToolMidiMappingEntry"></a>  
 > Extend Renoise's default MIDI mapping set, or add custom MIDI mappings
 > for your tool.
 > 
@@ -343,12 +353,9 @@
 > opened. Then, users simply click on the highlighted control to map MIDI
 > messages.  
 
-<!-- toc -->
-  
-
 ---  
 ## Properties
-### name : [`string`](../../API/builtins/string.md) {#name}
+### name : [`string`](../../API/builtins/string.md)<a name="name"></a>
 > The group, name of the midi mapping; as visible to the user.
 > 
 > The scope, name and category of the midi mapping use the form:
@@ -362,7 +369,7 @@
 > Existing global mappings from Renoise can be overridden. In this case the
 > original mappings are no longer called, only your tool's mapping.
 
-### invoke : (message : [`renoise.ScriptingTool.MidiMessage`](../../API/renoise/renoise.ScriptingTool.MidiMessage.md)) {#invoke}
+### invoke : (message : [`renoise.ScriptingTool.MidiMessage`](../../API/renoise/renoise.ScriptingTool.MidiMessage.md))<a name="invoke"></a>
 > A function that is called to handle a bound MIDI message.
 
   
@@ -372,8 +379,8 @@
 
 
 ---  
-## Local Aliases  
-### FileHookCategory {#FileHookCategory}
+## Aliases  
+### FileHookCategory<a name="FileHookCategory"></a>
 `"effect chain"` | `"effect preset"` | `"instrument"` | `"modulation set"` | `"phrase"` | `"sample"` | `"song"` | `"theme"`  
 > ```lua
 > FileHookCategory:
@@ -387,7 +394,7 @@
 >     | "theme"
 > ```  
   
-### TimerFunction {#TimerFunction}
+### TimerFunction<a name="TimerFunction"></a>
 fun()  
   
   

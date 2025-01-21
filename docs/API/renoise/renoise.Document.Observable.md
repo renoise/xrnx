@@ -1,4 +1,4 @@
-# renoise.Document.Observable  
+# renoise.Document.Observable<a name="renoise.Document.Observable"></a>  
 > Track changes to document properties or general states by attaching listener
 > functions to it.  
 
@@ -7,11 +7,11 @@
 
 ---  
 ## Functions
-### has_notifier([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#has_notifier}
+### has_notifier([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction))<a name="has_notifier"></a>
 `->`[`boolean`](../../API/builtins/boolean.md)  
 
 > Checks if the given function, method was already registered as notifier.
-### add_notifier([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction)) {#add_notifier}
+### add_notifier([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction))<a name="add_notifier"></a>
 > Register a function or method as a notifier, which will be called as soon as
 > the observable's value changed. The passed notifier can either be a function
 > or a table with a function and some context (an "object") -> method.
@@ -30,7 +30,7 @@
 >   end
 > })
 > ```
-### remove_notifier([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction) | [`NotifierMemberContext`](#NotifierMemberContext)) {#remove_notifier}
+### remove_notifier([*self*](../../API/builtins/self.md), notifier : [`NotifierFunction`](#NotifierFunction) | [`NotifierMemberContext`](#NotifierMemberContext))<a name="remove_notifier"></a>
 > Unregister a previously registered notifier. When only passing an object,
 > all notifier functions that match the given object will be removed.
 > This will not fire errors when no methods for the given object are attached.
@@ -40,12 +40,12 @@
 
 
 ---  
-## Local Aliases  
-### NotifierFunction {#NotifierFunction}
+## Aliases  
+### NotifierFunction<a name="NotifierFunction"></a>
 fun()  
   
   
-### NotifierMemberContext {#NotifierMemberContext}
+### NotifierMemberContext<a name="NotifierMemberContext"></a>
 [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
   
   

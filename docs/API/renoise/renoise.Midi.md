@@ -1,4 +1,4 @@
-# renoise.Midi  
+# renoise.Midi<a name="renoise.Midi"></a>  
 > Raw MIDI IO support for scripts in Renoise; the ability to send and receive
 > MIDI data.  
 
@@ -7,19 +7,19 @@
 
 ---  
 ## Functions
-### `available_input_devices()` {#available_input_devices}
+### `available_input_devices()`<a name="available_input_devices"></a>
 `->`[`string`](../../API/builtins/string.md)[]  
 
 > Return a list of strings with currently available MIDI input devices.
 > This list can change when devices are hot-plugged.
 > See `renoise.Midi.devices_changed_observable`
-### `available_output_devices()` {#available_output_devices}
+### `available_output_devices()`<a name="available_output_devices"></a>
 `->`[`string`](../../API/builtins/string.md)[]  
 
 > Return a list of strings with currently available MIDI output devices.
 > This list can change when devices are hot-plugged.
 > See `renoise.Midi.devices_changed_observable`
-### `devices_changed_observable()` {#devices_changed_observable}
+### `devices_changed_observable()`<a name="devices_changed_observable"></a>
 `->`[`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)  
 
 > Fire notifications as soon as new devices become active or a previously
@@ -30,7 +30,7 @@
 > Already opened references to devices which are no longer available will
 > do nothing: ou can use them as before and they will not fire any errors.
 > The messages will simply go into the void...
-### create_input_device(device_name : [`string`](../../API/builtins/string.md), callback : [`MidiMessageFunction`](#MidiMessageFunction) | [`MidiMessageMethod1`](#MidiMessageMethod1) | [`MidiMessageMethod2`](#MidiMessageMethod2)[`?`](../../API/builtins/nil.md), sysex_callback : [`MidiMessageFunction`](#MidiMessageFunction) | [`MidiMessageMethod1`](#MidiMessageMethod1) | [`MidiMessageMethod2`](#MidiMessageMethod2)[`?`](../../API/builtins/nil.md)) {#create_input_device}
+### create_input_device(device_name : [`string`](../../API/builtins/string.md), callback : [`MidiMessageFunction`](#MidiMessageFunction) | [`MidiMessageMethod1`](#MidiMessageMethod1) | [`MidiMessageMethod2`](#MidiMessageMethod2)[`?`](../../API/builtins/nil.md), sysex_callback : [`MidiMessageFunction`](#MidiMessageFunction) | [`MidiMessageMethod1`](#MidiMessageMethod1) | [`MidiMessageMethod2`](#MidiMessageMethod2)[`?`](../../API/builtins/nil.md))<a name="create_input_device"></a>
 `->`[`renoise.Midi.MidiInputDevice`](../../API/renoise/renoise.Midi.MidiInputDevice.md)  
 
 > Listen to incoming MIDI data: opens access to a MIDI input device by
@@ -48,7 +48,7 @@
 > Messages are received until the device reference is manually closed (see
 > renoise.Midi.MidiDevice:close()) or until the MidiInputDevice object gets garbage
 > collected.
-### create_output_device(device_name : [`string`](../../API/builtins/string.md)) {#create_output_device}
+### create_output_device(device_name : [`string`](../../API/builtins/string.md))<a name="create_output_device"></a>
 `->`[`renoise.Midi.MidiOutputDevice`](../../API/renoise/renoise.Midi.MidiOutputDevice.md)  
 
 > Open access to a MIDI device by specifying the device name.
@@ -62,28 +62,28 @@
 
 
 ---  
-## Local Aliases  
-### MidiMessage {#MidiMessage}
+## Aliases  
+### MidiMessage<a name="MidiMessage"></a>
 [`integer`](../../API/builtins/integer.md)[]  
   
   
-### MidiMessageFunction {#MidiMessageFunction}
+### MidiMessageFunction<a name="MidiMessageFunction"></a>
 (message : [`MidiMessage`](#MidiMessage))  
   
   
-### MidiMessageMemberContext {#MidiMessageMemberContext}
+### MidiMessageMemberContext<a name="MidiMessageMemberContext"></a>
 [`table`](../../API/builtins/table.md) | [`userdata`](../../API/builtins/userdata.md)  
   
   
-### MidiMessageMemberFunction {#MidiMessageMemberFunction}
+### MidiMessageMemberFunction<a name="MidiMessageMemberFunction"></a>
 (self : [`MidiMessageMemberContext`](#MidiMessageMemberContext), message : [`MidiMessage`](#MidiMessage))  
   
   
-### MidiMessageMethod1 {#MidiMessageMethod1}
+### MidiMessageMethod1<a name="MidiMessageMethod1"></a>
 { 1 : [`MidiMessageMemberContext`](#MidiMessageMemberContext), 2 : [`MidiMessageMemberFunction`](#MidiMessageMemberFunction) }  
   
   
-### MidiMessageMethod2 {#MidiMessageMethod2}
+### MidiMessageMethod2<a name="MidiMessageMethod2"></a>
 { 1 : [`MidiMessageMemberFunction`](#MidiMessageMemberFunction), 2 : [`MidiMessageMemberContext`](#MidiMessageMemberContext) }  
   
   

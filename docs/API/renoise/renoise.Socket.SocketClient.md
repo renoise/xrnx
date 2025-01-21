@@ -1,4 +1,4 @@
-# renoise.Socket.SocketClient  
+# renoise.Socket.SocketClient<a name="renoise.Socket.SocketClient"></a>  
 > A SocketClient can connect to other socket servers and send and receive data
 > from them on request. Connections to a server can not change, they are
 > specified when constructing a client. You can not reconnect a client; create
@@ -17,24 +17,24 @@
 
 ---  
 ## Properties
-### is_open : [`boolean`](../../API/builtins/boolean.md) {#is_open}
+### is_open : [`boolean`](../../API/builtins/boolean.md)<a name="is_open"></a>
 > **READ-ONLY** Returns true when the socket object is valid and connected.
 > Sockets can manually be closed (see socket:close()). Client sockets can also
 > actively be closed/refused by the server. In this case the client:receive()
 > calls will fail and return an error.
 
-### local_address : [`string`](../../API/builtins/string.md) {#local_address}
+### local_address : [`string`](../../API/builtins/string.md)<a name="local_address"></a>
 > **READ-ONLY** The socket's resolved local address (for example "127.0.0.1"
 > when a socket is bound to "localhost")
 
-### local_port : [`integer`](../../API/builtins/integer.md) {#local_port}
+### local_port : [`integer`](../../API/builtins/integer.md)<a name="local_port"></a>
 > **READ-ONLY** The socket's local port number, as specified when instantiated.
 
-### peer_address : [`string`](../../API/builtins/string.md) {#peer_address}
+### peer_address : [`string`](../../API/builtins/string.md)<a name="peer_address"></a>
 > **READ-ONLY** Address of the socket's peer, the socket address this client
 > is connected to.
 
-### peer_port : [`integer`](../../API/builtins/integer.md) {#peer_port}
+### peer_port : [`integer`](../../API/builtins/integer.md)<a name="peer_port"></a>
 > **READ-ONLY** Port of the socket's peer, the socket this client is
 > connected to.
 
@@ -42,13 +42,13 @@
 
 ---  
 ## Functions
-### close([*self*](../../API/builtins/self.md)) {#close}
+### close([*self*](../../API/builtins/self.md))<a name="close"></a>
 > Closes the socket connection and releases all resources. This will make
 > the socket useless, so any properties, calls to the socket will result in
 > errors. Can be useful to explicitly release a connection without waiting for
 > the dead object to be garbage collected, or if you want to actively refuse a
 > connection.
-### send([*self*](../../API/builtins/self.md), message : [`string`](../../API/builtins/string.md)) {#send}
+### send([*self*](../../API/builtins/self.md), message : [`string`](../../API/builtins/string.md))<a name="send"></a>
 `->`success : [`boolean`](../../API/builtins/boolean.md), error : [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
 
 > Send a message string (or OSC messages or bundles) to the connected server.
@@ -57,7 +57,7 @@
 > NB: when using TCP instead of UDP as protocol for OSC messages, !no! SLIP
 > encoding and no size prefixing of the passed OSC data will be done here.
 > So, when necessary, do this manually by your own please.
-### receive([*self*](../../API/builtins/self.md), mode : [`SocketReceiveMode`](#SocketReceiveMode), timeout_ms : [`number`](../../API/builtins/number.md)) {#receive}
+### receive([*self*](../../API/builtins/self.md), mode : [`SocketReceiveMode`](#SocketReceiveMode), timeout_ms : [`number`](../../API/builtins/number.md))<a name="receive"></a>
 `->`success : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md), error : [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
 
 > Receive a message string from the the connected server with the given
@@ -102,8 +102,8 @@
 
 
 ---  
-## Local Aliases  
-### SocketReceiveMode {#SocketReceiveMode}
+## Aliases  
+### SocketReceiveMode<a name="SocketReceiveMode"></a>
 [`integer`](../../API/builtins/integer.md) | `"*all"` | `"*line"`  
 > ```lua
 > SocketReceiveMode:

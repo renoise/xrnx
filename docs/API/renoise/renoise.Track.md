@@ -1,10 +1,10 @@
-# renoise.Track  
+# renoise.Track<a name="renoise.Track"></a>  
 > Track component of a Renoise song.  
 
 <!-- toc -->
   
 ## Constants
-### TrackType {#TrackType}
+### TrackType<a name="TrackType"></a>
 > ```lua
 > {
 >     TRACK_TYPE_SEQUENCER: integer = 1,
@@ -13,7 +13,7 @@
 >     TRACK_TYPE_GROUP: integer = 4,
 > }
 > ```
-### MuteState {#MuteState}
+### MuteState<a name="MuteState"></a>
 > ```lua
 > {
 >     MUTE_STATE_ACTIVE: integer = 1,
@@ -25,143 +25,143 @@
 
 ---  
 ## Properties
-### type : [`renoise.Track.TrackType`](renoise.Track.md#TrackType) {#type}
+### type : [`renoise.Track.TrackType`](renoise.Track.md#TrackType)<a name="type"></a>
 > **READ-ONLY**
 
-### name : [`string`](../../API/builtins/string.md) {#name}
+### name : [`string`](../../API/builtins/string.md)<a name="name"></a>
 > Name, as visible in track headers
 
-### name_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#name_observable}
+### name_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="name_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### color : [`RGBColor`](#RGBColor) {#color}
+### color : [`RGBColor`](#RGBColor)<a name="color"></a>
 > A table of 3 bytes (ranging from 0 to 255)
 > representing the red, green and blue channels of a color.
 > {0xFF, 0xFF, 0xFF} is white
 > {165, 73, 35} is the red from the Renoise logo
 
-### color_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#color_observable}
+### color_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="color_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### color_blend : [`integer`](../../API/builtins/integer.md) {#color_blend}
+### color_blend : [`integer`](../../API/builtins/integer.md)<a name="color_blend"></a>
 > Range: (0 - 100) Color blend in percent
 
-### color_blend_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#color_blend_observable}
+### color_blend_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="color_blend_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### mute_state : [`renoise.Track.MuteState`](renoise.Track.md#MuteState) {#mute_state}
+### mute_state : [`renoise.Track.MuteState`](renoise.Track.md#MuteState)<a name="mute_state"></a>
 > Mute and solo states. Not available for the master track.
 
-### mute_state_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#mute_state_observable}
+### mute_state_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="mute_state_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### solo_state : [`boolean`](../../API/builtins/boolean.md) {#solo_state}
-### solo_state_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#solo_state_observable}
+### solo_state : [`boolean`](../../API/builtins/boolean.md)<a name="solo_state"></a>
+### solo_state_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="solo_state_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### prefx_volume : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md) {#prefx_volume}
+### prefx_volume : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md)<a name="prefx_volume"></a>
 > **READ-ONLY**
 
-### prefx_panning : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md) {#prefx_panning}
+### prefx_panning : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md)<a name="prefx_panning"></a>
 > **READ-ONLY**
 
-### prefx_width : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md) {#prefx_width}
+### prefx_width : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md)<a name="prefx_width"></a>
 > **READ-ONLY**
 
-### postfx_volume : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md) {#postfx_volume}
+### postfx_volume : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md)<a name="postfx_volume"></a>
 > **READ-ONLY**
 
-### postfx_panning : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md) {#postfx_panning}
+### postfx_panning : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md)<a name="postfx_panning"></a>
 > **READ-ONLY**
 
-### collapsed : [`boolean`](../../API/builtins/boolean.md) {#collapsed}
+### collapsed : [`boolean`](../../API/builtins/boolean.md)<a name="collapsed"></a>
 > Collapsed/expanded visual appearance.
 
-### collapsed_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#collapsed_observable}
+### collapsed_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="collapsed_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### group_parent : [`renoise.GroupTrack`](../../API/renoise/renoise.GroupTrack.md) {#group_parent}
+### group_parent : [`renoise.GroupTrack`](../../API/renoise/renoise.GroupTrack.md)<a name="group_parent"></a>
 > **READ-ONLY**
 
-### available_output_routings : [`string`](../../API/builtins/string.md)[] {#available_output_routings}
+### available_output_routings : [`string`](../../API/builtins/string.md)[]<a name="available_output_routings"></a>
 > **READ-ONLY**
 
-### output_routing : [`string`](../../API/builtins/string.md) {#output_routing}
+### output_routing : [`string`](../../API/builtins/string.md)<a name="output_routing"></a>
 > One of `available_output_routings`
 
-### output_routing_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#output_routing_observable}
+### output_routing_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="output_routing_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### output_delay : [`number`](../../API/builtins/number.md) {#output_delay}
+### output_delay : [`number`](../../API/builtins/number.md)<a name="output_delay"></a>
 > Range: (-100.0-100.0) in ms
 
-### output_delay_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#output_delay_observable}
+### output_delay_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="output_delay_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### max_effect_columns : [`integer`](../../API/builtins/integer.md) {#max_effect_columns}
+### max_effect_columns : [`integer`](../../API/builtins/integer.md)<a name="max_effect_columns"></a>
 > **READ-ONLY** 8 OR 0 depending on the track type
 
-### min_effect_columns : [`integer`](../../API/builtins/integer.md) {#min_effect_columns}
+### min_effect_columns : [`integer`](../../API/builtins/integer.md)<a name="min_effect_columns"></a>
 > **READ-ONLY** 1 OR 0 depending on the track type
 
-### max_note_columns : [`integer`](../../API/builtins/integer.md) {#max_note_columns}
+### max_note_columns : [`integer`](../../API/builtins/integer.md)<a name="max_note_columns"></a>
 > **READ-ONLY** 12 OR 0 depending on the track type
 
-### min_note_columns : [`integer`](../../API/builtins/integer.md) {#min_note_columns}
+### min_note_columns : [`integer`](../../API/builtins/integer.md)<a name="min_note_columns"></a>
 > **READ-ONLY** 1 OR 0 depending on the track type
 
-### visible_effect_columns : [`integer`](../../API/builtins/integer.md) {#visible_effect_columns}
+### visible_effect_columns : [`integer`](../../API/builtins/integer.md)<a name="visible_effect_columns"></a>
 > 1-8 OR 0-8, depending on the track type
 
-### visible_effect_columns_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#visible_effect_columns_observable}
+### visible_effect_columns_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="visible_effect_columns_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### visible_note_columns : [`integer`](../../API/builtins/integer.md) {#visible_note_columns}
+### visible_note_columns : [`integer`](../../API/builtins/integer.md)<a name="visible_note_columns"></a>
 > 0 OR 1-12, depending on the track type
 
-### visible_note_columns_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#visible_note_columns_observable}
+### visible_note_columns_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="visible_note_columns_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### volume_column_visible : [`boolean`](../../API/builtins/boolean.md) {#volume_column_visible}
-### volume_column_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#volume_column_visible_observable}
+### volume_column_visible : [`boolean`](../../API/builtins/boolean.md)<a name="volume_column_visible"></a>
+### volume_column_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="volume_column_visible_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### panning_column_visible : [`boolean`](../../API/builtins/boolean.md) {#panning_column_visible}
-### panning_column_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#panning_column_visible_observable}
+### panning_column_visible : [`boolean`](../../API/builtins/boolean.md)<a name="panning_column_visible"></a>
+### panning_column_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="panning_column_visible_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### delay_column_visible : [`boolean`](../../API/builtins/boolean.md) {#delay_column_visible}
-### delay_column_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#delay_column_visible_observable}
+### delay_column_visible : [`boolean`](../../API/builtins/boolean.md)<a name="delay_column_visible"></a>
+### delay_column_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="delay_column_visible_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### sample_effects_column_visible : [`boolean`](../../API/builtins/boolean.md) {#sample_effects_column_visible}
-### sample_effects_column_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md) {#sample_effects_column_visible_observable}
+### sample_effects_column_visible : [`boolean`](../../API/builtins/boolean.md)<a name="sample_effects_column_visible"></a>
+### sample_effects_column_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="sample_effects_column_visible_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
-### available_devices : [`string`](../../API/builtins/string.md)[] {#available_devices}
+### available_devices : [`string`](../../API/builtins/string.md)[]<a name="available_devices"></a>
 > **READ-ONLY** FX devices this track can handle.
 
-### available_device_infos : [`AudioDeviceInfo`](#audiodeviceinfo)[] {#available_device_infos}
+### available_device_infos : [`AudioDeviceInfo`](#audiodeviceinfo)[]<a name="available_device_infos"></a>
 > **READ-ONLY** Array of tables containing information about the devices.
 
-### devices : [`renoise.AudioDevice`](../../API/renoise/renoise.AudioDevice.md)[] {#devices}
+### devices : [`renoise.AudioDevice`](../../API/renoise/renoise.AudioDevice.md)[]<a name="devices"></a>
 > **READ-ONLY** List of audio DSP FX.
 
-### devices_observable : [`renoise.Document.ObservableList`](../../API/renoise/renoise.Document.ObservableList.md) {#devices_observable}
+### devices_observable : [`renoise.Document.ObservableList`](../../API/renoise/renoise.Document.ObservableList.md)<a name="devices_observable"></a>
 > Track changes to document lists by attaching listener functions to it.
 > NB: Notifiers will not broadcast changes made to list items, but only changes
 > to the lists **layout** (items got added, removed, swapped).
@@ -170,74 +170,71 @@
 
 ---  
 ## Functions
-### insert_device_at([*self*](../../API/builtins/self.md), device_path : [`string`](../../API/builtins/string.md), device_index : [`integer`](../../API/builtins/integer.md)) {#insert_device_at}
+### insert_device_at([*self*](../../API/builtins/self.md), device_path : [`string`](../../API/builtins/string.md), device_index : [`integer`](../../API/builtins/integer.md))<a name="insert_device_at"></a>
 `->`[`renoise.AudioDevice`](../../API/renoise/renoise.AudioDevice.md)  
 
 > Insert a new device at the given position. `device_path` must be one of
 > `renoise.Track.available_devices`.
-### delete_device_at([*self*](../../API/builtins/self.md), device_index : [`any`](../../API/builtins/any.md)) {#delete_device_at}
+### delete_device_at([*self*](../../API/builtins/self.md), device_index : [`any`](../../API/builtins/any.md))<a name="delete_device_at"></a>
 > Delete an existing device in a track. The mixer device at index 1 can not
 > be deleted from any track.
-### swap_devices_at([*self*](../../API/builtins/self.md), device_index1 : [`integer`](../../API/builtins/integer.md), device_index2 : [`integer`](../../API/builtins/integer.md)) {#swap_devices_at}
+### swap_devices_at([*self*](../../API/builtins/self.md), device_index1 : [`integer`](../../API/builtins/integer.md), device_index2 : [`integer`](../../API/builtins/integer.md))<a name="swap_devices_at"></a>
 > Swap the positions of two devices in the device chain. The mixer device at
 > index 1 can not be swapped or moved.
-### device([*self*](../../API/builtins/self.md), device_index : [`integer`](../../API/builtins/integer.md)) {#device}
+### device([*self*](../../API/builtins/self.md), device_index : [`integer`](../../API/builtins/integer.md))<a name="device"></a>
 `->`[`renoise.AudioDevice`](../../API/renoise/renoise.AudioDevice.md)  
 
 > Access to a single device by index. Use property `devices` to iterate
 > over all devices and to query the device count.
-### mute([*self*](../../API/builtins/self.md)) {#mute}
+### mute([*self*](../../API/builtins/self.md))<a name="mute"></a>
 > Uses default mute state from the prefs. Not for the master track.
-### unmute([*self*](../../API/builtins/self.md)) {#unmute}
-### solo([*self*](../../API/builtins/self.md)) {#solo}
-### column_is_muted([*self*](../../API/builtins/self.md), column_index : [`integer`](../../API/builtins/integer.md)) {#column_is_muted}
+### unmute([*self*](../../API/builtins/self.md))<a name="unmute"></a>
+### solo([*self*](../../API/builtins/self.md))<a name="solo"></a>
+### column_is_muted([*self*](../../API/builtins/self.md), column_index : [`integer`](../../API/builtins/integer.md))<a name="column_is_muted"></a>
 `->`[`boolean`](../../API/builtins/boolean.md)  
 
 > Note column mutes. Only valid within (1-track.max_note_columns)
-### column_is_muted_observable([*self*](../../API/builtins/self.md), column_index : [`integer`](../../API/builtins/integer.md)) {#column_is_muted_observable}
+### column_is_muted_observable([*self*](../../API/builtins/self.md), column_index : [`integer`](../../API/builtins/integer.md))<a name="column_is_muted_observable"></a>
 `->`[`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)  
 
-### set_column_is_muted([*self*](../../API/builtins/self.md), column_index : [`integer`](../../API/builtins/integer.md), muted : [`boolean`](../../API/builtins/boolean.md)) {#set_column_is_muted}
-### column_name([*self*](../../API/builtins/self.md), column_index : [`integer`](../../API/builtins/integer.md)) {#column_name}
+### set_column_is_muted([*self*](../../API/builtins/self.md), column_index : [`integer`](../../API/builtins/integer.md), muted : [`boolean`](../../API/builtins/boolean.md))<a name="set_column_is_muted"></a>
+### column_name([*self*](../../API/builtins/self.md), column_index : [`integer`](../../API/builtins/integer.md))<a name="column_name"></a>
 `->`[`string`](../../API/builtins/string.md)  
 
 > Note column names. Only valid within (1-track.max_note_columns)
-### column_name_observable([*self*](../../API/builtins/self.md), column_index : [`integer`](../../API/builtins/integer.md)) {#column_name_observable}
+### column_name_observable([*self*](../../API/builtins/self.md), column_index : [`integer`](../../API/builtins/integer.md))<a name="column_name_observable"></a>
 `->`[`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)  
 
-### set_column_name([*self*](../../API/builtins/self.md), column_index : [`integer`](../../API/builtins/integer.md), name : [`string`](../../API/builtins/string.md)) {#set_column_name}
-### swap_note_columns_at([*self*](../../API/builtins/self.md), column_index1 : [`integer`](../../API/builtins/integer.md), column_index2 : [`integer`](../../API/builtins/integer.md)) {#swap_note_columns_at}
+### set_column_name([*self*](../../API/builtins/self.md), column_index : [`integer`](../../API/builtins/integer.md), name : [`string`](../../API/builtins/string.md))<a name="set_column_name"></a>
+### swap_note_columns_at([*self*](../../API/builtins/self.md), column_index1 : [`integer`](../../API/builtins/integer.md), column_index2 : [`integer`](../../API/builtins/integer.md))<a name="swap_note_columns_at"></a>
 > Swap the positions of two note or effect columns within a track.
-### swap_effect_columns_at([*self*](../../API/builtins/self.md), column_index1 : [`integer`](../../API/builtins/integer.md), column_index2 : [`integer`](../../API/builtins/integer.md)) {#swap_effect_columns_at}  
+### swap_effect_columns_at([*self*](../../API/builtins/self.md), column_index1 : [`integer`](../../API/builtins/integer.md), column_index2 : [`integer`](../../API/builtins/integer.md))<a name="swap_effect_columns_at"></a>  
 
 
 
 ---  
-## Local Structs  
-# AudioDeviceInfo  
+## Structs  
+# AudioDeviceInfo<a name="AudioDeviceInfo"></a>  
 > Audio device info  
-
-<!-- toc -->
-  
 
 ---  
 ## Properties
-### path : [`string`](../../API/builtins/string.md) {#path}
+### path : [`string`](../../API/builtins/string.md)<a name="path"></a>
 > The device's path used by `renoise.Track:insert_device_at`
 
-### name : [`string`](../../API/builtins/string.md) {#name}
+### name : [`string`](../../API/builtins/string.md)<a name="name"></a>
 > The device's name
 
-### short_name : [`string`](../../API/builtins/string.md) {#short_name}
+### short_name : [`string`](../../API/builtins/string.md)<a name="short_name"></a>
 > The device's name as displayed in shortened lists
 
-### favorite_name : [`string`](../../API/builtins/string.md) {#favorite_name}
+### favorite_name : [`string`](../../API/builtins/string.md)<a name="favorite_name"></a>
 > The device's name as displayed in favorites
 
-### is_favorite : [`boolean`](../../API/builtins/boolean.md) {#is_favorite}
+### is_favorite : [`boolean`](../../API/builtins/boolean.md)<a name="is_favorite"></a>
 > true if the device is a favorite
 
-### is_bridged : [`boolean`](../../API/builtins/boolean.md) {#is_bridged}
+### is_bridged : [`boolean`](../../API/builtins/boolean.md)<a name="is_bridged"></a>
 > true if the device is a bridged plugin
 
   
@@ -247,8 +244,8 @@
 
 
 ---  
-## Local Aliases  
-### RGBColor {#RGBColor}
+## Aliases  
+### RGBColor<a name="RGBColor"></a>
 { 1 : [`integer`](../../API/builtins/integer.md), 2 : [`integer`](../../API/builtins/integer.md), 3 : [`integer`](../../API/builtins/integer.md) }  
 > A table of 3 bytes (ranging from 0 to 255)
 > representing the red, green and blue channels of a color.

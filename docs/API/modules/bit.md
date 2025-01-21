@@ -1,4 +1,4 @@
-# bit  
+# bit<a name="bit"></a>  
 > Integer, Bit Operations, provided by <http://bitop.luajit.org/>
 > 
 >  [Documentation](http://bitop.luajit.org/api.html)  
@@ -8,38 +8,38 @@
 
 ---  
 ## Functions
-### tobit(x : [`integer`](../../API/builtins/integer.md)) {#tobit}
+### tobit(x : [`integer`](../../API/builtins/integer.md))<a name="tobit"></a>
 `->`[`integer`](../../API/builtins/integer.md)  
 
 > Normalizes a number to the numeric range for bit operations and returns it.
 > This function is usually not needed since all bit operations already normalize
 > all of their input arguments. Check the operational semantics for details.
-### tohex(x : [`integer`](../../API/builtins/integer.md), n : [`integer`](../../API/builtins/integer.md)[`?`](../../API/builtins/nil.md)) {#tohex}
+### tohex(x : [`integer`](../../API/builtins/integer.md), n : [`integer`](../../API/builtins/integer.md)[`?`](../../API/builtins/nil.md))<a name="tohex"></a>
 > Converts its first argument to a hex string. The number of hex digits is
 > given by the absolute value of the optional second argument. Positive numbers
 > between 1 and 8 generate lowercase hex digits. Negative numbers generate
 > uppercase hex digits. Only the least-significant 4*|n| bits are used. The
 > default is to generate 8 lowercase hex digits.
-### bnot(x : [`integer`](../../API/builtins/integer.md)) {#bnot}
+### bnot(x : [`integer`](../../API/builtins/integer.md))<a name="bnot"></a>
 `->`[`integer`](../../API/builtins/integer.md)  
 
 > Returns the bitwise **not** of its argument.
-### band(x1 : [`integer`](../../API/builtins/integer.md), ...[`integer`](../../API/builtins/integer.md)) {#band}
+### band(x1 : [`integer`](../../API/builtins/integer.md), ...[`integer`](../../API/builtins/integer.md))<a name="band"></a>
 `->`[`integer`](../../API/builtins/integer.md)  
 
 > Returns the bitwise and of all of its arguments. Note that more than two
 > arguments are allowed.
-### bor(x1 : [`integer`](../../API/builtins/integer.md), ...[`integer`](../../API/builtins/integer.md)) {#bor}
+### bor(x1 : [`integer`](../../API/builtins/integer.md), ...[`integer`](../../API/builtins/integer.md))<a name="bor"></a>
 `->`[`integer`](../../API/builtins/integer.md)  
 
 > Returns the bitwise or of all of its arguments. Note that more than two
 > arguments are allowed.
-### xor(x1 : [`integer`](../../API/builtins/integer.md), ...[`integer`](../../API/builtins/integer.md)) {#xor}
+### xor(x1 : [`integer`](../../API/builtins/integer.md), ...[`integer`](../../API/builtins/integer.md))<a name="xor"></a>
 `->`[`integer`](../../API/builtins/integer.md)  
 
 > Returns the bitwise xor of all of its arguments. Note that more than two
 > arguments are allowed.
-### lshift(x : [`integer`](../../API/builtins/integer.md), n : [`integer`](../../API/builtins/integer.md)) {#lshift}
+### lshift(x : [`integer`](../../API/builtins/integer.md), n : [`integer`](../../API/builtins/integer.md))<a name="lshift"></a>
 `->`[`integer`](../../API/builtins/integer.md)  
 
 > Returns the bitwise logical left-shift of its first argument by the number of
@@ -49,7 +49,7 @@
 > 0-bits. Arithmetic right-shift treats the most-significant bit as a sign bit
 > and replicates it. Only the lower 5 bits of the shift count are used (reduces
 > to the range [0..31]).
-### rshift(x : [`integer`](../../API/builtins/integer.md), n : [`integer`](../../API/builtins/integer.md)) {#rshift}
+### rshift(x : [`integer`](../../API/builtins/integer.md), n : [`integer`](../../API/builtins/integer.md))<a name="rshift"></a>
 `->`[`integer`](../../API/builtins/integer.md)  
 
 > Returns the bitwise logical right-shift of its first argument by the number of
@@ -59,7 +59,7 @@
 > 0-bits. Arithmetic right-shift treats the most-significant bit as a sign bit
 > and replicates it. Only the lower 5 bits of the shift count are used (reduces
 > to the range [0..31]).
-### arshift(x : [`integer`](../../API/builtins/integer.md), n : [`integer`](../../API/builtins/integer.md)) {#arshift}
+### arshift(x : [`integer`](../../API/builtins/integer.md), n : [`integer`](../../API/builtins/integer.md))<a name="arshift"></a>
 `->`[`integer`](../../API/builtins/integer.md)  
 
 > Returns the bitwise arithmetic right-shift of its first argument by the
@@ -69,7 +69,7 @@
 > 0-bits. Arithmetic right-shift treats the most-significant bit as a sign bit
 > and replicates it. Only the lower 5 bits of the shift count are used (reduces
 > to the range [0..31]).
-### rol(x : [`integer`](../../API/builtins/integer.md), n : [`integer`](../../API/builtins/integer.md)) {#rol}
+### rol(x : [`integer`](../../API/builtins/integer.md), n : [`integer`](../../API/builtins/integer.md))<a name="rol"></a>
 `->`[`integer`](../../API/builtins/integer.md)  
 
 > Returns bitwise left rotation of its first argument by the number of bits
@@ -78,7 +78,7 @@
 > 
 > Only the lower 5 bits of the rotate count are used (reduces to the range
 > [0..31]).
-### ror(x : [`integer`](../../API/builtins/integer.md), n : [`integer`](../../API/builtins/integer.md)) {#ror}
+### ror(x : [`integer`](../../API/builtins/integer.md), n : [`integer`](../../API/builtins/integer.md))<a name="ror"></a>
 `->`[`integer`](../../API/builtins/integer.md)  
 
 > Returns bitwise right rotation of its first argument by the number of bits
@@ -87,7 +87,7 @@
 > 
 > Only the lower 5 bits of the rotate count are used (reduces to the range
 > [0..31]).
-### bswap(x : [`integer`](../../API/builtins/integer.md)) {#bswap}
+### bswap(x : [`integer`](../../API/builtins/integer.md))<a name="bswap"></a>
 `->`[`integer`](../../API/builtins/integer.md)  
 
 > Swaps the bytes of its argument and returns it. This can be used to convert

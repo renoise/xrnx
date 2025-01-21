@@ -1,4 +1,4 @@
-# renoise.Osc  
+# renoise.Osc<a name="renoise.Osc"></a>  
 > OSC (Open Sound Control) support for Lua scripts in Renoise.  
 
 <!-- toc -->
@@ -6,7 +6,7 @@
 
 ---  
 ## Functions
-### from_binary_data(binary_data : [`string`](../../API/builtins/string.md)) {#from_binary_data}
+### from_binary_data(binary_data : [`string`](../../API/builtins/string.md))<a name="from_binary_data"></a>
 `->`[`renoise.Osc.Bundle`](../../API/renoise/renoise.Osc.Bundle.md) | [`renoise.Osc.Message`](../../API/renoise/renoise.Osc.Message.md)[`?`](../../API/builtins/nil.md), [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)  
 
 > De-packetizing raw (socket) data to OSC messages or bundles:
@@ -15,11 +15,11 @@
 > as first argument and the second return value will contain the error.
 > If de-packetizing was successful, either a renoise.Osc.Bundle or Message
 > object is returned. Bundles may contain multiple messages or nested bundles.
-### Message(pattern : [`string`](../../API/builtins/string.md), arguments : [`OscValue`](#oscvalue)[][`?`](../../API/builtins/nil.md)) {#Message}
+### Message(pattern : [`string`](../../API/builtins/string.md), arguments : [`OscValue`](#oscvalue)[][`?`](../../API/builtins/nil.md))<a name="Message"></a>
 `->`[`renoise.Osc.Message`](../../API/renoise/renoise.Osc.Message.md)  
 
 > Create a new OSC message with the given pattern and optional arguments.
-### Bundle(time : [`integer`](../../API/builtins/integer.md), arguments : [`renoise.Osc.Message`](../../API/renoise/renoise.Osc.Message.md) | [`renoise.Osc.Message`](../../API/renoise/renoise.Osc.Message.md)[]) {#Bundle}
+### Bundle(time : [`integer`](../../API/builtins/integer.md), arguments : [`renoise.Osc.Message`](../../API/renoise/renoise.Osc.Message.md) | [`renoise.Osc.Message`](../../API/renoise/renoise.Osc.Message.md)[])<a name="Bundle"></a>
 `->`[`renoise.Osc.Bundle`](../../API/renoise/renoise.Osc.Bundle.md)  
 
 > Create a new bundle by specifying a time-tag and one or more messages.
@@ -30,8 +30,8 @@
 
 
 ---  
-## Local Structs  
-# OscValue  
+## Structs  
+# OscValue<a name="OscValue"></a>  
 > `tag` is a standard OSC type tag. `value` is the arguments value expressed
 > by a Lua type. The value must be convertible to the specified tag, which
 > means, you cannot for example specify an "i" (integer) as type and then pass
@@ -39,13 +39,36 @@
 > value, like the T,F boolean tags. Then a `value` field should not be
 > specified. For more info, see: http://opensoundcontrol.org/spec-1_0  
 
-<!-- toc -->
-  
-
 ---  
 ## Properties
-### tag : [`OscTag`](#OscTag) {#tag}
-### value : [`boolean`](../../API/builtins/boolean.md) | [`string`](../../API/builtins/string.md) | [`number`](../../API/builtins/number.md) {#value}
+### tag : [`OscTag`](#OscTag)<a name="tag"></a>
+### value : [`boolean`](../../API/builtins/boolean.md) | [`string`](../../API/builtins/string.md) | [`number`](../../API/builtins/number.md)<a name="value"></a>
+  
+
+
+
+---  
+## Aliases  
+### OscTag<a name="OscTag"></a>
+`"F"` | `"I"` | `"N"` | `"S"` | `"T"` | `"b"` | `"c"` | `"d"` | `"f"` | `"h"` | `"i"` | `"m"` | `"r"` | `"s"` | `"t"`  
+> ```lua
+> OscTag:
+>     | "i" -- int32
+>     | "f" -- float32
+>     | "s" -- OSC-string
+>     | "b" -- OSC-blob (raw string)
+>     | "h" -- 64 bit big-endian two's complement integer
+>     | "t" -- OSC-timetag
+>     | "d" -- 64 bit ("double") IEEE 754 floating point number
+>     | "S" -- Alternate type represented as an OSC-string
+>     | "c" -- An ascii character, sent as 32 bits
+>     | "r" -- 32 bit RGBA color
+>     | "m" -- 4 byte MIDI message. Bytes from MSB to LSB are: port id, status byte, data1, data2
+>     | "T" -- True. No value needs to be specified.
+>     | "F" -- False. No value needs to be specified.
+>     | "N" -- Nil. No value needs to be specified.
+>     | "I" -- Infinitum. No value needs to be specified.
+> ```  
   
 
   
@@ -53,8 +76,8 @@
 
 
 ---  
-## Local Aliases  
-### OscTag {#OscTag}
+## Aliases  
+### OscTag<a name="OscTag"></a>
 `"F"` | `"I"` | `"N"` | `"S"` | `"T"` | `"b"` | `"c"` | `"d"` | `"f"` | `"h"` | `"i"` | `"m"` | `"r"` | `"s"` | `"t"`  
 > ```lua
 > OscTag:
