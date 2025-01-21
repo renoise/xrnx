@@ -17,11 +17,17 @@ jobs:
       - name: Install Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
 
+      - name: Install binstall
+        uses: cargo-bins/cargo-binstall@main
+
+      - name: Install mdbook
+        run: cargo binstall -y mdbook mdbook-linkcheck mdbook-toc mdbook-alerts
+
+      - name: Build the API
+        run: cargo run
+
       - name: Build the book
-        run: |
-          ./generate/build.sh "3.9.3"
-          cargo install mdbook mdbook-linkcheck mdbook-toc mdbook-alerts
-          mdbook build
+        run: mdbook build
 
       - name: Upload
         uses: actions/upload-pages-artifact@v3
