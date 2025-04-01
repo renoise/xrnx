@@ -1,0 +1,4 @@
+{
+    "Lua.workspace.library": ["./definitions"],
+    "Lua.runtime.plugin": "./definitions/plugin.lua"
+}
