@@ -297,7 +297,6 @@
 > + "Sample Editor"
 > + "Sample Editor Ruler"
 > + "Sample Editor Slice Markers"
-> + "Sample List"
 > + "Sample Mappings"
 > + "Sample FX Mixer"
 > + "Sample Modulation Matrix"
