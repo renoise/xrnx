@@ -18,6 +18,7 @@
 ### name : [`string`](../../API/builtins/string.md)<a name="name"></a>
 > **READ-ONLY**
 
+### name_observable : [`renoise.Document.ObservableString`](../../API/renoise/renoise.Document.ObservableString.md)<a name="name_observable"></a>
 ### polarity : [`renoise.DeviceParameter.Polarity`](renoise.DeviceParameter.md#Polarity)<a name="polarity"></a>
 > **READ-ONLY**
 

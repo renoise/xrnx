@@ -32,6 +32,23 @@
 >     LOWER_FRAME_TRACK_AUTOMATION: integer = 2,
 > }
 > ```
+### DiskBrowserCategory<a name="DiskBrowserCategory"></a>
+> ```lua
+> {
+>     DISK_BROWSER_CATEGORY_SONGS: integer = 1,
+>     DISK_BROWSER_CATEGORY_INSTRUMENTS: integer = 2,
+>     DISK_BROWSER_CATEGORY_SAMPLES: integer = 3,
+>     DISK_BROWSER_CATEGORY_OTHER: integer = 4,
+> }
+> ```
+### InstrumentBoxSlotSize<a name="InstrumentBoxSlotSize"></a>
+> ```lua
+> {
+>     INSTRUMENT_BOX_SLOT_SIZE_SMALL: integer = 1,
+>     INSTRUMENT_BOX_SLOT_SIZE_MEDIUM: integer = 2,
+>     INSTRUMENT_BOX_SLOT_SIZE_LARGE: integer = 3,
+> }
+> ```
 ### MixerFader<a name="MixerFader"></a>
 > ```lua
 > {
@@ -68,6 +85,11 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
+### disk_browser_category : [`renoise.ApplicationWindow.DiskBrowserCategory`](renoise.ApplicationWindow.md#DiskBrowserCategory)<a name="disk_browser_category"></a>
+### disk_browser_category_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="disk_browser_category_observable"></a>
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
 ### instrument_box_is_visible : [`boolean`](../../API/builtins/boolean.md)<a name="instrument_box_is_visible"></a>
 > InstrumentBox
 
@@ -75,10 +97,40 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
+### instrument_box_slot_size : [`renoise.ApplicationWindow.InstrumentBoxSlotSize`](renoise.ApplicationWindow.md#InstrumentBoxSlotSize)<a name="instrument_box_slot_size"></a>
+> InstrumentBox slot size
+
+### instrument_box_slot_size_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="instrument_box_slot_size_observable"></a>
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
 ### instrument_editor_is_detached : [`boolean`](../../API/builtins/boolean.md)<a name="instrument_editor_is_detached"></a>
 > Instrument Editor detaching.
 
 ### instrument_editor_is_detached_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="instrument_editor_is_detached_observable"></a>
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
+### instrument_properties_is_visible : [`boolean`](../../API/builtins/boolean.md)<a name="instrument_properties_is_visible"></a>
+> InstrumentProperties (below InstrumentBox)
+
+### instrument_properties_is_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="instrument_properties_is_visible_observable"></a>
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
+### instrument_properties_show_volume_transpose : [`boolean`](../../API/builtins/boolean.md)<a name="instrument_properties_show_volume_transpose"></a>
+### instrument_properties_show_trigger_options : [`boolean`](../../API/builtins/boolean.md)<a name="instrument_properties_show_trigger_options"></a>
+### instrument_properties_show_scale_options : [`boolean`](../../API/builtins/boolean.md)<a name="instrument_properties_show_scale_options"></a>
+### instrument_properties_show_plugin : [`boolean`](../../API/builtins/boolean.md)<a name="instrument_properties_show_plugin"></a>
+### instrument_properties_show_plugin_program : [`boolean`](../../API/builtins/boolean.md)<a name="instrument_properties_show_plugin_program"></a>
+### instrument_properties_show_midi : [`boolean`](../../API/builtins/boolean.md)<a name="instrument_properties_show_midi"></a>
+### instrument_properties_show_midi_program : [`boolean`](../../API/builtins/boolean.md)<a name="instrument_properties_show_midi_program"></a>
+### instrument_properties_show_macros : [`boolean`](../../API/builtins/boolean.md)<a name="instrument_properties_show_macros"></a>
+### instrument_properties_show_phrases : [`boolean`](../../API/builtins/boolean.md)<a name="instrument_properties_show_phrases"></a>
+### sample_properties_is_visible : [`boolean`](../../API/builtins/boolean.md)<a name="sample_properties_is_visible"></a>
+> SampleProperties (below SampleNavigator)
+
+### sample_properties_is_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="sample_properties_is_visible_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
@@ -117,6 +169,13 @@
 
 ### active_lower_frame : [`renoise.ApplicationWindow.LowerFrame`](renoise.ApplicationWindow.md#LowerFrame)<a name="active_lower_frame"></a>
 ### active_lower_frame_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="active_lower_frame_observable"></a>
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
+### right_frame_is_visible : [`boolean`](../../API/builtins/boolean.md)<a name="right_frame_is_visible"></a>
+> Frame with Disk Browser and Instrument Box.
+
+### right_frame_is_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="right_frame_is_visible_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 

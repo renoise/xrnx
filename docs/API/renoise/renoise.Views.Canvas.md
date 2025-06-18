@@ -1,10 +1,19 @@
-# renoise.Views.CheckBox<a name="renoise.Views.CheckBox"></a>  
-> A single button with a checkbox bitmap, which can be used to toggle
-> something on/off.
+# renoise.Views.Canvas<a name="renoise.Views.Canvas"></a>  
+> A canvas view lets you draw and handle mouse events in a completely
+> customisable way.
+> 
+> Note: The content is cached in a texture and not hardware accelerated, so
+> it's not suitable for animations, but for static content such as custom
+> backgrounds or bitmap-like views.
 > ```text
->  +----+
->  | _/ |
->  +----+
+>       .--.
+>     .'_\/_'.
+>     '. /\ .'
+>       "||"
+>        || /\
+>     /\ ||//\)
+>    (/\\||/
+> ______\||/_______
 > ```  
 
 <!-- toc -->
@@ -12,23 +21,11 @@
 
 ---  
 ## Properties
-### value : [`CheckBoxBoolean`](#CheckBoxBoolean)<a name="value"></a>
-> The current state of the checkbox, expressed as boolean.
-> * Default: false
-
-### active : [`ControlActive`](#ControlActive)<a name="active"></a>
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.
-
-### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)<a name="midi_mapping"></a>
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.
+### mode : [`CanvasMode`](#CanvasMode)<a name="mode"></a>
+> How to draw the canvas context to screen: "transparent" draws with alpha from
+> the canvas, "plain" ignores alpha values, which usually is a lot faster to draw.
+> Use "plain" to speed up drawing background alike canvas views which cover the
+> entire view area. Default: "transparent"
 
 ### visible : [`ViewVisibility`](#ViewVisibility)<a name="visible"></a>
 > Set visible to false to hide a view (make it invisible without removing
@@ -71,10 +68,14 @@
 
 ---  
 ## Functions
-### add_notifier([*self*](../../API/builtins/self.md), notifier : [`BooleanValueNotifierFunction`](#BooleanValueNotifierFunction))<a name="add_notifier"></a>
-> Add value change notifier
-### remove_notifier([*self*](../../API/builtins/self.md), notifier : [`BooleanValueNotifierFunction`](#BooleanValueNotifierFunction))<a name="remove_notifier"></a>
-> Remove value change notifier
+### update([*self*](../../API/builtins/self.md))<a name="update"></a>
+> Request background drawing contents of the canvas to be updated in the next
+> UI draw cycle.<br>
+> 
+> Size changes of the canvas view, global UI scaling changes, and color theme
+> changes will automatically update the canvas, so this is only necessary to
+> call when your draw content needs to be updated due to some internal state
+> changes.
 ### add_view([*self*](../../API/builtins/self.md), child : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md))<a name="add_view"></a>
 > Add a new child view to this view.
 ### remove_view([*self*](../../API/builtins/self.md), child : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md))<a name="remove_view"></a>
@@ -93,30 +94,17 @@
 
 ---  
 ## Aliases  
-### BooleanValueNotifierFunction<a name="BooleanValueNotifierFunction"></a>
-(value : [`boolean`](../../API/builtins/boolean.md))  
-  
-  
-### CheckBoxBoolean<a name="CheckBoxBoolean"></a>
-[`boolean`](../../API/builtins/boolean.md)  
-> The current state of the checkbox, expressed as boolean.
-> * Default: false  
-  
-### ControlActive<a name="ControlActive"></a>
-[`boolean`](../../API/builtins/boolean.md)  
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.  
-  
-### ControlMidiMappingString<a name="ControlMidiMappingString"></a>
-[`string`](../../API/builtins/string.md)  
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.  
+### CanvasMode<a name="CanvasMode"></a>
+`"plain"` | `"transparent"`  
+> ```lua
+> -- How to draw the canvas context to screen: "transparent" draws with alpha from
+> -- the canvas, "plain" ignores alpha values, which usually is a lot faster to draw.
+> -- Use "plain" to speed up drawing background alike canvas views which cover the
+> -- entire view area. Default: "transparent"
+> CanvasMode:
+>     | "plain"
+>     | "transparent"
+> ```  
   
 ### ViewCursorShape<a name="ViewCursorShape"></a>
 `"busy"` | `"change_value"` | `"crosshair"` | `"default"` | `"drag"` | `"drop"` | `"edit_text"` | `"empty"` | `"erase"` | `"extend_bottom"` | `"extend_bottom_alias"` | `"extend_left"` | `"extend_left_alias"` | `"extend_right"` | `"extend_right_alias"` | `"extend_top"` | `"extend_top_alias"` | `"marker"` | `"move"` | `"nodrop"` | `"none"` | `"pencil"` | `"play"` | `"resize_edge_diagonal_left"` | `"resize_edge_diagonal_right"` | `"resize_edge_horizontal"` | `"resize_edge_vertical"` | `"resize_horizontal"` | `"resize_vertical"` | `"zoom"` | `"zoom_horizontal"` | `"zoom_vertical"`  

@@ -6,7 +6,7 @@
 ## Constants
 
 ### API_VERSION : [`number`](../API/builtins/number.md)<a name="API_VERSION"></a>
-> Currently 6.1. Any changes in the API which are not backwards compatible,
+> Currently 6.2. Any changes in the API which are not backwards compatible,
 > will increase the internal API's major version number (e.g. from 1.4 -> 2.0).
 > All other backwards compatible changes, like new functionality, new functions
 > and classes which do not break existing scripts, will increase only the minor

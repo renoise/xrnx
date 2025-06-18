@@ -1,4 +1,5 @@
 # renoise.InstrumentDevice<a name="renoise.InstrumentDevice"></a>  
+> **Deprecated.** Use `renoise.InstrumentPluginDevice` instead.  
 
 <!-- toc -->
   

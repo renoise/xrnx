@@ -25,6 +25,15 @@
 >     TIMING_MODEL_LPB: integer = 2,
 > }
 > ```
+### SyncMode<a name="SyncMode"></a>
+> ```lua
+> {
+>     SYNC_MODE_INTERNAL: integer = 1,
+>     SYNC_MODE_MIDI_CLOCK: integer = 2,
+>     SYNC_MODE_ABLETON_LINK: integer = 3,
+>     SYNC_MODE_JACK: integer = 4,
+> }
+> ```
   
 
 ---  
@@ -33,6 +42,15 @@
 > Playing
 
 ### playing_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="playing_observable"></a>
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
+### sync_mode : [`renoise.Transport.SyncMode`](renoise.Transport.md#SyncMode)<a name="sync_mode"></a>
+> Transport sync mode.
+> Note: `SYNC_MODE_JACK` only is available on Linux. Trying to enable it on
+> other platforms will fire an error.
+
+### sync_mode_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="sync_mode_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
@@ -118,14 +136,22 @@
 ### loop_block_enabled : [`boolean`](../../API/builtins/boolean.md)<a name="loop_block_enabled"></a>
 > Block Loop On/Off
 
-### loop_block_start_pos : [`renoise.SongPos`](../../API/renoise/renoise.SongPos.md)<a name="loop_block_start_pos"></a>
-> Start of block loop
+### loop_block_enabled_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="loop_block_enabled_observable"></a>
+> Track changes to document properties or general states by attaching listener
+> functions to it.
 
 ### loop_block_range_coeff : [`integer`](../../API/builtins/integer.md)<a name="loop_block_range_coeff"></a>
 > Range: (2 - 16)
 
+### loop_block_range_coeff_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="loop_block_range_coeff_observable"></a>
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
+### loop_block_start_pos : [`renoise.SongPos`](../../API/renoise/renoise.SongPos.md)<a name="loop_block_start_pos"></a>
+> Start of block loop
+
 ### edit_mode : [`boolean`](../../API/builtins/boolean.md)<a name="edit_mode"></a>
-> Edit modes
+> Pattern edit/record mode On/Off
 
 ### edit_mode_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="edit_mode_observable"></a>
 > Track changes to document properties or general states by attaching listener
@@ -145,15 +171,22 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
+### octave_enabled : [`boolean`](../../API/builtins/boolean.md)<a name="octave_enabled"></a>
+> Enabled for MIDI keyboards
+
+### octave_enabled_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="octave_enabled_observable"></a>
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
 ### metronome_enabled : [`boolean`](../../API/builtins/boolean.md)<a name="metronome_enabled"></a>
-> Metronome
+> Metronome playback On/Off
 
 ### metronome_enabled_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="metronome_enabled_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
 ### metronome_beats_per_bar : [`integer`](../../API/builtins/integer.md)<a name="metronome_beats_per_bar"></a>
-> Range: (1 - 16)
+> Range: (1 - 16) or 0 = guess from pattern length
 
 ### metronome_beats_per_bar_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="metronome_beats_per_bar_observable"></a>
 > Track changes to document properties or general states by attaching listener
@@ -167,7 +200,7 @@
 > functions to it.
 
 ### metronome_precount_enabled : [`boolean`](../../API/builtins/boolean.md)<a name="metronome_precount_enabled"></a>
-> Metronome precount
+> Metronome precount playback On/Off
 
 ### metronome_precount_enabled_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="metronome_precount_enabled_observable"></a>
 > Track changes to document properties or general states by attaching listener
@@ -180,8 +213,15 @@
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
+### metronome_volume : [`number`](../../API/builtins/number.md)<a name="metronome_volume"></a>
+> Range: (0 - math.db2lin(6))
+
+### metronome_volume_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="metronome_volume_observable"></a>
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
 ### record_quantize_enabled : [`boolean`](../../API/builtins/boolean.md)<a name="record_quantize_enabled"></a>
-> Quantize
+> Record note quantization On/Off
 
 ### record_quantize_enabled_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="record_quantize_enabled_observable"></a>
 > Track changes to document properties or general states by attaching listener
@@ -219,7 +259,7 @@
 > functions to it.
 
 ### groove_enabled : [`boolean`](../../API/builtins/boolean.md)<a name="groove_enabled"></a>
-> Groove. (aka Shuffle)
+> Groove (aka Shuffle)
 
 ### groove_enabled_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="groove_enabled_observable"></a>
 > Track changes to document properties or general states by attaching listener
@@ -229,9 +269,12 @@
 > table with 4 numbers in Range: (0 - 1)
 
 ### groove_assignment_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="groove_assignment_observable"></a>
-> Attach notifiers that will be called as soon as any groove value changed.
+> Will be called as soon as any groove value changed.
 
 ### track_headroom : [`number`](../../API/builtins/number.md)<a name="track_headroom"></a>
+> Global Track Headroom
+> To convert to dB: `dB = math.lin2db(renoise.Transport.track_headroom)`
+> To convert from dB: `renoise.Transport.track_headroom = math.db2lin(dB)`
 > Range: (math.db2lin(-12) - math.db2lin(0))
 
 ### track_headroom_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="track_headroom_observable"></a>
@@ -246,9 +289,20 @@
 > functions to it.
 
 ### keyboard_velocity : [`integer`](../../API/builtins/integer.md)<a name="keyboard_velocity"></a>
+> Will return the default value of 127 when keyboard_velocity_enabled == false.
 > Range: (0 - 127)
 
 ### keyboard_velocity_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="keyboard_velocity_observable"></a>
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
+### sample_recording : [`boolean`](../../API/builtins/boolean.md)<a name="sample_recording"></a>
+> *READ-ONLY* true when sample sample dialog is visible and recording started.
+
+### sample_recording_sync_enabled : [`boolean`](../../API/builtins/boolean.md)<a name="sample_recording_sync_enabled"></a>
+> Sample recording pattern quantization On/Off.
+
+### sample_recording_sync_enabled_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="sample_recording_sync_enabled_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
 
@@ -277,9 +331,12 @@
 > Move the block loop one segment forwards, when possible.
 ### loop_block_move_backwards([*self*](../../API/builtins/self.md))<a name="loop_block_move_backwards"></a>
 > Move the block loop one segment backwards, when possible.
+### start_sample_recording([*self*](../../API/builtins/self.md))<a name="start_sample_recording"></a>
+> Start a new sample recording when the sample dialog is visible.
+### stop_sample_recording([*self*](../../API/builtins/self.md))<a name="stop_sample_recording"></a>
+> Stop sample recording when the sample dialog is visible and running
 ### start_stop_sample_recording([*self*](../../API/builtins/self.md))<a name="start_stop_sample_recording"></a>
-> Start a new sample recording when the sample dialog is visible,
-> otherwise stop and finish it.
+> **Deprecated.** Use `start_sample_recording` or `stop_sample_recording` instead.
 ### cancel_sample_recording([*self*](../../API/builtins/self.md))<a name="cancel_sample_recording"></a>
 > Cancel a currently running sample recording when the sample dialog
 > is visible, otherwise do nothing.  

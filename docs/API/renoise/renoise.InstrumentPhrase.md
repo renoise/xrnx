@@ -14,6 +14,13 @@
 >     KEY_TRACKING_OFFSET: integer = 3,
 > }
 > ```
+### PlaybackMode<a name="PlaybackMode"></a>
+> ```lua
+> {
+>     PLAY_PATTERN: integer = 1,
+>     PLAY_SCRIPT: integer = 2,
+> }
+> ```
 ### MAX_NUMBER_OF_LINES : [`integer`](../../API/builtins/integer.md)<a name="MAX_NUMBER_OF_LINES"></a>
 > Maximum number of lines that can be present in a phrase.
 
@@ -37,6 +44,17 @@
 
 ### mapping : [`renoise.InstrumentPhraseMapping`](../../API/renoise/renoise.InstrumentPhraseMapping.md)<a name="mapping"></a>
 > (Key)Mapping properties of the phrase or nil when no mapping is present.
+
+### playback_mode : [`renoise.InstrumentPhrase.PlaybackMode`](renoise.InstrumentPhrase.md#PlaybackMode)<a name="playback_mode"></a>
+> playback mode
+
+### playback_mode_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="playback_mode_observable"></a>
+> Track changes to document properties or general states by attaching listener
+> functions to it.
+
+### script : [`renoise.InstrumentPhraseScript`](../../API/renoise/renoise.InstrumentPhraseScript.md)<a name="script"></a>
+> **READ-ONLY** Phrase script properties. Only used when `playback_mode` is 
+> set to `renoise.InstrumentPhrase.PLAY_SCRIPT`
 
 ### is_empty : [`boolean`](../../API/builtins/boolean.md)<a name="is_empty"></a>
 > **READ-ONLY**
