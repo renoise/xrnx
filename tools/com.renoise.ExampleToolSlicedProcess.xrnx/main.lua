@@ -143,4 +143,3 @@ renoise.tool():add_menu_entry{
   end
 }
 
-
