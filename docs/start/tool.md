@@ -31,38 +31,54 @@ Here is an entire manifest file from a HelloWorld tool:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <RenoiseScriptingTool doc_version="0">
-  <ApiVersion>6</ApiVersion>
+  <ApiVersion>6.1</ApiVersion>
   <Id>com.renoise.HelloWorld</Id>
   <Version>1.0</Version>
-  <Author>your name [your_email@address.com]</Author>
+  <Author>Your Name [your@email.com]</Author>
   <Name>Hello World</Name>
   <Category>Tool Development</Category>
   <Description>
-    This tool is for printing "Hello World!" to the terminal when loaded.
+    This tool is for printing &quot;Hello World!&quot; to the terminal when loaded.
   </Description>
-  <Homepage>http://scripting.renoise.com</Homepage>
+  <Homepage>http://tools.renoise.com</Homepage>
   <Icon>icon.png</Icon>
   <Platform>Windows, Mac, Linux</Platform>
 </RenoiseScriptingTool>
 ```
 
 Let's go through what each of these tags mean and what you should put inside them.
-* `<?xml>` is the header for the XML file, this will stay the same across all tools
-* `<RenoiseScriptionTool doc_version="0">` tells Renoise that this XML describes a tool, this won't change either
-* `<ApiVersion>` is the version of the Renoise API your tool is using, this should be `6` for the latest version
-* `<Id>` should match the folder name of your tool **exactly** without the `.xrnx` at the end
-* `<Version>` is the version of your tool, whenever you release a new update you should increase this. It is best to follow standard [semantic versioning](https://semver.org/) conventions here.
-* `<Author>` contains your name and contact information, whenever your tool crashes, this information is going to be provided for the user alongside the crash message, you should use some contact where you can accept possbile bug reports or questions
-* `<Name>` the human readable name of your tool, it can be anything you want and you can change it anytime you feel like it
-* `<Category>` the category for your tool, which will be used to sort your tool on the [official Tools page](https://www.renoise.com/tools) if you ever decide to submit it there
-* `<Description>` a short description of your tool which will be displayed inside the *Tool Browser* in Renoise and on the Tools page
-* `<Homepage>` your website's address if you have any, you could also put your forum topic or git repository here if you want
-* `<Icon>` the path to an optional icon to your tool
-* `<Platform>` a list of platforms your tool supports, as long as you're only using the Renoise API, your tools will be automatically cross-platform, but once you do something OS specific you should communicate that here
+
+`<?xml>` is the header for the XML file, this will stay the same across all tools. `<RenoiseScriptingTool>` tells Renoise that this XML describes a tool. Don't change this.
+
+### Required Properties
+
+* `<ApiVersion>` The version of the Renoise API your tool is using. This should be `6.1` for the latest version.
+* `<Id>` Should match the folder name of your tool **exactly** without the `.xrnx` at the end.
+* `<Version>` The version of your tool, whenever you release a new update you should increase the version. Note that this is a **number value** and not a semantic version. So `1.02` is a valid version, while `1.0.2` **is not**.
+* `<Author>` Your name and contact information. Whenever your tool crashes, this information is going to be provided for the user alongside the crash message, you should use some contact where you can accept possible bug reports or questions.
+* `<Name>` Human readable name of your tool, it can be anything you want and you can change it anytime you feel like it.
+* `<Category>` Category for your tool, which will be used to categorize your tool on the [official Tools page](https://www.renoise.com/tools) if you ever decide to submit it there
+* `<Description>` A short description of your tool which will be displayed inside the *Tool Browser* in Renoise and on the Tools page.
+
+### Optional Properties
+
+* `<Homepage>` Your tool's website address if you have any. You could also put a forum topic or git repository here if you want.
+* `<Icon>` A relative path to an optional icon to your tool.
+* `<Platform>` List of platforms your tool supports separated by `,`. As long as you're only using the Renoise API, your tool will be automatically cross-platform, but once you do something OS specific you should communicate that here.
+
+### Text Encoding
+
+When writing the XML file in a regular text editor, ensure that text content is encoded correctly. Otherwise, the XML file will be invalid.
+
+- `"` ->  `&quot;`
+- `'` ->  `&apos;`
+- `<` ->  `&lt;`
+- `>` ->  `&gt;`
+- `&` ->  `&amp;`
 
 ## main.lua
 
-Now that we have a manifest file, we can get to the exciting part of printing a message to the Renoise console. The contents of the `main.lua` file will just have a single line for now.
+Now that we have a manifest file, we can get to the exciting part of printing a message to the Renoise console. The contents of the `main.lua` file will just have a single line for now:
 
 ```lua
 print("Hello world!")
