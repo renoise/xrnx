@@ -13,6 +13,9 @@
 ### visible : [`boolean`](../../API/builtins/boolean.md)<a name="visible"></a>
 >  **READ-ONLY** Check if a dialog is alive and visible.
 
+### focused : [`boolean`](../../API/builtins/boolean.md)<a name="focused"></a>
+>  **READ-ONLY** Check if a dialog is visible and is the key window.
+
   
 
 ---  

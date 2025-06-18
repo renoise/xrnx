@@ -1,34 +1,22 @@
-# renoise.Views.CheckBox<a name="renoise.Views.CheckBox"></a>  
-> A single button with a checkbox bitmap, which can be used to toggle
-> something on/off.
-> ```text
->  +----+
->  | _/ |
->  +----+
-> ```  
+# renoise.Views.Stack<a name="renoise.Views.Stack"></a>  
+> A Stack has no content on its own. It only *stacks* it's child views.
+> The position of the child views in the stack can be freely set by using
+> the `origin` property of the views.  
 
 <!-- toc -->
   
 
 ---  
 ## Properties
-### value : [`CheckBoxBoolean`](#CheckBoxBoolean)<a name="value"></a>
-> The current state of the checkbox, expressed as boolean.
-> * Default: false
+### autosize : [`StackAutoSize`](#StackAutoSize)<a name="autosize"></a>
+> When set to true, the width and height of the stack will be automatically
+> calculated and updated from the stack's child views, to ensure all views fit
+> into the stack.
+> When disabled, the width and height must be set manually.
+> * Default: true
 
-### active : [`ControlActive`](#ControlActive)<a name="active"></a>
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.
-
-### midi_mapping : [`ControlMidiMappingString`](#ControlMidiMappingString)<a name="midi_mapping"></a>
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.
+### background : [`ViewBackgroundStyle`](#ViewBackgroundStyle)<a name="background"></a>
+> Setup a background style for the view. 
 
 ### visible : [`ViewVisibility`](#ViewVisibility)<a name="visible"></a>
 > Set visible to false to hide a view (make it invisible without removing
@@ -71,10 +59,6 @@
 
 ---  
 ## Functions
-### add_notifier([*self*](../../API/builtins/self.md), notifier : [`BooleanValueNotifierFunction`](#BooleanValueNotifierFunction))<a name="add_notifier"></a>
-> Add value change notifier
-### remove_notifier([*self*](../../API/builtins/self.md), notifier : [`BooleanValueNotifierFunction`](#BooleanValueNotifierFunction))<a name="remove_notifier"></a>
-> Remove value change notifier
 ### add_view([*self*](../../API/builtins/self.md), child : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md))<a name="add_view"></a>
 > Add a new child view to this view.
 ### remove_view([*self*](../../API/builtins/self.md), child : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md))<a name="remove_view"></a>
@@ -93,30 +77,26 @@
 
 ---  
 ## Aliases  
-### BooleanValueNotifierFunction<a name="BooleanValueNotifierFunction"></a>
-(value : [`boolean`](../../API/builtins/boolean.md))  
-  
-  
-### CheckBoxBoolean<a name="CheckBoxBoolean"></a>
+### StackAutoSize<a name="StackAutoSize"></a>
 [`boolean`](../../API/builtins/boolean.md)  
-> The current state of the checkbox, expressed as boolean.
-> * Default: false  
+> When set to true, the width and height of the stack will be automatically
+> calculated and updated from the stack's child views, to ensure all views fit
+> into the stack.
+> When disabled, the width and height must be set manually.
+> * Default: true  
   
-### ControlActive<a name="ControlActive"></a>
-[`boolean`](../../API/builtins/boolean.md)  
-> Instead of making a control invisible, you can also make it inactive.
-> Deactivated controls will still be shown, and will still show their
-> currently assigned values, but will not allow changes. Most controls will
-> display as "grayed out" to visualize the deactivated state.  
-  
-### ControlMidiMappingString<a name="ControlMidiMappingString"></a>
-[`string`](../../API/builtins/string.md)  
-> When set, the control will be highlighted when Renoise's MIDI mapping dialog
-> is open. When clicked, it selects the specified string as a MIDI mapping
-> target action. This target acton can either be one of the globally available
-> mappings in Renoise, or those that were created by the tool itself.
-> Target strings are not verified. When they point to nothing, the mapped MIDI
-> message will do nothing and no error is fired.  
+### ViewBackgroundStyle<a name="ViewBackgroundStyle"></a>
+`"body"` | `"border"` | `"group"` | `"invisible"` | `"panel"` | `"plain"`  
+> ```lua
+> -- Setup a background style for the view. 
+> ViewBackgroundStyle:
+>     | "invisible" -- no background (Default)
+>     | "plain" -- undecorated, single coloured background
+>     | "border" -- same as plain, but with a bold nested border
+>     | "body" -- main "background" style, as used in dialog backgrounds
+>     | "panel" -- alternative "background" style, beveled
+>     | "group" -- background for "nested" groups within body
+> ```  
   
 ### ViewCursorShape<a name="ViewCursorShape"></a>
 `"busy"` | `"change_value"` | `"crosshair"` | `"default"` | `"drag"` | `"drop"` | `"edit_text"` | `"empty"` | `"erase"` | `"extend_bottom"` | `"extend_bottom_alias"` | `"extend_left"` | `"extend_left_alias"` | `"extend_right"` | `"extend_right_alias"` | `"extend_top"` | `"extend_top_alias"` | `"marker"` | `"move"` | `"nodrop"` | `"none"` | `"pencil"` | `"play"` | `"resize_edge_diagonal_left"` | `"resize_edge_diagonal_right"` | `"resize_edge_horizontal"` | `"resize_edge_vertical"` | `"resize_horizontal"` | `"resize_vertical"` | `"zoom"` | `"zoom_horizontal"` | `"zoom_vertical"`  

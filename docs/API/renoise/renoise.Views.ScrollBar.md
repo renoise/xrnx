@@ -1,21 +1,28 @@
-# renoise.Views.CheckBox<a name="renoise.Views.CheckBox"></a>  
-> A single button with a checkbox bitmap, which can be used to toggle
-> something on/off.
+# renoise.Views.ScrollBar<a name="renoise.Views.ScrollBar"></a>  
+> A special slider alike control to scroll through some content.
+> 
+> `min` and `max` define to the scrollable area's range. `pagesize` is the
+> currently visible area within that range and `value` is the offset from
+> `min` to `max - pagestep` within the whole scrollable area:
+> 
 > ```text
->  +----+
->  | _/ |
->  +----+
-> ```  
+> min   value                      max
+>  |      [xxxxxxxxxxxxxx]          |
+>         <---pagestep--->
+>  <---------scroll-area------------>
+> ```
+> 
+> Note that the *minimum offset value* is `min` and the *maximum offset
+> value* is `max - pagestep`.
+> 
+> A scrollbar can be horizontal or vertical. It will flip its orientation
+> according to the set width and height. By default it's horizontal.  
 
 <!-- toc -->
   
 
 ---  
 ## Properties
-### value : [`CheckBoxBoolean`](#CheckBoxBoolean)<a name="value"></a>
-> The current state of the checkbox, expressed as boolean.
-> * Default: false
-
 ### active : [`ControlActive`](#ControlActive)<a name="active"></a>
 > Instead of making a control invisible, you can also make it inactive.
 > Deactivated controls will still be shown, and will still show their
@@ -29,6 +36,28 @@
 > mappings in Renoise, or those that were created by the tool itself.
 > Target strings are not verified. When they point to nothing, the mapped MIDI
 > message will do nothing and no error is fired.
+
+### min : [`ScrollbarMin`](#ScrollbarMin)<a name="min"></a>
+> Default 0. Minimum offset value.
+
+### max : [`ScrollbarMax`](#ScrollbarMax)<a name="max"></a>
+> Default 100. Maximum offset value.
+
+### value : [`ScrollbarValue`](#ScrollbarValue)<a name="value"></a>
+> Default 0. Offset value in range `min to max - pagestep`.
+
+### step : [`ScrollbarStep`](#ScrollbarStep)<a name="step"></a>
+> Default 1. Amount the mouse-wheel or additional +/- buttons in the scroll bar
+> move the scrollable area.
+
+### pagestep : [`ScrollbarPagestep`](#ScrollbarPagestep)<a name="pagestep"></a>
+> Default 100. Size of the currently visible area.
+
+### background : [`ViewBackgroundStyle`](#ViewBackgroundStyle)<a name="background"></a>
+> Setup a background style for the view. 
+
+### autohide : [`ScrollbarAutoHide`](#ScrollbarAutoHide)<a name="autohide"></a>
+> Default: false. When true, view gets automatically hidden when no scrolling is needed
 
 ### visible : [`ViewVisibility`](#ViewVisibility)<a name="visible"></a>
 > Set visible to false to hide a view (make it invisible without removing
@@ -71,10 +100,10 @@
 
 ---  
 ## Functions
-### add_notifier([*self*](../../API/builtins/self.md), notifier : [`BooleanValueNotifierFunction`](#BooleanValueNotifierFunction))<a name="add_notifier"></a>
-> Add value change notifier
-### remove_notifier([*self*](../../API/builtins/self.md), notifier : [`BooleanValueNotifierFunction`](#BooleanValueNotifierFunction))<a name="remove_notifier"></a>
-> Remove value change notifier
+### add_notifier([*self*](../../API/builtins/self.md), notifier : [`IntegerValueNotifierFunction`](#IntegerValueNotifierFunction))<a name="add_notifier"></a>
+> Add offset value change notifier
+### remove_notifier([*self*](../../API/builtins/self.md), notifier : [`IntegerValueNotifierFunction`](#IntegerValueNotifierFunction))<a name="remove_notifier"></a>
+> Remove offset value change notifier
 ### add_view([*self*](../../API/builtins/self.md), child : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md))<a name="add_view"></a>
 > Add a new child view to this view.
 ### remove_view([*self*](../../API/builtins/self.md), child : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md))<a name="remove_view"></a>
@@ -93,15 +122,6 @@
 
 ---  
 ## Aliases  
-### BooleanValueNotifierFunction<a name="BooleanValueNotifierFunction"></a>
-(value : [`boolean`](../../API/builtins/boolean.md))  
-  
-  
-### CheckBoxBoolean<a name="CheckBoxBoolean"></a>
-[`boolean`](../../API/builtins/boolean.md)  
-> The current state of the checkbox, expressed as boolean.
-> * Default: false  
-  
 ### ControlActive<a name="ControlActive"></a>
 [`boolean`](../../API/builtins/boolean.md)  
 > Instead of making a control invisible, you can also make it inactive.
@@ -117,6 +137,48 @@
 > mappings in Renoise, or those that were created by the tool itself.
 > Target strings are not verified. When they point to nothing, the mapped MIDI
 > message will do nothing and no error is fired.  
+  
+### IntegerValueNotifierFunction<a name="IntegerValueNotifierFunction"></a>
+(value : [`integer`](../../API/builtins/integer.md))  
+  
+  
+### ScrollbarAutoHide<a name="ScrollbarAutoHide"></a>
+[`boolean`](../../API/builtins/boolean.md)  
+> Default: false. When true, view gets automatically hidden when no scrolling is needed  
+  
+### ScrollbarMax<a name="ScrollbarMax"></a>
+[`integer`](../../API/builtins/integer.md)  
+> Default 100. Maximum offset value.  
+  
+### ScrollbarMin<a name="ScrollbarMin"></a>
+[`integer`](../../API/builtins/integer.md)  
+> Default 0. Minimum offset value.  
+  
+### ScrollbarPagestep<a name="ScrollbarPagestep"></a>
+[`integer`](../../API/builtins/integer.md)  
+> Default 100. Size of the currently visible area.  
+  
+### ScrollbarStep<a name="ScrollbarStep"></a>
+[`integer`](../../API/builtins/integer.md)  
+> Default 1. Amount the mouse-wheel or additional +/- buttons in the scroll bar
+> move the scrollable area.  
+  
+### ScrollbarValue<a name="ScrollbarValue"></a>
+[`integer`](../../API/builtins/integer.md)  
+> Default 0. Offset value in range `min to max - pagestep`.  
+  
+### ViewBackgroundStyle<a name="ViewBackgroundStyle"></a>
+`"body"` | `"border"` | `"group"` | `"invisible"` | `"panel"` | `"plain"`  
+> ```lua
+> -- Setup a background style for the view. 
+> ViewBackgroundStyle:
+>     | "invisible" -- no background (Default)
+>     | "plain" -- undecorated, single coloured background
+>     | "border" -- same as plain, but with a bold nested border
+>     | "body" -- main "background" style, as used in dialog backgrounds
+>     | "panel" -- alternative "background" style, beveled
+>     | "group" -- background for "nested" groups within body
+> ```  
   
 ### ViewCursorShape<a name="ViewCursorShape"></a>
 `"busy"` | `"change_value"` | `"crosshair"` | `"default"` | `"drag"` | `"drop"` | `"edit_text"` | `"empty"` | `"erase"` | `"extend_bottom"` | `"extend_bottom_alias"` | `"extend_left"` | `"extend_left_alias"` | `"extend_right"` | `"extend_right_alias"` | `"extend_top"` | `"extend_top_alias"` | `"marker"` | `"move"` | `"nodrop"` | `"none"` | `"pencil"` | `"play"` | `"resize_edge_diagonal_left"` | `"resize_edge_diagonal_right"` | `"resize_edge_horizontal"` | `"resize_edge_vertical"` | `"resize_horizontal"` | `"resize_vertical"` | `"zoom"` | `"zoom_horizontal"` | `"zoom_vertical"`  

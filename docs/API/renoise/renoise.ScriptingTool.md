@@ -52,6 +52,12 @@
 > gets reloaded (only happens with the auto_reload debugging tools), in order
 > to connect the new script instance to the already running document.
 
+### app_will_save_document_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="app_will_save_document_observable"></a>
+> Invoked just before the application document (song) is saved.
+> This is the last chance to make any changes that should be part of
+> the saved song. You could for example write your tool data to
+> `renoise.song().tool_data` here.
+
 ### app_saved_document_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="app_saved_document_observable"></a>
 > Invoked each time the app's document (song) is successfully saved.
 > renoise.song().file_name will point to the filename that it was saved to.
@@ -293,10 +299,12 @@
 > + "Phrase Editor"
 > + "Phrase Mappings"
 > + "Phrase Grid"
+> + "Phrase Script Editor"
 > + "Sample Navigator"
 > + "Sample Editor"
 > + "Sample Editor Ruler"
 > + "Sample Editor Slice Markers"
+> + "Sample List"
 > + "Sample Mappings"
 > + "Sample FX Mixer"
 > + "Sample Modulation Matrix"
@@ -314,6 +322,7 @@
 > + "Tool Browser"
 > + "Script File Browser"
 > + "Script File Tabs"
+> + "Script Editor"
 > ```
 > Separating entries:
 > To divide entries into groups (separate entries with a line), prepend one or

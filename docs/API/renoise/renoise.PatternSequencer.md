@@ -25,6 +25,7 @@
 > Pattern order list: Notifiers will only be fired when sequence positions are
 > added, removed or their order changed. To get notified of pattern assignment
 > changes use the property `pattern_assignments_observable`.
+> Use `set_pattern` to change a single pattern in the sequence. 
 
 ### pattern_sequence_observable : [`renoise.Document.ObservableList`](../../API/renoise/renoise.Document.ObservableList.md)<a name="pattern_sequence_observable"></a>
 > Track changes to document lists by attaching listener functions to it.
@@ -59,6 +60,9 @@
 > Access to a single sequence by index (the pattern number). Use property
 > `pattern_sequence` to iterate over the whole sequence and to query the
 > sequence count.
+### set_pattern([*self*](../../API/builtins/self.md), sequence_index : [`integer`](../../API/builtins/integer.md), pattern_index : [`integer`](../../API/builtins/integer.md))<a name="set_pattern"></a>
+> Change a single assigned pattern for the given sequence index. Use `pattern_sequence`
+> to iterate or change the whole sequence and to query the sequence count.
 ### clone_range([*self*](../../API/builtins/self.md), from_sequence_index : [`integer`](../../API/builtins/integer.md), to_sequence_index : [`integer`](../../API/builtins/integer.md))<a name="clone_range"></a>
 > Clone a sequence range, appending it right after to_sequence_index.
 > Slot muting is copied as well.

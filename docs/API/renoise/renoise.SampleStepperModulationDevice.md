@@ -30,6 +30,8 @@
 > functions to it.
 
 ### enabled : [`boolean`](../../API/builtins/boolean.md)<a name="enabled"></a>
+> **Deprecated.** Use `is_active` instead.
+
 ### enabled_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="enabled_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.

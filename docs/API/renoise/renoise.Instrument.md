@@ -208,7 +208,7 @@
 ### macro([*self*](../../API/builtins/self.md), index : [`integer`](../../API/builtins/integer.md))<a name="macro"></a>
 `->`instrument_macro : [`renoise.InstrumentMacro`](../../API/renoise/renoise.InstrumentMacro.md)  
 
-> Range: (1 - renoise.Instrument.NUMBER_OF_MACROS) 
+> Range: (1 - renoise.Instrument.NUMBER_OF_MACROS)
 > Access a single macro by index.
 > See also property `macros`.
 ### insert_phrase_at([*self*](../../API/builtins/self.md), index : [`integer`](../../API/builtins/integer.md))<a name="insert_phrase_at"></a>

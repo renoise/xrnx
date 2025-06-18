@@ -28,7 +28,7 @@
 > may happen when using ReWire slaves. ReWire adds virtual MIDI devices to
 > Renoise.
 > Already opened references to devices which are no longer available will
-> do nothing: ou can use them as before and they will not fire any errors.
+> do nothing: you can use them as before and they will not fire any errors.
 > The messages will simply go into the void...
 ### create_input_device(device_name : [`string`](../../API/builtins/string.md), callback : [`MidiMessageFunction`](#MidiMessageFunction) | [`MidiMessageMethod1`](#MidiMessageMethod1) | [`MidiMessageMethod2`](#MidiMessageMethod2)[`?`](../../API/builtins/nil.md), sysex_callback : [`MidiMessageFunction`](#MidiMessageFunction) | [`MidiMessageMethod1`](#MidiMessageMethod1) | [`MidiMessageMethod2`](#MidiMessageMethod2)[`?`](../../API/builtins/nil.md))<a name="create_input_device"></a>
 `->`[`renoise.Midi.MidiInputDevice`](../../API/renoise/renoise.Midi.MidiInputDevice.md)  

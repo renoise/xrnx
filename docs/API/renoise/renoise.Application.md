@@ -25,10 +25,20 @@
 > **READ-ONLY** Returns information about all currently installed tools.
 
 ### key_modifier_states : table<[`string`](../../API/builtins/string.md), [`string`](../../API/builtins/string.md)><a name="key_modifier_states"></a>
+> **Deprecated.** **READ-ONLY** Use `key_modifier_flags` instead
+
+### key_modifier_flags : [`ModifierFlags`](#ModifierFlags)<a name="key_modifier_flags"></a>
 > **READ-ONLY** Access keyboard modifier states.
 
 ### window : [`renoise.ApplicationWindow`](../../API/renoise/renoise.ApplicationWindow.md)<a name="window"></a>
 > **READ-ONLY** Access to the application's window.
+
+### theme : [`renoise.ApplicationTheme`](../../API/renoise/renoise.ApplicationTheme.md)<a name="theme"></a>
+> **READ-ONLY** Access to the application's color theme.
+
+### theme_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="theme_observable"></a>
+> Fired, when *any* theme color changed. e.g. when a new theme got loaded
+> or when theme colors got edited in the theme preferences.
 
 ### active_clipboard_index : `1` | `2` | `3` | `4`<a name="active_clipboard_index"></a>
 > Range: (1 - 4) Get or set globally used clipboard "slots" in the application.
@@ -50,17 +60,23 @@
 
 > Opens a modal dialog with a title, text and custom button labels.
 > Returns the pressed button label or an empty string when canceled.
-### show_custom_prompt([*self*](../../API/builtins/self.md), title : [`string`](../../API/builtins/string.md), content_view : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md), button_labels : [`string`](../../API/builtins/string.md)[], key_handler : [`KeyHandler`](#KeyHandler)[`?`](../../API/builtins/nil.md), key_handler_options : [`KeyHandlerOptions`](#keyhandleroptions)[`?`](../../API/builtins/nil.md))<a name="show_custom_prompt"></a>
+### show_custom_prompt([*self*](../../API/builtins/self.md), title : [`string`](../../API/builtins/string.md), content_view : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md), button_labels : [`string`](../../API/builtins/string.md)[], key_handler : [`KeyHandler`](#KeyHandler)[`?`](../../API/builtins/nil.md), key_handler_options : [`KeyHandlerOptions`](#keyhandleroptions)[`?`](../../API/builtins/nil.md), focus_handler : [`FocusHandler`](#FocusHandler)[`?`](../../API/builtins/nil.md))<a name="show_custom_prompt"></a>
 `->`label : [`string`](../../API/builtins/string.md)  
 
 > Opens a modal dialog with a title, custom content and custom button labels.  
 > See: [renoise.ViewBuilder](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/viewbuilder.lua#17#10) for more info about custom views.
-### show_custom_dialog([*self*](../../API/builtins/self.md), title : [`DialogTitle`](#DialogTitle), content_view : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md), key_handler : [`KeyHandler`](#KeyHandler)[`?`](../../API/builtins/nil.md), key_handler_options : [`KeyHandlerOptions`](#keyhandleroptions)[`?`](../../API/builtins/nil.md))<a name="show_custom_dialog"></a>
+### show_custom_dialog([*self*](../../API/builtins/self.md), title : [`DialogTitle`](#DialogTitle), content_view : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md), key_handler : [`KeyHandler`](#KeyHandler)[`?`](../../API/builtins/nil.md), key_handler_options : [`KeyHandlerOptions`](#keyhandleroptions)[`?`](../../API/builtins/nil.md), focus_handler : [`FocusHandler`](#FocusHandler)[`?`](../../API/builtins/nil.md))<a name="show_custom_dialog"></a>
 `->`[`renoise.Dialog`](../../API/renoise/renoise.Dialog.md)  
 
 > Shows a non modal dialog (a floating tool window) with custom content.  
 > When no key_handler is provided, the Escape key is used to close the dialog.
 > See: [renoise.ViewBuilder](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/viewbuilder.lua#17#10) for more info about custom views.
+### show_menu([*self*](../../API/builtins/self.md), dialog : [`renoise.Dialog`](../../API/renoise/renoise.Dialog.md), menu_entries : [`DialogMenuEntry`](#dialogmenuentry)[], below_view : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)[`?`](../../API/builtins/nil.md))<a name="show_menu"></a>
+> Shows a custom context menu on top of the given dialog.
+> 
+> When specifying a view, the menu will be shown below the given view instance.
+> The view instance must be part of the dialog that shows the menu and must be visible.
+> By default the menu will be shown at the current mouse cursor position.
 ### prompt_for_path([*self*](../../API/builtins/self.md), title : [`DialogTitle`](#DialogTitle))<a name="prompt_for_path"></a>
 `->`path : [`string`](../../API/builtins/string.md)  
 
@@ -216,6 +232,42 @@
 
 ---  
 ## Structs  
+# DialogMenuEntry<a name="DialogMenuEntry"></a>  
+> Defines a custom menu entry, shown in custom dialog windows.
+> 
+> Separating entries:
+> To divide entries into groups prepend one or more dashes to the name:
+> ```md
+> ---First Group Item
+> Regular item
+> ```
+> 
+> To create sub menus, define entries with a common path, using a colon as separator:
+> ```md
+> Main Menu Item
+> Sub Menu:Sub Menu Item 1
+> Sub Menu:Sub Menu Item 2
+> ```
+> 
+> To insert a script menu entry into an existing context menu, see `ToolMenuEntry`.  
+
+---  
+## Properties
+### name : [`string`](../../API/builtins/string.md)<a name="name"></a>
+> Name and optional path of the menu entry
+
+### invoke : fun()<a name="invoke"></a>
+> A function that is called as soon as the entry is clicked
+
+### active : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md)<a name="active"></a>
+> Default: true. When false, the action will not be invoked and will be "greyed out".
+
+### selected : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md)<a name="selected"></a>
+> Default: false. When true, the entry will be marked as "this is a selected option"
+
+  
+
+  
 # KeyEvent<a name="KeyEvent"></a>  
 
 ---  
@@ -224,7 +276,11 @@
 > name of the key, like 'esc' or 'a'
 
 ### modifiers : [`ModifierStates`](#ModifierStates)<a name="modifiers"></a>
-> the held down modifiers as a string
+> **Deprecated.** Use `modifier_flags` instead
+> **READ-ONLY** the held down modifiers as a string
+
+### modifier_flags : [`ModifierFlags`](#ModifierFlags)<a name="modifier_flags"></a>
+> **READ-ONLY** the held down modifiers as flags
 
 ### character : [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md)<a name="character"></a>
 > possible character representation of the key
@@ -244,18 +300,26 @@
 
 ---  
 ## Aliases  
+### ModifierFlags<a name="ModifierFlags"></a>
+{ alt : [`boolean`](../../API/builtins/boolean.md), control : [`boolean`](../../API/builtins/boolean.md), meta : [`boolean`](../../API/builtins/boolean.md), shift : [`boolean`](../../API/builtins/boolean.md) }  
+> The currently pressed/release key's modifiers as platform independent flags.
+> On macOS "control" is their "Command" key and the "meta" keyboard is the "Control" key.
+> On Windows the "meta" key is the "Windows" key and on Linux the "Super" key.  
+  
 ### ModifierStates<a name="ModifierStates"></a>
 [`string`](../../API/builtins/string.md)  
-> The modifier keys will be provided as a string.  
+> **Deprecated.** Use `ModifierFlags` instead.
+> 
+> The modifier keys will be provided as a string.
 > Possible keys are dependent on the platform
 >  * Windows : "shift", "alt", "control", "winkey"
 >  * Linux : "shift", "alt", "control", "meta"
->  * Mac : "shift", "option", "control", "command"
+>  * Mac : "shift", "option", "control", "command".
 > If multiple modifiers are held down, the string will be formatted as  
 > "<key> + <key>"
 > Their order will correspond to the following precedence
 > `shift + alt/option + control + winkey/meta/command`  
-> If no modifier is pressed, this will be an empty string  
+> If no modifier is pressed, this will be an empty string.  
   
 
   
@@ -281,6 +345,12 @@
 [`string`](../../API/builtins/string.md)  
 > The title that shows up at the title-bar of the dialog.  
   
+### FocusHandler<a name="FocusHandler"></a>
+(dialogs : [`renoise.Dialog`](../../API/renoise/renoise.Dialog.md), focused : [`boolean`](../../API/builtins/boolean.md)) `->` [`KeyEvent`](#keyevent)[`?`](../../API/builtins/nil.md)  
+> Optional focus change notifier for a custom dialog.  
+> Will be called when the dialog gains of loses key focus. You maybe want to initialize 
+> your dloag's (modifier) keyboard states here.  
+  
 ### KeyHandler<a name="KeyHandler"></a>
 (dialog : [`renoise.Dialog`](../../API/renoise/renoise.Dialog.md), key_event : [`KeyEvent`](#keyevent)) `->` [`KeyEvent`](#keyevent)[`?`](../../API/builtins/nil.md)  
 > Optional keyhandler to process key events on a custom dialog.  
@@ -291,17 +361,25 @@
 > because your dialog will steal the focus from all other Renoise views such as
 > the Pattern Editor, etc.  
   
+### ModifierFlags<a name="ModifierFlags"></a>
+{ alt : [`boolean`](../../API/builtins/boolean.md), control : [`boolean`](../../API/builtins/boolean.md), meta : [`boolean`](../../API/builtins/boolean.md), shift : [`boolean`](../../API/builtins/boolean.md) }  
+> The currently pressed/release key's modifiers as platform independent flags.
+> On macOS "control" is their "Command" key and the "meta" keyboard is the "Control" key.
+> On Windows the "meta" key is the "Windows" key and on Linux the "Super" key.  
+  
 ### ModifierStates<a name="ModifierStates"></a>
 [`string`](../../API/builtins/string.md)  
-> The modifier keys will be provided as a string.  
+> **Deprecated.** Use `ModifierFlags` instead.
+> 
+> The modifier keys will be provided as a string.
 > Possible keys are dependent on the platform
 >  * Windows : "shift", "alt", "control", "winkey"
 >  * Linux : "shift", "alt", "control", "meta"
->  * Mac : "shift", "option", "control", "command"
+>  * Mac : "shift", "option", "control", "command".
 > If multiple modifiers are held down, the string will be formatted as  
 > "<key> + <key>"
 > Their order will correspond to the following precedence
 > `shift + alt/option + control + winkey/meta/command`  
-> If no modifier is pressed, this will be an empty string  
+> If no modifier is pressed, this will be an empty string.  
   
 

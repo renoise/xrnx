@@ -208,12 +208,17 @@
 > **READ-ONLY** Selected device index in the track DSP chain editor.
 
 ### selected_device : [`renoise.AudioDevice`](../../API/renoise/renoise.AudioDevice.md)<a name="selected_device"></a>
+> **Deprecated.** **READ-ONLY** Use 'selected_track_device' instead.
+
 ### selected_device_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="selected_device_observable"></a>
-> Track changes to document properties or general states by attaching listener
-> functions to it.
+> **Deprecated.** Use 'selected_track_device_observable' instead.
 
 ### selected_device_index : [`integer`](../../API/builtins/integer.md)<a name="selected_device_index"></a>
+> **Deprecated.** **READ-ONLY** Use 'selected_track_device_index' instead.
+
 ### selected_parameter : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md)<a name="selected_parameter"></a>
+> **Deprecated.** **READ-ONLY** Use 'selected_automation_parameter' instead.
+
 ### selected_parameter_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="selected_parameter_observable"></a>
 > Track changes to document properties or general states by attaching listener
 > functions to it.
@@ -228,7 +233,7 @@
 > functions to it.
 
 ### selected_automation_device : [`renoise.AudioDevice`](../../API/renoise/renoise.AudioDevice.md)<a name="selected_automation_device"></a>
-> **READ-ONLY** parent device of 'selected_automation_parameter'. not settable.
+> **READ-ONLY** Parent device of 'selected_automation_parameter'.
 
 ### selected_automation_device_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="selected_automation_device_observable"></a>
 > Track changes to document properties or general states by attaching listener
@@ -304,6 +309,34 @@
 >   --> select line 1 to 4, in the first track only
 > ```
 
+### selected_phrase_line : [`renoise.PatternLine`](../../API/renoise/renoise.PatternLine.md)<a name="selected_phrase_line"></a>
+> **READ-ONLY** The currently edited line in the currently edited phrase.
+> Nil when no phrase is selected.
+
+### selected_phrase_line_index : [`integer`](../../API/builtins/integer.md)<a name="selected_phrase_line_index"></a>
+> The currently edited line index in the currently edited phrase.
+> 0 when no phrase is selected.
+
+### selected_phrase_note_column : [`renoise.NoteColumn`](../../API/renoise/renoise.NoteColumn.md)<a name="selected_phrase_note_column"></a>
+> **READ-ONLY** The currently edited column in the selected line in the currently 
+> edited phrase. Nil when no phrase is selected or when an effect column is selected.
+
+### selected_phrase_note_column_index : [`integer`](../../API/builtins/integer.md)<a name="selected_phrase_note_column_index"></a>
+> The currently edited column index in the selected line in the currently edited
+> phrase. 0 when no phrase is selected or when an effect column is selected.
+
+### selected_phrase_effect_column : [`renoise.EffectColumn`](../../API/renoise/renoise.EffectColumn.md)<a name="selected_phrase_effect_column"></a>
+> **READ-ONLY** The currently edited column in the selected line in the currently 
+> edited phrase. Nil when no phrase is selected or when a note column is selected.
+
+### selected_phrase_effect_column_index : [`integer`](../../API/builtins/integer.md)<a name="selected_phrase_effect_column_index"></a>
+> The currently edited effect column index in the selected line in the currently 
+> edited phrase. 0 when no phrase is selected or when a note column is selected.
+
+### selected_phrase_sub_column_type : [`renoise.Song.SubColumnType`](renoise.Song.md#SubColumnType)<a name="selected_phrase_sub_column_type"></a>
+> **READ-ONLY** The currently edited sub column type within the selected
+> note/effect column in the current phrase. 0 when no phrase is selected.
+
 ### selection_in_phrase : [`PhraseSelection`](#phraseselection)[`?`](../../API/builtins/nil.md)<a name="selection_in_phrase"></a>
 > Same as `selection_in_pattern` but for the currently selected phrase (if any).
 
@@ -311,6 +344,9 @@
 
 ---  
 ## Functions
+### is_undo_redoing([*self*](../../API/builtins/self.md))<a name="is_undo_redoing"></a>
+> True while an undo/redo action is invoked. This may be useful to check in notifiers,
+>  to figure out if the document currently changes because of an undo/redo operation.
 ### can_undo([*self*](../../API/builtins/self.md))<a name="can_undo"></a>
 `->`[`boolean`](../../API/builtins/boolean.md)  
 
@@ -323,15 +359,27 @@
 > Test if something in the song can be redone.
 ### redo([*self*](../../API/builtins/self.md))<a name="redo"></a>
 > Redo a previously undo action. Will do nothing if nothing can be redone.
-### describe_undo([*self*](../../API/builtins/self.md), description : [`any`](../../API/builtins/any.md))<a name="describe_undo"></a>
+### describe_undo([*self*](../../API/builtins/self.md), description : [`string`](../../API/builtins/string.md))<a name="describe_undo"></a>
 > When modifying the song, Renoise will automatically add descriptions for
 > undo/redo by looking at what first changed (a track was inserted, a pattern
 > line changed, and so on). When the song is changed from an action in a menu
 > entry callback, the menu entry's label will automatically be used for the
 > undo description.
-> If those auto-generated names do not work for you, or you want  to use
-> something more descriptive, you can (!before changing anything in the song!)
+> If those auto-generated names do not work for you, or you want to use
+> something more descriptive, you can, **before changing anything in the song**,
 > give your changes a custom undo description (like: "Generate Synth Sample")
+### describe_batch_undo([*self*](../../API/builtins/self.md), description : [`string`](../../API/builtins/string.md), timeout_ms : [`number`](../../API/builtins/number.md)[`?`](../../API/builtins/nil.md))<a name="describe_batch_undo"></a>
+> Same as `describe_undo`, but additionally this tries to merge the following 
+> changes to the document with the last one, if the description matches the last
+> description and the given timeout was not reached since the last describe_batch_undo 
+> call.
+> 
+> Calls to `describe_undo` from other tools, or from Renoise internally, will cancel
+> batches and split the undo action.
+> 
+> Batches can be useful to combine multiple changes in the document into a single
+> udo/redo step, when the changes happen asynchroniously, for example a process
+> sliced action (via Lua coroutines).  
 ### insert_track_at([*self*](../../API/builtins/self.md), index : [`integer`](../../API/builtins/integer.md))<a name="insert_track_at"></a>
 `->`[`renoise.Track`](../../API/renoise/renoise.Track.md)  
 
@@ -408,9 +456,6 @@
 
 > Access to a single pattern by index. Use properties 'patterns' to iterate
 > over all patterns and to query the pattern count.
-### cancel_rendering([*self*](../../API/builtins/self.md))<a name="cancel_rendering"></a>
-> When rendering (see rendering, renoise.song().rendering_progress),
-> the current render process is canceled. Otherwise, nothing is done.
 ### render([*self*](../../API/builtins/self.md), options : [`RenderOptions`](#renderoptions), filename : [`string`](../../API/builtins/string.md), rendering_done_callback : fun())<a name="render"></a>
 `->`success : [`boolean`](../../API/builtins/boolean.md), error : [`string`](../../API/builtins/string.md)  
 
@@ -438,6 +483,42 @@
 > Parameter `rendering_done_callback` is ONLY called when rendering has succeeded.
 > You can do something with the file you've passed to the renderer here, like
 > for example loading the file into a sample buffer.
+### cancel_rendering([*self*](../../API/builtins/self.md))<a name="cancel_rendering"></a>
+> When rendering (see rendering, renoise.song().rendering_progress),
+> the current render process is canceled. Otherwise, nothing is done.
+### trigger_pattern_line([*self*](../../API/builtins/self.md), line_index : [`integer`](../../API/builtins/integer.md))<a name="trigger_pattern_line"></a>
+> Trigger the given pattern line index in the current pattern for preview purposes.
+> This works similar to the Renoise `PlayCurrentLine` keyboard shortcut, but does now
+> advance the playback position.
+> 
+> If you want to preview a single track's note only, mute other tracks before 
+> triggering the pattern line. To stop the preview, invoke `stop` from the transport.
+> 
+> Transport playback must be stopped for this to work. If it's not, an error is 
+> thrown.
+> 
+> This is evaluated from the GUI thread, not a real-time thread, so timing will
+> be a little bit wonky. Don't try to use this as a custom sequencer!
+### trigger_instrument_note_on([*self*](../../API/builtins/self.md), instrument_index : [`integer`](../../API/builtins/integer.md), track_index : [`integer`](../../API/builtins/integer.md), note : [`integer`](../../API/builtins/integer.md) | [`integer`](../../API/builtins/integer.md)[][`?`](../../API/builtins/nil.md), volume : [`number`](../../API/builtins/number.md)[`?`](../../API/builtins/nil.md))<a name="trigger_instrument_note_on"></a>
+> Trigger instrument playback with the specified note or a table of notes (a chord)
+> and volume for preview purposes on the given track index.
+> 
+> Send tracks can not play notes. When specifying a send track, notes will play on
+> the master track instead.
+> 
+> This is evaluated from the GUI thread, not a real-time thread, so timing will
+> be a little bit wonky. Only use this to **preview instruments** from tools and
+> not as a sequencer.
+### trigger_instrument_note_off([*self*](../../API/builtins/self.md), instrument_index : [`integer`](../../API/builtins/integer.md), track_index : [`integer`](../../API/builtins/integer.md), note : [`integer`](../../API/builtins/integer.md) | [`integer`](../../API/builtins/integer.md)[][`?`](../../API/builtins/nil.md))<a name="trigger_instrument_note_off"></a>
+> Stop instrument playback which previously got started via `trigger_instrument_note_on`.
+### trigger_sample_note_on([*self*](../../API/builtins/self.md), instrument_index : [`integer`](../../API/builtins/integer.md), sample_index : [`integer`](../../API/builtins/integer.md), track_index : [`integer`](../../API/builtins/integer.md), note : [`integer`](../../API/builtins/integer.md)[`?`](../../API/builtins/nil.md), volume : [`number`](../../API/builtins/number.md)[`?`](../../API/builtins/nil.md), use_selection : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md))<a name="trigger_sample_note_on"></a>
+> Trigger a sample with the specified note and volume for preview purposes on the
+> given track. This directly triggers the sample, bypassing the instrument's keyzone. 
+> 
+> Only use this to **preview samples** from tools and not as a sequencer.
+> See also `trigger_instrument_note_on`.
+### trigger_sample_note_off([*self*](../../API/builtins/self.md), instrument_index : [`integer`](../../API/builtins/integer.md), sample_index : [`integer`](../../API/builtins/integer.md), track_index : [`integer`](../../API/builtins/integer.md), note : [`integer`](../../API/builtins/integer.md)[`?`](../../API/builtins/nil.md))<a name="trigger_sample_note_off"></a>
+> Stops sample playback that previously got triggered via `trigger_sample_note_on`.
 ### load_midi_mappings([*self*](../../API/builtins/self.md), filename : [`string`](../../API/builtins/string.md))<a name="load_midi_mappings"></a>
 `->`success : [`boolean`](../../API/builtins/boolean.md), error : [`string`](../../API/builtins/string.md)  
 
