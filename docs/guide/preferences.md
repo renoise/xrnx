@@ -1,55 +1,50 @@
 # Preferences
 
-Tools can have preferences just like Renoise. To use them we first need to create a renoise.Document object which holds the options that we want to store and restore. 
+Tools can have preferences that are saved and loaded by Renoise. To use them, we first need to create a [`renoise.Document`](../API/renoise/renoise.Document.md) object which holds the options that we want to store.
 
-Documents in Renoise have all of their fields defined as an Observable type. This comes extra handy when you want to create some settings dialog that needs to be able change the behaviour of your tool and remember its state, while you also want to access these settings across your tool. By using the built-in Document API you get a lot of this functionality for free.
+Fields in a Renoise Document are defined as [Observable types](./observables.md). This is especially handy for settings dialogs, as UI widgets can be directly bound to these observable properties. The UI will automatically update the document, and vice-versa.
 
-Let's see an example of setting up an `options` object that can be used for the above things. 
+Let's see an example of setting up an `options` object for a tool. Our goal is to have a few settings managed by a Document and a dialog to change them. The tool will be able to randomize the song's BPM and track count.
 
-Our goal here is to have three kinds of settings managed by the Document class and a dialog that can be used to change them. The tool will be able to randomize the song by changing BPM and creating a random number of tracks. 
-
-We will also define a menu entry for opening our tool settings dialog, you can read more about menu entries in the [Menus](menus.md) guide, graphical dialogs are further discussed in [Views](views.md).
+We will also define a menu entry to open our tool's settings dialog. You can read more about menu entries in the [Menus guide](./menus.md) and about graphical dialogs in the [Views guide](./views.md).
 
 ```lua
--- We are creating a new renoise Document by supplying a table of values.
--- It has three fields, which will all get wrapped in an Observable
--- * a boolean for whether or not the tools should randomize the BPM
--- * another boolean for randomizing tracks
--- * an integer representing how many tracks we want to have at maximum
+-- Create a new renoise.Document by supplying a table of default values.
+-- Each field will be wrapped in an Observable type (e.g., ObservableBoolean).
+-- * a boolean for whether the tool should randomize the BPM
+-- * a boolean for randomizing tracks
+-- * an integer for the maximum number of tracks
 local options = renoise.Document.create("RandomizerToolPreferences") {
   randomize_bpm = true,
   randomize_tracks = false,
   max_tracks = 16
 }
 
--- once we have our options, we have to assign it to our tool
+-- Once we have our options, we assign the document to our tool's preferences.
 renoise.tool().preferences = options
 
--- we define a randomizer function
--- when called, it will set a random BPM
--- and add or remove tracks randomly
+-- Define a randomizer function.
+-- When called, it will set a random BPM and add or remove tracks.
 function randomize_song()
   local song = renoise.song()
-  -- make sure you use .value when accessing the underlying value inside Observables
+  -- Use .value to access the underlying value of an Observable
   if options.randomize_bpm.value then
-    -- we are setting the BPM to a value between 60 and 180
+    -- Set BPM to a value between 60 and 180
     song.transport.bpm = 60 + math.random() * 120
   end
   
   if options.randomize_tracks.value then
-    -- let's figure out how many tracks we want based on the max_tracks option
+    -- Figure out how many tracks we want based on the max_tracks option
     local target_count = 1 + math.floor(math.random() * options.max_tracks.value)
-
-    -- and cache the amount of regular tracks the song has
     local current_count = song.sequencer_track_count
 
-    -- we will either insert new tracks if there aren't enough
     if current_count < target_count then
+      -- Insert new tracks if there aren't enough
       for i = 1, target_count - current_count do
         song:insert_track_at(current_count)
       end
     else
-    -- or remove them if there is too much
+      -- Remove tracks if there are too many
       for i = 1, current_count - target_count do
         song:delete_track_at(song.sequencer_track_count)
       end
@@ -57,19 +52,19 @@ function randomize_song()
   end
 end
 
--- let's define a function for a custom dialog 
--- it will contain checkboxes and a slider for our options
+-- Define a function to show a custom dialog for our options.
 function show_options()
   local vb = renoise.ViewBuilder()
 
-  local dialog_content = vb:vertical_aligner {
+  local dialog_content = vb:column {
     margin = renoise.ViewBuilder.DEFAULT_CONTROL_MARGIN,
+    spacing = renoise.ViewBuilder.DEFAULT_CONTROL_SPACING,
 
     vb:row {
       vb:text {
         text = "Randomize BPM"
       },
-      -- here we are binding our observable value to this checkbox
+      -- Bind our observable value directly to this checkbox
       vb:checkbox {
         bind = options.randomize_bpm
       }
@@ -78,7 +73,7 @@ function show_options()
       vb:text {
         text = "Randomize Tracks"
       },
-      -- the same thing for the boolean for tracks
+      -- Same for the randomize_tracks boolean
       vb:checkbox {
         bind = options.randomize_tracks
       }
@@ -87,20 +82,18 @@ function show_options()
       vb:text {
         text = "Max Tracks"
       },
-      -- for the maximum tracks we create a value box 
-      -- and restrict it to a range of [1..16]
+      -- For max_tracks, create a valuebox and bind it.
+      -- Restrict it to a range of [1..16].
       vb:valuebox {
         min = 1,
         max = 16,
         bind = options.max_tracks
       }
     },
-    -- add a button that will execute the randomization based on our options
-    vb:row {
-      vb:button {
-        text = "Randomize",
-        pressed = randomize_song
-      }
+    -- Add a button that will execute the randomization
+    vb:button {
+      text = "Randomize Now",
+      notifier = randomize_song
     }
   }
   renoise.app():show_custom_dialog(
@@ -108,29 +101,26 @@ function show_options()
   )
 end
 
--- finally we add a menu entry to open our options dialog
+-- Finally, add a menu entry to open our options dialog.
 renoise.tool():add_menu_entry {
-  name = "Main Menu:Tools:Randomizer Options",
+  name = "Main Menu:Tools:Randomizer Options...",
   invoke = show_options
 }
-
 ```
 
-As you can see all we had to do was to assign our observables to the `bind` field on the checkboxes and valuebox, Renoise will take care of updating our settings when the view changes and vice versa.
-
-Of course you could also use observables this way without them being included in your settings, but this is the most common usage pattern for them.
+As you can see, all we had to do was assign our observables to the `bind` property of the UI controls. Renoise handles the synchronization between the UI and the document automatically.
 
 ## preferences.xml
 
-When you assign the preferences, Renoise will take care of saving and loading your settings. Your tool will have a `preferences.xml` file created in its folder with the values from your options table. As long as you are using simple types, you don't have to worry about (de)serializing values. 
+When you assign a document to `renoise.tool().preferences`, Renoise automatically saves its state to a `preferences.xml` file inside your tool's folder. As long as you use simple data types, you don't have to worry about serialization.
 
-Try restarting Renoise to see that the values you've set in your dialog will persist over different sessions.
+Try restarting Renoise to see that the values you've set in your dialog persist between sessions.
 
 ## Complex Documents
 
-For more complex applications (or if you just prefer doing things the Object-Oriented way) you can also inherit from `renoise.Document.DocumentNode` and register properties in the constructor.
+For more complex applications, or if you prefer an object-oriented approach, you can create a class that inherits from [`renoise.Document.DocumentNode`](../API/renoise/renoise.Document.DocumentNode.md) and register properties in its constructor.
 
-You could change the above Document creation to something like this:
+You could rewrite the document creation from the example above like this:
 
 ```lua
 ---@class RandomizerToolPreferences : renoise.Document.DocumentNode
@@ -141,7 +131,7 @@ class "RandomizerToolPreferences" (renoise.Document.DocumentNode)
 
 function RandomizerToolPreferences:__init()
   renoise.Document.DocumentNode.__init(self)
-  -- register an observable properties which will make up our Document
+  -- Register observable properties which will make up our Document
   self:add_property("randomize_bpm", true)
   self:add_property("randomize_tracks", false)
   self:add_property("max_tracks", 16)
@@ -153,7 +143,7 @@ local options = RandomizerToolPreferences()
 renoise.tool().preferences = options
 ```
 
-This allows you to create more complex documents. Have a look at the complete [Document API](../API/renoise/renoise.Document.md) for more info and details about what else you can load/store this way.
+This approach allows you to build more structured and complex preference documents. See the complete [Document API](../API/renoise/renoise.Document.md) for more details on what you can store and how to manage it.
 
 > [!NOTE]
-> This time we also included type annotations (like `---@class RandomizerToolPreferences`). These can help you with development but they aren't strictly necessary. You can read more about how to use them at the [LuaLS website](https://luals.github.io/).
+> This time we also included type annotations (like `---@class RandomizerToolPreferences`). These can help you with development when using a Lua language server like [LuaLS](https://luals.github.io/), but they are not required for the script to run.

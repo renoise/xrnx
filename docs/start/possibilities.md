@@ -42,14 +42,6 @@ There are a few ways tool creators can make the functionality they provide avail
 * Listen to [MIDI](../guide/midi.md), [OSC](../guide/osc.md) or [WebSocket messages](../guide/sockets.md) to execute actions
 * [React to events inside Renoise](../guide/observables.md) like "do something any time a new song is loaded"
 
-<!-- 
-  TODO more
-
-- Run scripts and commands via a terminal in realtime using the
-  "Scripting Console & Editor". 
-
-  + Nibbles ;)
--->
 
 ## Limitations
 
@@ -58,4 +50,4 @@ Finally, let's look at what is **not** possible via tools.
 * You cannot override the existing behaviour of Renoise. You can add functionality *on top* of what's already there, but you can't disable or change how the built-in features work.  
   For example, you can create a completely custom GUI to compose patterns in a novel way but you cannot change how the built-in pattern editor works or looks like. Similarly, you can add a new shortcut that does something extra to the selected sample block or places new slices but you can't modify how the built-in autoslicing works.
 
-* You cannot write real-time DSP code like synths, effects or modulators (except for scripts inside the [Formula device](https://tutorials.renoise.com/wiki/Meta_Devices#*Formula)), which is not using the Renoise Tool API. If you want to design your own synths and effects you should look into plugin development (using [DISTRHO](https://distrho.kx.studio/), [nih-plug](https://github.com/robbert-vdh/nih-plug) etc.), you could also use existing plugins that allow you to build your own DSP patches (like [plugdata](https://plugdata.org/) or [Cardinal](https://cardinal.kx.studio/)). Of course you can [generate and modify samples](../guide/sample_buffer.md) using your tool, but it will have to be implemented as offline rendering instead of real-time processing.
+* You cannot write real-time DSP code like synths, effects or modulators (except for scripts inside the [Formula device](https://tutorials.renoise.com/wiki/Meta_Devices#*Formula)), which is not using the Renoise Tool API. If you want to design your own synths and effects you should look into plugin development (using [DISTRHO](https://distrho.kx.studio/), [nih-plug](https://github.com/robbert-vdh/nih-plug) etc.), you could also use existing plugins that allow you to build your own DSP patches (like [plugdata](https://plugdata.org/) or [Cardinal](https://cardinal.kx.studio/)). Of course you can [generate and modify samples](../guide/song.md#samples) using your tool, but it will have to be implemented as offline rendering instead of real-time processing.

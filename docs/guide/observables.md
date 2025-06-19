@@ -1,36 +1,39 @@
 # Observables
 
-The Renoise API makes extensive use of [the Observer pattern](https://en.wikipedia.org//wiki/Observer_pattern). In short, different values can be wrapped in Observable objects on which you can register notifier functions that will get called whenever the underlying value changes. This is a great way to react to changes without having to deal with constantly comparing the value to a cached state for example.
+The Renoise API makes extensive use of the [Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern). In short, many values are wrapped in "Observable" objects. You can register "notifier" functions on these objects, which will be called whenever the underlying value changes. This is a powerful way to react to changes in the application state without constantly polling and comparing values.
 
-When reading the [API](../API/README.md), you will find a lot of fields with `_observable` at the end. Let's see how we can utilize this feature by attaching a notifier so that our tool can do something whenever the user loads a new song.
+When browsing the [API documentation](../API/README.md), you will find many properties with an `_observable` suffix. Let's see how to use this feature by attaching a notifier that runs when the user loads a new song.
 
 ```lua
-local loaded_new_song = function()
+local function on_new_document()
   renoise.app():show_message("Loaded a new song!")
 end
 
-renoise.tool().app_new_document_observable:add_notifier(loaded_new_song)
+-- Get the tool's new_document observable and add our function as a notifier.
+renoise.tool().app_new_document_observable:add_notifier(on_new_document)
 ```
 
-Try loading a tool with this code inside and open new songs. Whenever you want to attach notifiers to fields on the song, you should do it inside this function to make sure a song is already loaded and that you reattach things when the song changes. To listen to changes on specific values, you usually have to add `_observable` the name of the field and add a notifier to that. 
+A common pattern is to attach notifiers to song-specific properties inside the `app_new_document_observable` notifier. This ensures that your notifiers are re-attached whenever a new song is loaded. To listen for changes on a specific value, you typically add `_observable` to the property name and add a notifier to it.
 
-Let's extend the previous snippet so that it also fires whenever you change the name of an already loaded song.
+Let's extend the previous snippet to also fire a message whenever the name of the song changes.
 
 ```lua
-local new_name_was_set = function()
-  renoise.app():show_message("New name was set!\nName: " .. renoise.song().name)
+local function on_song_name_changed()
+  local song_name = renoise.song().name
+  renoise.app():show_message("New name was set!\nName: " .. song_name)
 end
 
-local loaded_new_song = function()
+local function on_new_document()
   renoise.app():show_message("Loaded a new song!")
-  renoise.song().name_observable:add_notifier(new_name_was_set)
+  -- When a new song is loaded, attach a notifier to its name_observable
+  renoise.song().name_observable:add_notifier(on_song_name_changed)
 end
 
-renoise.tool().app_new_document_observable:add_notifier(loaded_new_song)
+renoise.tool().app_new_document_observable:add_notifier(on_new_document)
 ```
 
-Now try changing the name of the current song inside the first field of the *Song / Song Comments* dialog to see your message pop up.
+Now, try changing the song title in the "Song Settings" tab to see your message pop up.
 
-With this technique you can listen to all sorts of things which is very useful when you want your tool to change its behaviour or initialize itself each time the user selects a new instrument, track, sample and so on.
+With this technique, you can listen to all sorts of events, which is very useful when you want your tool to react to user actions like selecting a new instrument, track, or sample.
 
-There are different Observables for each primitive type like `ObservableBoolean`, `ObservableNumber` or `ObservableString` and ones that are for storing list of such values (`ObservableBooleanList` etc.). You can check out the entire [Observables API](../API/renoise/renoise.Document.Observable.md) to see them all.
+There are different Observables for each primitive type, such as `ObservableBoolean`, `ObservableNumber`, or `ObservableString`, as well as list types like `ObservableBooleanList`. You can explore the entire [Observables API](../API/renoise/renoise.Document.Observable.md) to see them all.

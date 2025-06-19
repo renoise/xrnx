@@ -1,8 +1,8 @@
 # Menu Entries
 
-You can add new menu entries into any existing context menus or the global menu in Renoise. 
+You can add new menu entries into any existing context menu or the main application menu in Renoise.
 
-To do so, we are using the tool's [add_menu_entry](../API/renoise/renoise.ScriptingTool.md#add_menu_entry) function.
+To do so, use the tool's [`add_menu_entry`](../API/renoise/renoise.ScriptingTool.md#add_menu_entry) function.
 
 ### Example
 
@@ -10,38 +10,36 @@ To do so, we are using the tool's [add_menu_entry](../API/renoise/renoise.Script
 renoise.tool():add_menu_entry {
   name = "Main Menu:Tools:My Tool:Show Message...",
   invoke = function()
-  renoise.app():show_prompt(
-        "Congrats!",
-        "You've pressed then 'Show Message...' menu entry from the tools menu, "..
-        "which was defined by a scripting tool.",
-        {"OK?"}
-      )
+    renoise.app():show_prompt(
+      "Congrats!",
+      "You've pressed the 'Show Message...' menu entry from the tools menu, " ..
+      "which was defined by a scripting tool.",
+      {"OK?"}
+    )
   end
 }
 ```
 
-### Avilable Menus 
+### Available Menus
 
-You can place your entries in any context menu or any window menu in Renoise. To do so, use one of the specified categories in its name.
+You can place your entries in any context menu or window menu in Renoise. To do so, specify the target menu category in the `name` property.
 
-See API Docs for [ToolMenuEntry](../API/renoise/renoise.ScriptingTool.md#toolmenuentry) for more info.
+For a complete list of available menu locations, see the API documentation for [`ToolMenuEntry`](../API/renoise/renoise.ScriptingTool.md#toolmenuentry).
 
-### Separating Entries 
+### Separating Entries
 
-To divide entries into groups (separate entries with a line), prepend one or more dashes to the name, like
+To divide entries into groups with a separating line, prepend one or more dashes to the `name`, like so:
 
 ```lua
-"--- Main Menu:Tools:My Tool Group Starts Here"
+name = "--- Main Menu:Tools:My Tool Group Starts Here"
 ```
 
-### Entry Sub Groups 
+### Entry Sub-Groups
 
-To move entries into a menu sub groups, use a common path for them, like 
+To group entries into a sub-menu, use a common path for them in the `name` property:
 
 ```lua
 "Main Menu:Tools:My Tool Group:First Entry"
 "Main Menu:Tools:My Tool Group:Second Entry"
 "Main Menu:Tools:My Tool Group:Third Entry"
 ```
-
-
