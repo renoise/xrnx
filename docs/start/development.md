@@ -1,15 +1,12 @@
 # Setting up your development environment
 
-By default Renoise has all scripting utilities hidden to keep it simple for users who don't wish to mess around with code. If you want to write scripts, the first thing you have to do is to enable the hidden development tools.
+To start developing Scripts in Renoise, use the following two menu entries inside the `Tools` menu on the top bar.
 
-* For a quick test you can launch the Renoise executable with the `--scripting-dev` argument
-* To have this mode enabled by default, you'll have to edit your `Config.xml` file inside Renoise's preferences folder. Search for the `<ShowScriptingDevelopmentTools>` property and set it to `true`. To reveal the Config.xml path, click on the *Help / Show the Preferences Folder...* menu entry in Renoise.
-<!-- TODO consider exposing this setting in the Renoise GUI -->
+* `Scripting Terminal & Editor` - This will open the debugging console used to test things and see your tool's output
+* `Reload All Tools` - This will force a reload of all installed and running tools. It can be useful when adding new tools by hand or when changing them.
 
-Once scripting is enabled, you'll have the following entries inside the *Tools* menu on the top bar.
-
-* *Scripting Terminal & Editor* - This will open the debugging console used to test things and see your tool's output
-* *Reload All Tools* - This will force a reload of all installed and running tools. It can be useful when adding new tools by hand or when changing them.
+> [!NOTE] 
+> In previous versions of Renoise it was necessary to launch the Renoise executable with the `--scripting-dev` argument to see the above mentioned menue entries.
 
 ## Lua
 
