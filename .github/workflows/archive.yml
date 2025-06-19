@@ -18,7 +18,7 @@ jobs:
         uses: cargo-bins/cargo-binstall@main
 
       - name: Install mdbook
-        run: cargo binstall -y mdbook mdbook-linkcheck mdbook-toc mdbook-alerts
+        run: cargo binstall -y --force mdbook mdbook-linkcheck mdbook-toc mdbook-alerts
 
       - name: Build the API
         run: cargo run
