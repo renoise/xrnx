@@ -1,19 +1,20 @@
-# Midi
+# MIDI
 
-The Renoise API allows you to access raw MIDI input and output devices from within your tool.
-You can use this to add bi-directional MIDI controller support, for example.
+The Renoise API allows you to access raw MIDI input and output devices from within your tool. You can use this to add features like bi-directional MIDI controller support.
 
-## Midi input listener (function callback)
+See the [`renoise.Midi`](../API/renoise/renoise.Midi.md) API for more details.
+
+## MIDI Input Listener (Function Callback)
 
 ```lua
--- NOTE: the midi device will be closed when the local variable gets garbage
--- collected. Make it global or assign it to something which is held globally
--- to avoid that.
+-- NOTE: The MIDI device will be closed when this local variable gets garbage
+-- collected. Make it global or assign it to a table that is held globally
+-- to keep it active.
 local midi_device = nil
 
 local inputs = renoise.Midi.available_input_devices()
 if not table.is_empty(inputs) then
-  -- use the first avilable device in this example
+  -- Use the first available device in this example
   local device_name = inputs[1]
   
   local function midi_callback(message)
@@ -26,27 +27,28 @@ if not table.is_empty(inputs) then
       message[1], message[2], message[3]))
   end
 
-  -- note: sysex callback would be a optional 2nd arg...
+  -- The sysex callback is an optional second argument.
   midi_device = renoise.Midi.create_input_device(
     device_name, midi_callback)
   
-  -- stop dumping with 'midi_device:close()' ...
+  -- To stop listening, call: midi_device:close()
 end
 ```
 
-## Midi input and sysex listener (class callbacks)
+## MIDI Input and SysEx Listener (Class Callbacks)
 
 ```lua
 class "MidiDumper"
   function MidiDumper:__init(device_name)
     self.device_name = device_name
+    self.device = nil
   end
   
   function MidiDumper:start()
     self.device = renoise.Midi.create_input_device(
       self.device_name, 
-      { self, MidiDumper.midi_callback }, 
-      { MidiDumper.sysex_callback, self }
+      { self, self.midi_callback }, 
+      { self, self.sysex_callback }
     )
   end
   
@@ -67,25 +69,25 @@ class "MidiDumper"
       self.device_name, #message))
   end
   
--- NOTE: the midi device will be closed when the local variable gets garbage
--- collected. Make it global or assign it to something which is held globally
--- to avoid that.
+-- NOTE: The MIDI device will be closed when this dumper object gets garbage
+-- collected. Make it global or assign it to a table that is held globally
+-- to keep it active.
 local midi_dumper = nil
   
 local inputs = renoise.Midi.available_input_devices()
 
 if not table.is_empty(inputs) then
-  -- use the first avilable device in this example
+  -- Use the first available device in this example
   local device_name = inputs[1]
 
   midi_dumper = MidiDumper(device_name)
-  -- will dump till midi_dumper:stop() is called or the MidiDumber object 
-  -- is garbage collected...
+  -- This will dump MIDI messages until midi_dumper:stop() is called
+  -- or the MidiDumper object is garbage collected.
   midi_dumper:start()  
 end
 ```
 
-## Midi output 
+## MIDI Output
 
 ```lua
 local outputs = renoise.Midi.available_output_devices()
@@ -93,12 +95,12 @@ if not table.is_empty(outputs) then
   local device_name = outputs[1]
   local midi_device = renoise.Midi.create_output_device(device_name)
   
-  -- note on
-  midi_device:send { 0x90, 0x10, 0x7F }
-  -- sysex (MMC start)
-  midi_device:send { 0xF0, 0x7F, 0x00, 0x06, 0x02, 0xF7 }
+  -- Note On
+  midi_device:send({ 0x90, 0x10, 0x7F })
+  -- SysEx (MMC Start)
+  midi_device:send({ 0xF0, 0x7F, 0x00, 0x06, 0x02, 0xF7 })
  
-  -- no longer need the device in this example...
+  -- We no longer need the device in this example, so close it.
   midi_device:close()  
 end
 ```

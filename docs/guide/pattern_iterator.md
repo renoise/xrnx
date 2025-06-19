@@ -1,37 +1,15 @@
-# Pattern Iterator
-
-As a quick and efficient way to access the pattern data in phrases and the Renoise song, you can use the existing pattern iterators. Here are a few examples of how to use them. 
-
-See also API docs for [renoise.PatternIterator](../API/renoise/renoise.PatternIterator.md).
-
-## Change notes in selection
-
-changes all "C-4"s to "E-4" in the selection in the current pattern
-
-```lua
-local pattern_iter = renoise.song().pattern_iterator
-local pattern_index =  renoise.song().selected_pattern_index
-
-for pos,line in pattern_iter:lines_in_pattern(pattern_index) do
-  for _,note_column in pairs(line.note_columns) do 
-    if (note_column.is_selected and 
-        note_column.note_string == "C-4") then
-      note_column.note_string = "E-4"
-    end
-  end
-end
-```
 
 ## Generate a simple arp sequence
 
-... repeating in the current pattern & track from line 0 to the pattern end
+This example generates a repeating arpeggio in the current pattern and track.
 
 ```lua
-local pattern_iter = renoise.song().pattern_iterator
+local song = renoise.song()
+local pattern_iter = song.pattern_iterator
 
-local pattern_index =  renoise.song().selected_pattern_index
-local track_index =  renoise.song().selected_track_index
-local instrument_index = renoise.song().selected_instrument_index
+local pattern_index = song.selected_pattern_index
+local track_index = song.selected_track_index
+local instrument_index = song.selected_instrument_index
 
 local EMPTY_VOLUME = renoise.PatternLine.EMPTY_VOLUME
 local EMPTY_INSTRUMENT = renoise.PatternLine.EMPTY_INSTRUMENT
@@ -49,7 +27,6 @@ local arp_sequence = {
 
 for pos,line in pattern_iter:lines_in_pattern_track(pattern_index, track_index) do
   if not table.is_empty(line.note_columns) then
-
     local note_column = line:note_column(1)
     note_column:clear()
     
@@ -61,57 +38,37 @@ for pos,line in pattern_iter:lines_in_pattern_track(pattern_index, track_index) 
 end
 ```
 
-## Hide empty volume, panning, and delay colums
+## Hide empty volume, panning, and delay columns
+
+This example iterates through all tracks and hides the Volume, Panning, Delay, and Effects columns if they are not used.
 
 ```lua
-for track_index, track in pairs(renoise.song().tracks) do 
-  -- Set some bools
-  local found_volume = false
-  local found_panning = false
-  local found_delay = false
-  local found_sample_effects = false
-  -- Check whether or not this is a regular track
-  if
-    track.type ~= renoise.Track.TRACK_TYPE_MASTER and
-    track.type ~= renoise.Track.TRACK_TYPE_SEND
-  then
-    -- Iterate through the regular track
+for track_index, track in ipairs(renoise.song().tracks) do 
+  -- Only process regular sequence tracks
+  if (track.type == renoise.Track.TRACK_TYPE_SEQUENCER) then
+    local found_volume = false
+    local found_panning = false
+    local found_delay = false
+    local found_sample_effects = false
+    
     local iter = renoise.song().pattern_iterator:lines_in_track(track_index)
     for _,line in iter do
-      -- Check whether or not the line is empty
       if not line.is_empty then
-        -- Check each column on the line
         for _,note_column in ipairs(line.note_columns) do
-          -- Check for volume 
-          if  note_column.volume_value ~= renoise.PatternLine.EMPTY_VOLUME then
-            found_volume = true
-          end
-          -- Check for panning 
-          if note_column.panning_value ~= renoise.PatternLine.EMPTY_PANNING then
-            found_panning = true
-          end
-          -- Check for delay
-          if note_column.delay_value ~= renoise.PatternLine.EMPTY_DELAY then
-            found_delay = true
-          end
-          -- Check for sample effects
-          if note_column.effect_number_value ~= renoise.PatternLine.EMPTY_EFFECT_NUMBER then
-            found_sample_effects = true
-          end
-          if note_column.effect_amount_value ~= renoise.PatternLine.EMPTY_EFFECT_AMOUNT then
-            found_sample_effects = true
-          end
-          
+          if note_column.volume_is_set then found_volume = true end
+          if note_column.panning_is_set then found_panning = true end
+          if note_column.delay_is_set then found_delay = true end
+          if note_column.effect_is_set then found_sample_effects = true end
         end
-        -- If we found something in all three vol, pan, and del
-        -- Then there's no point in continuing down the rest of the track 
-        -- We break this loop and move on to the next track
+        
+        -- If we found content in all columns, we can stop searching this track
         if found_volume and found_panning and found_delay and found_sample_effects then
           break
         end
       end
     end
-    -- Set some properties
+    
+    -- Set column visibility based on what was found
     track.volume_column_visible = found_volume
     track.panning_column_visible = found_panning
     track.delay_column_visible = found_delay
