@@ -88,7 +88,7 @@ The operators you can overload are:
 *   `__eq` (equality)
 *   `__call` (function call)
 *   `__unm` (unary minus)
-*   `__tostring`
+*   `__tostring` (serialization)
 *   `__len` (length operator `#`)
 
 Note: `__tostring` isn't really an operator, but it's the metamethod that is called by the standard library's `tostring()` function.

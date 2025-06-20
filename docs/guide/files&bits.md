@@ -1,8 +1,10 @@
-# Files & Bits
+# File IO & Bits
+
+The Renoise API uses Lua's standard [io library](https://www.lua.org/pil/21.html) to read or write external files.
 
 To access the raw bits and bytes of some data, for example, to read or write binary file streams, you can use the `bit` library. It's built into the Renoise API, so there's no need to `require` it.
 
-See the [LuaJIT bit library documentation](https://bitop.luajit.org/api.html) for more info and examples. For file operations, you can use Lua's standard [io library](https://www.lua.org/pil/21.html).
+See the [LuaJIT bit library documentation](https://bitop.luajit.org/api.html) for more info and examples. 
 
 ```lua
 -- Reading integer numbers or raw bytes from a file
@@ -31,7 +33,7 @@ local function read_dword(file)
   end   
 end
 
--- and so on (adapt as needed to mess with endianness!) ...
+-- and so on (adapt as needed to deal with endianness!) ...
 
 local file, err = io.open("some_binary_file.bin", "rb")
 if not file then

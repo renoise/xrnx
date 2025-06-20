@@ -2,7 +2,7 @@
 
 The Renoise API allows you to create or load [SQLite databases](https://sqlite.org). This can be used to either efficiently deal with large data blobs within your tools or to read existing database files from other applications.
 
-See [Renoise SQLite API](../API/renoise/renoise.SQLite.md) for more info.
+See [`renoise.SQLite`](../API/renoise/renoise.SQLite.md) for more info.
 
 A quick example on how to open and read from an existing database file:
 

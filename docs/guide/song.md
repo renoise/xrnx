@@ -1,4 +1,4 @@
-# The Renoise Song
+# Renoise Song
 
 The `renoise.song()` function is the main entry point for scripting in Renoise. It returns a [`renoise.Song`](../API/renoise/renoise.Song.md) object that represents the entire project currently loaded in the application. 
 
@@ -14,7 +14,6 @@ renoise.song()
 ├── instruments[]          (List of all instruments)
 │   ├── samples[]
 │   │   └── sample_buffer
-│   ├── sample_device_chains[]
 │   └── ...
 ├── patterns[]             (The pool of all available patterns)
 │   └── tracks[]
@@ -75,13 +74,14 @@ first_track.name = "New Name" -- Set the track's name
 
 ### Track Devices and Parameters
 
-Once you have a device chain, you can iterate over its ([`renoise.AudioDevice`](../API/renoise/renoise.AudioDevice.md)) and ([`renoise.DeviceParameter`](../API/renoise/renoise.DeviceParameter.md)). The first device in a track's chain is always the "Mixer" device, which contains the track's built-in parameters like volume and panning.
+Once you have a device chain, you can iterate over its devices [`renoise.AudioDevice`](../API/renoise/renoise.AudioDevice.md) and parameters [`renoise.DeviceParameter`](../API/renoise/renoise.DeviceParameter.md). The first device in a track's chain is always the "Mixer" device, which contains the track's built-in parameters like volume and panning.
 
 ```lua
 local selected_track = renoise.song().selected_track
 local mixer_device = selected_track.devices[1]
 
 print("Parameters for '" .. mixer_device.display_name .. "':")
+
 for _, param in ipairs(mixer_device.parameters) do
   print(string.format("  - %s: %s", param.name, param.value_string))
 end
@@ -119,6 +119,7 @@ You can dynamically manage the devices in a chain. To add a device, you need its
 local track = renoise.song().selected_track
 
 print("Available devices:")
+-- `rprint` is a Renoise extension which also pretty prints tables 
 rprint(track.available_devices)
 
 -- Get a random device path (excluding plugins to avoid popups)
@@ -126,7 +127,7 @@ local device_path
 repeat
   device_path = track.available_devices[
     math.random(1, #track.available_devices)]
-until (device_path:find("Native/"))
+until device_path:find("Native/")
 
 -- Insert the device at the end of the chain
 local device_count = #track.devices
@@ -151,7 +152,7 @@ print("Removed the last added device.")
 
 A [`renoise.PatternTrack`](../API/renoise/renoise.PatternTrack.md) holds pattern lines and automations for a single track in a single pattern.
 
-The following example writes a C-4 note in the first pattern's track.
+The following example writes a `C-4` note in the first pattern's track.
 
 ```lua
 local song = renoise.song()
@@ -175,7 +176,7 @@ end
 
 For efficiently iterating over pattern data, it's recommended to use the [`renoise.PatternIterator`](../API/renoise/renoise.PatternIterator.md).
 
-This example changes all "C-4" notes to "E-4" within the *current selection* in the pattern editor.
+This example changes all `C-4` notes to `E-4` within the *current selection* in the pattern editor.
 
 ```lua
 local song = renoise.song()
@@ -196,23 +197,23 @@ end
 
 A [`renoise.PatternTrackAutomation`](../API/renoise/renoise.PatternTrackAutomation.md) automates track device parameters. 
 
-This example accesses the automation for the parameter currently selected in the "Automation" tab in Renoise. Note that the example code uses `song.selected_parameter`, which is deprecated. You should use `song.selected_automation_parameter` in new scripts.
+This example accesses the automation for the parameter currently selected in the "Automation" tab in Renoise.
 
 ```lua
 local song = renoise.song()
-local selected_track_parameter = song.selected_parameter
+local selected_parameter = song.selected_automation_parameter
 local selected_pattern_track = song.selected_pattern_track
 
 -- Is a parameter selected?
-if selected_track_parameter then
+if selected_parameter then
   local automation = selected_pattern_track:find_automation(
-    selected_track_parameter)
+    selected_parameter)
 
   -- Check if automation for the selected parameter already exists
   if not automation then
     -- If not, create it for the current pattern/track
     automation = selected_pattern_track:create_automation(
-      selected_track_parameter)
+      selected_parameter)
   end
 
   ---- Do something with the automation ----
@@ -230,7 +231,7 @@ if selected_track_parameter then
   automation:add_point_at(2, 0.5) 
   -- Change its value if it already exists
   automation:add_point_at(2, 0.8) 
-  -- Remove it again (must exist at this time)
+  -- Remove it again (a point must exist at this time)
   automation:remove_point_at(2) 
   
   -- Batch creation/insertion of points
@@ -253,7 +254,7 @@ end
 
 ## Instruments
 
-The `renoise.song().instruments` property contains a list of all instruments. An [`renoise.Instrument`](../API/renoise/renoise.Instrument.md) can contain samples, phrases, modulation, and DSP FX chains.
+The `renoise.song().instruments` property contains a list of all instruments. An [`renoise.Instrument`](../API/renoise/renoise.Instrument.md) may contain phrases, midi in/out properties, plugin devices, samples, sample modulation, and sample DSP FX chains.
 
 ```lua
 local song = renoise.song()
@@ -325,7 +326,7 @@ local num_frames = sample_rate / 2 -- half a second
 -- Create new or overwrite existing sample data
 local allocation_succeeded = sample_buffer:create_sample_data(
   sample_rate, bit_depth, num_channels, num_frames)
-  
+
 -- Check for allocation failures
 if not allocation_succeeded then
   renoise.app():show_error("Out of memory. Failed to allocate sample data.")

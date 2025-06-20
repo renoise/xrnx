@@ -1,4 +1,4 @@
-# The Renoise Application
+# Renoise Application
 
 The `renoise.app()` function is the entry point for interacting with the Renoise application itself. It returns a [`renoise.Application`](../API/renoise/renoise.Application.md) object, which provides access to global application states, functions for user interaction like dialogs, and control over the main window.
 

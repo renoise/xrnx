@@ -127,7 +127,7 @@ class "EchoServer"
   function EchoServer:__init(port)
     -- Create a server socket
     local server, socket_error = renoise.Socket.create_server(
-      nil, port, renoise.Socket.PROTOCOL_TCP)
+      "localhost", port, renoise.Socket.PROTOCOL_TCP)
      
     if socket_error then 
       renoise.app():show_warning(
