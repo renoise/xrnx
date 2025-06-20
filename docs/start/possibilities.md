@@ -36,9 +36,9 @@ Before you delve into writing your own scripts and tools, it worth considering w
 
 There are a few ways tool creators can make the functionality they provide available for users, below is a brief summary of the most used methods.
 
-* [Define keybindings](../guide/keybindings.md) that can be assigned to shortcuts and executed from certain contexts in Renoise
-* [Add new entries to menus](../guide/menus.md) like the *Tools* menu or one of the right-click context menus
-* [Create custom views](../guide/views.md) that do things on button presses, slider drags and so on
+* [Define keybindings](../guide/tool.md#keybindings) that can be assigned to shortcuts and executed from certain contexts in Renoise
+* [Add new entries to menus](../guide/tool.md#menu-entries) like the *Tools* menu or one of the right-click context menus
+* [Create custom views](../guide/tool.md#custom-guis) that do things on button presses, slider drags and so on
 * Listen to [MIDI](../guide/midi.md), [OSC](../guide/osc.md) or [WebSocket messages](../guide/sockets.md) to execute actions
 * [React to events inside Renoise](../guide/observables.md) like "do something any time a new song is loaded"
 

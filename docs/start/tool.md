@@ -19,10 +19,10 @@ A tool is a folder or a *zip file* with the extension `.xrnx`.
 * `manifest.xml` is an XML file which describes your tool.
 
 #### Optional files:
-* `cover.png` (600x350 px) is a large image, used on the [tools page](https://www.renoise.com/tools) and on the pages of individual tools.
-* `thumbnail.png` (120x45 px) is a small capsule image, used when tools are shown in a list on the tools website.
+* `cover.png` **600x350 px** is a large image, used on the tools page overview and on the pages of individual tools.
+* `thumbnail.png` **120x45 px** is a small capsule image, used when tools are shown in a list on the tools website.
 * `README.md` is a markdown-formatted file that the website will render on the tool's page.
-* `LICENSE` is a license file.
+* `LICENSE` is a raw text license file.
 
 The paths to the cover, thumbnail, readme, and license files can be customized using the `...File` tags in the manifest. See below for more info.
 
@@ -86,8 +86,8 @@ Let's go through what each of these tags means and what you should put inside th
 
 ### Optional Properties
 
-* `<Category>` A category for your tool, which will be used to categorize your tool on the [official Tools page](https://www.renoise.com/tools) if you ever decide to submit it there. See below for a valid list of categories.
-* `<Description>` A short description of your tool which will be displayed inside the *Tool Browser* in Renoise and on the Tools page.
+* `<Category>` One or more categories for your tool, separated via `,`, which will be used to categorize your tool on the [official Tools page](https://www.renoise.com/tools) if you ever decide to submit it there. See below for a valid list of categories.
+* `<Description>` A short description of your tool which will be displayed inside the *Tool Browser* in Renoise and on the official Tools page.
 * `<License>` The type of license, e.g., *MIT* or *AGPL*.
 * `<LicensePath>` Relative path to the license file within the XRNX bundle.
 * `<ThumbnailPath>` Relative path to the thumbnail icon file for the Tools page.
@@ -101,7 +101,7 @@ Let's go through what each of these tags means and what you should put inside th
 
 #### Tool Categories
 
-Valid categories are: `Automation`, `Coding`, `Control`, `Development`, `Export`, `Game`, `Hardware`, `Import`, `Instrument`, `MIDI`, `Mixing`, `Modulation`, `Networking`, `OSC`, `Pattern Editor`, `Pattern Generator`, `Phrases`, `Plugins`, `Recording`, `Rendering`, `Sample Editor`, `Sample Generator`, `Sequencer`, `Slicing`, `Tuning`, `Workflow`
+Valid categories are: `Automation`, `Coding`, `Control`, `Development`, `Export`, `Game`, `Hardware`, `Import`, `Instrument`, `MIDI`, `Mixing`, `Modulation`, `Networking`, `OSC`, `Pattern Editor`, `Pattern`, `Phrases`, `Plugins`, `Recording`, `Rendering`, `Sample Editor`, `Sample` , `Sequencer`, `Slicing`, `Tuning`, `Workflow`
 
 #### XML Text Encoding
 
