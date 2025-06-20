@@ -94,7 +94,7 @@
 
 > Load an existing, new, non aliased plugin. Pass an empty string to unload
 > an already assigned plugin. plugin_path must be one of the available plugins
-> See: [renoise.InstrumentPluginProperties.available_plugins](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/song/instrument/plugin.lua#35#10)  
+> See: `renoise.InstrumentPluginProperties.available_plugins`  
 
 
 

@@ -238,7 +238,7 @@
 > transform at the time of drawing.
 ### set_stroke_linear_gradient([*self*](../../API/builtins/self.md), start_x : [`number`](../../API/builtins/number.md), start_y : [`number`](../../API/builtins/number.md), end_x : [`number`](../../API/builtins/number.md), end_y : [`number`](../../API/builtins/number.md))<a name="set_stroke_linear_gradient"></a>
 > Set filling to use a linear gradient.<br>
-> See: [renoise.Views.Canvas.Context](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/canvas.lua#94#10) set_fill_linear_gradient
+> See: `renoise.Views.Canvas.Context` set_fill_linear_gradient
 ### set_fill_radial_gradient([*self*](../../API/builtins/self.md), start_x : [`number`](../../API/builtins/number.md), start_y : [`number`](../../API/builtins/number.md), start_radius : [`number`](../../API/builtins/number.md), end_x : [`number`](../../API/builtins/number.md), end_y : [`number`](../../API/builtins/number.md), end_radius : [`number`](../../API/builtins/number.md))<a name="set_fill_radial_gradient"></a>
 > Set filling to use a radial gradient.<br>
 > 
@@ -252,7 +252,7 @@
 > at the time of drawing. The radii must be non-negative.
 ### set_stroke_radial_gradient([*self*](../../API/builtins/self.md), start_x : [`number`](../../API/builtins/number.md), start_y : [`number`](../../API/builtins/number.md), start_radius : [`number`](../../API/builtins/number.md), end_x : [`number`](../../API/builtins/number.md), end_y : [`number`](../../API/builtins/number.md), end_radius : [`number`](../../API/builtins/number.md))<a name="set_stroke_radial_gradient"></a>
 > Set stroke to use a radial gradient.<br>
-> See: [renoise.Views.Canvas.Context](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/canvas.lua#94#10) set_fill_radial_gradient
+> See: `renoise.Views.Canvas.Context` set_fill_radial_gradient
 ### add_fill_color_stop([*self*](../../API/builtins/self.md), offset : [`number`](../../API/builtins/number.md), color : [`RGBAColor`](#RGBAColor) | [`RGBColor`](#RGBColor) | [`ThemeColor`](#ThemeColor))<a name="add_fill_color_stop"></a>
 > Add a color stop to a linear or radial gradient fill.<br>
 > 
@@ -471,7 +471,7 @@
 >     | "default_color_15"
 >     | "default_color_16"
 > ```
-> See: [renoise.Views.Canvas.Context](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/canvas.lua#94#10) add_fill_color_stop
+> See: `renoise.Views.Canvas.Context` add_fill_color_stop
 ### rect([*self*](../../API/builtins/self.md), x : [`number`](../../API/builtins/number.md), y : [`number`](../../API/builtins/number.md), width : [`number`](../../API/builtins/number.md), height : [`number`](../../API/builtins/number.md))<a name="rect"></a>
 > Add a closed subpath in the shape of a rectangle.<br>
 > 
