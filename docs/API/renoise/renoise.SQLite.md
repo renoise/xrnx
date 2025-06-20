@@ -154,7 +154,7 @@
 >   -- handle error
 > end
 > ```
-> See: [SQLiteStatement](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/sqlite.lua#283#10)
+> See: `SQLiteStatement`
 ### finalize([*self*](../../API/builtins/self.md), temp_only : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md))<a name="finalize"></a>
 >  Finalizes all statements that have not been explicitly finalized.
 ### execute([*self*](../../API/builtins/self.md), sql : [`string`](../../API/builtins/string.md), fun : fun(data: any, cols: integer, values: table<SQLiteValue>, names: table<string>)?, data : [`any`](../../API/builtins/any.md))<a name="execute"></a>
@@ -394,7 +394,7 @@
 > range or if the `n`-th parameter is nameless, then nil is returned.
 > 
 > The function returns `renoise.SQLlite.Status.OK` on success or else a numerical error code.
-> See: [renoise.SQLite.Status](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/sqlite.lua#28#9)
+> See: `renoise.SQLite.Status`
 ### bind([*self*](../../API/builtins/self.md), n : [`integer`](../../API/builtins/integer.md), value : [`boolean`](../../API/builtins/boolean.md) | [`string`](../../API/builtins/string.md) | [`number`](../../API/builtins/number.md)[`?`](../../API/builtins/nil.md))<a name="bind"></a>
 `->`[`renoise.SQLite.Status`](renoise.SQLite.md#Status)  
 
@@ -428,7 +428,7 @@
 > Binds the given values to statement parameters.
 > 
 > The function returns `renoise.SQLlite.Status.OK` on success or else a error code.
-> See: [renoise.SQLite.Status](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/sqlite.lua#28#9)
+> See: `renoise.SQLite.Status`
 ### nrows([*self*](../../API/builtins/self.md))<a name="nrows"></a>
 `->`() `->` table<[`string`](../../API/builtins/string.md), [`string`](../../API/builtins/string.md) | [`integer`](../../API/builtins/integer.md)>[`?`](../../API/builtins/nil.md)  
 
@@ -437,21 +437,21 @@
 > and values for the current row.
 > 
 > This is the prepared statement equivalent of `db:nrows()`.
-> See: [SQLiteDatabase.nrows](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/sqlite.lua#247#9)
+> See: `SQLiteDatabase.nrows`
 ### rows([*self*](../../API/builtins/self.md))<a name="rows"></a>
 `->`() `->` [`any`](../../API/builtins/any.md)[]  
 
 > Creates an iterator over the values of the result set of the statement.
 > Each iteration returns an array with the values for the current row.
 > This is the prepared statement equivalent of `db:rows()`.
-> See: [SQLiteDatabase.rows](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/sqlite.lua#263#9)
+> See: `SQLiteDatabase.rows`
 ### urows([*self*](../../API/builtins/self.md))<a name="urows"></a>
 `->`() `->` [`string`](../../API/builtins/string.md) | [`number`](../../API/builtins/number.md)[`?`](../../API/builtins/nil.md)  
 
 > Creates an iterator over the values of the result set of the statement.
 > Each iteration returns the values for the current row.
 > This is the prepared statement equivalent of `db:urows()`.
-> See: [SQLiteDatabase.urows](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/sqlite.lua#278#9)  
+> See: `SQLiteDatabase.urows`  
 
 
 

@@ -64,13 +64,13 @@
 `->`label : [`string`](../../API/builtins/string.md)  
 
 > Opens a modal dialog with a title, custom content and custom button labels.  
-> See: [renoise.ViewBuilder](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/viewbuilder.lua#17#10) for more info about custom views.
+> See: `renoise.ViewBuilder` for more info about custom views.
 ### show_custom_dialog([*self*](../../API/builtins/self.md), title : [`DialogTitle`](#DialogTitle), content_view : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md), key_handler : [`KeyHandler`](#KeyHandler)[`?`](../../API/builtins/nil.md), key_handler_options : [`KeyHandlerOptions`](#keyhandleroptions)[`?`](../../API/builtins/nil.md), focus_handler : [`FocusHandler`](#FocusHandler)[`?`](../../API/builtins/nil.md))<a name="show_custom_dialog"></a>
 `->`[`renoise.Dialog`](../../API/renoise/renoise.Dialog.md)  
 
 > Shows a non modal dialog (a floating tool window) with custom content.  
 > When no key_handler is provided, the Escape key is used to close the dialog.
-> See: [renoise.ViewBuilder](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/viewbuilder.lua#17#10) for more info about custom views.
+> See: `renoise.ViewBuilder` for more info about custom views.
 ### show_menu([*self*](../../API/builtins/self.md), dialog : [`renoise.Dialog`](../../API/renoise/renoise.Dialog.md), menu_entries : [`DialogMenuEntry`](#dialogmenuentry)[], below_view : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)[`?`](../../API/builtins/nil.md))<a name="show_menu"></a>
 > Shows a custom context menu on top of the given dialog.
 > 
@@ -114,13 +114,13 @@
 > The song is not created immediately, but soon after the call was made and
 > the user did not aborted the operation. In order to continue execution
 > with the new song, attach a notifier to 'renoise.app().new_document_observable'
-> See: [renoise.ScriptingTool](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/tool.lua#19#10) for more info.
+> See: `renoise.ScriptingTool` for more info.
 ### new_song_no_template([*self*](../../API/builtins/self.md))<a name="new_song_no_template"></a>
 > Create a new song document, avoiding template XRNS songs (when present) to be loaded.
 > The song is not created immediately, but soon after the call was made and
 > the user did not aborted the operation. In order to continue execution
 > with the new song, attach a notifier to 'renoise.app().new_document_observable'
-> See: [renoise.ScriptingTool](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/tool.lua#19#10) for more info.
+> See: `renoise.ScriptingTool` for more info.
 ### load_song([*self*](../../API/builtins/self.md), filename : [`string`](../../API/builtins/string.md))<a name="load_song"></a>
 > Load a new song document from the given filename (will ask to save
 > changes if needed, any errors are shown to the user).

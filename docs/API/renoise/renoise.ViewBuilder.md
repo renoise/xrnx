@@ -168,7 +168,7 @@
 >    }
 > }
 > ```
-> See: [renoise.Views.Stack](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/stack.lua#27#10)
+> See: `renoise.Views.Stack`
 ### space([*self*](../../API/builtins/self.md), properties : [`ViewProperties`](#viewproperties))<a name="space"></a>
 > You can create an empty space in layouts with a space.
 > 
@@ -192,83 +192,83 @@
 ### canvas([*self*](../../API/builtins/self.md), properties : [`CanvasViewProperties`](#canvasviewproperties)[`?`](../../API/builtins/nil.md))<a name="canvas"></a>
 `->`[`renoise.Views.Canvas`](../../API/renoise/renoise.Views.Canvas.md)  
 
-> See: [renoise.Views.Canvas](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/canvas.lua#57#10)
+> See: `renoise.Views.Canvas`
 ### text([*self*](../../API/builtins/self.md), properties : [`TextViewProperties`](#textviewproperties)[`?`](../../API/builtins/nil.md))<a name="text"></a>
 `->`[`renoise.Views.Text`](../../API/renoise/renoise.Views.Text.md)  
 
-> See: [renoise.Views.Text](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/text.lua#62#10)
+> See: `renoise.Views.Text`
 ### multiline_text([*self*](../../API/builtins/self.md), properties : [`MultilineTextViewProperties`](#multilinetextviewproperties)[`?`](../../API/builtins/nil.md))<a name="multiline_text"></a>
 `->`[`renoise.Views.MultiLineText`](../../API/renoise/renoise.Views.MultiLineText.md)  
 
-> See: [renoise.Views.MultiLineText](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/multiline_text.lua#48#10)
+> See: `renoise.Views.MultiLineText`
 ### textfield([*self*](../../API/builtins/self.md), properties : [`TextFieldProperties`](#textfieldproperties)[`?`](../../API/builtins/nil.md))<a name="textfield"></a>
 `->`[`renoise.Views.TextField`](../../API/renoise/renoise.Views.TextField.md)  
 
-> See: [renoise.Views.TextField](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/textfield.lua#41#10)
+> See: `renoise.Views.TextField`
 ### multiline_textfield([*self*](../../API/builtins/self.md), properties : [`MultilineTextFieldProperties`](#multilinetextfieldproperties)[`?`](../../API/builtins/nil.md))<a name="multiline_textfield"></a>
 `->`[`renoise.Views.MultiLineTextField`](../../API/renoise/renoise.Views.MultiLineTextField.md)  
 
-> See: [renoise.Views.MultiLineTextField](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/multiline_textfield.lua#22#10)
+> See: `renoise.Views.MultiLineTextField`
 ### link([*self*](../../API/builtins/self.md), properties : [`TextLinkViewProperties`](#textlinkviewproperties)[`?`](../../API/builtins/nil.md))<a name="link"></a>
 `->`[`renoise.Views.TextLink`](../../API/renoise/renoise.Views.TextLink.md)  
 
-> See: [renoise.Views.TextLink](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/link.lua#20#10)
+> See: `renoise.Views.TextLink`
 ### bitmap([*self*](../../API/builtins/self.md), properties : [`BitmapViewProperties`](#bitmapviewproperties)[`?`](../../API/builtins/nil.md))<a name="bitmap"></a>
 `->`[`renoise.Views.Bitmap`](../../API/renoise/renoise.Views.Bitmap.md)  
 
-> See: [renoise.Views.Bitmap](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/bitmap.lua#74#10)
+> See: `renoise.Views.Bitmap`
 ### button([*self*](../../API/builtins/self.md), properties : [`ButtonProperties`](#buttonproperties)[`?`](../../API/builtins/nil.md))<a name="button"></a>
 `->`[`renoise.Views.Button`](../../API/renoise/renoise.Views.Button.md)  
 
-> See: [renoise.Views.Button](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/button.lua#60#10)
+> See: `renoise.Views.Button`
 ### checkbox([*self*](../../API/builtins/self.md), properties : [`CheckBoxProperties`](#checkboxproperties)[`?`](../../API/builtins/nil.md))<a name="checkbox"></a>
 `->`[`renoise.Views.CheckBox`](../../API/renoise/renoise.Views.CheckBox.md)  
 
-> See: [renoise.Views.CheckBox](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/checkbox.lua#28#10)
+> See: `renoise.Views.CheckBox`
 ### switch([*self*](../../API/builtins/self.md), properties : [`ButtonSwitchProperties`](#buttonswitchproperties)[`?`](../../API/builtins/nil.md))<a name="switch"></a>
 `->`[`renoise.Views.Switch`](../../API/renoise/renoise.Views.Switch.md)  
 
-> See: [renoise.Views.Switch](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/switch.lua#30#10)
+> See: `renoise.Views.Switch`
 ### popup([*self*](../../API/builtins/self.md), properties : [`PopUpMenuProperties`](#popupmenuproperties)[`?`](../../API/builtins/nil.md))<a name="popup"></a>
 `->`[`renoise.Views.Popup`](../../API/renoise/renoise.Views.Popup.md)  
 
-> See: [renoise.Views.Popup](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/popup.lua#25#10)
+> See: `renoise.Views.Popup`
 ### chooser([*self*](../../API/builtins/self.md), properties : [`ChooserProperties`](#chooserproperties)[`?`](../../API/builtins/nil.md))<a name="chooser"></a>
 `->`[`renoise.Views.Chooser`](../../API/renoise/renoise.Views.Chooser.md)  
 
-> See: [renoise.Views.Chooser](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/chooser.lua#19#10)
+> See: `renoise.Views.Chooser`
 ### valuebox([*self*](../../API/builtins/self.md), properties : [`ValueBoxProperties`](#valueboxproperties)[`?`](../../API/builtins/nil.md))<a name="valuebox"></a>
 `->`[`renoise.Views.ValueBox`](../../API/renoise/renoise.Views.ValueBox.md)  
 
-> See: [renoise.Views.ValueBox](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/valuebox.lua#51#10)
+> See: `renoise.Views.ValueBox`
 ### value([*self*](../../API/builtins/self.md), properties : [`ValueViewProperties`](#valueviewproperties)[`?`](../../API/builtins/nil.md))<a name="value"></a>
 `->`[`renoise.Views.Value`](../../API/renoise/renoise.Views.Value.md)  
 
-> See: [renoise.Views.Value](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/value.lua#20#10)
+> See: `renoise.Views.Value`
 ### valuefield([*self*](../../API/builtins/self.md), properties : [`ValueFieldProperties`](#valuefieldproperties)[`?`](../../API/builtins/nil.md))<a name="valuefield"></a>
 `->`[`renoise.Views.ValueField`](../../API/renoise/renoise.Views.ValueField.md)  
 
-> See: [renoise.Views.ValueField](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/valuefield.lua#20#10)
+> See: `renoise.Views.ValueField`
 ### scrollbar([*self*](../../API/builtins/self.md), properties : [`ScrollBarProperties`](#scrollbarproperties)[`?`](../../API/builtins/nil.md))<a name="scrollbar"></a>
 `->`[`renoise.Views.ScrollBar`](../../API/renoise/renoise.Views.ScrollBar.md)  
 
-> See: [renoise.Views.ScrollBar](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/scrollbar.lua#49#10)
+> See: `renoise.Views.ScrollBar`
 ### slider([*self*](../../API/builtins/self.md), properties : [`SliderProperties`](#sliderproperties)[`?`](../../API/builtins/nil.md))<a name="slider"></a>
 `->`[`renoise.Views.Slider`](../../API/renoise/renoise.Views.Slider.md)  
 
-> See: [renoise.Views.Slider](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/slider.lua#49#10)
+> See: `renoise.Views.Slider`
 ### minislider([*self*](../../API/builtins/self.md), properties : [`MiniSliderProperties`](#minisliderproperties)[`?`](../../API/builtins/nil.md))<a name="minislider"></a>
 `->`[`renoise.Views.MiniSlider`](../../API/renoise/renoise.Views.MiniSlider.md)  
 
-> See: [renoise.Views.MiniSlider](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/minislider.lua#18#10)
+> See: `renoise.Views.MiniSlider`
 ### rotary([*self*](../../API/builtins/self.md), properties : [`RotaryEncoderProperties`](#rotaryencoderproperties)[`?`](../../API/builtins/nil.md))<a name="rotary"></a>
 `->`[`renoise.Views.RotaryEncoder`](../../API/renoise/renoise.Views.RotaryEncoder.md)  
 
-> See: [renoise.Views.RotaryEncoder](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/rotary.lua#23#10)
+> See: `renoise.Views.RotaryEncoder`
 ### xypad([*self*](../../API/builtins/self.md), properties : [`XYPadProperties`](#xypadproperties)[`?`](../../API/builtins/nil.md))<a name="xypad"></a>
 `->`[`renoise.Views.XYPad`](../../API/renoise/renoise.Views.XYPad.md)  
 
-> See: [renoise.Views.XYPad](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/views/xypad.lua#64#10)  
+> See: `renoise.Views.XYPad`  
 
 
 

@@ -45,7 +45,7 @@
 `->`new_device : [`renoise.AudioDevice`](../../API/renoise/renoise.AudioDevice.md)  
 
 > Insert a new device at the given position. "device_path" must be an available device
-> See: [renoise.SampleDeviceChain.available_devices](file:///c%3A/Users/emuell/Development/Renoise-XRNX/definitions/library/renoise/song/instrument/sample_device_chain.lua#24#10)
+> See: `renoise.SampleDeviceChain.available_devices`
 ### delete_device_at([*self*](../../API/builtins/self.md), index : [`integer`](../../API/builtins/integer.md))<a name="delete_device_at"></a>
 > Delete an existing device from a chain. The mixer device at index 1 can not
 > be deleted.
