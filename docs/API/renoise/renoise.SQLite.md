@@ -96,15 +96,15 @@
 > **READ-ONLY** The most recent error message.
 
 ### changes : [`integer`](../../API/builtins/integer.md)<a name="changes"></a>
-> **READ-ONLY** Number of database rows that were changed, inserted, or deleted by 
-> the most recent SQL statement. 
+> **READ-ONLY** Number of database rows that were changed, inserted, or deleted by
+> the most recent SQL statement.
 > Only changes that are directly specified by INSERT, UPDATE, or DELETE statements
 > are counted.
 > Auxiliary changes caused by triggers are not counted. Use `db.total_changes`
 > to find the total number of changes.
 
 ### total_changes : [`integer`](../../API/builtins/integer.md)<a name="total_changes"></a>
-> **READ-ONLY** The number of database rows that have been modified by INSERT, 
+> **READ-ONLY** The number of database rows that have been modified by INSERT,
 > UPDATE or DELETE statements since the database was opened.
 > This includes UPDATE, INSERT and DELETE statements executed as part of
 > trigger programs. All changes are counted as soon as the statement that
@@ -201,7 +201,7 @@
 ### interrupt([*self*](../../API/builtins/self.md))<a name="interrupt"></a>
 >  Causes any pending database operation to abort and return at the next opportunity.
 ### busy_handler([*self*](../../API/builtins/self.md), fun : (udata : [`any`](../../API/builtins/any.md), retries : [`integer`](../../API/builtins/integer.md)) `->` [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md), data : [`any`](../../API/builtins/any.md))<a name="busy_handler"></a>
-> Sets or removes a busy handler for a SQLiteDatabase. 
+> Sets or removes a busy handler for a SQLiteDatabase.
 > `fun` is either a Lua function that implements the busy handler or `nil`
 > to remove a previously set handler. This function returns nothing.
 > The handler function is called with two parameters: `data` and the number
@@ -278,7 +278,7 @@
 > or 0 if the statement does not return data (for example an UPDATE).
 
 ### last_insert_rowid : [`integer`](../../API/builtins/integer.md)<a name="last_insert_rowid"></a>
-> **READ-ONLY** rowid of the most recent INSERT into the database corresponding 
+> **READ-ONLY** rowid of the most recent INSERT into the database corresponding
 > to this statement.
 
 ### named_types : table<[`string`](../../API/builtins/string.md), [`string`](../../API/builtins/string.md)><a name="named_types"></a>
@@ -349,23 +349,23 @@
 
 > Evaluates the (next iteration of the) prepared statement.
 > It will return one of the following values:
->  - `renoise.SQLite.Status.BUSY`: the engine was unable to acquire the locks needed. 
->    If the statement is a COMMIT or occurs outside of an explicit transaction, 
+>  - `renoise.SQLite.Status.BUSY`: the engine was unable to acquire the locks needed.
+>    If the statement is a COMMIT or occurs outside of an explicit transaction,
 >    then you can retry the statement. If the statement is not a COMMIT and
 >    occurs within a explicit transaction then you should rollback the transaction
 >    before continuing.
->  - `renoise.SQLite.Status.DONE`: the statement has finished executing successfully. 
+>  - `renoise.SQLite.Status.DONE`: the statement has finished executing successfully.
 >    `stmt:step()` should not be called again on this statement without first
 >    calling `stmt:reset()` to reset the virtual machine back to the initial state.
 >  - `renoise.SQLite.Status.ROW`: this is returned each time a new row of data is ready.
->    The values may be accessed using the column access functions. 
+>    The values may be accessed using the column access functions.
 >    `stmt:step()` can be called again to retrieve the next row of data.
 >  - `renoise.SQLite.Status.ERROR`: a run-time error (e.g. a constraint violation) occurred.
 >    `stmt:step()` should not be called again. More information may be found by
->    calling `db:error_message()`. A more specific error code can be obtained by calling 
+>    calling `db:error_message()`. A more specific error code can be obtained by calling
 >    `stmt:reset()`.
 >  - `renoise.SQLite.Status.MISUSE`: the function was called inappropriately.
->    Perhaps because the statement has already been finalized or a previous call to 
+>    Perhaps because the statement has already been finalized or a previous call to
 >    `stmt:step()` has returned `sqlite.ERROR` or `sqlite.DONE`.
 ### bind_parameter_count([*self*](../../API/builtins/self.md))<a name="bind_parameter_count"></a>
 `->`[`integer`](../../API/builtins/integer.md)  

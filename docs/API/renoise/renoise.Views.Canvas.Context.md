@@ -493,7 +493,7 @@
 > 
 > Tip: to make multiple curves join smoothly, ensure that each new end
 > point is on a line between the adjacent control points.
-### arc([*self*](../../API/builtins/self.md), x : [`number`](../../API/builtins/number.md), y : [`number`](../../API/builtins/number.md), radius : [`number`](../../API/builtins/number.md), start_angle : [`number`](../../API/builtins/number.md), end_angle : [`number`](../../API/builtins/number.md), counter_clockwise : [`number`](../../API/builtins/number.md))<a name="arc"></a>
+### arc([*self*](../../API/builtins/self.md), x : [`number`](../../API/builtins/number.md), y : [`number`](../../API/builtins/number.md), radius : [`number`](../../API/builtins/number.md), start_angle : [`number`](../../API/builtins/number.md), end_angle : [`number`](../../API/builtins/number.md), counter_clockwise : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md))<a name="arc"></a>
 > Extend the current subpath with an arc between two angles.<br>
 > 
 > The arc is from the circle centered at the given point and with the

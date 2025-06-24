@@ -5,6 +5,12 @@
 
 ---  
 ## Properties
+### editor_visible : [`boolean`](../../API/builtins/boolean.md)<a name="editor_visible"></a>
+> When false, a preview of the script is shown instead of a text editor.
+
+### editor_visible_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="editor_visible_observable"></a>
+> fired, when the editor visibility changed.
+
 ### parameters : [`renoise.DeviceParameter`](../../API/renoise/renoise.DeviceParameter.md)[]<a name="parameters"></a>
 >  **READ-ONLY** List of script input parameters, if any.
 
@@ -40,7 +46,7 @@
 > functions to it.
 
 ### pending_changes : [`integer`](../../API/builtins/integer.md)<a name="pending_changes"></a>
-> **READ-ONLY** Number of changes since the last commit() or auto-commit call, 
+> **READ-ONLY** Number of changes since the last commit() or auto-commit call,
 > that have been applied to the parapgraphs.
 > Note: `auto-commit` only is applied for scripts which are currently edited.
 
