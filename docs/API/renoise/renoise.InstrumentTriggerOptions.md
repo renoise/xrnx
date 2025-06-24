@@ -41,11 +41,11 @@
 > functions to it.
 
 ### tuning : [`number`](../../API/builtins/number.md)[]<a name="tuning"></a>
-> Array of custom pitch values relative to 1/1, used as custom tuning values for 
-> instrument sample playback. The root key is assumed to be middle C (48 in Renoise), 
-> The scale will be repeated, so only one octave of values should be defined. An 
-> octave may contain more or less than 12 notes. 
->  
+> Array of custom pitch values relative to 1/1, used as custom tuning values for
+> instrument sample playback. The root key is assumed to be middle C (48 in Renoise),
+> The scale will be repeated, so only one octave of values should be defined. An
+> octave may contain more or less than 12 notes.
+> 
 > When set mts_esp_tuning is disabled. Set an empty table to disable custom tuning
 > using default 12-TET tuning instead.
 > 
@@ -54,12 +54,12 @@
 > #### examples:
 > ```lua
 > -- Andreas Werckmeister's temperament III (the most famous one, 1681)
-> local well_tempered_tuning = { 
->   256/243, 1.117403, 32/27, 1.252827, 4/3, 1024/729, 
+> local well_tempered_tuning = {
+>   256/243, 1.117403, 32/27, 1.252827, 4/3, 1024/729,
 >   1.494927, 128/81, 1.670436, 16/9, 1.879241, 2/1
 > }
 > instrument.tuning = well_tempered_tuning
-> ``` 
+> ```
 
 ### tuning_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="tuning_observable"></a>
 > Track changes to document properties or general states by attaching listener

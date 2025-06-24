@@ -150,7 +150,7 @@
 > functions to it.
 
 ### selected_sample_index : [`integer`](../../API/builtins/integer.md)<a name="selected_sample_index"></a>
-> **READ-ONLY** Selected sample index in the instrument's sample list. 
+> **READ-ONLY** Selected sample index in the instrument's sample list.
 > Only 0 when no samples are present in the selected instrument.
 
 ### selected_sample_modulation_set : [`renoise.SampleModulationSet`](../../API/renoise/renoise.SampleModulationSet.md)<a name="selected_sample_modulation_set"></a>
@@ -318,7 +318,7 @@
 > 0 when no phrase is selected.
 
 ### selected_phrase_note_column : [`renoise.NoteColumn`](../../API/renoise/renoise.NoteColumn.md)<a name="selected_phrase_note_column"></a>
-> **READ-ONLY** The currently edited column in the selected line in the currently 
+> **READ-ONLY** The currently edited column in the selected line in the currently
 > edited phrase. Nil when no phrase is selected or when an effect column is selected.
 
 ### selected_phrase_note_column_index : [`integer`](../../API/builtins/integer.md)<a name="selected_phrase_note_column_index"></a>
@@ -326,11 +326,11 @@
 > phrase. 0 when no phrase is selected or when an effect column is selected.
 
 ### selected_phrase_effect_column : [`renoise.EffectColumn`](../../API/renoise/renoise.EffectColumn.md)<a name="selected_phrase_effect_column"></a>
-> **READ-ONLY** The currently edited column in the selected line in the currently 
+> **READ-ONLY** The currently edited column in the selected line in the currently
 > edited phrase. Nil when no phrase is selected or when a note column is selected.
 
 ### selected_phrase_effect_column_index : [`integer`](../../API/builtins/integer.md)<a name="selected_phrase_effect_column_index"></a>
-> The currently edited effect column index in the selected line in the currently 
+> The currently edited effect column index in the selected line in the currently
 > edited phrase. 0 when no phrase is selected or when a note column is selected.
 
 ### selected_phrase_sub_column_type : [`renoise.Song.SubColumnType`](renoise.Song.md#SubColumnType)<a name="selected_phrase_sub_column_type"></a>
@@ -369,9 +369,9 @@
 > something more descriptive, you can, **before changing anything in the song**,
 > give your changes a custom undo description (like: "Generate Synth Sample")
 ### describe_batch_undo([*self*](../../API/builtins/self.md), description : [`string`](../../API/builtins/string.md), timeout_ms : [`number`](../../API/builtins/number.md)[`?`](../../API/builtins/nil.md))<a name="describe_batch_undo"></a>
-> Same as `describe_undo`, but additionally this tries to merge the following 
+> Same as `describe_undo`, but additionally this tries to merge the following
 > changes to the document with the last one, if the description matches the last
-> description and the given timeout was not reached since the last describe_batch_undo 
+> description and the given timeout was not reached since the last describe_batch_undo
 > call.
 > 
 > Calls to `describe_undo` from other tools, or from Renoise internally, will cancel
@@ -379,7 +379,7 @@
 > 
 > Batches can be useful to combine multiple changes in the document into a single
 > udo/redo step, when the changes happen asynchroniously, for example a process
-> sliced action (via Lua coroutines).  
+> sliced action (via Lua coroutines).
 ### insert_track_at([*self*](../../API/builtins/self.md), index : [`integer`](../../API/builtins/integer.md))<a name="insert_track_at"></a>
 `->`[`renoise.Track`](../../API/renoise/renoise.Track.md)  
 
@@ -491,10 +491,10 @@
 > This works similar to the Renoise `PlayCurrentLine` keyboard shortcut, but does now
 > advance the playback position.
 > 
-> If you want to preview a single track's note only, mute other tracks before 
+> If you want to preview a single track's note only, mute other tracks before
 > triggering the pattern line. To stop the preview, invoke `stop` from the transport.
 > 
-> Transport playback must be stopped for this to work. If it's not, an error is 
+> Transport playback must be stopped for this to work. If it's not, an error is
 > thrown.
 > 
 > This is evaluated from the GUI thread, not a real-time thread, so timing will
@@ -513,7 +513,7 @@
 > Stop instrument playback which previously got started via `trigger_instrument_note_on`.
 ### trigger_sample_note_on([*self*](../../API/builtins/self.md), instrument_index : [`integer`](../../API/builtins/integer.md), sample_index : [`integer`](../../API/builtins/integer.md), track_index : [`integer`](../../API/builtins/integer.md), note : [`integer`](../../API/builtins/integer.md)[`?`](../../API/builtins/nil.md), volume : [`number`](../../API/builtins/number.md)[`?`](../../API/builtins/nil.md), use_selection : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md))<a name="trigger_sample_note_on"></a>
 > Trigger a sample with the specified note and volume for preview purposes on the
-> given track. This directly triggers the sample, bypassing the instrument's keyzone. 
+> given track. This directly triggers the sample, bypassing the instrument's keyzone.
 > 
 > Only use this to **preview samples** from tools and not as a sequencer.
 > See also `trigger_instrument_note_on`.

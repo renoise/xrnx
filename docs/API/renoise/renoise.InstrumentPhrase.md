@@ -53,7 +53,7 @@
 > functions to it.
 
 ### script : [`renoise.InstrumentPhraseScript`](../../API/renoise/renoise.InstrumentPhraseScript.md)<a name="script"></a>
-> **READ-ONLY** Phrase script properties. Only used when `playback_mode` is 
+> **READ-ONLY** Phrase script properties. Only used when `playback_mode` is
 > set to `renoise.InstrumentPhrase.PLAY_SCRIPT`
 
 ### is_empty : [`boolean`](../../API/builtins/boolean.md)<a name="is_empty"></a>

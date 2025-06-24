@@ -40,7 +40,7 @@
 > functions to it.
 
 ### pending_changes : [`integer`](../../API/builtins/integer.md)<a name="pending_changes"></a>
-> **READ-ONLY** Number of changes since the last commit() or auto-commit call, 
+> **READ-ONLY** Number of changes since the last commit() or auto-commit call,
 > that have been applied to the parapgraphs.
 > Note: `auto-commit` only is applied for scripts which are currently edited.
 
