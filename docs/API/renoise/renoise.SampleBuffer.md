@@ -120,7 +120,7 @@
 > data for your changes and update sample overview caches!
 ### prepare_sample_data_changes([*self*](../../API/builtins/self.md), undo_redo_enabled : [`boolean`](../../API/builtins/boolean.md)[`?`](../../API/builtins/nil.md))<a name="prepare_sample_data_changes"></a>
 > To be called once **before** sample data gets manipulated via `set_sample_data`.
-> This will prepare undo/redo data for the whole sample and does other internal 
+> This will prepare undo/redo data for the whole sample and does other internal
 > housekeeping. Every *prepare_sample_data_changes* call must be paired with a
 > *finalize_sample_data_changes* call.
 > 
@@ -134,7 +134,7 @@
 > This will create undo/redo data for the whole samples, and also updates the
 > sample view caches for the sample.
 > The reason this isn't automatically invoked is to avoid performance overhead when
-> changing sample data 'sample by sample'. 
+> changing sample data 'sample by sample'.
 > 
 > Don't forget to call this after any data changes, or changes may not be visible
 > in the GUI and can not be un/redone!

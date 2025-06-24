@@ -25,7 +25,7 @@
 > Pattern order list: Notifiers will only be fired when sequence positions are
 > added, removed or their order changed. To get notified of pattern assignment
 > changes use the property `pattern_assignments_observable`.
-> Use `set_pattern` to change a single pattern in the sequence. 
+> Use `set_pattern` to change a single pattern in the sequence.
 
 ### pattern_sequence_observable : [`renoise.Document.ObservableList`](../../API/renoise/renoise.Document.ObservableList.md)<a name="pattern_sequence_observable"></a>
 > Track changes to document lists by attaching listener functions to it.

@@ -24,6 +24,20 @@
 ### installed_tools : table<[`string`](../../API/builtins/string.md), [`string`](../../API/builtins/string.md)><a name="installed_tools"></a>
 > **READ-ONLY** Returns information about all currently installed tools.
 
+### installed_tools_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="installed_tools_observable"></a>
+> Fired when the list of installed tools changed.
+
+### audio_plugin_effects_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="audio_plugin_effects_observable"></a>
+> Fired when the list of available audio plugin effects changed, for example
+> when scanning for new plugins in the preferences.
+> Use the component's `available_plugins` or `available_devices` properties
+> to access currently available devices which are supported by the component
+> such as the track device chains.
+
+### audio_plugin_instruments_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="audio_plugin_instruments_observable"></a>
+> Fired when the list of available audio plugin instruments changed, for example
+> when scanning for new plugins in the preferences.
+
 ### key_modifier_states : table<[`string`](../../API/builtins/string.md), [`string`](../../API/builtins/string.md)><a name="key_modifier_states"></a>
 > **Deprecated.** **READ-ONLY** Use `key_modifier_flags` instead
 
@@ -63,12 +77,12 @@
 ### show_custom_prompt([*self*](../../API/builtins/self.md), title : [`string`](../../API/builtins/string.md), content_view : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md), button_labels : [`string`](../../API/builtins/string.md)[], key_handler : [`KeyHandler`](#KeyHandler)[`?`](../../API/builtins/nil.md), key_handler_options : [`KeyHandlerOptions`](#keyhandleroptions)[`?`](../../API/builtins/nil.md), focus_handler : [`FocusHandler`](#FocusHandler)[`?`](../../API/builtins/nil.md))<a name="show_custom_prompt"></a>
 `->`label : [`string`](../../API/builtins/string.md)  
 
-> Opens a modal dialog with a title, custom content and custom button labels.  
+> Opens a modal dialog with a title, custom content and custom button labels.
 > See: `renoise.ViewBuilder` for more info about custom views.
 ### show_custom_dialog([*self*](../../API/builtins/self.md), title : [`DialogTitle`](#DialogTitle), content_view : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md), key_handler : [`KeyHandler`](#KeyHandler)[`?`](../../API/builtins/nil.md), key_handler_options : [`KeyHandlerOptions`](#keyhandleroptions)[`?`](../../API/builtins/nil.md), focus_handler : [`FocusHandler`](#FocusHandler)[`?`](../../API/builtins/nil.md))<a name="show_custom_dialog"></a>
 `->`[`renoise.Dialog`](../../API/renoise/renoise.Dialog.md)  
 
-> Shows a non modal dialog (a floating tool window) with custom content.  
+> Shows a non modal dialog (a floating tool window) with custom content.
 > When no key_handler is provided, the Escape key is used to close the dialog.
 > See: `renoise.ViewBuilder` for more info about custom views.
 ### show_menu([*self*](../../API/builtins/self.md), dialog : [`renoise.Dialog`](../../API/renoise/renoise.Dialog.md), menu_entries : [`DialogMenuEntry`](#dialogmenuentry)[], below_view : [`renoise.Views.View`](../../API/renoise/renoise.Views.View.md)[`?`](../../API/builtins/nil.md))<a name="show_menu"></a>
@@ -315,10 +329,10 @@
 >  * Windows : "shift", "alt", "control", "winkey"
 >  * Linux : "shift", "alt", "control", "meta"
 >  * Mac : "shift", "option", "control", "command".
-> If multiple modifiers are held down, the string will be formatted as  
+> If multiple modifiers are held down, the string will be formatted as
 > "<key> + <key>"
 > Their order will correspond to the following precedence
-> `shift + alt/option + control + winkey/meta/command`  
+> `shift + alt/option + control + winkey/meta/command`
 > If no modifier is pressed, this will be an empty string.  
   
 
@@ -347,13 +361,13 @@
   
 ### FocusHandler<a name="FocusHandler"></a>
 (dialogs : [`renoise.Dialog`](../../API/renoise/renoise.Dialog.md), focused : [`boolean`](../../API/builtins/boolean.md)) `->` [`KeyEvent`](#keyevent)[`?`](../../API/builtins/nil.md)  
-> Optional focus change notifier for a custom dialog.  
-> Will be called when the dialog gains of loses key focus. You maybe want to initialize 
+> Optional focus change notifier for a custom dialog.
+> Will be called when the dialog gains of loses key focus. You maybe want to initialize
 > your dloag's (modifier) keyboard states here.  
   
 ### KeyHandler<a name="KeyHandler"></a>
 (dialog : [`renoise.Dialog`](../../API/renoise/renoise.Dialog.md), key_event : [`KeyEvent`](#keyevent)) `->` [`KeyEvent`](#keyevent)[`?`](../../API/builtins/nil.md)  
-> Optional keyhandler to process key events on a custom dialog.  
+> Optional keyhandler to process key events on a custom dialog.
 > When returning the passed key from the key-handler function, the
 > key will be passed back to Renoise's key event chain, in order to allow
 > processing global Renoise key-bindings from your dialog. This will not work
@@ -376,10 +390,10 @@
 >  * Windows : "shift", "alt", "control", "winkey"
 >  * Linux : "shift", "alt", "control", "meta"
 >  * Mac : "shift", "option", "control", "command".
-> If multiple modifiers are held down, the string will be formatted as  
+> If multiple modifiers are held down, the string will be formatted as
 > "<key> + <key>"
 > Their order will correspond to the following precedence
-> `shift + alt/option + control + winkey/meta/command`  
+> `shift + alt/option + control + winkey/meta/command`
 > If no modifier is pressed, this will be an empty string.  
   
 
