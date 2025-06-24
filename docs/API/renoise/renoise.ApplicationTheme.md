@@ -1,7 +1,7 @@
 # renoise.ApplicationTheme<a name="renoise.ApplicationTheme"></a>  
 > Application's theme colors and other general color theme properties.
 > 
-> Note: All properties and functions of the app theme are **read-only**, so the 
+> Note: All properties and functions of the app theme are **read-only**, so the
 > theme can't be modified here. Use the app's `renoise.Application:load_theme`
 > function to load and apply new themes instead.
 > 
@@ -14,11 +14,11 @@
 ---  
 ## Properties
 ### colors : { [ThemeColor]: RGBColor }<a name="colors"></a>
-> **READ-ONLY** Get all theme colors in a flat list of RGBColors. 
+> **READ-ONLY** Get all theme colors in a flat list of RGBColors.
 > Color table keys are string identifiers as used in the theme XML file,
 > but in lower case.
 > 
-> Note that if you only need to access a single color from the theme, 
+> Note that if you only need to access a single color from the theme,
 > use `renoise.app().theme.color(color_name)` instead.
 > 
 > To get notified of color changes, use `renoise.app().theme_observable`
@@ -58,11 +58,11 @@
 ### color([*self*](../../API/builtins/self.md), color_name : [`ThemeColor`](#ThemeColor))<a name="color"></a>
 `->`[`RGBColor`](#RGBColor)  
 
-> Get a single color from the theme using a color identifier as used 
+> Get a single color from the theme using a color identifier as used
 > in the theme XML file - but in lower case.
 > 
-> e.g. to access the button background color from the theme, use 
-> `renoise.app().theme.color("button_back")` 
+> e.g. to access the button background color from the theme, use
+> `renoise.app().theme.color("button_back")`
 > 
 > To get notified of color changes, use `renoise.app().theme_observable`
 > 

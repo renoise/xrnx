@@ -59,8 +59,8 @@
 > **READ-ONLY** List of available filter types depending on the filter_version.
 
 ### filter_type : [`FilterTypes`](#FilterTypes)<a name="filter_type"></a>
-> The type of the filter selected for the modulation set. 
-> Songs made with previous versions of Renoise may use old filter types. 
+> The type of the filter selected for the modulation set.
+> Songs made with previous versions of Renoise may use old filter types.
 
 ### filter_type_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="filter_type_observable"></a>
 > Track changes to document properties or general states by attaching listener
