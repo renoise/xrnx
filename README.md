@@ -1,8 +1,8 @@
-<img src="https://www.renoise.com/sites/default/files/renoise_logo_0.png" alt="Renoise" height="100"/>
+<img src="https://www.renoise.com/images/renoise_logo.png" alt="Renoise" height="100"/>
 
 ## Renoise Scripting Development
 
-Welcome to the Renoise Lua Scripting Repository! This site is for developers who want to write their own scripts & tools for [Renoise](http://www.renoise.com/). If you are only interested in downloading tools for Renoise and not in developing your own, please have a look at the [Renoise Tools Page](http://tools.renoise.com/).
+Welcome to the Renoise Lua Scripting Repository! This site is for developers who want to write their own scripts & tools for [Renoise](http://www.renoise.com/). If you are only interested in downloading tools for Renoise and not in developing your own, please have a look at the [Renoise Tools Page](http://renoise.com/tools).
 
 ### Documentation & Guides
 
