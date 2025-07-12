@@ -3,7 +3,7 @@
 There are a few things that all tools must conform to for Renoise to successfully recognize and load them.
 
 ```sh
-com.name_of_creator.name_of_tool.xrnx
+com.domain_of_developer.name_of_tool.xrnx
 ├── manifest.xml
 ├── main.lua
 ├── cover.png
@@ -24,11 +24,11 @@ A tool is a folder or a *zip file* with the extension `.xrnx`.
 * `README.md` is a markdown-formatted file that the website will render on the tool's page.
 * `LICENSE` is a raw text license file.
 
-The paths to the cover, thumbnail, readme, and license files can be customized using the `...File` tags in the manifest. See below for more info.
+The paths to the cover, thumbnail, readme, and license files can be customized using the `...Path` tags in the manifest. See below for more info.
 
 
 > [!NOTE] 
-> You'll see that the names of tool folders follow [reverse domain notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation), but don't worry, you don't have to actually own a domain to create and share your tools. Just use whatever nickname you want, but make sure it's not already taken by other developers to avoid confusion.
+> You'll see that the names of tool folders (and `Id` field) follow [reverse domain notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation), but don't worry, you don't have to actually own a domain to create and share your tools. Just use whatever nickname you want, but make sure it's not already taken by other developers to avoid confusion.
 
 If needed, you can split your tool into multiple files and use the ["require" function](https://www.lua.org/pil/8.1.html) to load them inside your main script, but to start with, you will be fine just using a single main script.
 
@@ -46,7 +46,7 @@ Here is an entire manifest file from a HelloWorld tool:
 <?xml version="1.0" encoding="UTF-8"?>
 <RenoiseScriptingTool doc_version="0">
   <!-- REQUIRED -->
-  <Id>com.renoise.HelloWorld</Id>
+  <Id>com.yourDomain.HelloWorld</Id>
   <ApiVersion>6.2</ApiVersion>
   <Version>1.02</Version>
   <Author>Your Name [your@email.com]</Author>
@@ -100,8 +100,7 @@ Let's go through what each of these tags means and what you should put inside th
 * `<Documentation>` A URL to a website where your tool's documentation can be viewed.
 
 #### Tool Categories
-
-Valid categories are: `Automation`, `Coding`, `Control`, `Development`, `Export`, `Game`, `Hardware`, `Import`, `Instrument`, `MIDI`, `Mixing`, `Modulation`, `Networking`, `OSC`, `Pattern Editor`, `Pattern`, `Phrases`, `Plugins`, `Recording`, `Rendering`, `Sample Editor`, `Sample` , `Sequencer`, `Slicing`, `Tuning`, `Workflow`
+Valid categories are: `Analysis`,`Automation`,`Bridge`,`Coding`,`Control`,`Development`,`DSP`,`Editing`,`Export`,`Game`,`Generator`,`Hardware`,`Import`,`Instrument`,`Integration`,`Live`,`MIDI`,`Mixing`,`Modulation`,`Networking`,`OSC`,`Pattern`,`Phrase`,`Plugin`,`Recording`,`Rendering`,`Sample`,`Sequencer`,`Slicing`,`Tuning`,`Workflow`
 
 #### XML Text Encoding
 
