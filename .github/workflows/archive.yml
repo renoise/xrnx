@@ -1,6 +1,14 @@
 name: Build and Archive XRNX_Starter_Pack.zip
 
-on: [push]
+on:
+  pull_request:
+    branches: [ "master" ]
+  push:
+    branches:
+      - master
+
+env:
+  CARGO_TERM_COLOR: always
 
 jobs:
   build:
@@ -13,12 +21,12 @@ jobs:
             
       - name: Install Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
-
-      - name: Install binstall
-        uses: cargo-bins/cargo-binstall@main
+        with: 
+          cache-workspaces: "docs"
+          cache-key: "renoise-xrnx"
 
       - name: Install mdbook
-        run: cargo binstall -y --force mdbook mdbook-linkcheck mdbook-toc mdbook-alerts
+        run: cargo install mdbook@0.4.51 mdbook-linkcheck@0.7.5 mdbook-toc@0.14.2 mdbook-alerts@0.8.0
 
       - name: Build the API
         run: cargo run
