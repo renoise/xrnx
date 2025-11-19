@@ -71,14 +71,14 @@
 > to iterate over all parameters and to query the parameter count.
 ### commit([*self*](../../API/builtins/self.md))<a name="commit"></a>
 > Commit paragraph changes for playback.
-### render_to_pattern([*self*](../../API/builtins/self.md), options : [`RenderScriptOptions`](#renderscriptoptions), rendering_done_callback : (string : [`any`](../../API/builtins/any.md)[`?`](../../API/builtins/nil.md), integer : [`any`](../../API/builtins/any.md), integer : [`any`](../../API/builtins/any.md)))<a name="render_to_pattern"></a>
+### render_to_pattern([*self*](../../API/builtins/self.md), options : [`RenderScriptOptions`](#renderscriptoptions), rendering_done_callback : [`RenderingDoneCallback`](#RenderingDoneCallback))<a name="render_to_pattern"></a>
 > Render script content with the given options to the phrase pattern.
 > Only committed content will be rendered, so make sure to commit changes first.
-> Parameter `rendering_done_callback` carries along rendering results:
->  - 1. optional error as string that happened while rendering. nil when succeeded.
->  - 2. number of successfully rendered raw events (not pattern lines) or 0.
->  - 3. number of skipped raw events, in case the pattern can't fit all events, or 0.
-### render_to_clipboard([*self*](../../API/builtins/self.md), options : [`RenderScriptOptions`](#renderscriptoptions), rendering_done_callback : (string : [`any`](../../API/builtins/any.md)[`?`](../../API/builtins/nil.md), integer : [`any`](../../API/builtins/any.md), integer : [`any`](../../API/builtins/any.md)))<a name="render_to_clipboard"></a>
+> Parameter `rendering_done_callback` is called with the results:
+>  * `error`: nil when the rendering succeeded, otherwise a string describing the error
+>  * `rendered_events`: number of successfully rendered raw events (not pattern lines) or 0
+>  * `skipped_events`: number of skipped raw events, in case the pattern couldn't fit all events, or 0
+### render_to_clipboard([*self*](../../API/builtins/self.md), options : [`RenderScriptOptions`](#renderscriptoptions), rendering_done_callback : [`RenderingDoneCallback`](#RenderingDoneCallback))<a name="render_to_clipboard"></a>
 > Same as `render_to_pattern`, but rendering into a temporary phrase object in the clipboard,
 > which can then be pasted by the user somewhere.  
 
@@ -100,5 +100,14 @@
 
   
 
+  
+
+
+
+---  
+## Aliases  
+### RenderingDoneCallback<a name="RenderingDoneCallback"></a>
+(error : [`string`](../../API/builtins/string.md)[`?`](../../API/builtins/nil.md), rendered_events : [`integer`](../../API/builtins/integer.md), skipped_events : [`integer`](../../API/builtins/integer.md))  
+  
   
 
