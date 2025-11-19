@@ -7,9 +7,9 @@
 ## Properties
 ### device_name : [`string`](../../API/builtins/string.md)<a name="device_name"></a>
 > When setting new devices, device names must be one of
-> renoise.Midi.available_input_devices.
-> Devices are automatically opened when needed. To close a device, set its
-> name to "", e.g. an empty string.
+> `renoise.Midi.available_input_devices()` or "Renoise OSC Device".
+> To close a device and disconnect it from the instrument, assign 
+> an empty string.
 
 ### device_name_observable : [`renoise.Document.Observable`](../../API/renoise/renoise.Document.Observable.md)<a name="device_name_observable"></a>
 > Track changes to document properties or general states by attaching listener

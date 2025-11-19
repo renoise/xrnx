@@ -65,11 +65,11 @@
   
   
 ### ListElementRemoved<a name="ListElementRemoved"></a>
-{ index : [`integer`](../../API/builtins/integer.md), type : `"removed"` }  
+{ index : [`integer`](../../API/builtins/integer.md), type : `"remove"` }  
   
   
 ### ListElementsSwapped<a name="ListElementsSwapped"></a>
-{ index1 : [`integer`](../../API/builtins/integer.md), index2 : [`integer`](../../API/builtins/integer.md), type : `"swapped"` }  
+{ index1 : [`integer`](../../API/builtins/integer.md), index2 : [`integer`](../../API/builtins/integer.md), type : `"swap"` }  
   
   
 ### ListNotifierFunction<a name="ListNotifierFunction"></a>
