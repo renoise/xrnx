@@ -370,6 +370,8 @@ Some important notifiers include:
 *   `app_will_save_document_observable` Fired just before the song is saved.
 *   `app_idle_observable`: Fired periodically, useful for low-priority background tasks.
 
+See a detailed timeline for these notifiers in [Lifetime of a Song](./song.md#lifetime-of-a-song)
+
 ## Preferences
 
 Tools can have preferences that are saved and loaded by Renoise. To use them, we first need to create a [`renoise.Document`](../API/renoise/renoise.Document.md) object which holds the options that we want to store.
