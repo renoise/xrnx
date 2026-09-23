@@ -6,7 +6,7 @@ The docs are generated using [mdBook](https://github.com/rust-lang/mdBook). To p
 
 ```sh
 # or `binstall`, to fetch latest binaries
-cargo install mdbook mdbook-linkcheck mdbook-toc mdbook-alerts
+cargo install mdbook@0.4 mdbook-linkcheck@0.7 mdbook-toc@0.14 mdbook-alerts@0.8
 ```
 
 ### Building
