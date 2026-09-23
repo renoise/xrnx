@@ -398,3 +398,28 @@ if selected_device then
   print("Selected device: " .. selected_device.display_name)
 end
 ```
+
+## Lifetime of a Song
+
+Below is a timeline of the different events that happen regarding songs while Renoise is running with your tool enabled. Tools that want to keep some context around based on the current song will want to manage it by listening to some or all of the listed observables for changes.
+
+### Initialization
+
+1. Renoise boots up
+2. Your tool's `main.lua` is executed
+3. Two things happen without a strict order
+	* A `Song` is loaded and [`app_new_document`](../API/renoise/renoise.ScriptingTool.md#app_new_document_observable--renoisedocumentobservable) fires
+	* The user's saved preferences are loaded for your `Tool` and [`tool_finished_loading`](../API/renoise/renoise.ScriptingTool.md#tool_finished_loading_observable) fires
+
+### User loads a new song
+
+1. If the user saves the previous song (`A`) before loading a new song (`B`) these save related notifier trigger
+	1. [`app_will_save_document`](../API/renoise/renoise.ScriptingTool.md#app_will_save_document_observable) fires with song `A`
+	2. [`app_saved_document`](../API/renoise/renoise.ScriptingTool.md#app_saved_document_observable) fires with song `A` (if saving was successful)
+2. [`app_release_document`](../API/renoise/renoise.ScriptingTool.md#app_release_document_observable) fires with song `A`
+3. [`app_new_document`](../API/renoise/renoise.ScriptingTool.md#app_new_document_observable) fires with song `B`
+
+### User quits Renoise
+
+1. Step 1 and 2 happens from above (1 only if the song was saved)
+2. [`tool_will_unload`](../API/renoise/renoise.ScriptingTool.md#tool_will_unload_observable) fires
