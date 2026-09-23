@@ -1,6 +1,9 @@
 Cargo.lock
 /book/
 /dist/
+/docs/API/builtins
+/docs/API/renoise
+/docs/API/modules
 /generate/Cargo.lock
 /generate/target/
 /generate/lua-language-server/
