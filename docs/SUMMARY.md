@@ -1,4 +1,4 @@
-<img src="https://www.renoise.com/sites/default/files/renoise_logo_0.png" alt="Renoise" height="100"/>
+<img src="https://www.renoise.com/images/renoise_logo.png" alt="Renoise" height="100"/>
 
 - [Introduction](start/README.md)
   - [Possibilities and Limitations](start/possibilities.md)
@@ -130,8 +130,10 @@
     - [table](API/modules/table.md)
   - [Builtin Types](API/builtins.md)
     - [any](API/builtins/any.md)
+    - [array](API/builtins/array.md)
     - [boolean](API/builtins/boolean.md)
     - [function](API/builtins/function.md)
+    - [generic](API/builtins/generic.md)
     - [integer](API/builtins/integer.md)
     - [lightuserdata](API/builtins/lightuserdata.md)
     - [nil](API/builtins/nil.md)
