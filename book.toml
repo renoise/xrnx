@@ -15,3 +15,5 @@ edit-url-template = "https://github.com/renoise/xrnx/edit/master/{path}"
 additional-css = [ "docs/styles.css" ]
 sidebar-header-nav = false
 
+[output.html.search]
+limit-results = 100
