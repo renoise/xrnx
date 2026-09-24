@@ -2,7 +2,7 @@
 
 The Renoise API makes extensive use of the [Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern). In short, many values are wrapped in "Observable" objects. You can register "notifier" functions on these objects, which will be called whenever the underlying value changes. This is a powerful way to react to changes in the application state without constantly polling and comparing values.
 
-When browsing the [API documentation](../API/README.md), you will find many properties with an `_observable` suffix. Let's see how to use this feature by attaching a notifier that runs when the user loads a new song.
+When browsing the [API documentation](../API/), you will find many properties with an `_observable` suffix. Let's see how to use this feature by attaching a notifier that runs when the user loads a new song.
 
 ```lua
 local function on_new_document()
