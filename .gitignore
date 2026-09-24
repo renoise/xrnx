@@ -3,6 +3,7 @@ Cargo.lock
 /dist/
 /docs/API/builtins
 /docs/API/renoise
+/docs/API/renoise.md
 /docs/API/modules
 /generate/Cargo.lock
 /generate/target/
