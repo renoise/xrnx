@@ -5,8 +5,7 @@
 The docs are generated using [mdBook](https://github.com/rust-lang/mdBook). To preview the pages locally you will need [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) to install mdbook, mdbook-linkcheck and mdbook-toc. 
 
 ```sh
-# or `binstall`, to fetch latest binaries
-cargo install mdbook@0.4 mdbook-linkcheck@0.7 mdbook-toc@0.14 mdbook-alerts@0.8
+cargo install mdbook@^0.5 # or `binstall` to fetch binaries
 ```
 
 ### Building
