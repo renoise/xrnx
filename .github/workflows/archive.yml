@@ -26,7 +26,7 @@ jobs:
           cache-key: "renoise-xrnx"
 
       - name: Install mdbook
-        run: cargo install mdbook@0.4.51 mdbook-linkcheck@0.7.5 mdbook-toc@0.14.2 mdbook-alerts@0.8.0
+        run: cargo install mdbook@^0.5
 
       - name: Build the API
         run: cargo run
@@ -34,11 +34,17 @@ jobs:
       - name: Build the book
         run: mdbook build
 
+      - name: Validate links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --offline --root-dir "$GITHUB_WORKSPACE/book" book
+          fail: true
+
       - name: Create XRNX_Starter_Pack
         run: |
           mkdir dist
           cp -rf definitions dist/definitions
-          cp -rf book/html dist/docs
+          cp -rf book dist/docs
           cp -rf tools dist/tools
           rm -rf dist/*/.git dist/*/.gitignore
           echo -e '<html>\n<body>\n<script type="text/javascript">\n\twindow.location.href = "./docs/index.html";\n</script>\n</body>\n</html>' > dist/docs.html 

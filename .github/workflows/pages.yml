@@ -16,12 +16,12 @@ jobs:
 
       - name: Install Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
-        with: 
+        with:
           cache-workspaces: "docs"
           cache-key: "renoise-xrnx"
 
       - name: Install mdbook
-        run: cargo install mdbook@0.4.51 mdbook-linkcheck@0.7.5 mdbook-toc@0.14.2 mdbook-alerts@0.8.0
+        run: cargo install mdbook@^0.5
 
       - name: Build the API
         run: cargo run
@@ -29,12 +29,18 @@ jobs:
       - name: Build the book
         run: mdbook build
 
+      - name: Validate links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --offline --root-dir "$GITHUB_WORKSPACE/book" book
+          fail: true
+
       - name: Upload
         uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
           path: ./book/html
-          
+
   deploy:
     # Add a dependency to the build job
     needs: build
