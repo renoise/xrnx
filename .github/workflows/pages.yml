@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
-          path: ./book/html
+          path: ./book
 
   deploy:
     # Add a dependency to the build job
