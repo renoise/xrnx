@@ -1,6 +1,9 @@
 name: Build and Deploy mdBook
 
 on:
+  pull_request:
+    branches:
+      - master
   push:
     branches:
       - master
@@ -10,21 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: recursive
 
       - name: Install Rust
-        uses: actions-rust-lang/setup-rust-toolchain@v1
+        uses: actions-rust-lang/setup-rust-toolchain@v2
         with:
           cache-workspaces: "docs"
           cache-key: "renoise-xrnx"
 
-      - name: Install mdbook
-        run: cargo install mdbook@^0.5
-
       - name: Build the API
         run: cargo run
+
+      - name: Install mdbook
+        run: cargo install mdbook@^0.5
 
       - name: Build the book
         run: mdbook build
@@ -35,8 +38,28 @@ jobs:
           args: --no-progress --offline --root-dir "$GITHUB_WORKSPACE/book" book
           fail: true
 
-      - name: Upload
-        uses: actions/upload-pages-artifact@v3
+      # the steps below only run on pushes to master, not on PRs
+      
+      - name: Create XRNX_Starter_Pack
+        if: github.ref_name == 'master'
+        run: |
+          mkdir dist
+          cp -rf definitions dist/definitions
+          cp -rf book dist/docs
+          cp -rf tools dist/tools
+          rm -rf dist/*/.git dist/*/.gitignore
+          echo -e '<html>\n<body>\n<script type="text/javascript">\n\twindow.location.href = "./docs/index.html";\n</script>\n</body>\n</html>' > dist/docs.html
+
+      - name: Upload Archive
+        uses: actions/upload-artifact@v4
+        if: github.ref_name == 'master'
+        with:
+          name: XRNX_Starter_Pack
+          path: dist
+
+      - name: Upload Pages
+        uses: actions/upload-pages-artifact@v5
+        if: github.ref_name == 'master'
         with:
           name: github-pages
           path: ./book
@@ -44,11 +67,12 @@ jobs:
   deploy:
     # Add a dependency to the build job
     needs: build
+    if: github.ref_name == 'master'
 
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
 
     # Deploy to the github-pages environment
     environment:
@@ -60,4 +84,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
+        uses: actions/deploy-pages@v5 # or specific "vX.X.X" version tag for this action
